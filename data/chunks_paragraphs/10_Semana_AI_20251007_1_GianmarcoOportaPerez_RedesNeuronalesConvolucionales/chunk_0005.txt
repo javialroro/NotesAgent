@@ -1,0 +1,20 @@
+Cada neurona
+esta conectadaunicamente a una pequeña region de la capa
+anterior, en lugar de estar completamente conectada, lo cual
+reduce la complejidad y mejora la eficiencia computacional. Las capas principales que componen una CNN son:
+•Capa convolucional: Calcula las salidas de las neuronas
+conectadas a regiones locales de la capa anterior. •Capa de agrupamiento (pooling): Reduce el tamaño
+espacial de las representaciones, manteniendo las carac-
+teristicas mas relevantes. •Capa completamente conectada (fully connected):
+Transforma la representacion final en probabilidades de
+pertenencia a una clase especifica. A medida que las imagenes avanzan a traves de las capas
+convolucionales y de agrupamiento, se reduce su tamaño
+espacial, pero aumenta la abstraccion de las caracteristicas
+aprendidas. Fig. 1. redes convolucionales
+C. Aplicaciones Comunes
+Las redes convolucionales se aplican ampliamente en diver-
+sas tareas de vision artificial, entre las que destacan:
+•Clasificacion de imagenes. •Segmentacion de objetos. •Segmentacion de instancias. •Procesamiento general de imagenes. Estas arquitecturas han demostrado una gran eficacia en
+problemas de reconocimiento visual, deteccion de patrones y
+procesamiento de señales en el dominio de la vision. REFERENCES
+[1] S. Pacheco, “Convolutional Neural networks” Presentacion,

@@ -1,0 +1,20 @@
+Regresion Lineal
+Lo que queremos hacer es encontrar la linea que mejor se
+ajuste a los datos, para poder realizar una prediccion de un
+valor. B1. Variables:
+Variables independientes: Son las caracteristicas de la
+muestra. Variables dependientes: Es el valor a predecir y es
+afectada por las varibales independientes
+Con esto lo que queremos hacer es encontrar un modelo
+estadistico lineal: fw,b(X) =wX +b
+Donde:
+X es un vector D-dimensional. w es un vector D-dimensional. b un numero real. wX es un producto punto, dandonos como resultado un
+escalar. El modelo esta parametrizado por wyb, por lo que
+debemos encontrar los valoresoptimos de wybque haran
+que la funcion realice las predicciones mas precisas. Pero ojo,
+Optimo =Perfecto
+Figura 1. Tipos de Regresion
+C. Funcion de Perdida
+Necesitamos de un metodo que nos permita cuantificar que
+tan bien se ajusta nuestro modelo a los datos. Funcion de
+Perdida = Medida del error del modelo

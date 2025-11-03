@@ -1,0 +1,20 @@
+Pixeles activos e inactivos & formacion de la figura
+En una imagen de MNIST, cada pixel tiene una intensidad
+(0 = “apagado”, valores altos = “encendido”). La figura del
+digito se forma por elpatronde pixeles activos/inactivos. El
+aprendizaje consiste en ajustar pesos para que ciertas config-
+uraciones de pixeles (patrones) produzcan la clase correcta. Fig. 1. Ejemplo de representacion de un digito en MNIST y sus pixeles en
+escala de grises. B. Por que esto es un problema complejo
+Aunque un digito “5” tiene una forma reconocible, cada
+persona lo escribe distinto. La variacion en trazo, grosor,
+inclinacion y ubicacion hace que sea dificil usar reglas fijas;
+necesitamos un modelo que aprenda a partir de ejemplos. C. Clasificacion binaria: “¿es un 5 o no?”
+La regresion logistica es la base de las redes neuronales. Se
+usa para clasificar entre dos clases (ej: ¿es un 5 o no lo es?). fw,b(x) =1
+1 +e−(wx+b)
+h(x) =g(f(x))
+g(x) =1
+1 +e−x
+fw,b(x) =wx+b
+En la Figura 2 se observa como la regresion logistica puede
+interpretarse como una red neuronal muy simple.

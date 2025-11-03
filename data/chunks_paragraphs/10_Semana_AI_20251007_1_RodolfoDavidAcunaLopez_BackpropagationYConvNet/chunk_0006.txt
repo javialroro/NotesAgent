@@ -1,0 +1,11 @@
+El primero me indica la capa en la que me encuentro, en
+este caso el L. El segundo me indica cual neurona es para
+identificar cada una de ellas. Los pesos estan asociados a las
+capas me van a indicar hacia donde voy y de donde provengo. Podemos tener dos funciones, las cuales son:
+•Preactivacion
+z(l)
+j=b(l)
+j+nl−1X
+k=1w(l)
+j,ka(l−1)
+k

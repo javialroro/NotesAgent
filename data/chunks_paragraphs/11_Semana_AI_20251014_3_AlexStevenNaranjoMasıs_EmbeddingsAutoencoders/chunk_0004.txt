@@ -1,0 +1,33 @@
+B. AlexNet (2012)
+Krizhevsky et al. popularizan ReLU,dropout, entrenamiento
+en multiples GPUs y kernels grandes (11×11,5×5,3×3)
+en entradas224×224. Disparo la adopcion dedeep learning
+a gran escala. C. ZFNet y Visualizacion Intermedia
+Ajusta tamaños de kernel/stride y estudiafeature maps
+internos para entender que aprende cada capa, motivando
+practicas de diseño y depuracion. D. GoogLeNet / Inception
+Modulos con ramas paralelas (1×1,3×3,5×5+max
+pooling); reduce parametros (de∼60M a∼4M) usando cuellos
+1×1yglobal average poolingal final. E. VGG-16
+Filosofia de simplicidad: solo3×3+ profundidad (16/19
+capas). A pesar de muchos parametros, es unbaselinedidacti-
+co muy usado. F . ResNet (Redes Residuales)
+Skip connections(y=F(x) +x) permiten entrenar redes
+muy profundas mitigandovanishing gradient. Bloquesba-
+sic/bottleneckse apilan eficientemente. G. DenseNet
+Conexiones densas “todas con todas” dentro del bloque;
+fomenta reutilizacion de caracteristicas, mejora el flujo de
+gradiente y reduce parametros a igual rendimiento. IV. EXPLICABILIDAD DELMODELO YEMBEDDINGS
+A. Visualizacion de Activaciones y Filtros
+Observarfeature mapsmuestra que regiones activan ca-
+da neurona. En capas iniciales, activaciones recuerdan bor-
+des/colores; en capas profundas, particulas semanticas mas
+complejas. B. Embeddings y Reduccion de Dimensionalidad
+Losembeddingsson vectores enRdque capturan semantica. Vectores de clases similares tienden a agruparse en el espacio
+latente. t-SNE:proyeccion no lineal a 2D/3D preservando vecin-
+darios locales. PCA:proyeccion lineal; ´util comobaselineo preproce-
+samiento. C. Mapas de Activacion (Heatmaps)
+Heatmapsseñalan zonas que mas influyen en la prediccion
+(´util en aplicaciones medicas/industriales para justificar deci-
+siones). Figura 1. Representacion deembeddingsmediante t-SNE. Figura 2. Estructura basica de un Autoencoder. V. AUTOENCODERS(CODIFICADORESAUTOMATICOS)
+A.

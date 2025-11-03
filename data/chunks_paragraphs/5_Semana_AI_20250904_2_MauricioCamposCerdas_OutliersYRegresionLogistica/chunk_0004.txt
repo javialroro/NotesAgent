@@ -1,0 +1,30 @@
+Alto Bias
+Cuando el modelo comete muchos errores en el training
+set, se produce underfitting. Esto ocurre porque el modelo
+asume demasiado del training set, no utiliza todas los features
+disponibles y es demasiado simple para capturar la compleji-
+dad de los datos. Para evitar un alto sesgo, se puede utilizar
+un modelo mas complejo. Ademas, es importante revisar que
+los features del training set sean adecuadas para la naturaleza
+del problema, ya que si no tienen la capacidad de capturar la
+informacion relevante, el modelo no podra hacer predicciones
+correctas. F . Alta Varianza
+Ocurre cuando el modelo se ajusta demasiado a los datos
+de entrenamiento y no es capaz de generalizar correctamente. Esto suele suceder cuando los datos son de alta dimension-
+alidad y hay pocos ejemplos disponibles. Para evitar la alta
+varianza, se pueden usar modelos mas simples, reducir la
+dimensionalidad de los datos, obtener mas ejemplos y aplicar
+tecnicas de regularizacion. IV. R EGRESIONLOGISTICA
+Aunque su nombre contenga la palabra regresion, en re-
+alidad la regresion logistica es un algoritmo de clasificacion
+binaria. Distingue entre dos clases ( 0y1), estimando proba-
+bilidades. Fig. 3). A. Distribucion de Bernoulli
+Utilizamos una distribucion de Bernoulli para la ocurrencia
+de un evento binario. P(Y=k) =pk(1−p)1−k, k∈ {0,1}
+B. Funcion Sigmoide
+Es una funcion que no se comporta linealmente. Tiene un
+Codominio de [0, 1]
+σ(x) =1
+1 +e−x
+Nota: x puede ser cualquier numero, hasta el resultado de otra
+funcion. Ver Fig. 4).

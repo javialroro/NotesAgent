@@ -1,0 +1,36 @@
+El profesor men-
+ciona que podemos usar Google Colab pero que es limitado,
+por lo que debemos aprovechar los recursos. La extension de la documentacion debe ser de maximo 10
+paginas. Los apuntes anteriores son los mas relevantes sobre
+la explicacion. C. Repaso de Back Propagation
+Este nos permite determinar cuanto aporta cada peso al
+error total de la red, ajustando los parametros en la direccion
+contraria al proceso de propagacion hacia adelante, asi como
+lo podemos observar en la Fig. 1. Vamos a ver las operaciones como grafos donde van a ser un
+tipo de operaciones donde vamos a ponerle un sobrenombre. El sobrenombre nos puede ayudar con las derivadas parciales. Cuando tratamos de optimizar un grafo, contamos con dos
+etapas. La de salida la cual le llamamos activacion L donde
+Fig. 1. Back and forward propagation. tenemos solo una neurona. Cada una de esas neuronas estan
+compuestas por una funcion no lineal que tiene como entrada
+una funcion lineal. Para optimizar los pesos en esa funcion
+debemos hacer derivadas parciales. Al final esa derivada va
+a ser el activador de la capa anterior por lo que no necesito
+conocer como fue computada cada capa anterior. Solo necesito
+el resultado y ya con eso puedo calcular la derivada que yo voy
+a necesitar. Si yo ocupo calcular la derivada parcial, respecto
+a la funcion de perdida con mi parametro w, lo que tengo que
+hacer es aplicar la regla de la cadena para llegar al parametro
+de mi funcion. Hay calculos que siempre se van a repetir por lo
+que podremos guardar esos calculos para evitar recalcularlos
+de nuevo para cada uno de los parametros. ∂Li
+∂wl=∂zl
+∂wl∂al
+∂zl∂Li
+∂al,
+∂Li
+∂bl=∂zl
+∂bl∂al
+∂zl∂Li
+∂al. Esto nos da como resultado un vector gradiente, la cual
+podemos ver en la Fig. 2, que tiene el calculo de todos los
+gradientes por todos los parametros en la red. Fig. 2. Vector gradiente. Si tenemos multiples neuronas, tenemos que utilizar su-
+perindices o subindices, podemos ver un ejemplo en la Fig. 3.

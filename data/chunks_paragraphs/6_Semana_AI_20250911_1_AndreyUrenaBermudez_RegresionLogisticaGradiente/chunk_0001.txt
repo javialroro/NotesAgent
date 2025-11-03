@@ -1,0 +1,44 @@
+Apuntes Semana 6
+Apuntes del 11 de setiembre de 2025
+Andrey Urena Bermudez – 2022017442
+Inteligencia Artificial
+andurena@estudiantec.cr
+Resumen—En este documento, se resume la clase del 11 de
+setiembre de 2025, en la cual se realizoprimeramente un repaso
+de lo visto en la clase anterior. De manera general, este documento
+recopila informacion sobre verosimilitud en la regresion logistica,
+la funcion de costo e informacion sobre un notebook de regresion
+logistica compartido por el profesor. Index Terms—Verosimilitud, regresion logistica, gradiente des-
+cendiente, funcion sigmoide, derivada. I. NOTA SOBRETAREAI
+Se hace recordatorio sobre darle importancia y no descuidar
+el trabajo escrito de la tarea, asicomo su documentacion, pues
+de este se daraelfeedbackpara los escritos que haya que
+realizar en tareas proximas y etapas del proyecto. II. REPASO SOBRE CLASE DEL MARTES
+II-A. Verosimilitud
+Es la probabilidad de observar cada uno de los datos
+cambiando ciertos parametros. Lo que se busca es maximizar
+para llegar al punto de maxima probabilidad. La diferencia entre MSE ymaximum likelihoodradica en su
+aplicacion: para la prediccion de valores continuos, se utiliza
+MSE, mientras que para modelar probabilidades, se utiliza
+maximum likelihood. Asi, nuestra funcion de costo es:
+L=NY
+i=1fw,b(xi)yi·(1−f w,b(xi))(1−y i)(1)
+Se vioel desarrollo de cada uno de los casos dey ien
+fw,b(xi)yi(1−f w,b(xi))(1−y i):
+Casoy i= 1:
+fw,b(xi)yi(1−f w,b(xi))(1−y i)=fw,b(xi)1(1−f w,b(xi))0
+(1)
+=fw,b(xi)1(2)
+Acael modelo nos da el valor directo. Ejemplo:Calabaza
+no es naranja:
+wx+b= 1,458
+fw,b(xi) =σ(wx i+b) =σ(1,458) = 0,81
+=fw,b(xi)1(1−f w,b(xi))0
+=fw,b(xi)1=σ(1,458)
+= 0,81
+La probabilidad de quex ino sea naranja es0,81.Casoy i= 0:
+fw,b(xi)yi(1−f w,b(xi))(1−y i)=fw,b(xi)0(1−f w,b(xi))1
+(1)
+= (1−f w,b(xi))1(2)
+Con la misma formula puedo estudiar de que ocurra o no
+un evento.

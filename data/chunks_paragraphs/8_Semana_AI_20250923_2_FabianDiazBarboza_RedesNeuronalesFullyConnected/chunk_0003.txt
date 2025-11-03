@@ -1,0 +1,4 @@
+Capas ocultas:transforman la informacion en re-
+presentaciones abstractas. Capa de salida:entrega la prediccion (10 neuronas
+para MNIST). Figura 4: Ejemplo esquematico de una red neuronal con
+capa de entrada, capa(s) oculta(s) y capa de salida. 2

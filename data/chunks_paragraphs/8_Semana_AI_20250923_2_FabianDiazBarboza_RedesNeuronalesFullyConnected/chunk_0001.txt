@@ -1,0 +1,50 @@
+Apuntes de clase: Redes Neuronales con el dataset MNIST
+Fabian Diaz Barboza
+Estudiante Ing. Computacion
+Tecnologico de Costa Rica
+Cartago, Costa Rica
+fdiaz@estudiantec.cr
+23/09/2025
+1El Dataset MNIST y la Representacion de
+Caracteristicas
+1.1 Descripcion del Dataset MNIST
+Imagenes en blanco y negro (1 canal).
+10 clases (digitos 0–9).
+Tamano estandar:28 ×28pixeles (entrada comun-
+mente utilizada).
+Conjunto: 60000 ejemplos de entrenamiento y 10000
+de prueba.
+1.2 Proceso de Aplanamiento (Flattening)
+Una imagen de entrada X∈R28×28se convierte en un
+vector columna medianteflatten:
+x∈R784,28×28 = 784.
+Cada uno de los 784 elementos es una caracteristica
+(feature) que alimenta el modelo.
+Figura 1: Ejemplo de la representacion de un digito en
+MNIST como matriz28 ×28y su aplanamiento a un
+vector de 784 caracteristicas.1.3Pixeles Activos e Inactivos: La Semantica del
+Input
+Un pixel con intensidad 0 se considera “apagado” y
+valores altos indican un pixel “encendido”.
+Incluso la regresion logistica binaria mas simple exige
+784pesos(w i) + 1sesgo(b) = 785parametros,
+lo que muestra la complejidad del espacio de entrada.
+2La Regresion Logistica Binaria: La Neurona
+Fundamental
+2.1 Clasificacion Binaria como Problema Inicial
+La regresion logistica estima la probabilidad de que
+una entrada pertenezca a la clase positiva; la salida estaen(0,1).
+2.2 Ecuaciones Fundamentales de la Neurona
+Potencial de activacion:
+z=w⊤x+b.
+Funcion sigmoide:
+g(z) =1
+1 +e−z.
+Salida del modelo:
+y=h(x) =g(w⊤x+b).
+Figura: diagrama esquematico de la neurona
+(Entradas→combinacion lineal→activacion→
+salida)
+Figura 2: Diagrama esquematico que interpreta la regre-
+sion logistica como la neurona mas simple.
+1

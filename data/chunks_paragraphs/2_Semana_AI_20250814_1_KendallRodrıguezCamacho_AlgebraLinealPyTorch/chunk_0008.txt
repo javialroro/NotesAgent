@@ -1,0 +1,30 @@
+Se puede inspeccionar el numero total de elementos con
+numel() y la forma del tensor (tamaño de cada eje) con
+shape :
+x = torch.arange(12, dtype=torch.float32)
+x.numel() # 12 elementos
+x.shape # (12,)
+1) Redimensionamiento (reshape): El metodo reshape
+permite cambiar la forma de un tensor sin copiar sus datos. Por ejemplo, un vector de 12 elementos puede transformarse
+en una matriz de 3 filas y 4 columnas:
+X = x.reshape(3, 4)
+X# Matriz de 3x4
+2) Tensores pre-inicializados: Se pueden crear tensores
+ya con valores especificos, como ceros, unos o numeros
+aleatorios, ´utiles por ejemplo para parametros de modelos:
+zeros = torch.zeros((2, 3, 4)) # Tensor de
+ceros
+ones = torch.ones((2, 3, 4)) # Tensor de
+unos
+randn = torch.randn(3, 4) # Valores
+aleatorios
+La forma 2×3×4indica 2 bloques, cada uno con 3 filas
+y 4 columnas. 3) Creacion de Tensores desde listas de Python: PyTorch
+permite convertir listas de Python o arreglos de NumPy
+directamente en tensores:
+A = torch.tensor([[2, 1, 4, 3],
+[1, 2, 3, 4],
+[4, 3, 2, 1]], dtype=torch. float32)
+A
+Esto genera un tensor de 3 filas y 4 columnas con los valores
+especificados.

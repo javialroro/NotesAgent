@@ -1,0 +1,209 @@
+Apuntes de clase: Redes Neuronales con el dataset MNIST
+Fabian Diaz Barboza
+Estudiante Ing. Computacion
+Tecnologico de Costa Rica
+Cartago, Costa Rica
+fdiaz@estudiantec.cr
+23/09/2025
+1El Dataset MNIST y la Representacion de
+Caracteristicas
+1.1 Descripcion del Dataset MNIST
+Imagenes en blanco y negro (1 canal).
+10 clases (digitos 0–9).
+Tamano estandar:28 ×28pixeles (entrada comun-
+mente utilizada).
+Conjunto: 60000 ejemplos de entrenamiento y 10000
+de prueba.
+1.2 Proceso de Aplanamiento (Flattening)
+Una imagen de entrada X∈R28×28se convierte en un
+vector columna medianteflatten:
+x∈R784,28×28 = 784.
+Cada uno de los 784 elementos es una caracteristica
+(feature) que alimenta el modelo.
+Figura 1: Ejemplo de la representacion de un digito en
+MNIST como matriz28 ×28y su aplanamiento a un
+vector de 784 caracteristicas.1.3Pixeles Activos e Inactivos: La Semantica del
+Input
+Un pixel con intensidad 0 se considera “apagado” y
+valores altos indican un pixel “encendido”.
+Incluso la regresion logistica binaria mas simple exige
+784pesos(w i) + 1sesgo(b) = 785parametros,
+lo que muestra la complejidad del espacio de entrada.
+2La Regresion Logistica Binaria: La Neurona
+Fundamental
+2.1 Clasificacion Binaria como Problema Inicial
+La regresion logistica estima la probabilidad de que
+una entrada pertenezca a la clase positiva; la salida estaen(0,1).
+2.2 Ecuaciones Fundamentales de la Neurona
+Potencial de activacion:
+z=w⊤x+b.
+Funcion sigmoide:
+g(z) =1
+1 +e−z.
+Salida del modelo:
+y=h(x) =g(w⊤x+b).
+Figura: diagrama esquematico de la neurona
+(Entradas→combinacion lineal→activacion→
+salida)
+Figura 2: Diagrama esquematico que interpreta la regre-
+sion logistica como la neurona mas simple.
+1
+
+3Extension a la Clasificacion Multinomial y la
+Codificacion One-Hot
+3.1Ejemplo de clase: 10 Regresiones Logisticas, una
+por alumno
+Para manejar las 10 clases se puede entrenar una regre-
+sion logistica por estudiante (una por clase); la capa de
+salida tendria 10 neuronas (una por clase).
+3.2 Codificacion One-Hot de las Etiquetas (y)
+La etiqueta escalar se codifica como un vector one-hot
+enR10.
+Clase (digito) Vector One-Hot (y∈R10) Esperada
+0[1,0,0,0,0,0,0,0,0,0]Neurona 0
+2[0,0,1,0,0,0,0,0,0,0]Neurona 2
+9[0,0,0,0,0,0,0,0,0,1]Neurona 9
+Cuadro 1: Codificacion one-hot de etiquetas (ejemplos).
+4 Compactacion por Algebra Lineal
+4.1 Formulacion Matricial de Pesos y Sesgos
+Stackeando los vectores de pesos obtenemos la matriz
+de pesos y el vector de sesgos:
+W∈R10×784, b∈R10.
+La combinacion lineal de la capa de salida se escribe
+como:
+z=Wx+b, z∈R10.
+Elemento Simbolo Dimension
+Entradax784×1
+Matriz de pesosW10×784
+Sesgosb10×1
+Potencial de activacionz10×1
+Cuadro 2: Dimensiones en la formulacion matricial para
+MNIST.
+Figura 3: Matriz de pesos Wen la capa fully connected:
+cada fila corresponde a una neurona de salida y cada
+columna a un pixel de entrada.4.2Ejemplo Numerico de Clase: De Vector a Matriz
+V.B.1. Calculo de una sola regresion (vector de
+4 features):
+w=
+3
+2
+4
+5
+, b= 2, x=
+3
+4
+5
+6
+.
+z=w⊤x+b= (3·3) + (2·4) + (4·5) + (5·6) + 2 = 69.
+y=σ(z).
+V.B.2. Calculo de varias regresiones a la vez (2
+neuronas):
+W=3 2 4 5
+4 3 2 1
+, b=2
+3
+, x=
+3
+4
+5
+6
+.
+z=Wx+b=69
+43
+.
+5Arquitectura de las Redes Neuronales Profun-
+das
+5.1 Definicion y Estructura Tipica
+Unared neuronal artificiales un modelo de computo
+inspirado en el cerebro humano, compuesto por unidades
+llamadasneuronas artificiales. Cada neurona recibe
+un conjunto de entradas x, aplica una combinacion lineal
+con sus pesos wy un sesgo b, y luego pasa el resultado
+por una funcion de activaciong:
+h(x) =g(w⊤x+b).
+Capa de entrada:recibe los 784 pixeles (flatten).
+Capas ocultas:transforman la informacion en re-
+presentaciones abstractas.
+Capa de salida:entrega la prediccion (10 neuronas
+para MNIST).
+Figura 4: Ejemplo esquematico de una red neuronal con
+capa de entrada, capa(s) oculta(s) y capa de salida.
+2
+
+5.2 El Rol del Sesgob
+Retomando, el parametro b(bias o sesgo) podriamos
+verlo como undesplazamientoen la funcion de acti-
+vacion. Sin b, todas las funciones aprendidas por la red
+tenderian a pasar por el origen, lo que limita la flexibilidad
+del modelo.
+En el caso de MNIST:
+Tenemos10regresiones logisticas (una por cada cla-
+se).
+Cada regresion tiene un vector de pesos wi∈R784y
+un sesgob i.
+Enconjunto,lospesosformanlamatriz W∈R10×784
+y los sesgos forman un vectorb∈R10.
+Es importante corregir una confusion que se habloen
+clase: no existe un unico bde dimension784por ejemplo.
+En cambio, hayun sesgo por neurona de salida. Cada
+componente biactua como umbral independiente para la
+neurona i, permitiendo desplazar su funcion de activacion
+y ajustar su probabilidad de disparo de forma individual.
+5.3 Fully Connected (Completamente Conectadas)
+Las capasfully connected (FC)son aquellas en las
+que cada neurona de una capa se conecta con todas las
+neuronas de la capa anterior.
+En nuestro ejemplo de MNIST:
+Cada neurona de salida (de las 10) recibe conexion
+de los 784 pixeles de entrada.
+Cada conexion tiene su propio peso, y ademas cada
+neurona tiene su sesgob i.
+Esta estructura convierte el modelo en un clasifica-
+dor mucho mas potente que una sola regresion logistica
+binaria, porque permite:
+1.Aprender multiples fronteras de decision en paralelo.
+2.Combinar la informacion de todos los pixeles de
+forma diferenciada para cada clase.
+3. Ajustar umbrales especificos gracias a losb i.
+En otras palabras, una red fully connected extiende el
+poder de una regresion logistica binaria: al apilar capas
+con activaciones no lineales, las salidas de una capa se
+convierten en features no lineales que alimentan la si-
+guiente, permitiendo construir clasificadores mucho mas
+expresivos.
+5.3.1 De la Multiclase al Clasificador Binario
+Una arquitectura util consiste en usar primero las 10 re-
+gresiones logisticas (capa multiclase) y luego aplicar sobre
+su salida un clasificador binario adicional. Por ejemplo,
+para determinar si la imagen corresponde al digito “5” o
+no, la decision puede tomarse a partir de las 10 salidas
+(o de una combinacion entrenada de ellas), en lugar de
+hacerlo directamente sobre los pixeles. De este modo, las
+capas previas actuan como extraedores de caracteristicas
+no lineales que potencian una decision binaria final mas
+robusta.5.4 Propiedades Esenciales de la Red
+1.Nolinealidad:lasfuncionesdeactivacion(sigmoide,
+ReLU, etc.) permiten que la red modelice relaciones
+no lineales entre entradas y salidas.
+2.Capasyprofundidad:amayorprofundidad,mayor
+capacidad para representar abstracciones jerarquicas.
+3.Diferenciabilidad:la diferenciabilidad de las fun-
+ciones internas es requisito para aplicar retropropaga-
+cion y optimizar los parametros mediante gradiente
+descendente.
+6 Conclusiones
+En conclusion de la clase, las redes neuronales son como
+una evolucion natural de la regresion logistica: partien-
+do de la clasificacion binaria, pasando por la extension
+multinomial y compactando parametros mediante alge-
+bra lineal, se llega a arquitecturas fully connected que
+permiten mayor expresividad y paralelizacion. La ecua-
+cionz=Wx+bnos sintetiza el paso fundamental hacia
+la representacion matricial; pero el verdadero salto en
+capacidad proviene de combinar esa formulacion con fun-
+ciones de activacion no lineales y con multiples capas
+diferenciables, lo que habilita la retropropagacion y el
+entrenamiento eficiente de modelos capaces de abstraer
+caracteristicas complejas de datos como MNIST.
+3

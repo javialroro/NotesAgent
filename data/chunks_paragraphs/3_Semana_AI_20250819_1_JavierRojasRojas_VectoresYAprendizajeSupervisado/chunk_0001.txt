@@ -1,0 +1,36 @@
+Inteligencia Artificial
+Apuntes de Clase - 19 de Agosto 2025
+Javier Rojas Rojas
+Escuela de Ingenieria en Computacion
+Tecnologico de Costa Rica
+Cartago, Costa Rica
+javrojas@estudiantec.cr
+Abstract —This paper summarizes the topics covered in class
+on August 19, 2025. The session focused on two main areas: a
+review of linear algebra concepts, with emphasis on vectors, and
+an introduction to supervised learning. In the first part, vectors
+were examined in terms of their definitions, norms, distances,
+and operations, highlighting their importance as mathematical
+tools for representing and comparing data. In the second part,
+supervised learning was introduced through the notions of
+features, labels, regression, and classification. The connection
+between these two areas illustrates how algebraic concepts serve
+as the foundation for machine learning techniques. I.INTRODUCCION
+Estos apuntes estan basados en la clase del 19 de Agosto de
+2025 [1]. Elalgebra lineal es la base matematica de muchas
+tecnicas de inteligencia artificial. En particular, los vectores
+permiten representar datos, medir similitudes y realizar opera-
+ciones fundamentales en espacios multidimensionales. Estos
+conceptos resultan esenciales para entender el aprendizaje
+supervisado, paradigma en el que los datos se expresan me-
+diante vectores de caracteristicas y etiquetas asociadas. Dicho
+enfoque permite construir modelos de regresion, orientados a
+predecir valores continuos, y de clasificacion, enfocados en
+asignar categorias. Este documento resume lo visto en clase,
+donde se tocaron ambos temas, destacando la conexion entre la
+teoria algebraica y su aplicacion en el aprendizaje automatico. II.REPASO DEALGEBRA LINEAL
+A.¿Que es un vector? Un vector es una estructura de datos que permite organizar
+informacion de forma secuencial y que tambien puede inter-
+pretarse geometricamente. 1)Caracteristicas :
+•Tiene un punto de origen (normalmente (0,0)) y un punto
+final. •Posee una direccionespecifica.

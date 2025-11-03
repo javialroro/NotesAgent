@@ -1,0 +1,32 @@
+Representa la informacion comprimida
+en unespacio latente, donde se encuentran codificadas las
+caracteristicas mas significativas. Esta capa restringe el flujo
+de informacion proveniente del encoder al decoder, limitando
+la cantidad de datos que pueden ser reconstruidos. C. Decoder
+El decoder esta compuesto por una serie de convoluciones
+que realizanupsamplingpara reconstruir la imagen original a
+partir del vector latente. EnPyTorch, esta tarea suele imple-
+mentarse mediante capasConvTranspose2d. El objetivo
+del decoder es generar una salida lo mas fiel posible a la
+entrada original. D. Hiperparametros a considerar
+El desempeño del autoencoder depende en gran medida de
+los hiperparametros seleccionados, entre los que destacan:
+•Tamaño de la codificacion (vector latente):determina
+el nivel de compresion de los datos. Un tamaño menor
+implica mayor compresion, pero puede perderse infor-
+macion relevante. •Numero de capas:define la profundidad del encoder
+y del decoder. Un numero mayor de capas genera un
+modelo mas complejo y con mayor capacidad de repre-
+sentacion, mientras que un numero menor lo hace mas
+rapido pero menos preciso. V. CONCLUSIONES
+Durante la clase se destacaron los componentes esenciales
+y las arquitecturas principales de las redes neuronales con-
+volucionales, explicando como las capas, filtros y operaciones
+depoolingtrabajan en conjunto para extraer informacion
+relevante de las imagenes. La visualizacion de activaciones
+yembeddingspermite comprender mejor el funcionamiento
+interno de los modelos profundos, mejorando su interpretabil-
+idad y facilitando el diagnostico de su desempeño. Asimismo, losautoencodersse presentaron como her-
+ramientas potentes dentro del aprendizaje no supervisado, ca-
+paces de comprimir informacion, detectar anomalias y mejorar
+la calidad de las imagenes mediante su reconstruccion.

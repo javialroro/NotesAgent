@@ -1,0 +1,45 @@
+IV. Backpropagation
+Permite calcular cuanto contribuye cada peso al
+error final de la red, actualizando los parametros en
+direccion opuesta a la propagacion hacia adelante.
+Este proceso es esencial para que la red aprenda y
+mejore su desempeño durante el entrenamiento.
+A. Procesos del Entrenamiento
+•Forward Propagation:Consiste en calcular la
+salida de la red enviando los datos desde la
+capa de entrada hacia las capas siguientes, hasta
+obtener el resultado final.
+•Backpropagation:Implica propagar el error
+desde la capa de salida hacia las capas anteriores,
+calculando las derivadas parciales con respecto
+a los pesos y sesgos para ajustar los parametros
+del modelo.
+Fig. 24.Forward y Back Propagation
+B. Optimizacion del grafo
+En este ejemplo se considera una red neuronal en
+la que cada capa contieneunicamente una neurona,
+suponiendo que la funcion de activacion utilizada es
+laSigmoide, como se muestra en la Figura??.
+Fig. 25.Grafo de la red neuronal
+•Denominamos a las capas antes de𝐿 𝑖,𝑎𝑙hasta
+𝑎𝑙−𝑛.
+•Definimos el MSE como:
+𝐿𝑖=(𝑎𝑙−𝑦𝑖)2
+•Dividimos la neurona en 2 capas:
+1)Entrada:𝑧𝑙=𝑤𝑙𝑎𝑙−1+𝑏𝑙donde𝑎𝑙−1
+corresponde a los inputs𝑥.2)Salida:𝑎𝑙=𝑔(𝑧𝑙)donde𝑔es nuestra
+funcion de activacion.
+Vamos a actualizar los parametros de𝑧𝑙, que son𝑤𝑙
+y𝑏𝑙. Para esto emplearemos laregla de la cadena,
+usando la salida de la activacion de la capa anterior.
+Profundizando a nivel de neurona, se muestra la
+siguiente figura.
+Fig. 26.Grafo de la capa al y Li a detalle
+C. Vector gradiente
+El vector gradiente se define como el conjunto
+de derivadas parciales de los parametros (pesos y
+sesgos) de la red neuronal. Al calcularlo, es comun
+encontrar operaciones repetidas, lo que se aprovecha
+en el algoritmo de backpropagation para optimizar
+los calculos.
+Fig. 27.Vector Gradiente

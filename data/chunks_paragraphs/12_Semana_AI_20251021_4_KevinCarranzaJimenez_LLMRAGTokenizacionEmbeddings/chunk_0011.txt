@@ -1,0 +1,31 @@
+Chunking similaridad semantica:Elchunkingbasa-
+do en similitud semantica emplea medidas vectoriales —prin-
+cipalmente la similitud del coseno— para dividir un texto
+en fragmentos coherentes segun su significado, en lugar de
+hacerlo por longitud o estructura gramatical. En este enfoque,
+se generanembeddingsde oraciones o parrafos consecutivos, y
+se calcula la similitud coseno entre ellos. Cuando la similitud
+cae por debajo de un umbral predefinido, se considera que el
+contexto cambia significativamente, estableciendo asiun nuevo
+limite dechunk. Este metodo produce divisiones mas naturales
+desde el punto de vista semantico, preservando la coherencia
+tematica y mejorando la recuperacion contextual en sistemas
+basados enRetrieval-Augmented Generation (RAG)[13]. V-B. Indexacion
+Laindexacion vectoriales un proceso fundamental en
+los sistemas de recuperacion aumentada (Retrieval-Augmented
+Generation, RAG), que permite almacenar y buscar eficien-
+temente representaciones numericas de documentos o frag-
+mentos de texto en un espacio vectorial de alta dimension. Su proposito es facilitar la recuperacion de informacion se-
+manticamente similar a una consulta mediante la comparacion
+de vectores utilizando metricas como la similitud coseno o
+la distancia euclidiana. Entre las soluciones mas utilizadas
+se encuentranQdrant, un motor de busqueda vectorial de
+codigo abierto optimizado para busquedas por similitud yfiltrado hibrido;Pinecone, un servicio en la nube que ofrece
+indexacion vectorial escalable y mantenimiento automatico de
+indices; yFAISS(Facebook AI Similarity Search), una biblio-
+teca desarrollada por Meta que permite busquedas eficientes
+en grandes volumenes de vectores mediante tecnicas de cuan-
+tizacion y optimizacion de memoria. Estas herramientas son
+esenciales para el funcionamiento de sistemas RAG modernos,
+al permitir una recuperacion rapida y precisa del contexto mas
+relevante [14]–[16]. V-C.

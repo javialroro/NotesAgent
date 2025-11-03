@@ -1,0 +1,271 @@
+Apuntes IA Clase 14/10/2025
+Juan Jim ´enez Valverde
+Escuela de Ingenier ´ıa en Computaci ´on
+Instituto Tecnol ´ogico de Costa Rica
+Cartago, Costa Rica
+juand0908@estudiantec.cr
+Abstract—Este documento resume los conceptos clave vistos en
+la clase de Inteligencia Artificial sobre redes neuronales convolu-
+cionales (CNN) y autoencoders. Se abordan temas fundamentales
+como los filtros, campos receptivos,stride,paddingy las capas de
+pooling, as ´ı como las arquitecturas cl ´asicas de CNN, entre ellas
+LeNet, AlexNet, ZFNet, GoogleNet, VGG16, ResNet y DenseNet.
+Adem ´as, se presentan consideraciones pr ´acticas para el an ´alisis
+de modelos de aprendizaje profundo, como la visualizaci ´on de
+activaciones, losembeddingsde caracter ´ısticas y la estructura
+de los autoencoders, incluyendo sus aplicaciones en reducci ´on
+de dimensionalidad, detecci ´on de anomal ´ıas y procesamiento
+de im ´agenes. El objetivo es ofrecer una visi ´on general clara y
+concisa, ´util tanto para el estudio te ´orico como para la aplicaci ´on
+pr´actica.
+Index Terms—Redes Neuronales Convolucionales, Autoen-
+coders, Visualizaci ´on de Activaciones, Embeddings, Pooling, Ar-
+quitecturas de Aprendizaje Profundo
+I. INTRODUCCI ´ON
+Las Redes Neuronales Convolucionales (CNN) se han con-
+vertido en un pilar fundamental de la visi ´on por computadora
+moderna, ya que permiten extraer autom ´aticamente carac-
+ter´ısticas jer ´arquicas a partir de im ´agenes. Comprender sus
+mecanismos internos, incluyendo los filtros, los campos recep-
+tivos, elstride, elpaddingy las operaciones depooling, resulta
+esencial para dise ˜nar arquitecturas eficientes e interpretar el
+comportamiento de los modelos.
+Por su parte, losautoencoderscomplementan el uso de las
+CNN al aprender representaciones compactas de los datos sin
+requerir etiquetas, lo que los hace ideales para tareas de apren-
+dizaje no supervisado como la reducci ´on de dimensionalidad,
+la detecci ´on de anomal ´ıas y la reconstrucci ´on de im ´agenes.
+Este documento sintetiza los principales conceptos y ar-
+quitecturas revisados en clase, sirviendo como material de
+referencia para la comprensi ´on y aplicaci ´on pr ´actica de estos
+modelos en inteligencia artificial.
+II. REPASO DE LA CLASE ANTERIOR
+A. Filtros o Kernels
+Son matrices (por ejemplo, de3×3o5×5) que se deslizan
+sobre la imagen para aplicar convoluciones. ElGaussian
+Kernelse utiliza para suavizar la imagen y eliminar ruido.
+B. Campo Receptivo
+Es la regi ´on local de la imagen a la que una neurona est ´a
+conectada. Por ejemplo, para una entrada de32×32×3y un
+campo receptivo de5×5, cada neurona tendr ´a5×5×3 = 75
+pesos.C. Stride, Padding y C ´alculo de Dimensiones
+•Stride:Indica cu ´antos pasos da el filtro al desplazarse
+sobre la imagen. Unstridemayor reduce el tama ˜no de la
+salida.
+•Padding:Agrega p ´ıxeles (usualmente ceros) alrededor de
+la imagen de entrada para controlar el tama ˜no de salida
+y preservar dimensiones. El padding sim ´etrico t ´ıpico se
+calcula como:
+p=(k−1)
+2
+dondekes el tama ˜no del kernel.
+El tama ˜no de salida se calcula con:
+Dimensi ´on de salida=(m−k+ 2p)
+s+ 1
+donde:mes el tama ˜no de la entrada,kel tama ˜no del kernel,
+pel padding aplicado ysel stride.
+D. Pesos y Arquitectura de AlexNet
+En redes convolucionales se utilizanpesos compartidos,
+lo que reduce dr ´asticamente el n ´umero de par ´ametros, ya que
+el mismo conjunto de filtros se aplica en todas las posiciones
+espaciales. En la arquitectura de AlexNet, por ejemplo, se em-
+plean 96 filtros en la primera capa convolucional, permitiendo
+extraer m ´ultiples caracter ´ısticas visuales de forma eficiente.
+E. Pooling Layer
+Despu ´es de las convoluciones, se aplica la capa depooling,
+que resume la informaci ´on espacial (alto y ancho) sin alterar
+la cantidad de canales. Existen dos tipos principales:
+•Max Pooling:conserva el valor m ´aximo de cada regi ´on.
+•Average Pooling:calcula el promedio de los valores en
+la regi ´on.
+Dada una entrada de tama ˜noW×H×D, elpoolingreduce
+WyH, manteniendoD.
+F . Fully-Connected Layer
+Finalmente, las caracter ´ısticas extra ´ıdas se transforman en
+un´unico vector, conectando todas las neuronas entre s ´ı. Esta
+capa permite realizar la clasificaci ´on final del modelo.
+
+G. Arquitecturas Convolucionales
+Una red convolucional combina secuencias deconvoluci ´on
+→activaci ´on (ReLU)→pooling. Este patr ´on se repite varias
+veces para extraer informaci ´on progresivamente m ´as abstracta
+de la imagen. Generalmente, se prefieren filtros peque ˜nos
+(como3×3) para capturar detalles locales de forma m ´as
+eficiente.
+Elconvolutional stackse forma al aplicar m ´ultiples capas
+de convoluci ´on consecutivas. Por ejemplo, en una imagen de
+5×5, un filtro3×3puede desplazarse para generar una salida
+de3×3.
+Regla pr ´actica:las dimensiones de las im ´agenes deben
+ser divisibles entre 2, lo cual facilita la reducci ´on progresiva
+mediante pooling.
+H. Principales Arquitecturas
+1) LeNet:Dise ˜nada por Yann LeCun et al. (1998), fue una
+de las primeras redes convolucionales exitosas. Cuenta con 5
+capas: dos convolucionales, dos depoolingy una totalmente
+conectada [1]. Su estructura sirvi ´o de base para las redes
+modernas.
+2) AlexNet:Propuesta por Krizhevsky, Sutskever y Hinton
+(2012), marc ´o un hito en la visi ´on por computadora. Procesa
+im´agenes de224×224con filtros grandes (11×11,5×5,
+3×3) y cinco capas convolucionales. Populariz ´o el uso de
+ReLU,dropouty la utilizaci ´on de m ´ultiples GPUs para el
+entrenamiento [2].
+3) ZFNet:Basada en AlexNet, reduce la profundidad y
+tama ˜no de los filtros para analizar c ´omo afectan las capas
+a la representaci ´on interna. Sirvi ´o como experimento para
+visualizar activaciones intermedias y optimizar arquitecturas.
+4) GoogleNet (Inception):Reduciendo los m ´as de 60 mil-
+lones de par ´ametros de AlexNet a unos 4 millones, GoogleNet
+introdujo los m ´odulosInception[3]. Cada m ´odulo combina
+convoluciones de diferentes tama ˜nos (1×1,3×3,5×5)
+junto conmax pooling, concatenando sus resultados. Al final,
+la salida (7×7×1024) se aplana y se pasa a unaverage
+poolingde1×1×1024.
+5) VGG16:Caracterizada por su simplicidad, utiliza
+´unicamente filtros de3×3y aumenta la profundidad hasta 16
+capas. Esta arquitectura demostr ´o que aumentar la profundidad
+mejora el rendimiento si se mantienen filtros peque ˜nos y
+consistentes.
+6) ResNet:Introduce lasconexiones residuales, que per-
+miten el paso de informaci ´on entre capas no adyacentes. Esto
+evita la degradaci ´on del gradiente en redes muy profundas y
+mejora la capacidad de entrenamiento.
+7) DenseNet:Conecta cada capa con todas las anteriores,
+favoreciendo la reutilizaci ´on de caracter ´ısticas y reduciendo
+la cantidad de par ´ametros necesarios. Este enfoque mejora la
+eficiencia y el flujo de informaci ´on a lo largo de la red.
+III. MATERIA DE CLASE
+A. Problemas en las Redes Neuronales Convolucionales
+1) Explicabilidad del Modelo:Uno de los principales de-
+saf´ıos actuales es la falta de interpretabilidad en las redes
+Fig. 1. Representaci ´on de embeddings mediante t-SNE.
+profundas. Losfeaturesaprendidos por las capas internas
+suelen ser dif ´ıciles de entender por los humanos, lo que
+complica saber qu ´e est ´a “viendo” realmente el modelo.
+2) Visualizaci ´on y An ´alisis de Activaciones:Una forma de
+entender mejor el funcionamiento interno es observar:
+•Visualizaci ´on de activaciones:muestra qu ´e regiones de
+la imagen activan ciertas neuronas.
+•Visualizaci ´on de filtros:permite observar los pesos
+de los kernels. En las primeras capas, estos muestran
+patrones reconocibles (bordes, colores, texturas), mientras
+que en capas profundas se vuelven m ´as abstractos.
+Estos m ´etodos ayudan a detectar si el modelo est ´a aprendiendo
+caracter ´ısticas relevantes o solo ruido.
+3) Embeddings y Reducci ´on de Dimensionalidad:Las re-
+des pueden transformar im ´agenes en representaciones vectori-
+ales llamadasembeddings. Estas representaciones condensan
+la informaci ´on relevante de una imagen, permitiendo separar
+clases en el espacio de caracter ´ısticas. Al reducir la dimen-
+sionalidad (manteniendo las distancias relativas), podemos
+visualizar las relaciones entre clases.
+Una t ´ecnica com ´un para ello est-SNE, que proyecta estos
+vectores a dos dimensiones preservando la estructura del
+espacio original (Fig. 1).
+4) Mapas de Activaci ´on:Adem ´as de las visualizaciones de
+filtros, es posible generarmapas de activaci ´onoheatmaps
+que muestran qu ´e regiones espec ´ıficas de la imagen influyen
+m´as en la decisi ´on del modelo. Estas t ´ecnicas son ´utiles,
+por ejemplo, en aplicaciones m ´edicas para resaltar fracturas
+o anomal ´ıas en radiograf ´ıas.
+B. Autoencoders
+Aunque utilizan arquitecturas similares a las redes convolu-
+cionales, losautoencoderstrabajan sin etiquetas expl ´ıcitas,
+por lo que se consideran m ´etodos no supervisados. Su objetivo
+es reconstruir la entrada original, aprendiendo una repre-
+sentaci ´on interna comprimida.
+
+Fig. 2. Estructura b ´asica de un Autoencoder.
+El proceso consta de tres partes, como se muestra en la
+Fig. 2:
+1)Encoder:reduce la imagen a un vector compacto.
+2)Espacio latente:contiene la representaci ´on esencial o
+codificada de la entrada.
+3)Decoder:reconstruye la imagen original a partir del
+vector latente.
+1) Tareas Comunes de un Autoencoder:
+•Reducci ´on de dimensionalidad:genera una repre-
+sentaci ´on m ´as compacta y poderosa que PCA, conser-
+vando la informaci ´on esencial.
+•Detecci ´on de anomal ´ıas:se entrena para reconstruir
+datos de una tarea tomando en cuenta ´unicamente ejem-
+plos positivos o normales. Por ejemplo:
+–Transferencias bancarias correctas.
+–Audio o im ´agenes de alta fidelidad sin defectos.
+El modelo aprende la representaci ´on latente de estos ca-
+sos y, al presentarle ejemplos an ´omalos, su reconstrucci ´on
+falla, evidenciando la anomal ´ıa.
+•Procesamiento de im ´agenes (Fig. 3):permite tareas
+como compresi ´on, eliminaci ´on de ruido o inclusosuper
+resoluci ´on, es decir, generar im ´agenes de alta resoluci ´on
+a partir de versiones borrosas o peque ˜nas.
+Estos principios sientan las bases de los algoritmos genera-
+tivos modernos, donde el modelo aprende a reconstruir o crear
+contenido visual de forma aut ´onoma.
+Fig. 3. Procesamiento de im ´agenesIV. PARTES DELAUTOENCODER
+Los autoencoders se componen de tres partes principales:
+elencoder, elcuello de botellay eldecoder. Cada una
+cumple una funci ´on espec ´ıfica en el proceso de codificaci ´on
+y reconstrucci ´on de los datos.
+A. Encoder
+El encoder est ´a formado por un conjunto de bloques con-
+volucionales seguidos de m ´odulos depooling. Su funci ´on
+principal es extraer las caracter ´ısticas m ´as relevantes de la
+imagen de entrada y comprimir la informaci ´on. La expectativa
+del encoder es aprender informaci ´on importante de la entrada
+mediante un proceso dedownsampling, reduciendo la dimen-
+sionalidad y conservando los rasgos esenciales.
+B. Cuello de botella
+El cuello de botella constituye la parte m ´as importante y
+peque ˜na del modelo. Representa la informaci ´on comprimida
+en unespacio latente, donde se encuentran codificadas las
+caracter ´ısticas m ´as significativas. Esta capa restringe el flujo
+de informaci ´on proveniente del encoder al decoder, limitando
+la cantidad de datos que pueden ser reconstruidos.
+C. Decoder
+El decoder est ´a compuesto por una serie de convoluciones
+que realizanupsamplingpara reconstruir la imagen original a
+partir del vector latente. EnPyTorch, esta tarea suele imple-
+mentarse mediante capasConvTranspose2d. El objetivo
+del decoder es generar una salida lo m ´as fiel posible a la
+entrada original.
+D. Hiperpar ´ametros a considerar
+El desempe ˜no del autoencoder depende en gran medida de
+los hiperpar ´ametros seleccionados, entre los que destacan:
+•Tama ˜no de la codificaci ´on (vector latente):determina
+el nivel de compresi ´on de los datos. Un tama ˜no menor
+implica mayor compresi ´on, pero puede perderse infor-
+maci ´on relevante.
+•N´umero de capas:define la profundidad del encoder
+y del decoder. Un n ´umero mayor de capas genera un
+modelo m ´as complejo y con mayor capacidad de repre-
+sentaci ´on, mientras que un n ´umero menor lo hace m ´as
+r´apido pero menos preciso.
+V. CONCLUSIONES
+Durante la clase se destacaron los componentes esenciales
+y las arquitecturas principales de las redes neuronales con-
+volucionales, explicando c ´omo las capas, filtros y operaciones
+depoolingtrabajan en conjunto para extraer informaci ´on
+relevante de las im ´agenes. La visualizaci ´on de activaciones
+yembeddingspermite comprender mejor el funcionamiento
+interno de los modelos profundos, mejorando su interpretabil-
+idad y facilitando el diagn ´ostico de su desempe ˜no.
+Asimismo, losautoencodersse presentaron como her-
+ramientas potentes dentro del aprendizaje no supervisado, ca-
+paces de comprimir informaci ´on, detectar anomal ´ıas y mejorar
+la calidad de las im ´agenes mediante su reconstrucci ´on.
+
+Dominar estos conceptos proporciona una base te ´orica y
+pr´actica s ´olida para el dise ˜no, an ´alisis y aplicaci ´on efectiva de
+modelos de aprendizaje profundo en distintos contextos.
+REFERENCES
+[1] Y . LeCun, L. Bottou, Y . Bengio, and P. Haffner, “Gradient-based learning
+applied to document recognition,”Proceedings of the IEEE, vol. 86, no.
+11, pp. 2278–2324, 1998.
+[2] A. Krizhevsky, I. Sutskever, and G. Hinton, “ImageNet classification
+with deep convolutional neural networks,”Advances in Neural Informa-
+tion Processing Systems (NIPS), pp. 1097–1105, 2012.
+[3] C. Szegedy et al., “Going deeper with convolutions,”Proceedings of the
+IEEE Conference on Computer Vision and Pattern Recognition (CVPR),
+pp. 1–9, 2015.

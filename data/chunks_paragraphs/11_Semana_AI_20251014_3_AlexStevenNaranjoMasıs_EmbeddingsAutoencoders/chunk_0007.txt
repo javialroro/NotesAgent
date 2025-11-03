@@ -1,0 +1,17 @@
+Notas de Implementacion
+Enframeworkscomo PyTorch, la reconstruccion en deco-
+ders suele emplearConvTranspose2doUpsample+1×
+1conv; para clasificacion,CrossEntropyLoss(con
+LogSoftmaxinterno) es estandar. VII. CONCLUSIONES
+Las CNN han transformado la vision por computadora
+al extraer jerarquias de caracteristicas de manera automatica
+y eficiente. No obstante, su interpretabilidad sigue siendo
+un reto; tecnicas de visualizacion,embeddingsyheatmaps
+ayudan a entender y validar decisiones. Los autoencoders
+extienden estos conceptos hacia la compresion, reconstruccion
+y generacion de datos, habilitando aplicaciones practicas como
+reduccion de dimensionalidad, deteccion de anomalias y super-
+resolucion. Una ingenieria cuidadosa de arquitectura,datay
+entrenamiento es clave para un desempeño robusto. REFERENCIAS
+[1] Y . LeCun, L. Bottou, Y . Bengio, and P. Haffner, “Gradient-based learning
+applied to document recognition,”Proceedings of the IEEE, vol. 86, no. 11, pp. 2278–2324, 1998. [2] C. Szegedy et al., “Going deeper with convolutions,”CVPR, 2015.

@@ -1,0 +1,23 @@
+3) Suavizado de ruido:
+•Ajustar una funcion matematica (lineal o no lineal) para
+suavizar fluctuaciones. Ejemplo: regresion lineal en ven-
+tas mensuales.
+•Aplicar tecnicas de filtrado como la media movil:
+MA 7(t) =1
+76X
+i=0xt−i
+donde xtes el valor en el diat. Esto genera una curva
+suavizada que refleja la tendencia real.
+G. Data Integration: Manejo de redundancia
+La misma informacion puede estar registrada varias veces
+o con diferencias. Ejemplo: un cliente como “Juan Perez”
+en una base de datos y “J. A. Perez” en otra. Se aplican
+pruebas estadisticas como la chi-cuadrado (χ2) para detectar
+redundancia o asociaciones entre variables categoricas:
+H0:P(Ai∩Bj) =P(Ai)P(Bj)
+Siχ2
+calculado ≤χ2
+α,d f, se acepta la hipotesis de independencia.
+REFERENCES
+[1] A. Burkov, The Hundred-Page Machine Learning Book . Andriy Burkov,
+2019. [Online]. Available: https://themlbook.com/

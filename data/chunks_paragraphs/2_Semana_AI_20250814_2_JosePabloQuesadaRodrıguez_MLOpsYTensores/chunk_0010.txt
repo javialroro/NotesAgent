@@ -1,0 +1,60 @@
+XIX. P ROPIEDADES BASICAS DE LA ARITMETICA DE
+TENSORES
+Sumando o multiplicando un escalan y un tensor, producira
+un tensor del mismo tamaño como el tensor original. Cada
+elemento de el tensos es sumado o multiplicado por el escalar. a = 2
+X = torch.arange(24).reshape(2, 3, 4)
+a + X, (a *X).shape
+Resultado:
+(tensor([[[ 2, 3, 4, 5],
+[ 6, 7, 8, 9],
+[10, 11, 12, 13]],
+[[14, 15, 16, 17],
+[18, 19, 20, 21],
+[22, 23, 24, 25]]]),
+torch.Size([2, 3, 4]))
+XX. R EDUCCION
+Podemos realizar la suma de tensores se puede invocar
+sum() sin argumentos, esto hara que se reduzca a un escalar
+# Crear una matriz A de forma (2, 3)
+con valores [0,1,2,3,4,5]
+A=torch.arange(6,dtype=torch.float32).reshape
+(2,3)
+# Mostrar la forma de A y la suma
+de todos sus elementos
+A.shape, A. sum()
+(torch.Size([2, 3]), tensor(15.))
+Como lo reduce a lo largo de sus ejes, se puede especificar
+alguna de sus ejes x o y para sumar a lo largo del respectivo
+eje usando el parametro axis
+A, A. sum(axis=0), A. sum(axis=1)
+A--->(tensor([[0., 1., 2.],
+[3., 4., 5.]])
+A.sum(axis=0) ---> tensor([3., 5., 7.]),
+A.sum(axis=1)--->tensor([ 3., 12.]))
+Si se reduce a lo largo de todos sus ejes equivale a sumar
+todos los elementos de la matriz
+A.sum(axis=[0, 1]) == A. sum()
+tensor(True)
+La media se calcula usando mean , la cual se puede definir
+como la suma de todos los elementos dividido entre el total
+de estos
+A.mean(), A. sum() / A.numel()
+#Comparacin entre ambas formas de sacar la
+mediaA.mean(), A. sum() / A.numel() #Se obtiene el
+mismo resultado
+XXI. S UMA SIN REDUCCION
+Si se desea conservar el numero de ejes al sumar como
+cuando se desea aprovechar el broadcasting, se usa
+sum_A = A. sum(axis=1, keepdims=True)
+sum_A, sum_A.shape
+(tensor([[ 3.],
+[12.]]),
+torch.Size([2, 1]))
+Si se desea calcular la suma acumulada de los elementos
+de un tensor, se puede usar cumsum
+A.cumsum(axis=0)
+tensor([[0., 1., 2.],
+[3., 5., 7.]])
+XXII. N OTICIAS HABLADAS EN CLASE
+A.

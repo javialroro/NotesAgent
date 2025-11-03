@@ -1,0 +1,142 @@
+Apuntes de la clase del 23 de octubre de 2025
+Curso de Inteligencia Artificial
+Nelson Rojas Obando
+Estudiante Ingenieria en Computacion
+nelson.rojas@estudiantec.cr
+Resumen—Este informe presenta una sintesis de los temas
+abordados en la sesion del 23 de octubre del curso de Inteligencia
+Artificial, centrada en el cierre del aprendizaje supervisado y
+la introduccion al proceso de quantization como tecnica de
+optimizacion de modelos de aprendizaje profundo.
+Index Terms—Inteligencia Artificial, Quantization
+I. INTRODUCCION
+Durante la clase se abordaron temas de actualidad rela-
+cionados con la evolucion de los modelos de lenguaje y su
+impacto en el futuro del internet. Con esta sesion concluye
+la seccion del curso dedicada al aprendizaje supervisado. A
+partir de este punto, los contenidos se centran en metodos de
+aprendizaje no supervisado, es decir, aquellos que no dependen
+de etiquetas o resultados predeterminados para evaluar la
+calidad del aprendizaje del modelo.
+II. ASPECTOS ADMINISTRATIVOS
+Se mencionola integracion de herramientas como ChatGPT
+Atlas para Chrome, que reflejan como las empresas estan
+orientando sus estrategias hacia la adopcion de Modelos de
+Lenguaje Extensos (LLMs) como nucleo de sus servicios
+digitales.
+Asimismo, se compartieron noticias institucionales sobre
+la rama IEEE del Tecnologico de Costa Rica, que organiza
+reuniones periodicas entre distintas universidades. El proposito
+principal es identificar fuentes de financiamiento para eventos
+tecnologicos, especialmente aquellos destinados a llevar co-
+nocimiento a zonas rurales o con menor acceso. Tambien se
+anunciola realizacion de un taller de team building el domingo
+9 de noviembre, con un costo de $20, que incluye almuerzo
+y transporte.
+III. TEMA PRINCIPAL: QUANTIZATION
+Quantization es una tecnica de optimizacion de modelos de
+aprendizaje profundo que busca reducir el tamano y el con-
+sumo de recursos computacionales de un modelo sin compro-
+meter significativamente su precision. La idea es convertir los
+parametros del modelo (usualmente almacenados en formato
+de punto flotante de 32 bits, float32) a representaciones de
+menor precision, como int8, int4 o incluso int1, dependiendo
+del nivel de compresion deseado.
+Esto permite ejecutar modelos de gran tamano en hardware
+con recursos limitados (por ejemplo, dispositivos moviles o
+microcontroladores).III-A. Ejemplo contextual
+Un modelo como LLaMA 2 posee mas de 70 mil millones
+de parametros, lo que equivale a aproximadamente 28 GB solo
+para almacenarlos en disco. Cargar ese modelo en memoria
+seria inviable sin una GPU especializada, por lo que la
+quantization se convierte en una alternativa para reducir el
+tamano y mantener la funcionalidad.
+IV. REPRESENTACION NUMERICA
+IV-A. Numeros enteros
+Los computadores representan los numeros utilizando se-
+cuencias de bits. Con N bits se pueden representar2nvalores
+distintos.
+Por ejemplo, con 3 bits se pueden representar los numeros
+del 0 al 7.
+El formato mas comun para representar numeros enteros
+con signo en CPUs es el complemento a dos, donde:
+El bit mas significativo indica el signo (0 = positivo, 1 =
+negativo). Los demas bits representan el valor absoluto.
+4.2. Numeros de punto flotante
+Los numeros de punto flotante se utilizan para representar
+valores reales que no pueden expresarse de manera exacta
+con enteros. En la normaIEEE 754, un numero flotante se
+representa mediante tres componentes principales: elsigno, el
+exponentey lamantissa(tambien conocida como fraccion o
+significando).
+Parte Descripcion Bits tipicos (float32)
+Signo (s) Indica si el numero es positivo o negativo 1
+Exponente (e) Determina la escala o rango del numero 8
+Mantissa (m) Define la precision o parte fraccionaria 23
+Cuadro I
+ESTRUCTURA DEL FORMATOIEEE 754DE32BITS.
+El valor real que representa el numero en punto flotante se
+calcula mediante la siguiente ecuacion:
+x= (−1)s×(1 +m)×2(e−127)
+Donde:
+ses el bit de signo.
+mes la fraccion o mantissa normalizada.
+ees el exponente con un sesgo de127(en el caso de
+float32).
+
+Este formato permite representar numeros muy grandes o
+muy pequenos, aunque implica un mayor uso de memoria y
+recursos computacionales en comparacion con representacio-
+nes de menor precision.
+V. QUANTIZATION DE REDES NEURONALES
+En redes neuronales, las matrices de pesos y sesgos estan
+representadas como flotantes. El proceso de quantization busca
+convertir esos valores a enteros para reducir memoria y
+acelerar la inferencia.
+V-A. Etapas del proceso
+Quantize:Los valores en punto flotante se transforman
+a enteros.
+InferenciaEl modelo realiza sus calculos con aritmetica
+entera.
+DequantizeLos resultados se transforman nuevamente a
+flotantes para la siguiente capa.
+El desafio estaen mantener la precision del modelo. Los
+hardware modernos (GPU, TPU, CPU vectoriales) incluyen
+soporte para operaciones de baja precision (por ejemplo, int8)
+para facilitar este proceso.
+VI. TIPOS DE QUANTIZATION
+VI-A. Quantization simetrica
+Usa un rango centrado en cero:
+VI-B. Quantization asimetrica
+Utiliza un rango desplazado[α, β]:
+VII. ESTRATEGIAS Y VARIANTES
+VII-A. Dynamic Quantization
+La escala y el rango se calculan en tiempo de inferencia. Se
+aplican factores estadisticos derivados del conjunto de datos
+de prueba (“calibration set”).
+VII-B. Post-Training Quantization (PTQ)
+Despues del entrenamiento, se insertan observadores (ob-
+servers) en el modelo para analizar las salidas de cada capa
+y determinar los mejores parametros de escala y punto cero.
+Este proceso no requiere reentrenamiento y es rapido, aunque
+puede perder algo de precision.
+VII-C. Quantization-Aware Training (QAT)
+Simula la quantization durante el entrenamiento. El modelo
+aprende a compensar los errores introducidos por la reduccion
+de precision, por lo que mantiene un rendimiento superior tras
+el proceso.
+VIII. VENTAJAS DELQUANTIZATION
+Menor consumo de memoria: los modelos comprimidos
+se cargan mas rapido.
+Menor tiempo de inferencia: calculos mas simples.
+Menor consumo energetico: ideal para dispositivos em-
+bebidos o moviles.
+Portabilidad: permite ejecutar modelos complejos en
+hardware limitado.IX. CONCLUSIONES
+El estudio del quantization permite comprender como los
+modelos de inteligencia artificial pueden adaptarse a las limi-
+taciones del hardware sin comprometer significativamente su
+desempeno. Esta tecnica representa un punto de conexion entre
+el desarrollo teorico de los algoritmos y su aplicacion real en
+sistemas de produccion, donde los recursos computacionales,
+la energia y el tiempo de inferencia son factores determinantes.

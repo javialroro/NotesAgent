@@ -1,0 +1,29 @@
+Estas observaciones nos ayudaron a contextu-
+alizar por quela eficiencia computacional y la interpretabilidad
+son temas relevantes hoy. [1], [2]
+III. R EPASO :CONCEPTOS CLAVE
+A. KNN - K nearest neighbor
+KNN es un algoritmo lazy (perezoso): no aprende un
+modelo global, simplemente guarda los datos y en tiempo de
+consulta busca los K vecinos mas cercanos. K:Es el hiperparametro a seleccionar. Ventajas: sencillo, interpretable, sin entrenamiento costoso. Desventajas: costoso en memoria y consulta; sensible a la
+escala de las features.B. Regresion Lineal
+Concepto basico
+•Busca construir un modelo estadistico lineal. •La relacion entre variables debe representarse como una
+recta. •Si no es lineal, cae en otra categoria de modelos. Variables
+•Variable dependiente (y): valor que queremos predecir. •Variable independiente (x): valor usado para ex-
+plicar/predicir. •x: vector D-dimensional (caracteristicas o features ). •w: vector D-dimensional (pendientes/pesos). •b: numero real (interseccion con el eje y). Modelo
+fw,b(x) =w·x+b
+•f(x): prediccion del modelo. •w·x: producto punto →asegura que el resultado sea un
+escalar. •Interpretacion: combinacion lineal de caracteristicas. Parametros del modelo
+•F: vector de variables independientes. •W: pendientes. •B: interseccion con el eje y. •Modelo parametrizado por wyb. •Objetivo: encontrar valores optimos de wybque permi-
+tan predicciones mas acertadas. •Optimo =perfecto, siempre existe error. •Restriccion: solo se pueden modificar wyb, elxes fijo
+(sample). Funcion de perdida
+•Mide quetan bien o mal estafuncionando el modelo (quetan lejos estan las predicciones de los valores reales). Plot residual
+•Un residual es la diferencia entre el valor real y la
+prediccion. •Elplot residual muestra graficamente esas diferencias
+para analizar la calidad del ajuste. C. Funcion de Costo: Error Cuadratico Medio (MSE)
+Definicion
+L=1
+NNX
+i=1(fw,b(xi)−yi)2
+Conceptos Clave

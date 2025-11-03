@@ -1,0 +1,337 @@
+APUNTES DE CLASE
+Inteligencia Artificial — Semana 2 — 12 de agosto
+Priscilla Jim ´enez Salgado
+Escuela de Ingenier ´ıa en Computaci ´on, Tecnol ´ogico de Costa Rica
+Cartago, Costa Rica — 2021022576@estudiantec.cr
+Abstract —El presente documento recopila los
+apuntes de la segunda semana del curso de In-
+teligencia Artificial. Se introducen conceptos de
+machine learning ydeep learning , los principales
+tipos de aprendizaje, el rol de la calidad de los
+datos y el ciclo completo de desarrollo, validaci ´on
+y despliegue de modelos.
+I.Introducci ´on a la Inteligencia Artificial
+Se hace un repaso de los fundamentos de la
+Inteligencia Artificial (IA), sus caracter ´ısticas de
+autonom ´ıa y adaptabilidad, y su capacidad para
+resolver problemas complejos. Se destacan ejemplos
+pr´acticos y analog ´ıas para comprender el compor-
+tamiento de sistemas inteligentes.
+A.Definici ´on de la Inteligencia Artificial
+La Inteligencia Artificial (IA) es, en pocas pal-
+abras, un conjunto de tecnolog ´ıas capaces de re-
+alizar tareas que requieren inteligencia humana,
+como ver, escuchar, aprender y adaptarse. Su ob-
+jetivo es resolver problemas complejos de forma
+eficaz y generar valor.
+B.¿Qu´e significa ser aut ´onomo y adaptativo en esta
+´area?
+En IA, un sistema puede considerarse inteligente
+cuando combina dos capacidades clave: la au-
+tonom ´ıa para actuar sin instrucciones constantes y la
+adaptabilidad para modificar su comportamiento en
+respuesta a cambios del entorno o de las condiciones
+que se presenten.
+C.Usos de la Inteligencia Artificial
+La Inteligencia Artificial tiene aplicaciones en una
+gran variedad de ´areas. Algunos ejemplos destaca-
+dos son:•Medicina: Uso de modelos de machine learning
+para analizar im ´agenes m ´edicas, como escaneos
+cerebrales, y detectar patrones o anomal ´ıas que
+ayuden en el diagn ´ostico.
+Fig. 1. An ´alisis de im ´agenes m ´edicas con algoritmos de aprendizaje au-
+tom´atico
+•Agricultura: An´alisis de datos sobre clima, tipo
+de planta, composici ´on y humedad del suelo para
+optimizar qu ´e cultivar, cu ´ando sembrar, cu ´ando
+regar y qu ´e fertilizantes usar.
+Fig. 2. Aplicaci ´on de datos para perfeccionar las pr ´acticas de cultivo
+•Videojuegos: En la imagen se muestra un ejem-
+plo donde la IA analiza el entorno de un video-
+juego tipo plataformas , identificando obst ´aculos,
+enemigos y recompensas, para decidir qu ´e ac-
+ciones ejecutar mediante diferentes entradas y
+salidas de un modelo de red neuronal.
+
+Fig. 3. IA identificando acciones ´optimas en un entorno de plataformas
+D.Modelos deterministas y estoc ´asticos
+En Inteligencia Artificial y Machine Learning, un
+modelo puede clasificarse seg´ un c ´omo responde a
+una entrada:
+•Determinista: Para una entrada espec ´ıfica, siem-
+pre devuelve la misma salida. Ejemplo: determi-
+nar si hay luz de d ´ıa a las 12 p.m.
+•Estoc ´astico: Para una entrada espec ´ıfica, puede
+devolver diferentes salidas de un conjunto de
+posibilidades, incorporando aleatoriedad. Ejem-
+plo: predecir el clima exacto a las 12 p.m.
+II.Machine Learning
+El concepto de Machine Learning consiste en
+dise˜nar m ´aquinas capaces de realizar tareas sin estar
+programadas de forma expl ´ıcita, extrayendo la l ´ogica
+directamente de los datos.
+Por ejemplo, no se le indicar ´a a la computadora
+qu´e es un perro ni las reglas que lo definen (cola,
+ojos, raza, etc.); en su lugar, se le proporcionar ´a una
+imagen y retroalimentaci ´on para que aprenda por s ´ı
+misma. As ´ı, si se dispone de im ´agenes etiquetadas
+como X e Y, el modelo recibe cada imagen junto
+con su etiqueta y debe, de manera impl ´ıcita, aprender
+a distinguir entre ambas, sin que se le explique el
+procedimiento.En resumen, se le entrega ´ unicamente la entrada y
+su etiqueta, y el modelo debe inferir o aproximar el
+resultado con la mayor precisi ´on posible.
+En este contexto, se cuenta con dos perspectivas:
+Ciencia e Ingenier ´ıa.
+Machine Learning: Ciencia
+•Generar conocimiento: Se refiere a investi-
+gar y desarrollar nuevas ideas para mejorar
+el aprendizaje autom ´atico. Esto puede incluir
+crear modelos desde cero, encontrar formas m ´as
+eficientes de optimizar funciones o aprovechar
+datos sin etiquetar para entrenar sistemas.
+•M´etricas: Se emplean m ´etricas para determinar
+qu´e modelo ofrece un mejor desempe ˜no, eval-
+uando su rendimiento en funci ´on del problema
+espec ´ıfico que se busca resolver.
+•Data Scientist: Se encarga de trabajar con los
+datos desde su recolecci ´on hasta su preparaci ´on
+final, aplicando t ´ecnicas de an ´alisis y manipu-
+laci´on para convertirlos en informaci ´on compren-
+sible y aplicable.
+•Research Scientist: Centra su labor en inves-
+tigar y proponer nuevos modelos, algoritmos y
+enfoques te ´oricos que impulsen el avance del
+Machine Learning. Esto incluye experimentar
+con aprendizaje no supervisado.
+Fig. 4. Descripci ´on general del uso de Machine Learning en la Ciencia.
+En esta misma l ´ınea, Google public ´o un art ´ıculo
+titulado Towards an AI Co-Scientist, en el que
+presenta una inteligencia artificial capaz de generar
+hip´otesis cient ´ıficas a partir del an ´alisis de datos. Esta
+tecnolog ´ıa se prob ´o en el ´ambito m ´edico y permiti ´o
+obtener avances significativos en esa ´area.
+
+Machine Learning: Ingenier ´ıa
+En la etapa de Puesta en producci ´on de un
+modelo , lo primero que se debe considerar es la
+necesidad de refactorizar el c ´odigo, ya que ser ´a
+necesario seguir monitoreando el modelo e, incluso,
+volver a entrenarlo pasado cierto tiempo. Esto implica
+modificar su estructura para que pueda ofrecer la
+misma funcionalidad, pero de manera m ´as eficiente.
+Por ejemplo, si se dispone de un modelo muy pesado,
+es fundamental Transformar el modelo para que
+pueda ser servido a un cliente de forma pr ´actica.
+Para lograrlo, existen diversas herramientas ´ utiles.
+Una de ellas es OnnX , que permite tomar un
+modelo desarrollado en un framework espec ´ıfico
+y optimizarlo, generando una versi ´on m ´as ligera y
+compacta. Tambi ´en pueden aplicarse t ´ecnicas como
+elmodel distillation , donde un modelo m ´as peque ˜no
+aprende a imitar el comportamiento de uno de mayor
+tama ˜no, logrando realizar las mismas tareas con
+menor peso. Otra estrategia es la que reduce la
+cantidad de bits en los par ´ametros del modelo. Estos
+par´ametros, normalmente en punto flotante, se ajustan
+para mejorar el rendimiento, reduciendo el tama ˜no y
+acelerando su ejecuci ´on.
+En el ´ambito del MLOps , el objetivo es gestionar
+el modelo de forma m ´as detallada. Un concepto clave
+es el data shift , que ocurre cuando el modelo fue
+entrenado con una distribuci ´on de datos espec ´ıfica,
+pero con el tiempo los patrones cambian, afectando
+su precisi ´on. Por eso, una de las responsabilidades del
+equipo de MLOps es monitorear el comportamiento
+del modelo y, si detectan un cambio en los datos,
+volver a entrenarlo. Este monitoreo continuo no solo
+incluye el rendimiento del modelo, sino tambi ´en la
+calidad y actualidad de los datos, la infraestructura
+de despliegue y la trazabilidad de las versiones
+utilizadas.
+Fig. 5. Descripci ´on general del uso de Machine Learning en la Ingenier ´ıa.Ahora bien, consideremos el siguiente gr ´afico:
+Fig. 6. S ´ıntesis del Machine Learning en el campo de la Ingenier ´ıa.
+El proceso comienza con la recolecci ´on de datos .
+A partir de ellos, se genera un conjunto estructurado
+(dataset ) que se dividir ´a en dos partes: una para
+elentrenamiento y otra para las pruebas . Esta
+informaci ´on se almacena para su uso posterior.
+En la fase de entrenamiento , el modelo aprende
+a partir del conjunto de datos de entrenamiento,
+ajustando sus par ´ametros seg´ un el fen ´omeno que se
+desea modelar. Durante esta etapa tambi ´en se define
+qu´e tipo de modelo utilizar, justificando la elecci ´on
+en funci ´on de las necesidades del problema.
+Luego se pasa a la validaci ´on, donde se utilizan
+datos que el modelo no ha visto antes para evaluar
+su rendimiento en condiciones similares a las de
+producci ´on. Esto permite identificar qu ´e modelo
+obtiene los mejores resultados seg´ un los criterios de
+evaluaci ´on establecidos.
+El modelo seleccionado se guarda en un reposito-
+rio o almacenamiento de modelos , desde el cual
+se prepara para su implementaci ´on en el entorno
+elegido.
+Por ´ ultimo, se lleva a cabo el despliegue oservicio
+de predicciones , donde el modelo ya entrenado y
+validado comienza a procesar datos reales y a generar
+
+resultados. Todo este flujo puede representarse me-
+diante un diagrama que describe cada paso, desde la
+obtenci ´on inicial de los datos hasta la puesta en
+marcha del sistema en producci ´on.
+III.Jerarqu ´ıa de conceptos en IA
+Fig. 7. Relaci ´on entre IA, Machine Learning y Deep Learning
+•Machine Learning: utiliza datos para que un sis-
+tema pueda entrenarse y mejorar su rendimiento.
+Para lograrlo, emplea m ´etodos como algoritmos
+estad ´ısticos, regresi ´on lineal, regresi ´on log ´ıstica
+o´arboles de decisi ´on. M ´as all ´a de la t ´ecnica
+usada, su base siempre es la misma: aprender
+a partir de los datos disponibles.
+•Deep Learning: es una especialidad dentro del
+Machine Learning que utiliza redes neuronales
+profundas, formadas por varias capas conectadas.
+Este enfoque es muy efectivo para resolver tareas
+complejas, aunque requiere grandes vol´ umenes
+de datos para funcionar correctamente.
+En resumen, las diferencias es que la Inteligencia
+Artificial es el concepto m ´as amplio, que engloba
+todo lo relacionado con lograr que una m ´aquina
+act´ ue de forma “inteligente”. El Machine Learn-
+ing agrupa algoritmos que aprenden con datos,
+y el Deep Learning es una t ´ecnica dentro de
+este que est ´a dise ˜nada para trabajar con canti-
+dades masivas de informaci ´on y resolver tareas
+espec ´ıficas con gran precisi ´on.
+IV.Tipos de aprendizaje en Machine Learning
+Se hizo un repaso de la clase anterior y se retomaron
+los dem ´as tipos de aprendizaje y se describen acontinuaci ´on.
+•Supervisado: El modelo aprende a partir de
+datos que incluyen etiquetas, las cuales sirven
+como referencia durante el entrenamiento. Un
+ejemplo com´ un es la clasificaci ´on de im ´agenes.
+•No supervisado: El modelo trabaja con datos sin
+etiquetas y se encarga de encontrar patrones en
+los datos ocultos. Un ejemplo claro de esto son
+los clusters.
+•Semi-supervisado: Combina datos etiquetados
+y no etiquetados, ´ util cuando el proceso de
+etiquetado es costoso o dif ´ıcil de realizar.
+•Auto-supervisado: El propio dato de entrada
+sirve como etiqueta. Se emplea en autoencoders
+y modelos de representaci ´on, principalmente
+para reducir el tama ˜no de vectores o extraer
+caracter ´ısticas relevantes.
+•Aprendizaje por refuerzo: El modelo, llamado
+agente, aprende mediante un sistema de recom-
+pensas, mejorando su desempe ˜no a trav ´es de la
+interacci ´on con un entorno.
+•Few-Shot Learning: El modelo necesita solo
+unos pocos ejemplos para aprender a realizar una
+tarea espec ´ıfica.
+•One-Shot Learning: Basta con mostrarle una
+´ unica vez c ´omo realizar la tarea para que el
+modelo pueda reproducirla.
+•Zero-Shot Learning: El modelo es capaz de
+realizar tareas sin haber sido entrenado previa-
+mente para ellas de forma espec ´ıfica.
+V.Pipeline de Machine Learning
+El desarrollo de un modelo de Machine Learning
+pasa por varias etapas clave:
+1)Data Adquisition: Este es muy importante
+ya que se necesitan obtener datos de calidad y
+representativos, evitando errores como valores
+faltantes y duplicados.
+2)Data preparation: Para esta etapa se tiene que
+preparar los datos que se tienen para tener un
+
+dataset de calidad, ya sea, eliminando datos
+duplicados o se descartan datos que no tienen
+utilidad.
+3)Feature Engineering: Esta fase consiste en
+crear nuevas variables ´ utiles a partir de los
+datos que se encuentran disponibles o eliminar
+aquellas que no aporten informaci ´on relevante,
+especialmente en el caso de datos tabulares.
+4)Modelo Selection: Elegir el modelo m ´as ade-
+cuado seg´ un el problema y recursos disponibles,
+puede ir desde opciones simples como regresi ´on
+log´ıstica hasta redes neuronales profundas para
+casos complejos.
+5)Model training: Esta fase de entrenamiento
+del proceso del modelo, se dividen los datos en
+training set y validation set y se ajustan hiper-
+par´ametros con m ´etodos como Grid Search.
+6)Model Deployment: En este proceso de de-
+ployment se implementa el modelo en pro-
+ducci ´on y se supervisa para poder garantizar
+usu buen rendimiento.
+VI.Hiperpar ´ametros y Par ´ametros
+Es importante diferenciar entre par´ametros e
+hiperpar ´ametros :
+•Par´ametros: son los valores internos que un
+modelo aprende autom ´aticamente a partir de los
+datos durante el entrenamiento. Estos valores son
+los que el modelo ajusta para minimizar el error
+y mejorar su capacidad de predicci ´on.
+•Hiperpar ´ametros: Son valores definidos man-
+ualmente antes de iniciar el entrenamiento, y
+controlan el comportamiento del algoritmo. Un
+ejemplo es el batch size (por ejemplo, 32 mues-
+tras por iteraci ´on). Estos no se aprenden del
+conjunto de datos, sino que se configuran para
+guiar el proceso de entrenamiento.
+El ajuste de hiperpar ´ametros requiere un proceso
+deexperimentaci ´on, probando distintas configu-raciones hasta encontrar la que produce el mejor
+rendimiento del modelo.
+VII.Paradigmas de resoluci ´on de problemas en
+Machine Learning
+1)Agrupamiento: Busca patrones o relaciones
+ocultas en los datos para formar grupos, ´ util
+para descubrir conexiones que no se hab ´ıan
+considerado.
+Fig. 8. Ejemplo del proceso de agrupamiento
+2)Predicci ´on y clasificaci ´on:
+•Predicci ´on: Estima un valor num ´erico
+bas´andose en patrones de los datos.
+•Clasificaci ´on:Asigna datos a una categor ´ıa
+seg´ un sus caracter ´ısticas.
+Fig. 9. Ejemplo del proceso de predicci ´on y clasificaci ´on
+
+3)Optimizaci ´on: Encuentra la mejor soluci ´on
+entre muchas posibles.
+•Local: La mejor en un ´area concreta.
+•Global: La mejor en todo el espacio de
+b´ usqueda.
+Fig. 10. Ejemplo del proceso de Optimizaci ´on
+4)B´usqueda: Encuentra el camino m ´as eficiente
+hacia una soluci ´on, representando la mejor
+opci´on como el camino de menor costo.
+Fig. 11. Ejemplo del proceso de b´ usquedaVIII. Nota importante
+•Enunciado Tarea Moral Mencionar un aporte
+de cada uno de ellos:
+•Yann LeCun
+•Yoshua Bengio
+•Sam Altman
+•Geoffrey Hinton
+•Timnit Gebru
+•Ian Goodfellow
+Incluya un resumen del funcionamiento de las
+siguientes herramientas/conceptos:
+•Onnx
+•MLFlow
+•Vertex
+•LangChain
+•HuggingFace
+•Ollama
+•Chain-of-Thought
+Fecha de entrega: 19 de Agosto, pero esta es
+moral.
+IX.Aspectos Administrativos
+La pr ´oxima secci ´on corresponde a ´Algebra Lin-
+eal, la cual es fundamental para los temas que se
+abordar ´an m ´as adelante.
+La pr ´oxima semana la modalidad ser ´avirtual .
+Hasta el martes 26 de agosto las clases ser ´an
+presenciales y ese martes habr ´aquiz acumulativo .

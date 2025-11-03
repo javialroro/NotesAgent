@@ -1,0 +1,24 @@
+Relaciones no lineales entre variables
+La regresion lineal presume una relacion lineal entre pre-
+dictores y variable respuesta. Cuando esta suposicion se viola,
+el modelo resulta inadecuado y muestra patrones sistematicos
+en los residuos:
+ei=yi−yi
+La solucion implica transformar las variables predictoras
+mediante expansion polinomial o otras transformaciones que
+permitan capturar relaciones no lineales manteniendo la linea-
+lidad en los parametros. Figura 1: Ejemplo de relacion no lineal y su ajuste mediante
+transformacion polinomial. II-B. Manejo de valores atipicos
+Las observaciones extremas pueden distorsionar significati-
+vamente los modelos de regresion. Existen multiples enfoques
+para su identificacion y tratamiento:
+II-B1. Identificacion de valores atipicos:
+Residuos estandarizados:z i=ei
+σedondeσ ees la
+desviacion estandar de los residuos. Rango intercuartilico: Valores fuera de[Q 1−1,5·
+IQR, Q 3+ 1,5·IQR]se consideran atipicos. II-B2. Tecnicas de tratamiento:
+Eliminacion: Remover observaciones identificadas como
+atipicas. Winsorizacion: Reemplazar valores extremos por per-
+centiles especificos (ej. percentil 5 y 95). Transformaciones: Aplicar funciones como logaritmo
+o raiz cuadrada para reducir la influencia de valores
+extremos.

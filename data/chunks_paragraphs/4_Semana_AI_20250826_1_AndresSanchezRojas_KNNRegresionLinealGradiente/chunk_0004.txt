@@ -1,0 +1,11 @@
+3
+G. ¿Por queutilizamos MSE (Mean Squared Error) y no
+MAE(Mean Absolute Error)
+•El MSE penaliza mas los errores grandes, el MAE los
+penaliza de manera lineal
+•MAE no tiene una derivada continua ya que no es
+derivable en 0
+Fig. 5. Ilustracion de MAE vs MSE
+REFERENCES
+[1] Steven Pacheco Portuguez, Clase sobre Regresion Lineal , Tecnologico de
+Costa Rica, 2025.

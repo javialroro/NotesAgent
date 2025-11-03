@@ -1,0 +1,34 @@
+Apuntes de la Clase Semana 7 2025
+Curso de Inteligencia Artificial
+Rafael Vargas Solis
+Apuntes del 16 de Setiembre de 2025
+Resumen —Este documento presenta un resumen de los temas
+clave abordados en la clase de Inteligencia Artificial del 16
+de setiembre de 2025. Comienza describiendo las diferencias
+fundamentales entre la regresion lineal y la regresion logistica, asi
+como las tecnicas comunes para el manejo de valores atipicos y las
+estrategias para enfrentar el sesgo y la varianza en los modelos de
+aprendizaje automatico. Posteriormente, se discuten las metricas
+de evaluacion tanto para clasificacion como para regresion, in-
+cluyendo la matriz de confusion, precision, exhaustividad (recall),
+F1-score, curva ROC y elarea bajo la curva (AUC), apoyadas
+en ejemplos practicos. Finalmente, el documento resalta los
+problemas mas frecuentes en la calidad de los datos —como
+la incompletitud, la inexactitud y la inconsistencia— y enfatiza
+la importancia de las tareas de preprocesamiento, tales como
+limpieza, integracion, reduccion, transformacion y discretizacion,
+para garantizar el desarrollo de modelos predictivos robustos y
+confiables. Index Terms —Inteligencia Artificial, Aprendizaje Automatico,
+Regresion, Valores Atipicos, Sesgo, Varianza, Metricas de Eval-
+uacion, Matriz de Confusion, ROC, AUC, Preprocesamiento de
+Datos
+I. P REGUNTAS DEL QUIZ
+1. ¿Cual es la diferencia entre regresion lineal y re-
+gresion logistica? Laregresion lineal se utiliza para predecir variables con-
+tinuas, ajustando una recta que minimiza el error cuadratico
+medio. Por ejemplo, estimar el precio de una vivienda segun
+su tamaño. En cambio, la regresion logistica se aplica a problemas
+de clasificacion, donde la variable dependiente es categorica
+(binaria en la mayoria de casos). Utiliza la funcion sigmoide
+para mapear los valores de entrada en probabilidades entre 0y
+1. Ejemplo: predecir si un estudiante aprobara o no un curso. 2.

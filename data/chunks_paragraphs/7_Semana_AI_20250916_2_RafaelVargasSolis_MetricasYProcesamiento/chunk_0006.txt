@@ -1,0 +1,27 @@
+Fig. 2. Ejemplo de curva ROC y calculo de AUC. B.´Area Bajo la Curva (AUC)
+El AUC mide elarea bajo la curva ROC:
+•AUC = 0.5: clasificador aleatorio. •AUC cercano a 1: modelo con gran poder de discrimi-
+nacion. VII. P ROCESAMIENTO DE DATOS
+A. Problemas encontrados en la calidad de datos
+En escenarios reales, los datos suelen presentar problemas
+que afectan directamente la efectividad de los algoritmos de
+mineria y aprendizaje automatico. Los principales son:
+•Incompletitud: valores faltantes en atributos importantes. Ejemplo: si un producto estaba en oferta y no se registro
+la variable. •Inexactitud o ruido: errores de medicion, valores
+atipicos o entradas anomalas en transacciones. •Inconsistencia: discrepancias en nombres, codigos
+o formatos. Ejemplo: fechas almacenadas como
+DD/MM/AAAA en una base de datos y como
+MM-DD-YYYY en otra. Un caso ilustrativo es la recoleccion de datos medicos: en la
+medicion de presion sanguinea, un valor faltante no implica
+que el registro deba eliminarse, ya que otras caracteristicas
+(edad, peso, historial clinico) si aportan informacion valiosa. Esto demuestra que los datasets requieren preprocesamiento
+antes de aplicar tecnicas de mineria o aprendizaje. B. Causas de datos defectuosos
+•Instrumentos de recoleccion defectuosos. •Errores humanos o computacionales en la entrada de
+datos. •Valores falsos en campos obligatorios (ejemplo: fecha por
+defecto “1 de enero” para ocultar cumpleaños), conocidos
+como datos faltantes disfrazados .•Inconsistencias en convenciones de nombres, codigos o
+formatos. •Registros duplicados que requieren procesos de data
+cleaning . C. Causas de incompletitud
+•Atributos de interes no siempre disponibles o considera-
+dos irrelevantes en el momento de captura. •Fallos tecnicos o malentendidos durante la recoleccion. •Eliminacion de registros por inconsistencias. •Ausencia de historial o modificaciones no registradas. •Valores faltantes en atributos clave que deben ser inferi-
+dos. D.

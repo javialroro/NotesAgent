@@ -1,0 +1,20 @@
+•Permite cuantizar el modelo sin necesidad de re-
+entrenamiento completo. Quantization aware training (QAT):
+•Metodo avanzado donde la cuantizacion se simula durante
+el entrenamiento. •El modelo aprende a compensar la perdida de precision
+por la cuantizacion al utilizar la funcion de perdida para
+actualizar los pesos que constantemente sufren de este
+efecto. •Mejora el rendimiento en modelos cuantizados para en-
+tornos de baja precision. VIII. C ONCLUSION
+La informacion presentada demostro la importancia para
+la optimizacion del uso de recursos en modelos de redes
+neuronales, especialmente si se desea implementar en sistemas
+embebidos o con recursos limitados, en esta clase se aprendio
+que : tex
+•La cuantizacion consiste en transformar pesos, activa-
+ciones y sesgos de punto flotante a representaciones de
+menor precision, principalmente enteros, con el fin de
+reducir tamaño y acelerar la inferencia. •Existen distintos tipos de cuantizacion: simetrica ,
+asimetrica , dinamica , granulada y post-
+entrenamiento , cada una con estrategias especificas para
+mapear y convertir datos.

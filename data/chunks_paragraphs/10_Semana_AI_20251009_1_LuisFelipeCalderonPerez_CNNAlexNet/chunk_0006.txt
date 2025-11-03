@@ -1,0 +1,12 @@
+III-C. Menciones finales
+Al final se mencionan arquitecturas similares a LeNet para
+tomar en cuenta para el proyecto, tales como, AlexNet, AFNet,
+GoogleNet (reduce parametros), VGG16 y ResNet. Nota:Embedding, informacion distribuida en espacio vec-
+torial que retorna mi NN. REFERENCIAS
+[1] “ResNet, AlexNet, VGGNet, Inception: Understanding various archi-
+tectures of Convolutional Networks,” CV-Tricks.com, Aug. 01, 2022. https://cv-tricks.com/cnn/understand-resnet-alexnet-vgg-inception/
+[2] R. R. Abril, “Redes convolucionales,” La Maquina Oraculo, Jul. 2025,
+[Online]. Available: https://lamaquinaoraculo.com/deep-learning/redes-
+neuronales-convolucionales/
+[3] S. A. P. Portuguez, “Apuntes de la clase de inteligencia artificial,”
+Cartago, Costa Rica, agosto 2025, clase del 9 de octubre del 2025.

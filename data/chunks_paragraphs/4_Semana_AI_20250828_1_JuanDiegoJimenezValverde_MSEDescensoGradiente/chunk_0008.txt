@@ -1,0 +1,13 @@
+Se destacola
+relevancia de elegir adecuadamente funciones de perdida,
+hiperparametros como el learning rate y la estrategia de actual-
+izacion de gradientes, asicomo la importancia de comprender
+la teoria detras de KNN y regresion lineal. Asimismo, los
+apuntes reflejan la relacion entre teoria y practica, preparando
+al estudiante para aplicar estos conceptos en tareas concretas
+y proyectos de programacion. REFERENCES
+[1] Belcak et al., “Small Language Models are the Future of Agentic AI”,
+NVIDIA Research, 2025. https://arxiv.org/abs/2506.02153
+[2] E. Brynjolfsson, A. Chandar, y Z. Chen, “Canaries in the Coal Mine? Six
+Facts about the Recent Employment Effects of Artificial Intelligence”,
+Stanford Digital Economy Lab, 2025. https://digitaleconomy.stanford. edu/publications/canaries-in-the-coal-mine/

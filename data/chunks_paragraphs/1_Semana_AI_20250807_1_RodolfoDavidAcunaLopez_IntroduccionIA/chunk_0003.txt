@@ -1,0 +1,7 @@
+Adaptativo implica que un sistema puede modificar su
+comportamiento si el entorno o el espacio del problema
+cambian. Por ejemplo, en clase se mostro una imagen de unas
+hormigas que se apilaban unas sobre otras para alcanzar una
+hoja. Este comportamiento demuestra como pueden adaptarse
+a las condiciones de su ambiente para cumplir un objetivo. D. ¿Que puede ser la IA? Un sistema que muestra un comportamiento ”inteligente”. Por ejemplo, la automatizacion de tareas o algo que nos ayuda
+a resolver problemas complejos. Tambien puede ser como ver

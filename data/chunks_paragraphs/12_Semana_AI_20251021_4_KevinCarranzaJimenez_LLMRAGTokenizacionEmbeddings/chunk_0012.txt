@@ -1,0 +1,25 @@
+Consulta o Recuperacion
+Una vez construida la base vectorial, el siguiente paso
+consiste en realizar la recuperacion semantica de informacion. Dada una consulta o pregunta formulada por el usuario, esta
+se transforma en unembeddingque captura su significado
+en un espacio de alta dimension. Posteriormente, se calcula
+la similitud —comunmente mediante la metrica del coseno—
+entre este vector de consulta y todos losembeddingsprevia-
+mente indexados. Finalmente, el sistema devuelve lostop-k
+fragmentos mas cercanos, es decir, aquellos cuya representa-
+cion vectorial es mas similar a la de la consulta. Este proceso
+permite realizar busquedas basadas en el significado semantico
+del texto, en lugar de depender de coincidencias literales o
+palabras exactas, lo que mejora significativamente la precision
+contextual en aplicaciones basadas enRetrieval-Augmented
+Generation (RAG)[1]. V-D. Augmentacion y Generacion (Inyeccion de contexto)
+El paso final en un sistemaRetrieval-Augmented Generation
+(RAG)consiste en integrar la informacion recuperada dentro
+delpromptque se enviaraal modelo de lenguaje. Para ello, se
+construye una plantilla o estructura de entrada que combina
+la pregunta del usuario con los fragmentos de texto mas
+relevantes obtenidos en la fase de recuperacion. Este contexto
+adicional actua como una fuente de conocimiento explicita
+que guia al LLM, permitiendole generar una respuesta mas
+precisa, coherente y sustentada en la evidencia. De esta
+Figura 4. Diagrama del proceso del RAG

@@ -1,0 +1,50 @@
+fInput layer (x∈R784)
+Outputy∈(0,1)
+Fig. 2. Modelo de regresion logistica como red neuronal: entradas→
+combinacion lineal→funcion sigmoide. D. ¿Como alimentar una regresion logisticacon una matriz? SeaX∈R28×28la imagen (matriz de pixeles). Se aplana
+(flatten) en un vector columna:
+x= vec(X)∈R784. Tamaño de entrada (input layer) y conteo de parametros
+•Input layer:784features(un pixel por entrada). •Pesos en binario:784pesos enw+1bias =785
+parametrosen total. III. REGRESIONLOGISTICAMULTINOMIAL
+(EXPERIMENTO EN CLASE)
+Ejercicio del profe: 10 regresiones que responden “si/no”
+Se eligio a 10 estudiantes, cada uno “especialista” en un
+digito (0–9). Cada imagen se le pregunta a los especialista
+uno por uno y ellos respondieron “si es mi numero” o “no
+es”. Si la respuesta no coincide con la etiqueta verdadera, se
+hace refuerzo (entrenamiento). Como resultado se obtiene:
+One–hot vector
+La etiqueta correcta se codifica como un vector con ununico
+1 en la posicion del digito correcto:
+0 1 2 3 4 5 6 7 8 9
+y (one–hot) 0 010 0 0 0 0 0 0
+Ese1marca cual estudiante (regresion) deberia decir “si”. La Figura 3 representa la extension al caso multinomial. En este modelo, las entradas se conectan directamente con
+multiples salidas, de manera que cada una corresponde a
+una clase distinta. De esta forma se pueden reconocer si-
+multaneamente los diez digitos de MNIST.Capa de entrada (R5)Capa de salida (R10)
+Fig. 3. Regresion logistica multinomial: 5 entradas conectadas directamente
+con 10 salidas. Compactacion: de 10 vectores a una sola matriz
+En vez de calcular 10 regresiones por separado, apilamos
+sus pesos en una matriz:
+W|{z}
+∈R10×784=
+−
+w⊤
+0
+−
+−
+w⊤
+1
+−
+... −
+w⊤
+9
+−
+, b|{z}
+∈R10=
+b0
+b1
+... b9
+, z=Wx+b|{z}
+∈R10. ´Indices:W j,ies el peso que conecta elfeaturei(pixeli) con
+la neurona/clasej. •Miwes una matrizW∈R10×784. •Mibes un vectorb∈R10(un bias por neurona/clase). ¿Que sucede con el parametrob?

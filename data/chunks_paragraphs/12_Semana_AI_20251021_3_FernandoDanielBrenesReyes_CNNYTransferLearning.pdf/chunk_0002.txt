@@ -1,0 +1,18 @@
+Existen multiples estrategias de tokenizacion, cada una
+optimizada para un objetivo distinto:
+Por palabra: Ofrece simplicidad. Por caracter: Permite manejar simbolos o palabras fuera
+del vocabulario (OOV). Subpalabra (BPE, WordPiece): Logra un equilibrio
+optimo entre el tamano del vocabulario y la preservacion
+del contexto.II-B. Embeddings y Espacios Vectoriales
+Una vez tokenizados, los IDs numericos se convierten en
+embeddings, que son representaciones numericas densas en
+un espacio continuo de alta dimension. Captura semantica: Los embeddings capturan el sig-
+nificado y las relaciones contextuales entre palabras u
+oraciones completas. Proximidad: Las palabras con significados similares se
+ubican proximas en el espacio vectorial. Operaciones: Este espacio permite realizar operacio-
+nes semanticas, como analogias (por ejemplo,Rey−
+Hombre+Mujer≈Reina). Para medir lasimilitudentre dos vectoresaybenRn, la
+Similitud del Cosenoes la metrica mas utilizada:
+sim(a,b) =a·b
+||a||||b||(1)
+Figura 1. Representacion tridimensional de tokens (Realeza).

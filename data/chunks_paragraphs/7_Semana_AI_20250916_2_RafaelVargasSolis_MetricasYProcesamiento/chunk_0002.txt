@@ -1,0 +1,32 @@
+Describa tres tecnicas para el tratamiento de datos
+sobresalientes (outliers). Los outliers o valores atipicos son observaciones que se
+alejan significativamente del patron general de los datos y
+pueden afectar la precision de los modelos predictivos. Existen
+diversas estrategias para tratarlos, entre las cuales destacan:
+•Eliminacion:Consiste en remover los outliers identifi-
+cados cuando se determina que son producto de errores
+de medicion, registros defectuosos o inconsistencias en
+la recoleccion de datos. Esta tecnica debe aplicarse con
+cautela para no eliminar informacion valiosa. •Transformacion de variables: Aplicar funciones
+matematicas como logaritmos, raices cuadradas o escal-
+ados que reduzcan la magnitud de los valores extremos.De esta manera, se disminuye su influencia en la varianza
+del modelo y se mejora la distribucion de los datos. •Winsorizacion (recorte): Sustituir los valores atipicos
+por valores mas cercanos dentro de un rango definido,
+usualmente basado en percentiles (por ejemplo, 1% y
+99%). Esta tecnica conserva la estructura general de los
+datos y evita que los valores extremos distorsionen los
+resultados. 3. Mencione dos tecnicas para evitar un alto sesgo y dos
+para evitar alta varianza. En el aprendizaje automatico, es fundamental lograr un
+equilibrio entre sesgo yvarianza para obtener modelos con
+buena capacidad de generalizacion. A continuacion, se de-
+scriben algunas tecnicas para abordar ambos problemas:
+Para reducir sesgo (underfitting):
+•Incrementar la complejidad del modelo: Utilizar mod-
+elos mas sofisticados, como polinomiales en lugar de
+lineales, redes neuronales mas profundas o algoritmos no
+lineales, permite capturar relaciones mas complejas entre
+las variables. •Incorporar nuevas variables o caracteristicas: Me-
+diante tecnicas de feature engineering , se pueden in-
+cluir atributos relevantes que enriquezcan la informacion
+disponible, mejorando asi la capacidad predictiva del
+modelo.

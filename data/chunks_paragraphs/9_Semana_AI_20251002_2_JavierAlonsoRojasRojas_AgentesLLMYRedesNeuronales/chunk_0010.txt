@@ -1,0 +1,54 @@
+suman estos productos junto con el sesgo asociado, repitiendo
+el proceso para cada neurona de la capa.
+F . Funcion de perdida global
+La funcion de perdida global se obtiene sumando las difer-
+encias entre la salida de cada neurona en la capa de activacion
+ly su valor esperado yj:
+Li=nlX
+j=1(a(l)
+j−yj)2
+G. Aplicacion de la regla de la cadena
+Dado que las funciones Li,z(l)
+jya(l)
+jestan encadenadas, es
+necesario aplicar la regla de la cadena para derivar cada peso
+w(l)
+j,ky sesgo b(l)
+j. Solo la derivada∂z(l)
+j
+∂w(l)
+j,kcambia con cada peso
+actualizado, mientras que las demas se mantienen constantes
+dentro de la capa.
+Las derivadas parciales relevantes son:
+∂Li
+∂a(l)
+j= 2(a(l)
+j−yj)
+∂a(l)
+j
+∂z(l)
+j=g(z(l)
+j)(1−g(z(l)
+j))
+∂z(l)
+j
+∂w(l)
+j,k=a(l−1)
+k
+A partir de estas derivadas, los pesos y sesgos se actualizan
+siguiendo el descenso del gradiente:
+w(l)
+j,k←w(l)
+j,k−η∂Li
+∂w(l)
+j,k, b(l)
+j←b(l)
+j−η∂Li
+∂b(l)
+j
+donde ηrepresenta la tasa de aprendizaje.
+En redes mas profundas, al extender el calculo hacia capas
+anteriores (l−1), el numero de parametros y combinaciones
+a derivar aumenta considerablemente, incrementando la com-
+plejidad computacional del algoritmo.

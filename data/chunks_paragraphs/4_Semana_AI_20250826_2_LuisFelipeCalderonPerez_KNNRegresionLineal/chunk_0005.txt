@@ -1,0 +1,26 @@
+Para mitigar estos problemas, se suelen emplear estrate-
+gias como la busqueda de una tasa de aprendizaje optima o el
+early stopping , que detiene el entrenamiento cuando la funcion
+de perdida deja de mejorar significativamente o alcanza un
+valor aceptable. Nota: Los terminos derivada, pendiente y gradiente son
+equivalentes. Derivada de una constante:d
+dx[c] = 0
+Derivada de una variable:d
+dx[x] = 1
+Derivada de constante por variable:d
+dx[c·x] =c
+Regla de la potencia:d
+dx[xn] =nxn−1
+Derivada de una suma:d
+dx[f(x) +g(x)] =f′(x) +g′(x)
+Regla del producto:d
+dx[f(x)g(x)] =f′(x)g(x) +f(x)g′(x)
+Derivadas parciales:∂f
+∂xi=derivada de frespecto a xi
+Ejemplo de parciales: f(x, y) =x2y+ 3xy2,∂f
+∂x= 2xy+ 3y2,∂f
+∂y=x2+ 6xy
+Pregunta final
+Se concluye la clase con la siguiente pregunta, ¿Porque
+escoger MSE y no MAE? Respuesta: MAE no es derivable en 0 y nos lleva a errores
+de calculo

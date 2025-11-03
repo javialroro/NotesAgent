@@ -1,0 +1,38 @@
+3
+2) Funcion Tangente Hiperbolica (tanh): La tangente
+hiperbolica es similar a la sigmoide, pero su rango va de
+-1 a 1, lo que permite que las salidas esten centradas en
+cero. Esto ayuda a mitigar algunos problemas de gradientes
+en comparacion con la sigmoide, aunque aun puede sufrir de
+saturacion [6]. tanh( x) =ex−e−x
+ex+e−x
+3) Funcion ReLU (Rectified Linear Unit): La funcion
+ReLU es una de las mas utilizadas en redes neuronales
+modernas. Define la salida como 0 para valores negativos
+y como la propia entrada para valores positivos. Es com-
+putacionalmente eficiente y mitiga en gran parte el problema
+del desvanecimiento del gradiente, aunque puede presentar el
+problema de “neurona muerta” [7]. f(x) = max(0 , x)
+4) Funcion Leaky ReLU: La funcion Leaky ReLU es una
+variante de la ReLU que permite pequeños valores negativos
+en la salida (usualmente multiplicados por una constante
+pequeña, como 0.01). Esto evita el problema de neuronas
+muertas al asegurar un gradiente no nulo para entradas nega-
+tivas [8]. f(x) =(
+x six≥0
+αx six <0
+5) Funcion Softmax: La funcion Softmax convierte un
+vector de valores reales en una distribucion de probabilidad,
+donde cada valor queda entre 0 y 1 y la suma total es igual a 1. Se utiliza principalmente en la capa de salida de clasificadores
+multiclase [6]. σ(z)i=ezi
+PK
+j=1ezjparai= 1, . . . , K
+V. P ERCEPTRONMULTICAPA
+El Perceptron Multicapa (MLP, por sus siglas en ingles) es
+una arquitectura fundamental dentro de las redes neuronales
+artificiales. Esta compuesto por una capa de entrada, una o
+mas capas ocultas y una capa de salida. A diferencia del
+perceptron simple, que solo puede resolver problemas lineal-
+mente separables, el MLP utiliza funciones de activacion no
+lineales en sus neuronas ocultas, lo que le permite aproximar
+funciones complejas y resolver problemas no lineales.

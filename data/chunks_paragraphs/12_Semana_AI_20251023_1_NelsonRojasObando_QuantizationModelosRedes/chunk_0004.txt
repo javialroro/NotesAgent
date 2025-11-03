@@ -1,0 +1,34 @@
+Este formato permite representar numeros muy grandes o
+muy pequenos, aunque implica un mayor uso de memoria y
+recursos computacionales en comparacion con representacio-
+nes de menor precision. V. QUANTIZATION DE REDES NEURONALES
+En redes neuronales, las matrices de pesos y sesgos estan
+representadas como flotantes. El proceso de quantization busca
+convertir esos valores a enteros para reducir memoria y
+acelerar la inferencia. V-A. Etapas del proceso
+Quantize:Los valores en punto flotante se transforman
+a enteros. InferenciaEl modelo realiza sus calculos con aritmetica
+entera. DequantizeLos resultados se transforman nuevamente a
+flotantes para la siguiente capa. El desafio estaen mantener la precision del modelo. Los
+hardware modernos (GPU, TPU, CPU vectoriales) incluyen
+soporte para operaciones de baja precision (por ejemplo, int8)
+para facilitar este proceso. VI. TIPOS DE QUANTIZATION
+VI-A. Quantization simetrica
+Usa un rango centrado en cero:
+VI-B. Quantization asimetrica
+Utiliza un rango desplazado[α, β]:
+VII. ESTRATEGIAS Y VARIANTES
+VII-A. Dynamic Quantization
+La escala y el rango se calculan en tiempo de inferencia. Se
+aplican factores estadisticos derivados del conjunto de datos
+de prueba (“calibration set”). VII-B. Post-Training Quantization (PTQ)
+Despues del entrenamiento, se insertan observadores (ob-
+servers) en el modelo para analizar las salidas de cada capa
+y determinar los mejores parametros de escala y punto cero. Este proceso no requiere reentrenamiento y es rapido, aunque
+puede perder algo de precision. VII-C. Quantization-Aware Training (QAT)
+Simula la quantization durante el entrenamiento. El modelo
+aprende a compensar los errores introducidos por la reduccion
+de precision, por lo que mantiene un rendimiento superior tras
+el proceso. VIII. VENTAJAS DELQUANTIZATION
+Menor consumo de memoria: los modelos comprimidos
+se cargan mas rapido. Menor tiempo de inferencia: calculos mas simples.

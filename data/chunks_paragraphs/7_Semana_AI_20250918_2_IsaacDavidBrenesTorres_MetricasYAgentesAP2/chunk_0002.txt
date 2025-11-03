@@ -1,0 +1,31 @@
+Agent Payments Protocol (AP2) de Google Cloud
+ElAgent Payments Protocol (AP2)es un framework
+desarrollado por Google Cloud diseñado especificamente para
+permitir que los agentes de IA realicen pagos de forma segura
+y automatizada [1]. AP2 facilita las transacciones economicas
+entre agentes, servicios y usuarios, actuando como una capa
+de confianza y estandarizacion. Caracteristicas principales de AP2:Seguridad y autenticacion:Utiliza criptografia avanza-
+da para verificar la identidad de los agentes y asegurar
+las transacciones. Descentralizacion:Puede operar en entornos distribui-
+dos, reduciendo puntosunicos de fallo. Escalabilidad:Esta diseñado para manejar un alto volu-
+men de micro-transacciones simultaneas. Interoperabilidad:Permite la integracion con multiples
+sistemas de pago y plataformas blockchain. AP2 representa un avance significativo hacia la economia
+autonoma, donde los agentes de IA pueden participar en
+mercados digitales sin intervencion humana constante. III. METRICAS DEEVALUACION PARACLASIFICACION
+III-A. Matriz de Confusion
+La matriz de confusion es una herramienta fundamental para
+evaluar el rendimiento de un modelo de clasificacion binaria. Organiza las predicciones del modelo en cuatro categorias
+(Tabla I). Cuadro I: Matriz de Confusion para clasificacion binaria. Valor Real
+Prediccion Negativo (N) Positivo (P)
+Positivo (P) FP VP
+Negativo (N) VN FN
+Verdadero Positivo (VP):El modelo predice la clase
+positiva correctamente. Falso Positivo (FP):Error Tipo I. El modelo predice
+positivo cuando la clase real es negativa. Falso Negativo (FN):Error Tipo II. El modelo predice
+negativo cuando la clase real es positiva. Verdadero Negativo (VN):El modelo predice la clase
+negativa correctamente. III-B. Exactitud (Accuracy)
+La exactitud mide la proporcion de predicciones correctas
+sobre el total de instancias. Exactitud=V P+V N
+V P+V N+FP+FN
+Esutil cuando las clases estan balanceadas, pero puede ser
+engañosa en conjuntos de datos desequilibrados.

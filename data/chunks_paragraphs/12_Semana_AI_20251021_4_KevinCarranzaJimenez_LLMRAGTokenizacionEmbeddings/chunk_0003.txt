@@ -1,0 +1,14 @@
+Comprender
+los mecanismos internos que permiten estas representaciones,
+asicomo sus limitaciones y potencial de generalizacion,
+resulta esencial para el desarrollo de aplicaciones mas seguras
+y efectivas basadas en inteligencia artificial generativa. La Figura 1 ilustra la arquitectura de un modelo de red
+neuronal preentrenado disenado para la clasificacion de even-
+tos de colision. Este modelo recibe como entrada un conjunto
+de caracteristicas ofeaturesque incluyen la velocidad del
+vehiculo, la calidad del terreno, el grado de vision disponible y
+la experiencia total del conductor. A partir de estos parametros,
+la red aprende a identificar patrones que permiten estimar la
+probabilidad de que ocurra una colision bajo determinadas
+Figura 1. Modelo de red neuronal preentrenado para la clasificacion de
+eventos de colision.

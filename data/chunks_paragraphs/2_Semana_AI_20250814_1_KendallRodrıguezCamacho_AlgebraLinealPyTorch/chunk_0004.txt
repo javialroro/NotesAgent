@@ -1,0 +1,38 @@
+MACHINE LEARNING VISTO DESDE LA INGENIERIA
+Desde la perspectiva de la ingenieria, el enfoque esta en
+implementar, mantener y optimizar modelos en produccion.
+Entre las principales tareas se incluyen transformar modelos
+para reducir su tamaño y aumentar la velocidad, crear pipelines
+de datos que alimenten los modelos de forma automatica y
+monitorear metricas de rendimiento y tiempos de respuesta.
+Ademas, las practicas de MLOps se aplican para opera-
+cionalizar el aprendizaje automatico, de manera similar a como
+DevOps se utiliza para el desarrollo y despliegue de software.
+IV. P ARADIGMAS DE RESOLUCION DE PROBLEMAS
+Entre los principales paradigmas de resolucion de problemas
+en Inteligencia Artificial se incluyen:
+float
+A. Problemas de busqueda
+Se busca encontrar el camino mas eficiente hacia una
+solucion.
+Fig. 1. Ejemplo de problemas de busqueda.
+B. Problemas de optimizacion
+Cuando existe un gran numero de soluciones posibles, hallar
+la mejor solucion absoluta puede ser dificil.
+1) Solucion local: Mejor solucion dentro de unarea es-
+pecifica.
+2) Solucion global: Mejor solucion en todo el espacio de
+posibles soluciones.
+Fig. 2. Ejemplo de soluciones locales y globales en optimizacion.
+C. Prediccion y clasificacion
+1) Prediccion:Estimar un valor futuro o desconocido, en-
+contrando patrones segun los datos disponibles. Por ejemplo,
+cuanta gasolina quedara en un carro.
+2) Clasificacion: Asignar elementos a categorias pre-
+definidas, basandose en sus caracteristicas. Por ejemplo, iden-
+tificar el modelo de un carro segun sus partes.
+Fig. 3. Ejemplo de prediccion y clasificacion.
+D. Agrupamiento (Clustering)
+Descubrir patrones o grupos naturales en los datos, uti-
+lizando diferentes aspectos para formar grupos con distintas
+formas.

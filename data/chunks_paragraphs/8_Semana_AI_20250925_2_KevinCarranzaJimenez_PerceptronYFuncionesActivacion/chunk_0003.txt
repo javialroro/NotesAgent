@@ -1,0 +1,15 @@
+Multinomial
+Para esto, al problema requerir 10 clases, se desarrollan
+10 regresiones logisticas, una por cada clase y a cada una
+se le pasa como entrada la informacion de los pixeles de
+la imagen, por lo que una de las regresiones logisticas dara
+mayor probabilidad que las demas. Y en este punto tenemos
+en la Figura 1 una arquitectura que ya podria llamarse red
+neuronal, aunque todavia faltaria agregar una siguiente capa
+para poder resolver problemas no lineales. Tambien se menciona en el resumen de la clase anterior
+que en lugar de calcular cada regresion lineal de forma
+vectorial, cambiamos los vectores por matrices para hacer 1
+sola operacion y no N. Donde N es el tamaño de la capa
+siguiente utilizando conceptos dealgebra lineal. En cada una
+de las filas sera representado las neuronas para la siguiente
+capa y las entradas las columnas.

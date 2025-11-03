@@ -1,0 +1,36 @@
+comun en la mayoria de problemas. Trae consigo una mayor
+complejidad pero a su vez logra resolver problemas mas
+complejos. Su codominio es de 0 a 1 y esto es muy conveniente ya que
+los valores probabilisticos comparten ese mismo espacio. La funcion sigmoide se expresa de la siguiente manera
+σ(x) =1
+1 +e−x⇒σ(fw,b(x)) =1
+1 +e−fw,bx
+La manera en que esta funcion se convierte en un clasi-
+ficador es al escoger un umbral. este umbral se utiliza para
+definir un punto a partir de cual se calsifica un evento con
+una etiqueta o la otra. Por lo general se suele escoger un valor
+umbral de 0.5. C. Derivada de la funcion Sigmoide
+Como la regresion logistica es un clasificador, se debe
+encontrar una funcion de peridica adecuada para el problema. Para esto se debe analizar la derivada de la funcion sigmoide,
+ya que es necesario para cualquier problema de optimizacion. σ′(x) =1′(1 +e−x)−(1(1 + e−x)′)
+(1 +e−x)2
+⇒σ′(x) =σ(x)(1−σ(x))
+Como se puede notar, la derivada se puede expresar en
+terminos de la funcion misma, lo cual lo hace muy conveniente
+ya que no se requieren operaciones muy complejas y con esto
+se obtiene una mayor eficiencia. D. Funcion de Perdida: Verosimilitud
+En vez de utilizar MSE o MAE, se utiliza la verosimilitud. Esta esta dada por la siguiente ecuacion
+L=Y
+fw,b(xi)yi(1−fw,b(xi))1−yi
+El resultado que se obtiene para un punto en esta ecuacion
+es la probabilidad de que su etiqueta sea yicon los pesos
+wactuales. Como se quiere optimizar los pesos para los
+cuales se obtiene una mejor metrica, se debe derivar esta
+funcion. Sin embargo, existe un problema con esta expresion
+donde una multiplicacion incluye polinomios muy grandes,
+y calcular la dervida respectiva se vuelve muy complejo
+y computacionalmente costoso. Ademas, como se trata de
+valores probabilisticos, o sea, de 0 a 1, su multiplicacion
+se vuelve extremadamente pequeña y asi la derivada de la
+funcion se vuelve virtualmente cero, y esto no cambia los
+pesos en el paso de entrenamiento.

@@ -1,0 +1,34 @@
+Apuntes IA Clase 7/10
+Gianmarco Oporta Perez
+Ingenieria en Computacion
+Instituto Tecnologico de Costa Rica
+San Jose, Costa Rica
+gooporta@estudiantec.cr
+Abstract —El presente documento recopila los apuntes de la
+clase del 7 de octubre, correspondientes al curso de Inteligencia
+Artificial. Se abordan los lineamientos del Proyecto 1, centrado
+en redes neuronales convolucionales aplicadas al reconocimiento
+de voz mediante espectrogramas, asi como los fundamentos
+teoricos de las redes convolucionales y su aplicacion en tareas
+de clasificacion y segmentacion de imagenes. Index Terms —Inteligencia Artificial, Redes Neuronales Con-
+volucionales, Clasificacion de Audio, PyTorch, Espectrogramas
+I. R ESULTADOS DEL QUIZ5
+Se realizo el quiz 5 durante el inicio de la sesion, la cual
+contiene las siguientes preguntas:
+•Pregunta: Describa que es una red totalmente conectada. R/Es una red neuronal en la cual cada neurona esta
+conectada con todas las neuronas de la capa siguiente,
+de principio a fin. •Pregunta: Mencione tres funciones de activacion no
+lineales. R/ReLU, Sigmoide y Tanh. •Pregunta: Describa los cuatro componentes principales
+de un agente LLM. R/
+– Perfil: Define la identidad o personalidad del agente,
+determinando su tono, estilo de comunicacion y
+comportamiento general. – Memoria: Permite conservar informacion relevante
+de interacciones anteriores o resultados previos, fa-
+cilitando la continuidad y el contexto en tareas
+extensas. – Herramientas: Corresponden a recursos o funciones
+externas que el agente puede invocar para realizar
+operaciones especificas o acceder a informacion adi-
+cional. – Planificacion o razonamiento: Consiste en la ca-
+pacidad del agente para interpretar las instrucciones
+del usuario, elaborar estrategias y seleccionar la
+accion mas apropiada segun el objetivo planteado. •Pregunta: Describa la diferencia entre sistemas de agenteunico y sistemas multiagentes.

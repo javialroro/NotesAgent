@@ -1,0 +1,30 @@
+Fig. 3. Ejemplo de Super-Resolucion con Autoencoder. entre si, formando agrupamientos que reflejan la estructura
+semantica de los datos. C. Decoder y Reconstruccion
+A partir del vector del espacio latente, utiliza capas de
+upsamplingoconvoluciones transpuestaspara expandir pro-
+gresivamente la representacion comprimida hasta recuperar la
+forma original. Durante este proceso, el modelo aprende a
+reconstruir los detalles perdidos, generando una salida que se
+asemeje lo mas posible a la entrada inicial. D. Aplicaciones de los Autoencoders
+•Reduccion de dimensionalidad:obtener representa-
+ciones mas compactas que las de PCA. •Deteccion de anomalias:los ejemplos normales se re-
+construyen bien, mientras que los atipicos muestran un
+error de reconstruccion elevado. Se puede fijar un umbral
+para decidir cuando un dato es anomalo. •Eliminacion de ruido:aprender a reconstruir una imagen
+limpia a partir de una ruidosa. •Edicion y generacion de imagenes:al modificar el vec-
+tor latente se pueden crear variantes o nuevas imagenes,
+por ejemplo, para comprimirlas. •Super-Resolucion:generar versiones de alta resolucion
+a partir de imagenes pequeñas (Fig. 3). E. Hiperparametros Relevantes
+•Tamaño del vector latente:define la cantidad de in-
+formacion que el modelo puede retener en el espacio
+comprimido. Un vector mas pequeño produce un modelo
+mas eficiente en computo, pero con menor capacidad para
+capturar detalles de la imagen. En cambio, un vector mas
+grande permite representar mas caracteristicas, aunque
+incrementa el costo de entrenamiento y de procesamiento. •Numero de capas:tanto el encoder como el decoder
+pueden variar en profundidad. Un mayor numero de capas
+permite modelar relaciones mas complejas, pero tambien
+hace el entrenamiento mas pesado y sensible al ajuste de
+parametros. •Funcion de perdida:para tareas de reconstruccion de
+imagenes se utiliza comunmente elMean Squared Error
+(MSE).

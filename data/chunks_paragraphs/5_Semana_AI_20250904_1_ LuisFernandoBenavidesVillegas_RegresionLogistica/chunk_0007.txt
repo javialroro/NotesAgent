@@ -1,0 +1,17 @@
+La probabilidad de que ocurra el
+evento ( y= 1) o no ocurra ( y= 0) se define como:
+P(Y=k) =pk(1−p)1−k, k∈ {0,1}
+donde:
+•pes la probabilidad deexito ( y= 1). •kes la etiqueta observada (0 o 1). Asi, si k= 1 , la probabilidad es p; y si k= 0 , la
+probabilidad es 1−p. VI. F UNCIONSIGMOIDE
+La funcion sigmoide es una herramienta clave porque intro-
+duce no linealidad al modelo y tiene un rango de salida entre
+0 y 1 , lo cual la hace ideal para trabajar con probabilidades. Se define como:
+σ(x) =1
+1 +e−x
+Al tomar valores de entrada muy negativos, la salida se
+acerca a 0; mientras que con valores grandes y positivos, se
+acerca a 1. Fig. 8. Grafica de la funcion sigmoide
+Ademas, el argumento xpuede ser cualquier valor o incluso
+otra funcion (composicion de funciones), lo que da flexibilidad
+para modelar relaciones mas complejas.

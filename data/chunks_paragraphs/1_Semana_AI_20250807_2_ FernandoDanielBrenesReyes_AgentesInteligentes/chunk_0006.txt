@@ -1,0 +1,3 @@
+Comprender fundamentos, cuidar la calidad de los datos y
+adquirir habilidades practicas (Keras, MLOps, validacion) son
+claves para trabajar efectivamente en esteambito.

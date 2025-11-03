@@ -1,0 +1,213 @@
+Apuntes de Semana 5, Clase #2
+Mauricio Campos Cerdas
+Instituto Tecnol ´ogico de Costa Rica
+Cartago, Costa Rica
+maucampos@estudiantec.cr
+Abstract —This document presents class notes on handling
+outliers, the concepts of bias and variance, and an introduction
+to logistic regression as a classification algorithm. Techniques for
+identifying and addressing outlying values are discussed, along
+with methods for splitting datasets and common scenarios en-
+countered during training and validation. As well as the sigmoid
+function and parameter optimization in logistic regression are
+introduced, including the derivation of the sigmoid function.
+Index Terms —Outliers, bias, variance, logistic regression, clas-
+sification, sigmoid function, parameter optimization, training and
+validation, Overfitting, Underfitting
+I. N OTICIAS DE LA SEMANA
+A. Evento IEEE
+IEEE est ´a organizando un evento donde se tocar ´an temas
+muy interesantes, incluyendo la inteligencia artificial. Vendr ´an
+personas de gran renombre a dar charlas, habr ´a comida y
+dem´as. Se pide registrarse para calcular la alimentaci ´on para
+el d´ıa del evento.
+B. Problema con las referencias y la IA
+Se est ´a produciendo un fen ´omeno en el que cada vez m ´as
+art´ıculos, notas y sitios web son generados con inteligencia
+artificial y se referencian entre s ´ı. Esto puede llevar a que
+la propia IA se cite a s ´ı misma, provocando un aumento de
+referencias generadas artificialmente.
+C. Modelo Nano Banana
+Google lanz ´o un nuevo modelo llamado Nano Banana. Su
+atractivo se encuentra que a diferencia de otros modelos, este
+agarra la imagen que est ´a como input y la modifica sin tener
+que generarla otra vez. Se di ´o un ejemplo de un experimento
+donde una IA ten ´ıa que modificar una foto varias veces y se
+lleg´o a evidenciar que hubo un sesgo de generar la imagen de
+la persona cada vez con rasgos m ´as latinos.
+II. P OTENCIALES PROBLEMAS DE LA REGRESI ´ONLINEAL
+•No linealidad: En regresi ´on lineal se asume que ex-
+iste una relaci ´on lineal entre las variables predictoras
+y la variable respuesta. Sin embargo, esto no siempre
+se cumple, lo que provoca que el modelo no capture
+adecuadamente la relaci ´on y que los residuos presenten
+patrones sistem ´aticos (por ejemplo, con forma parab ´olica)
+en lugar de distribuirse aleatoriamente (ver Fig. 1).
+Una estrategia para enfrentar este problema es aplicar
+feature engineering . Un ejemplo es incorporar t ´erminos
+polin ´omicos adicionales a las variables, lo que permite
+aproximar mejor relaciones no lineales.
+Fig. 1. Residual plots
+•Datos sobresalientes: Siempre existir ´an outliers, ya sea
+por ruido o error humano. Lo que pasa es que nos afecta
+a nuestro modelo, siempre habr ´a cierta sensibilidad hay
+que tratarlos para evitar que nos afecte en gran medida
+nuestro modelo.
+A. M ´etodos para tratar outliers
+– Standardized Residuals: Tenemos el c ´alculo de
+los residuos y calculamos la desviaci ´on est ´andar,
+para asegurarnos de que nuestros datos siguen una
+distribuci ´on normal. A partir de que los tenemos
+estandarizados, calculamos a cu ´antas desviaciones
+est´andar se encuentra ese dato. Lo que nos dir ´a
+es el l ´ımite de hasta d ´onde se consideran datos
+sobresalientes.
+∗ |z|>2: posible outlier.
+∗ |z|>3: outlier muy probable, se recomienda
+excluir.
+– Regla del rango intercuart ´ılico (IQR): Definido
+como IQR =Q3−Q1. Los datos que se encuentran
+fuera del intervalo [Q1−1.5·IQR, Q 3 + 1.5·IQR]
+se consideran outliers.
+– Winsorizaci ´on:T´ecnica que consiste en reemplazar
+los valores extremos por los percentiles l ´ımite (por
+ejemplo, 5% y 95%).
+III. S ESGO Y VARIANZA
+El dataset suele dividirse en train y test (80/20)
+A. Training set
+Se utiliza para ajustar el modelo. Nos puede pasar que
+entrenemos el modelo mucho tiempo, lleguemos al final y
+
+Fig. 2. Underfitting, Ideal, Overfitting plots
+nos damos cuenta de que fallamos el examen. Si dedicamos
+mucho al entrenamiento pero nada a generalizar, se llama
+overfitting. Por eso queremos hacer tests peque ˜nos durante el
+entrenamiento, con el validation set.
+B. Validation set
+Nos dice si los hiperpar ´ametros son adecuados o no, para
+no continuar si no lo son y as ´ı no desperdiciar recursos.
+C. T ´ecnicas de subdividir el dataset
+•Random Sampling: Se usa siempre que tengamos clases
+balanceadas. Si los datos no est ´an balanceados, pueden
+quedar mal distribuidos, con m ´as datos de una clase que
+de la otra.
+•Stratified Sampling: Usado para datos imbalanceados,
+asegura una representaci ´on de todas las clases por sepa-
+rado.
+•K-Fold Cross-Validation: Divisi ´on en kpartes, en cada
+iteraci ´on se usan k−1para entrenamiento y 1 para
+validaci ´on.
+D. Escenarios posibles
+•Escenario ideal: El modelo presenta bajo error tanto en
+training como en testing. Puede evitar el ruido de los
+datos y generalizar correctamente. Por cada ´epoca de
+entrenamiento el error deber ´ıa ir disminuyendo, tendiendo
+siempre a la baja.
+•Overfitting: Ocurre cuando el error en el validation set
+empieza a crecer o se estanca. Esto indica que el modelo
+era bueno hasta cierta ´epoca de entrenamiento, pero luego
+empieza a sobreajustarse a los datos de entrenamiento,
+produciendo overfitting. A esta t ´ecnica de detener el
+entrenamiento antes de que esto suceda se le llama early
+stopping.
+•Underfitting: Se da cuando el error es alto tanto en
+training como en testing. Esto se conoce como under-
+fitting, que ocurre cuando el modelo no logra ajustarse
+correctamente a los datos. Es lo opuesto al overfitting y
+se caracteriza por un alto sesgo. Para ver gr ´aficamente
+estos escenarios, ver Fig. 2).
+•Bias-Variance Tradeoff: Validaci ´on con buen resultado,
+pero entrenamiento con alto error. Es raro que suceda y
+tal vez hay errores de c ´alculo.
+Fig. 3. Linear vs Logistic Regression
+E. Alto Bias
+Cuando el modelo comete muchos errores en el training
+set, se produce underfitting. Esto ocurre porque el modelo
+asume demasiado del training set, no utiliza todas los features
+disponibles y es demasiado simple para capturar la compleji-
+dad de los datos. Para evitar un alto sesgo, se puede utilizar
+un modelo m ´as complejo. Adem ´as, es importante revisar que
+los features del training set sean adecuadas para la naturaleza
+del problema, ya que si no tienen la capacidad de capturar la
+informaci ´on relevante, el modelo no podr ´a hacer predicciones
+correctas.
+F . Alta Varianza
+Ocurre cuando el modelo se ajusta demasiado a los datos
+de entrenamiento y no es capaz de generalizar correctamente.
+Esto suele suceder cuando los datos son de alta dimension-
+alidad y hay pocos ejemplos disponibles. Para evitar la alta
+varianza, se pueden usar modelos m ´as simples, reducir la
+dimensionalidad de los datos, obtener m ´as ejemplos y aplicar
+t´ecnicas de regularizaci ´on.
+IV. R EGRESI ´ONLOG´ISTICA
+Aunque su nombre contenga la palabra regresi ´on, en re-
+alidad la regresi ´on log ´ıstica es un algoritmo de clasificaci ´on
+binaria. Distingue entre dos clases ( 0y1), estimando proba-
+bilidades. Fig. 3).
+A. Distribuci ´on de Bernoulli
+Utilizamos una distribuci ´on de Bernoulli para la ocurrencia
+de un evento binario.
+P(Y=k) =pk(1−p)1−k, k∈ {0,1}
+B. Funci ´on Sigmoide
+Es una funci ´on que no se comporta linealmente. Tiene un
+Codominio de [0, 1]
+σ(x) =1
+1 +e−x
+Nota: x puede ser cualquier n ´umero, hasta el resultado de otra
+funci ´on. Ver Fig. 4).
+
+Fig. 4. Sigmoid plot
+C. Clasificador
+•Siy <0.5, se clasifica como 0.
+•Siy≥0.5, se clasifica como 1.
+El umbral puede ajustarse seg ´un el problema.
+D. Modelo combinado
+Al aplicar la sigmoide a una funci ´on lineal fw,b(x) =wx+
+b, obtenemos:
+fw,b(x) =1
+1 +e−(wx+b)
+La relaci ´on de los features y pesos se da por regresi ´on lineal.
+Lo que nos da es la probabilidad de que un evento suceda.
+E. Optimizaci ´on
+En la regresi ´on log ´ıstica necesitamos optimizar los pesos
+wy el sesgo b. Para actualizar estos pesos, es necesario
+contar con una funci ´on de p ´erdida Lque sea adecuada para
+probabilidades, ya que el MSE ya no es lo apropiado en este
+caso.
+F . Derivada de la sigmoide
+σ(x) =1
+1 +e−x
+Usando la regla del cociente:
+σ′(x) =1′·(1 +e−x)−(1·(1 +e−x)′)
+(1 +e−x)2
+σ′(x) =0−1·(1′+ (e−x)′)
+(1 +e−x)2
+σ′(x) =−(0−(e−x))
+(1 +e−x)2
+σ′(x) =e−x
+(1 +e−x)2σ′(x) =e−x+ 1−1
+(1 +e−x)2
+σ′(x) =e−x+ 1
+(1 +e−x)2−1
+(1 +e−x)2
+De la fracci ´on izquierda, puedo cancelar
+σ′(x) =1
+(1 +e−x)−1
+(1 +e−x)2
+Aplicamos factor com ´un
+σ′(x) =1
+(1 +e−x)·(1−1
+(1 +e−x))
+Como1
+(1+e−x)=σ(x), decimos que:
+σ′(x) =σ(x) 
+1−σ(x)
+REFERENCES
+[1] Amazon Web Services, “Model Fit: Underfitting vs. Overfit-
+ting,”. Available: https://docs.aws.amazon.com/machine-learning/latest/
+dg/model-fit-underfitting-vs-overfitting.html.
+[2] University of Virginia Library, “Understanding Diagnostic Plots for
+Linear Regression Analysis,”. Available: https://library.virginia.edu/data/
+articles/diagnostic-plots.
+[3] ML4A, “Neural networks,”. Available: https://ml4a.github.io/ml4a/es/
+neural networks/.

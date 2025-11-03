@@ -1,0 +1,31 @@
+Preparacion de los documentos
+Los documentos que se desean utilizar para la recuperacion
+se dividen en fragmentos llamadoschunks, normalmente de
+entre 200 y 500 tokens. Para evitar perdida de informacion,
+los chunks suelen tener unoverlapentre si. 1) Chunking de tamaño fijo:Se segmentan los documentos
+en trozos de longitud fija, respetando en la medida de lo
+posible los limites de las frases, y se mantiene unoverlap
+para preservar contexto. 2) Chunking recursivo:En este enfoque, los chunks no
+se cortan estrictamente segun el tamaño maximo, sino que
+se ajustan para mantener la semantica de las oraciones. Se
+comparan oraciones con la similitud del coseno y, si son
+suficientemente similares segun un umbral, se combinan en un
+chunk mas grande, logrando un almacenamiento mas eficiente
+y contextual. B. Transformacion en embeddings
+Cadachunkse convierte en un vector mediante un modelo
+de embeddings. Estos vectores se utilizan para medir similitud
+semantica y permitir la recuperacion eficiente de fragmentos
+relevantes durante la consulta del usuario. C. Indexacion
+Los vectores resultantes se almacenan en bases vectoriales
+especializadas, que pueden residir en memoria RAM o disco:
+•FAISS: principalmente en RAM, rapido para busquedas. •Qdrant: almacenamiento en disco con soporte de
+busqueda vectorial. •Pinecone: almacenamiento en disco y nube, escalable. Se almacena ademas la metadata asociada, como el texto
+original del chunk, para permitir una recuperacion eficiente. D. Consulta o recuperacion
+Cuando llega una pregunta del usuario, el proceso consiste
+en:
+1) Transformar la consulta en unembedding. 2) Calcular la similitud con todos los embeddings indexa-
+dos. 3) Seleccionar lostop-kchunks mas cercanos
+semanticamente. E. Augmentacion y generacion
+Para enriquecer el prompt del LLM, los chunks recuperados
+se organizan en una plantilla estructurada, que combina el
+contextextraido de los documentos con laquestiondel usuario.

@@ -1,0 +1,19 @@
+ElMean Squared Error (MSE) es mas utilizado que el
+Mean Absolute Error (MAE) en optimizacion con descenso
+del gradiente porque:
+•La funcion MSE es suave (diferenciable en todos sus
+puntos), lo que permite calcular derivadas de forma
+sencilla y aplicar metodos basados en gradiente. •En contraste, la funcion MAE no es diferenciable en
+0(presenta una esquina), lo que complica el uso de
+derivadas directas y hace mas dificil la optimizacion con
+gradiente puro. •Gracias a su naturaleza cuadratica, el MSE penaliza mas
+fuertemente los errores grandes, favoreciendo un ajuste
+mas preciso en esos casos. Error Cuadratico Medio (MSE):
+MSE =1
+NNX
+i=1(fw,b(xi)−yi)2
+Fig. 2. MSE
+Error Absoluto Medio (MAE):
+MAE =1
+NNX
+i=1|fw,b(xi)−yi|

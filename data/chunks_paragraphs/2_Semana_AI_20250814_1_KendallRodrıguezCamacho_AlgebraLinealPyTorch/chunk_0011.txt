@@ -1,0 +1,51 @@
+inputs = inputs.fillna(inputs.mean())
+# Completar valores faltantes
+X_csv = torch.tensor(inputs.to_numpy(dtype=
+float )) # Convertir a tensor
+X_csv
+IX. C ONCEPTOS BASICOS DEALGEBRA LINEAL
+En esta seccion, como continuacion de la anterior, se pre-
+sentan los fundamentos matematicos que sustentan la manip-
+ulacion de datos. Se introducen escalares, vectores, matrices
+y tensores, junto con sus operaciones basicas. A. Escalar
+Un escalar es un valor numericounico que representa una
+sola cantidad. En PyTorch se puede representar como un tensor
+con un solo elemento:
+escalar = 6
+B. Vector
+Un vector es un arreglo unidimensional de escalares. Cada
+elemento del vector es un escalar. import numpy as np
+vector = np.array([1, 2, 3])
+Vector:
+[1 2 3]
+C. Matriz
+Al igual que los escalares son tensores de orden 0 y los
+vectores son tensores de orden 1, una matriz es un tensor de
+orden 2. Es un arreglo bidimensional de escalares. import numpy as np
+matriz = np.array([[1, 2, 3],
+[4, 5, 6],
+[7, 8, 9]])
+Matriz:
+[[1 2 3]
+[4 5 6]
+[7 8 9]]
+D. Tensor
+Cuando se trabaja con datos de mas de dos dimensiones, se
+utilizan tensores. Son arreglos de orden 3 o superior. import numpy as np
+tensor = np.array([[[1, 2, 3], [4, 5, 6]],
+[[7, 8, 9], [10, 11, 12]]])tensor:
+[[[ 1 2 3]
+[ 4 5 6]]
+[[ 7 8 9]
+[10 11 12]]]
+E. Hadamard Product
+El producto Hadamard corresponde a la multiplicacion
+elemento a elemento de dos matrices o tensores de igual forma. En Python se puede realizar usando el operador *. A = np.array([[1, 2],
+[3, 4]])
+B = np.array([[5, 6],
+[7, 8]])
+C = A *B
+C:
+[[ 5 12]
+[21 32]]
+F .

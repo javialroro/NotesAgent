@@ -1,0 +1,13 @@
+En este caso, el angulo entre ambos vectores es nulo y
+el coseno del angulo es igual a uno. El vector unitario
+es un caso particular, ya que al ser multiplicado por un
+escalar recupera la magnitud del vector original sin alterar
+su direccion. Se sabe que si dos vectores son codireccionales, el angulo
+entre ellos es de 0◦. En consecuencia, el producto punto se
+expresa como
+u·u=∥u∥ · ∥u∥ ·cos(0) = ∥u∥2. De esta forma, la norma de un vector puede escribirse
+como
+∥u∥=√u·u. Asimismo, la distancia euclidiana puede expresarse en
+terminos de producto punto:
+√u·u=p
+∥u∥2=∥u∥.

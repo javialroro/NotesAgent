@@ -1,0 +1,2 @@
+Esto muestra como los vectores son la base para
+representar conceptos en IA.

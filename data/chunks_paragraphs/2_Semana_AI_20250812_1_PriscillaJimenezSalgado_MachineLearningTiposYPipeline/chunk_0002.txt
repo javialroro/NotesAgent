@@ -1,0 +1,12 @@
+Analisis de imagenes medicas con algoritmos de aprendizaje au-
+tomatico
+•Agricultura: Analisis de datos sobre clima, tipo
+de planta, composicion y humedad del suelo para
+optimizar que cultivar, cuando sembrar, cuando
+regar y que fertilizantes usar. Fig. 2. Aplicacion de datos para perfeccionar las practicas de cultivo
+•Videojuegos: En la imagen se muestra un ejem-
+plo donde la IA analiza el entorno de un video-
+juego tipo plataformas , identificando obstaculos,
+enemigos y recompensas, para decidir que ac-
+ciones ejecutar mediante diferentes entradas y
+salidas de un modelo de red neuronal.

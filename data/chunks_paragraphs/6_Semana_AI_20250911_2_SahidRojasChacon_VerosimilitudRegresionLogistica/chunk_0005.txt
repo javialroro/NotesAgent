@@ -1,0 +1,38 @@
+Figura 1.cap01:ClaseLogisticRegressionAI. Hiperparametros (lr,
+epochs), parametrosw, b, sigmoide y perdida (16). Figura 2.cap02:fit(forwardz→a, gradientesdw/db, actualizacion) y
+predict(umbral0,5). Gradientes (regla de la cadena).:De la derivacion teorica
+se obtiene
+∂L
+∂z=a−y,∂L
+∂w=1
+NX⊤(a−y),∂L
+∂b=1
+N1⊤(a−y). En el codigo aparecen comodw = (1/n_samples)
+*X.T @ (a - y)ydb = (1/n_samples) *
+np.sum(a - y). Actualizacion (descenso por gradiente).:Con tasaα=
+lr:
+w←w−α∂L
+∂w, b←b−α∂L
+∂b,
+que en el codigo se implementa comow = w - lr *dw
+yb = b - lr *db. Al disminuir (16) se incrementa la
+verosimilitud del modelo. Prediccion.:El metodopredictrepitez=Xw+by
+a=σ(z)y umbraliza con0,5para devolver etiquetas binarias
+y∈ {0,1}, consistente con decidir por la clase mas probable. Figura 3.cap03:Flujo completo: imports, generacion del dataset con
+make_classification, division entrenamiento/prueba, entrenamiento
+del modelo propio y bloque analogo consklearn. VIII-C. Bloque principal: imports, dataset y flujo del entre-
+namiento (cap03)
+Como se muestra en la Figura 3, se realiza la im-
+portacion de librerias necesarias (numpyy modulos de
+sklearn). Luego, se crea undataset de clasificacioncon
+make_classification, que genera datos sinteticos con-
+trolados para problemas binarios. En este caso, se indica:
+n_samples= 1000,n_features= 2,n_informative= 2,n_redundant= 0,n_clusters_per_class= 1,random_state= 225. Esto produce dosfeaturesinformativas sin redundancia y un
+solo cluster por clase, coherente con los ejemplos del curso. A continuacion, se realiza ladivision entrenamien-
+to/pruebacontrain_test_split, manteniendo la
+proporcion de clases mediantestratify=yy fijando
+random_statepara reproducibilidad. Seguidamente, se
+instancia y entrenael modelo implementado desde cero:
+modelo_manual = LogisticRegressionAI(lr=0.001, epochs=6000),
+ejecutando el bucle explicado en la subseccion anterior (for-
+ward, gradientes y actualizacion).

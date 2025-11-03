@@ -1,0 +1,33 @@
+Su
+entrenamiento se realiza comunmente mediante el algoritmo
+de retropropagacion (backpropagation), el cual ajusta los pesos
+de las conexiones minimizando el error entre la salida predicha
+y la deseada. Esta arquitectura constituye la base de los
+modelos modernos de aprendizaje profundo [6], [9]. A. Maldicion de dimensionalidad
+A mayor cantidad de dimensiones, aumenta la complejidad,
+a su vez, aumentando la computabilidad y se vuelve mas
+complicado encontrar patrones. Para esto existen algoritmos
+de deduccion de dimensiones como el PCA.1) PCA: El Analisis de Componentes Principales (PCA,
+por sus siglas en ingles: Principal Component Analysis) es un
+metodo estadistico ampliamente utilizado para la reduccion
+de dimensionalidad, que transforma un conjunto de vari-
+ables posiblemente correlacionadas en un nuevo conjunto
+de variables no correlacionadas denominadas componentes
+principales. El procedimiento consiste en centrar los datos,
+calcular la matriz de covarianza, obtener sus autovalores
+y autovectores, y seleccionar los vectores asociados a los
+mayores autovalores para proyectar los datos en un subespacio
+de menor dimension que conserva la mayor varianza posible
+de la informacion original [10], [11], [12]. B. Comportamiento Jerarquico
+Los humanos aprenden cosas simples para transformarlo en
+algo mas complejo, tal es el caso del MLP conformado por
+multiples regresiones lineales, de lo cual se optienen ganan-
+cias exponenciales en algunas funciones, como polinomios,
+la composicion de funciones que permite reusar funciones
+simples otras de orden superior y que mediante una repre-
+sentacion compacta, en la que pocos pesos se pueden modelar
+funciones complejas, como por ejemplo, una red neuronal que
+se aproxime a otra. VI. C ONCLUSION
+La clase permitio la comprension de los fundamentos de las
+redes neuronales, resaltando su estructura jerarquica al final
+y las motivaciones biologicas que inspiran su arquitectura.

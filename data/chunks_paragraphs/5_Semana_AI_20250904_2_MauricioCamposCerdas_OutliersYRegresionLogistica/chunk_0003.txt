@@ -1,0 +1,34 @@
+Fig. 2. Underfitting, Ideal, Overfitting plots
+nos damos cuenta de que fallamos el examen. Si dedicamos
+mucho al entrenamiento pero nada a generalizar, se llama
+overfitting. Por eso queremos hacer tests pequeños durante el
+entrenamiento, con el validation set. B. Validation set
+Nos dice si los hiperparametros son adecuados o no, para
+no continuar si no lo son y asi no desperdiciar recursos. C. Tecnicas de subdividir el dataset
+•Random Sampling: Se usa siempre que tengamos clases
+balanceadas. Si los datos no estan balanceados, pueden
+quedar mal distribuidos, con mas datos de una clase que
+de la otra. •Stratified Sampling: Usado para datos imbalanceados,
+asegura una representacion de todas las clases por sepa-
+rado. •K-Fold Cross-Validation: Division en kpartes, en cada
+iteracion se usan k−1para entrenamiento y 1 para
+validacion. D. Escenarios posibles
+•Escenario ideal: El modelo presenta bajo error tanto en
+training como en testing. Puede evitar el ruido de los
+datos y generalizar correctamente. Por cadaepoca de
+entrenamiento el error deberia ir disminuyendo, tendiendo
+siempre a la baja. •Overfitting: Ocurre cuando el error en el validation set
+empieza a crecer o se estanca. Esto indica que el modelo
+era bueno hasta ciertaepoca de entrenamiento, pero luego
+empieza a sobreajustarse a los datos de entrenamiento,
+produciendo overfitting. A esta tecnica de detener el
+entrenamiento antes de que esto suceda se le llama early
+stopping. •Underfitting: Se da cuando el error es alto tanto en
+training como en testing. Esto se conoce como under-
+fitting, que ocurre cuando el modelo no logra ajustarse
+correctamente a los datos. Es lo opuesto al overfitting y
+se caracteriza por un alto sesgo. Para ver graficamente
+estos escenarios, ver Fig. 2). •Bias-Variance Tradeoff: Validacion con buen resultado,
+pero entrenamiento con alto error. Es raro que suceda y
+tal vez hay errores de calculo. Fig. 3. Linear vs Logistic Regression
+E.

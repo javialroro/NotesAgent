@@ -1,0 +1,30 @@
+Las CNN
+aprenden filtros que detectan caracteristicas locales (bordes,
+texturas) y luego construyen representaciones de alto nivel
+mediante capas sucesivas. Fig. 3. Esquema de una red convolucional
+V. D ATOS :EL CORAZON DE LA IA
+A. Calidad y preprocesamiento
+Los datos deben ser:
+•Representativos del problema real. •Limpios : sin errores obvios (p. ej. mezcla Cel-
+sius/Fahrenheit). •Balanceados o bien tratados para evitar sesgos. •Steven Pacheco 2025 - Si tenemos mal los datos, mala
+es la salida de nuestra funcion
+Tecnicas comunes: normalizacion, imputacion
+(media/mediana), deteccion y tratamiento de outliers,
+ingenieria de caracteristicas y enriquecimiento. B. Sesgos y equidad
+Los datasets reflejan las desigualdades del mundo real. Un modelo entrenado con datos sesgados puede perpetuar
+discriminaciones. Ejemplos practicos:
+•Reconocimiento facial con peor desempeño en ciertos
+grupos demograficos. •Modelos de credito que penalizan poblaciones subrepre-
+sentadas. Buenas practicas: auditorias de sesgo, conjuntos de prueba
+estratificados, transparencia en datos y procesos. C. Ejemplo del profe: Celsius vs Fahrenheit
+Un error clasico en datasets es mezclar unidades. Si un
+campo de temperatura contiene valores en ambas escalas sin
+etiqueta, el modelo puede aprender patrones erroneos. Es
+esencial normalizar unidades y validar rangos. VI. B REVE HISTORIA DE LA IA ( LINEA DEL TIEMPO )
+•1950s: Perceptron y primeras investigaciones (Rosen-
+blatt). •1960s: Nacimiento temprano del Machine Learning y
+primeros sistemas simbolicos. •1970s: Lenguajes logicos (Prolog), algoritmos clasicos
+(Dijkstra). •1980s: Inicio de la experimentacion con autos autonomos. •1990s: Resurgimiento con redes multicapa y aprendizaje
+por refuerzo. •2000s: Auge del reconocimiento facial y vision por
+computadora. •2010s–2020s: Deep learning, grandes modelos de
+lenguaje, despliegues comerciales.

@@ -1,0 +1,367 @@
+Apuntes Inteligencia Artificial, Clase 02 de Octubre
+Javier Alonso Rojas Rojas
+Escuela de Ingenier ´ıa en Computaci ´on
+Instituto Tecnol ´ogico de Costa Rica
+Cartago, Costa Rica
+javrojas@estudiantec.cr
+Abstract —Estos apuntes reflejan lo conversado en la clase
+del 02 de octubre donde se mencionaron temas como. El fun-
+cionamiento de los agentes basados en modelos de lenguaje de
+gran escala (LLM) y su papel en la inteligencia artificial moderna.
+Se mencionaron las principales herramientas y frameworks para
+la creaci ´on de agentes, junto con las diferencias entre sistemas de
+un solo agente y multiagente. Adem ´as, se examina el caso de Sora
+de OpenAI como ejemplo de modelo multimodal de generaci ´on
+de video y audio, considerando tambi ´en los retos ´eticos asociados.
+Finalmente, se incluye un repaso de los fundamentos de las
+redes neuronales, sus funciones de activaci ´on y el proceso de
+entrenamiento mediante backpropagation, como base conceptual
+de los LLM actuales.
+I. I NTRODUCTION
+La inteligencia artificial (IA) ha avanzado r ´apidamente
+gracias a los modelos de lenguaje de gran escala (LLMs) y al
+desarrollo de agentes inteligentes capaces de actuar y razonar
+en distintos contextos. Estos sistemas han transformado la
+generaci ´on de texto en un proceso de planificaci ´on y ejecuci ´on
+m´as complejo, permitiendo la creaci ´on de agentes aut ´onomos
+que integran herramientas y colaboran entre s ´ı.
+Los apuntes abordan los fundamentos y la arquitectura de
+los agentes basados en LLM, distinguiendo entre sistemas
+individuales y multiagente, y destacando el papel del Chain of
+Thought (CoT) como mecanismo clave para el razonamiento
+estructurado. Adem ´as, se incluye el caso de estudio Sora de
+OpenAI y un repaso de las bases neuronales del aprendizaje
+profundo, como las funciones de activaci ´on y el entrenamiento
+porbackpropagation .
+II. M ENCI ´ON DE LECTURA DE AGENTES
+Se hizo un repaso general de la lectura “From Language to
+Action: A Review of Large Language Models as Autonomous
+Agents and Tool Users”. Explic ´o que lo fundamental para
+el pr ´oximo quiz del martes es comprender lo esencial: los
+modelos de lenguaje (LLMs) han pasado de ser simples
+generadores de texto a actuar como agentes aut ´onomos con
+capacidad para razonar, planificar, usar memoria e interactuar
+con herramientas externas. La lectura tambi ´en distingue entre
+sistemas de un solo agente y sistemas multiagente, en los
+que varios modelos cooperan para resolver tareas m ´as com-
+plejas. Adem ´as, se analizan sus aplicaciones en ´areas como
+la investigaci ´on, la programaci ´on, la salud, la rob ´otica y las
+simulaciones, junto con los principales desaf ´ıos que enfrentan:
+la memoria limitada, la seguridad, la ´etica y la necesidad de
+mejores m ´etodos de evaluaci ´on.
+Fig. 1. Sora 2
+III. S ORA 2BYOPENAI
+Sora 2 es la nueva versi ´on del modelo multimodal de
+OpenAI, capaz de generar video y audio sincronizados a
+partir de texto. Presenta notables mejoras en realismo f ´ısico,
+coherencia visual y control creativo. Su funci ´on de cameos
+permite insertar la imagen y voz del usuario, bajo consen-
+timiento, ampliando las posibilidades narrativas y expresivas.
+Adem ´as, han desarrollado un tipo de red social donde se
+pueden compartir los videos creados con el modelo.
+El modelo ofrece mayor precisi ´on en iluminaci ´on,
+movimiento y sonido, adem ´as de opciones de control estil ´ıstico
+mediante steerability . OpenAI ha incorporado medidas ´eticas
+para evitar la reproducci ´on de personas reales o la generaci ´on
+de contenido sensible, lanz ´andolo de forma gradual mediante
+laSora app y futuras APIs. Sora 2 representa un avance sig-
+nificativo en la generaci ´on audiovisual con IA, aunque plantea
+retos importantes en materia de privacidad y autenticidad
+digital.
+IV. R EPASO DE REDES NEURONALES
+A. El Perceptr ´on y su evoluci ´on
+El perceptr ´on puede entenderse de forma similar a una
+regresi ´on log ´ıstica, aunque se diferencia en la funci ´on de
+p´erdida que utiliza. Durante la historia de la inteligencia
+artificial surgi ´o el llamado “invierno de la IA” , en parte debido
+al problema del XOR, ya que este no pod ´ıa ser representado
+adecuadamente por un modelo lineal ni por un perceptr ´on
+simple.
+
+Fig. 2. Funciones de activaci ´on
+B. El problema del XOR
+El principal inconveniente del perceptr ´on simple es que el
+problema XOR no es linealmente separable, por lo que este
+modelo no puede ofrecer una soluci ´on adecuada. Esto dio
+origen a las redes neuronales multicapa (MLP), capaces de
+resolver problemas no lineales y ampliar significativamente el
+rango de aplicaciones posibles.
+C. Inspiraci ´on biol ´ogica
+Las redes neuronales artificiales se inspiran en el fun-
+cionamiento del cerebro humano. Cada neurona recibe se ˜nales
+a trav ´es de sus dendritas (entradas), las procesa en el n ´ucleo
+mediante una combinaci ´on lineal, y decide si transmite o no
+la se ˜nal seg ´un una funci ´on de activaci ´on.
+D. Funciones de activaci ´on
+Las funciones de activaci ´on introducen no linealidad en el
+modelo, permitiendo que la red aprenda relaciones complejas:
+•ReLU: g(x) = max(0 , x); eficiente, pero puede generar
+“neuronas muertas” cuando el gradiente es cero.
+•Leaky ReLU: introduce una peque ˜na pendiente en la
+parte negativa para evitar neuronas inactivas.
+•Tanh: produce salidas en el rango (−1,1),´util para
+manejar valores positivos y negativos.
+•Sigmoide: transforma la entrada en valores entre 0 y 1,
+com´un en tareas de clasificaci ´on binaria.
+E. Perceptr ´on Multicapa (MLP)
+ElMultilayer Perceptron (MLP) extiende el perceptr ´on sim-
+ple a ˜nadiendo capas ocultas que permiten resolver problemas
+no lineales. Su estructura general incluye:
+•Capa de entrada: recibe los datos originales Xi.
+•Capas ocultas: realizan transformaciones y c ´alculos in-
+ternos.
+•Capa de salida: entrega el resultado final, cuyo tama ˜no
+depende del tipo de problema.
+El entrenamiento se realiza mediante backpropagation , que
+calcula el error del modelo y ajusta los pesos utilizando
+descenso de gradiente.
+Fig. 3. Comportamiento Jer ´arquico
+Fig. 4. Funcionamiento de las CNN
+Cada capa se calcula de la siguiente forma:
+h(0)=σ(XW 0+b0) (1)
+h(1)=σ(h(0)W1+b1) (2)
+h(n)=g(h(n−1)Wn+bn) (3)
+F . Capas de salida y distribuci ´on
+Las salidas pueden ser categ ´oricas o continuas:
+•En clasificaci ´on, se usa softmax como funci ´on de salida.
+•En regresi ´on, se emplea una funci ´on lineal.
+En todos los casos, la activaci ´on final g(x)debe ser no lineal
+para permitir un aprendizaje m ´as expresivo.
+G. Maldici ´on de la dimensionalidad
+Cuando se trabaja con datos de muchas variables, los puntos
+se dispersan en un espacio de alta dimensi ´on, reduciendo su
+densidad y dificultando el hallazgo de patrones significativos.
+H. Comportamiento jer ´arquico
+Como vemos en la Figura 3, las redes neuronales apren-
+den de forma jer ´arquica, combinando funciones simples para
+formar otras m ´as complejas. Esto permite construir representa-
+ciones compactas y eficientes, en las que un n ´umero reducido
+de pesos puede modelar funciones avanzadas.
+I. CNN
+En las redes convolucionales (CNN), las primeras capas
+detectan bordes o patrones b ´asicos, las intermedias aprenden
+estructuras m ´as definidas y las ´ultimas capas reconocen objetos
+completos, como rostros o figuras, esto representado en la
+Figura 4.
+J. Representaciones vectoriales
+En el procesamiento de lenguaje natural (NLP), las palabras
+se representan como vectores en un espacio de alta dimensi ´on,
+de modo que las palabras con significados o funciones simi-
+lares se ubican pr ´oximas entre s ´ı en dicho espacio.
+
+Fig. 5. Tangente hiperb ´olica
+V. F UNCIONES DE ACTIVACI ´ON
+Las funciones de activaci ´on son un componente esencial
+en las redes neuronales, ya que permiten introducir la no
+linealidad necesaria para modelar relaciones complejas entre
+los datos. A continuaci ´on, se describen las funciones m ´as rel-
+evantes junto con sus principales caracter ´ısticas matem ´aticas.
+A. Lineal
+La funci ´on lineal se define como:
+f(x) =ax
+Su derivada es constante ( f′(x) =a), por lo que el modelo
+no puede aprovechar el descenso del gradiente para aprender
+patrones complejos. Debido a su car ´acter estrictamente lineal,
+no introduce capacidad de generalizaci ´on ni no linealidad en
+la red.
+B. Sigmoide
+La funci ´on sigmoide produce salidas entre 0 y 1, es siempre
+positiva, acotada y estrictamente creciente:
+σ(x) =1
+1 +e−x
+A pesar de su utilidad inicial, presenta el problema del
+vanishing gradient : la derivada tiende a cero en los extremos
+de la funci ´on, lo que hace que el aprendizaje sea lento o
+incluso se detenga en redes profundas.
+C. Tangente Hiperb ´olica (Tanh)
+La funci ´on tangente hiperb ´olica tiene un rango de salida
+entre (−1,1)como vemos en la Figura 5 y su forma es similar
+a la sigmoide, pero centrada en el origen:
+tanh( x) =ex−e−x
+ex+e−x
+Esto permite representar tanto valores positivos como nega-
+tivos, lo que facilita la convergencia del modelo. Sin embargo,
+al igual que la sigmoide, tambi ´en sufre del problema del
+gradiente desvanecido en los extremos.D. Parametric ReLU (PReLU)
+La funci ´onParametric ReLU (PReLU) es una variante
+de la funci ´on ReLU tradicional, como se muestra en la
+figura ??. A diferencia de la ReLU est ´andar, esta introduce
+un par ´ametro αque se aprende durante el entrenamiento y
+controla la pendiente en la regi ´on negativa. De esta manera,
+el modelo puede ajustar autom ´aticamente el grado de “fuga”
+en los valores menores que cero, evitando el problema de las
+neuronas muertas .
+Su definici ´on matem ´atica es la siguiente:
+g(x) =(
+αx, six <0
+x, six≥0
+La derivada correspondiente es:
+dg(x)
+dx=(
+α, six <0
+1,six≥0
+El par ´ametro αse entrena junto con el resto de los pesos de
+la red, lo que otorga al modelo mayor flexibilidad y capacidad
+de adaptaci ´on frente a distintas distribuciones de datos. Por
+esta raz ´on, la PReLU suele ofrecer un mejor desempe ˜no en
+arquitecturas profundas donde la ReLU est ´andar podr ´ıa perder
+gradiente.
+E. Softmax
+La funci ´on Softmax transforma las salidas de la capa final
+en una distribuci ´on de probabilidad, como vemos en la figura
+6. Su expresi ´on se define como:
+σ(x)j=exj
+PK
+k=1exk
+donde cada valor xjse denomina logit. Esta funci ´on se utiliza
+principalmente en problemas de clasificaci ´on multiclase, ya
+que garantiza que todas las salidas sean positivas y sumen 1.
+•El uso de exasegura una funci ´on estrictamente creciente
+y evita valores negativos.
+•Se emplea junto con la funci ´on de p ´erdida Cross-
+Entropy Loss , tambi ´en llamada Log-Loss .
+La p ´erdida se define como:
+L=−logP(Y=yi|X=xi)
+y, en el caso multiclase:
+L=−logesk
+PC
+j=1esj
+F . Selecci ´on de la funci ´on de activaci ´on
+La elecci ´on de la funci ´on de activaci ´on depende del tipo de
+problema y la arquitectura de la red. Las funciones Sigmoid y
+Tanh tienden a sufrir el problema del gradiente desvanecido,
+por lo que no son recomendadas para redes profundas. En
+la pr ´actica, se suele comenzar con la funci ´onReLU por
+su eficiencia computacional y buen rendimiento en modelos
+deDeep Learning . Si esta presenta problemas (por ejemplo,
+neuronas muertas), se pueden utilizar variantes como Leaky
+ReLU oParametric ReLU , que permiten mantener un flujo
+de gradiente estable incluso en valores negativos.
+
+Fig. 6. Uso de Softmax
+Fig. 7. Forward Propagation y Back Propagation
+VI. B ACKPROPAGATION
+El algoritmo de backpropagation permite calcular cu ´anto
+contribuye cada peso al error final de la red, actualizando los
+par´ametros en la direcci ´on opuesta a la propagaci ´on hacia
+adelante. Este proceso es esencial para que la red neuronal
+aprenda y mejore su desempe ˜no durante el entrenamiento. Esto
+representado en la figura 7.
+A. Forward Propagation
+Consiste en calcular la salida de la red, enviando los datos
+desde la capa de entrada hacia las capas ocultas hasta obtener
+la salida final.
+B. Backpropagation
+implica propagar el error desde la capa de salida hacia las
+capas anteriores, calculando las derivadas parciales respecto a
+los pesos y sesgos para ajustar los par ´ametros del modelo.
+C. Optimizaci ´on del grafo computacional
+Consideremos una red neuronal como la de la figura 8,
+donde cada capa contiene una ´unica neurona y la funci ´on de
+activaci ´on utilizada es la sigmoide. El c ´alculo se puede dividir
+en las siguientes partes:
+•Funci ´on de p ´erdida (MSE):
+Li= (a(L)−yi)2
+donde a(L)es la salida de la red y yiel valor esperado.
+•Entrada:
+z(L)=w(L)a(L−1)+b(L)
+•Salida:
+a(L)=g(z(L))
+Fig. 8. Red neuronal simple
+Fig. 9. Red neuronal mas compleja
+donde grepresenta la funci ´on de activaci ´on.
+Los par ´ametros w(L)yb(L)se actualizan utilizando la regla
+de la cadena, derivando el error con respecto a cada par ´ametro
+y aprovechando la salida de la capa anterior.
+D. Vector gradiente
+Elvector gradiente est´a formado por todas las derivadas
+parciales de los par ´ametros (pesos y sesgos) de la red. Durante
+el c´alculo del gradiente se identifican operaciones repetidas,
+lo que permite optimizar los c ´alculos en el algoritmo de back-
+propagation mediante reutilizaci ´on de resultados intermedios
+(cach ´e).
+E. Redes con m ´ultiples neuronas
+En redes con mayor dimensionalidad como la de la figura
+9, se introducen notaciones adicionales:
+•Super ´ındice: indica la capa. Ejemplo: a(l)representa la
+activaci ´on en la capa l.
+•Sub´ındice: indica la neurona dentro de una capa. Ejem-
+plo:a(l)
+jes la j-´esima neurona en la capa l.
+•Pesos: se representan como w(l)
+j,k, que conecta la neurona
+a(l−1)
+kcona(l)
+j, aca j seria el destino y k el origen.
+Cada neurona de la capa lrecibe entradas desde todas las
+neuronas de la capa anterior (l−1), siguiendo los pasos:
+•Preactivaci ´on:
+z(l)
+j=b(l)
+j+nl−1X
+k=1w(l)
+j,ka(l−1)
+k
+•Activaci ´on:
+a(l)
+j=g(z(l)
+j)
+Para obtener la activaci ´on de una neurona destino, se
+calculan las contribuciones de todas las neuronas de la capa
+anterior, multiplicando los pesos de conexi ´on correspondientes
+por la activaci ´on de cada neurona origen. Posteriormente, se
+
+suman estos productos junto con el sesgo asociado, repitiendo
+el proceso para cada neurona de la capa.
+F . Funci ´on de p ´erdida global
+La funci ´on de p ´erdida global se obtiene sumando las difer-
+encias entre la salida de cada neurona en la capa de activaci ´on
+ly su valor esperado yj:
+Li=nlX
+j=1(a(l)
+j−yj)2
+G. Aplicaci ´on de la regla de la cadena
+Dado que las funciones Li,z(l)
+jya(l)
+jest´an encadenadas, es
+necesario aplicar la regla de la cadena para derivar cada peso
+w(l)
+j,ky sesgo b(l)
+j. Solo la derivada∂z(l)
+j
+∂w(l)
+j,kcambia con cada peso
+actualizado, mientras que las dem ´as se mantienen constantes
+dentro de la capa.
+Las derivadas parciales relevantes son:
+∂Li
+∂a(l)
+j= 2(a(l)
+j−yj)
+∂a(l)
+j
+∂z(l)
+j=g(z(l)
+j)(1−g(z(l)
+j))
+∂z(l)
+j
+∂w(l)
+j,k=a(l−1)
+k
+A partir de estas derivadas, los pesos y sesgos se actualizan
+siguiendo el descenso del gradiente:
+w(l)
+j,k←w(l)
+j,k−η∂Li
+∂w(l)
+j,k, b(l)
+j←b(l)
+j−η∂Li
+∂b(l)
+j
+donde ηrepresenta la tasa de aprendizaje.
+En redes m ´as profundas, al extender el c ´alculo hacia capas
+anteriores (l−1), el n ´umero de par ´ametros y combinaciones
+a derivar aumenta considerablemente, incrementando la com-
+plejidad computacional del algoritmo.

@@ -1,0 +1,3 @@
+Otra forma de hacer esto es convertir esa voz en espectro-
+gramas, la cual es un diagrama de tiempo y las frecuencias
+que produce la señal de audio. Con esto se produce un patron.

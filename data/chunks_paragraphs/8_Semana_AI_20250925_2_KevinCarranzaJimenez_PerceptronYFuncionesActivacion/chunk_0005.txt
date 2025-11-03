@@ -1,0 +1,32 @@
+Ademas, advirtieron sobre su limitada expresivi-
+dad computacional y su escasa capacidad para generalizar en
+problemas mas complejos, lo que contradecia las expectativas
+iniciales de que los perceptrones pudieran resolver tareas
+de vision y reconocimiento de patrones. Estas observaciones
+demostraron que, aunque los perceptrones eranutiles para
+ciertos problemas lineales, su aplicacion practica era muy
+limitada. El impacto de estas criticas fue significativo, con-
+tribuyendo al primer invierno de la inteligencia artificial, hasta
+que el desarrollo del perceptron multicapa y el algoritmo de
+retropropagacion permitieron superar estas restricciones [5]. B. Inspiracion Biologica
+Las redes neuronales artificiales se inspiran en el fun-
+cionamiento de las neuronas del cerebro humano, donde cada
+neurona recibe señales de multiples conexiones sinapticas, las
+procesa y genera una respuesta que se transmite a otras neu-
+ronas. De manera analoga, en las redes neuronales artificiales,
+cada nodo o “neurona” recibe entradas ponderadas, aplica una
+funcion de activacion y transmite su salida a las siguientes
+capas, reproduciendo de forma simplificada el procesamiento
+distribuido y paralelo del sistema nervioso biologico. Esta
+inspiracion biologica se ilustra en la Figura 2, donde se
+muestra la correspondencia entre una neurona biologica y su
+modelo artificial. C. Funcion de Activacion
+En regresion logistica se llama funcion no-lineal (sigmoid). Esta depende de si la señal activa o no la neurona. Dependi-
+endo de la intensidad de la señal que se haya recibido, esta
+dejara pasar la informacion, la bloqueara o la transformara y
+existen varias funciones de activacion. 1) Funcion Sigmoide: La funcion sigmoide transforma un
+valor de entrada en un rango entre 0 y 1, lo que permite
+interpretarla como una probabilidad. Su desventaja principal es
+la saturacion de gradientes en valores extremos, lo que dificulta
+el entrenamiento en redes profundas [6]. σ(x) =1
+1 +e−x

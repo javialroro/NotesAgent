@@ -1,0 +1,31 @@
+N OTICIAS Y CONTEXTO RECIENTE
+En esta parte de la clase se discutio brevemente la impor-
+tancia de asistir a charlas organizadas por grupos estudiantiles
+como IEEE, ya que estas actividades permiten el contacto con
+profesionales delarea y fomentan tanto el aprendizaje com-
+plementario como la creacion de redes de colaboracion que
+pueden abrir oportunidades laborales en el futuro. Asimismo,
+se menciono el surgimiento de nuevas versiones de modelos
+de lenguaje como GPT-5. Aunque se destaco su relevancia
+en elambito de la Inteligencia Artificial, se comento que la
+recepcion por parte de los usuarios no fue del todo positiva. Mas alla de esta observacion, no se abordaron en detalle otras
+noticias recientes durante la sesion.III. R EPASO DE MATEMATICA :´ALGEBRA LINEAL
+En esta parte de la clase retomamos conceptos basicos dealgebra lineal, que son fundamentales para entender la Inteli-
+gencia Artificial. Como textos de apoyo se usaron Introduccion
+a la Inteligencia Artificial yDive into Machine Learning –
+Algebra, Capitulo 2 . A continuacion se resumen los puntos
+mas importantes. III-A. Vectores y Representacion
+Un vector es un objeto matematico con direccion y magni-
+tud, definido en un espacio N-dimensional. En 2D o 3D se
+puede representar graficamente, pero en dimensiones mayores
+(4D, 500D, etc.) aunque no se pueda visualizar, si se puede
+operar matematicamente. Figura 1. Representacion grafica de un vector. Un vector se puede ver como un segmento con un punto
+inicial y uno final; la operacion fundamental es restar las
+coordenadas correspondientes. Normalmente se asume que
+todos los vectores parten del origen (0,0)y los ejes dependen
+de la dimension que estemos usando. III-B. Vectores en Lenguaje Natural
+En IA, las palabras se pueden representar como vectores en
+un espacio semantico. Por ejemplo, las palabras Rey, Reina,
+Hombre, Mujer pueden combinarse de forma vectorial para
+ver relaciones: Rey - Hombre + Mujer da un vector cercano
+aReina .

@@ -1,0 +1,2 @@
+ees el exponente con un sesgo de127(en el caso de
+float32).

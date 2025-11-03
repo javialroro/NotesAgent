@@ -1,0 +1,22 @@
+Notas practicas (mencionadas en clase).:
+Normalizar los pixeles al rango adecuado facilita la
+eleccion de la perdida.La eleccion entre comparacion pixel a pixel y una perdida
+para datos binarios depende del rango y la interpretacion
+de los pixeles. Cuando la calidad visual importa, ademas de la perdida
+de entrenamiento suele evaluarse la reconstruccion con
+metricas perceptuales (p. ej. SSIM) para complementar
+la evaluacion numerica. III-D. Variantes y su proposito
+III-D0a. Denoising:Entrenar conx ruidosa y objetivo
+xlimpio. El modelo aprende a eliminar ruido especifico (ej. Salt-and-Pepper). III-D0b. Under-/Overcomplete:Latente mas pequeño
+obliga a comprimir; latente mayor puede memorizar en exceso. III-D0c. VAE:Permite muestrear y hacer interpolacion
+en un espacio continuoutil para generacion. La combinacion
+de reconstruccion y KL genera latentes con estructura es-
+tadistica. Ver Figura 2 para ilustracion de muestreo y espacio
+latente continuo. Figura 2: Representacion del muestreo en V AE
+III-E. Aplicaciones practicas
+III-E0a. Reduccion de dimensionalidad:Guardarzen
+una base de datos vectorial. Comparar vectores con similitud
+de coseno:
+sim(u, v) =u·v
+∥u∥∥v∥. Usos: busqueda por similitud, indexacion y como entrada
+comprimida para clasificadores simples (KNN).

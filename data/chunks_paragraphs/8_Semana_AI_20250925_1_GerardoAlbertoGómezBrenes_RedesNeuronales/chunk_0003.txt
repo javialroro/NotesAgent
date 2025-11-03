@@ -1,0 +1,15 @@
+IX. COSTOS COMPUTACIONALES Y DIMENSIONALIDAD
+Aumentar neuronas y capas incrementa parametros y costo
+de optimizacion. Lamaldicion de la dimensionalidadcomplica
+la busqueda de soluciones optimas. Ejemplo: si una capa tiene
+256 neuronas y la siguiente tiene 10, los pesos entre ellas son
+10×256 = 2 560.
+Recomendacion practica: reducir dimensiones innecesarias
+(filtrado de features, PCA) cuando sea posible.
+X. NOTAS SOBRE REPRESENTACIONES Y
+CNN/EMBEDDINGS
+Para imagenes, las CNN aplican kernels que extraen pa-
+trones locales (bordes, texturas, formas). En lenguaje,embed-
+dingscondensan palabras o frases en vectores de dimension
+fija; la similitud semantica se mide por distancia en ese espacio
+vectorial.

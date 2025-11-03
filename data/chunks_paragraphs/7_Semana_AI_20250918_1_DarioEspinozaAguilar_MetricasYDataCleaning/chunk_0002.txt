@@ -1,0 +1,36 @@
+En esta matriz se tienen los
+Target Class que es la etiqueta tenemos en el dataset y el
+predicted class que es la prediccion de nuestro modelo. Los
+cuatros combinaciones•TP: True positive
+•TN: True negative
+•FP: False positive
+•FN: False negative
+A partir de estos se pueden hacer varias combinaciones
+para calcular ciertas metricas
+1) Accuracy: Clasificacion correcta entre todos los intentos. La formula es la siguiente:
+Accuracy =TP+TN
+TP+TN +FP +FN
+Esutil cuando los errores por clase son igual de importantes. Otorga importancia igual a todas las claases. 2) Precision: Mide los errores tipo 1 (FP). Tasa de predic-
+ciones positivas correctas entre todas las predicciones positi-
+vas. Precision =TP
+TP+FP
+3) Recall: Mide los errores de tipo 2 (FN). Tasa de
+predicciones correctas entre todos los ejemplos positivos del
+conjunto de datos. Recall =TP
+TP+FN
+4) F1-Score: Esta es un metrica que contempla ambos
+errores. Comunmente utilizada en problemas de clasificacion,
+especialemnte cuando tenemos desequelibrio de clases. F1 =2·precision ·recall
+precision +recall
+A. ROC (Receiver Operating Characteristic)
+Elarea bajo la curva siempre tiene que ser >0.5. Si es = 5
+lo que vamos a tener es un random clasifier, es un clasificador
+aleatorio. Si es cada vez mayor a 0.5 el modelo va siendo
+mejor. III. R ESPASO DE PROCESAMIENTO DE DATOS
+En la practica podemos tener ciertos problemas con nuestros
+datos:
+•Incompletitud: valores faltantes en atributos importantes
+•Inexactitud o ruido: errores y valores atipico en las
+transacciones
+•Inconsistencia: discrepancia en lo codigo de departamen-
+tos o categoria

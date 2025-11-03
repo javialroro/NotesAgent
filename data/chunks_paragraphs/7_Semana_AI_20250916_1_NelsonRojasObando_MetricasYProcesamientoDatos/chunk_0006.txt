@@ -1,0 +1,46 @@
+F1-Score:es la media armonica entre precision y exhaus-
+tividad, util cuando existe un desbalance de clases:
+F1 = 2·Precision·Recall
+Precision+Recall
+Caso de estudio:Dado un conjunto de 1000 pacientes se
+han realizado estudios para determinar la presencia de cancer. Del total de pacientes, 30 son pacientes con cancer (clase
+positiva) y 970 pacientes sin cancer (clase negativa). Matriz de confusion:
+Prediccion/Objetivo Cancer No cancer
+Cancer 25 (TP) 20 (FP)
+No cancer 5 (FN) 950 (TN)
+Metricas de evaluacion:
+Accuracy:
+Accuracy=TP+TN
+Total=25 + 950
+1000= 0,975 (97,5 %)
+Recall (Sensibilidad):
+Recall=TP
+TP+FN=25
+25 + 5= 0,833 (83,3 %)
+Indica la capacidad del modelo para identificar correc-
+tamente a los pacientes con cancer. A pesar del alto
+accuracy, elrecallmuestra espacio de mejora en la
+deteccion de la clase positiva (cancer). Precision:
+Precision=TP
+TP+FP=25
+25 + 20= 0,55 (55 %)
+El modelo presenta una baja precision, lo cual implica
+que muchas predicciones positivas son en realidad fal-
+sos positivos. Este valor debe considerarse con cautela,
+dependiendo del contexto clinico. F1-Score:
+F1 =2·Precision·Recall
+Precision+Recall=2·0,55·0,833
+0,55 + 0,833≈0,662 (66,2 %)
+ElF1-scorerefleja un balance bajo entre precision y
+sensibilidad, indicando que la capacidad del modelo para
+clasificar correctamente la clase minoritaria (cancer) aun
+no es adecuada. Otras metricas no tan basicas:
+Receiver Operating Characteristic (ROC)
+Lacurva ROCes una representacion grafica que muestra
+el rendimiento de un clasificador binario a diferentes
+umbrales de decision. En el ejexse representa la tasa de
+falsos positivos (FPR) y en el ejeyla tasa de verdaderos
+positivos (TPR oRecall). Una curva mas cercana a la
+esquina superior izquierda indica un mejor desempeno
+del modelo. Area Under the Curve (AUC)
+ElAUCcorresponde al area bajo la curva ROC.

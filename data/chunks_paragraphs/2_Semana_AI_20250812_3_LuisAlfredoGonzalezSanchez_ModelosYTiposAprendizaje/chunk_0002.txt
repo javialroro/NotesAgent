@@ -1,0 +1,27 @@
+Definicion de parametros
+•Parametros : Son los datos que se le configuran al
+modelo, permiten controlar el comportamiento de sus
+algoritmos
+•Hiperparametros : Son todos los valores que el mod-
+elo aprende a partir de los datos de entrenamiento,
+le permiten al modelo identificar errores y ajustar sus
+algoritmos.C. La jerarquia de conceptos en IA
+Observe la figura 1. Fig. 1. Jerarquia de conceptos IA
+D. ¿Que es machine learning ? Consiste en generar maquinas o programas a partir de
+algoritmos que sean capaces de resolver un problema a partir
+de inferencias. En este contexto se busca que , a partir de datos
+de entrada (y en ocasiones con sus resultados) donde el sistema
+sea capaz de resolver problemas en base a los datos que ya
+posee sin que se le explique como resolverlo. Considerando lo
+anterior , se describe a continuacion los tipos de aprendizaje
+en machine learning. III. T IPOS DE APRENDIZAJE
+A. Aprendizaje supervisado
+Tipo de aprendizaje que involucra un conjunto de datos con
+caracteristicas y una respectiva etiqueta, esa etiqueta asocia
+dichas caracteristicas con un valor. La etiqueta supervisa y
+corrige las aproximaciones dadas por la funcion planteada para
+obtener mejores resultados, una forma de visualizarlo es de la
+siguiente manera :
+x={xi, yi}
+donde x representa mi caracteristica, xi representa la etiqueta
+y yi, representa el resultado ”supervisado” por la etiqueta.

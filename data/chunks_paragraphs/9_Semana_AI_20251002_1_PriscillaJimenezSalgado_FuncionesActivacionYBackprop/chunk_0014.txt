@@ -1,0 +1,22 @@
+Con esto se logra actualizar los pesos de la capa𝑙,
+aunque las derivadas no cambian, si deben manejarse
+masindices a medida que la red crece en complejidad.
+Capa𝑙−1
+Cuando el calculo debe extenderse hacia una capa
+anterior, como la capa𝑙−1, el procedimiento se vuelve
+mas complejo. Esto ocurre porque, segun el tamaño
+de la siguiente capa, el algoritmo requiere combinar
+mas conexiones y parametros, lo que incrementa la
+dificultad del calculo.
+𝛿𝐿𝑖
+𝛿𝑎(𝑙−1)
+𝑘=𝑛𝑙∑
+𝑗=1𝛿𝑧(𝑙)
+𝑗
+𝛿𝑎(𝑙−1)
+𝑘𝛿𝑎(𝑙)
+𝑗
+𝛿𝑧(𝑙)
+𝑗𝛿𝐿𝑖
+𝛿𝑎(𝑙)
+𝑗

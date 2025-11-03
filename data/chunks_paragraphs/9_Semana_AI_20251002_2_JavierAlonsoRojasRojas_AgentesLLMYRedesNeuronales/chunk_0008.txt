@@ -1,0 +1,40 @@
+Fig. 6. Uso de Softmax
+Fig. 7. Forward Propagation y Back Propagation
+VI. B ACKPROPAGATION
+El algoritmo de backpropagation permite calcular cuanto
+contribuye cada peso al error final de la red, actualizando los
+parametros en la direccion opuesta a la propagacion hacia
+adelante. Este proceso es esencial para que la red neuronal
+aprenda y mejore su desempeño durante el entrenamiento. Esto
+representado en la figura 7. A. Forward Propagation
+Consiste en calcular la salida de la red, enviando los datos
+desde la capa de entrada hacia las capas ocultas hasta obtener
+la salida final. B. Backpropagation
+implica propagar el error desde la capa de salida hacia las
+capas anteriores, calculando las derivadas parciales respecto a
+los pesos y sesgos para ajustar los parametros del modelo. C. Optimizacion del grafo computacional
+Consideremos una red neuronal como la de la figura 8,
+donde cada capa contiene unaunica neurona y la funcion de
+activacion utilizada es la sigmoide. El calculo se puede dividir
+en las siguientes partes:
+•Funcion de perdida (MSE):
+Li= (a(L)−yi)2
+donde a(L)es la salida de la red y yiel valor esperado. •Entrada:
+z(L)=w(L)a(L−1)+b(L)
+•Salida:
+a(L)=g(z(L))
+Fig. 8. Red neuronal simple
+Fig. 9. Red neuronal mas compleja
+donde grepresenta la funcion de activacion. Los parametros w(L)yb(L)se actualizan utilizando la regla
+de la cadena, derivando el error con respecto a cada parametro
+y aprovechando la salida de la capa anterior. D. Vector gradiente
+Elvector gradiente esta formado por todas las derivadas
+parciales de los parametros (pesos y sesgos) de la red. Durante
+el calculo del gradiente se identifican operaciones repetidas,
+lo que permite optimizar los calculos en el algoritmo de back-
+propagation mediante reutilizacion de resultados intermedios
+(cache). E. Redes con multiples neuronas
+En redes con mayor dimensionalidad como la de la figura
+9, se introducen notaciones adicionales:
+•Superindice: indica la capa. Ejemplo: a(l)representa la
+activacion en la capa l.

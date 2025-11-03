@@ -1,0 +1,3 @@
+Sin
+embargo, presenta el problema de que su derivada se
+aproxima a cero en los extremos de la funcion, lo que

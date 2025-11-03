@@ -1,0 +1,33 @@
+NOTAS DE CLASE
+INTELIGENCIA ARTIFICIAL - 23 DE OCTUBRE - SEMANA 12
+Luis Alfredo Gonzalez Sanchez
+Escuela de Ingenieria en Computacion
+Instituto Tecnologico de Costa Rica
+Cartago, Costa Rica
+2021024482 gonzal3z.luis@estudiantec.cr
+Abstract —Neural network quantization is a vital technique in
+AI that reduces model size and computational cost by converting
+weights and activations from floating-point to lower-precision
+formats, such as integers. This process enables deployment on
+resource-constrained devices, like mobile or embedded systems,
+while maintaining high accuracy. Different methods include
+symmetric and asymmetric quantization, with strategies tailored
+to specific data distributions and hardware constraints. Dy-
+namic, granular, and post-training quantization further refine
+this approach by adjusting intervals per layer, per sample, or
+after training, respectively. These techniques involve calculating
+scaling factors and zero points to effectively map high-precision
+values to lower-bit representations, introducing minimal accuracy
+loss. Overall, quantization enhances efficiency, reduces power
+consumption, and facilitates real-time AI applications, making
+it a cornerstone of practical deep learning deployment. Index Terms —Quantization in neural networks,model com-
+pression,QAT quantization techniques,integer representation
+I. I NTRODUCTION
+La cuantizacion en redes neuronales es una tecnica esencial
+para mejorar la eficiencia del computo y reducir el tamaño
+de los modelos, principalmente transformando los datos de
+punto flotante a formatos de menor precision, como enteros. Esta transformacion permite que los modelos se ejecuten de
+manera mas rapida y con menor consumo de memoria, lo
+cual es fundamental para desplegar inteligencia artificial en
+dispositivos con recursos limitados, como moviles y sistemas
+embebidos.

@@ -1,0 +1,29 @@
+Figura 1: Esquema general de encoder, espacio latente y
+decoder. funcion de perdida son elencoder—que produce el vector
+latente o, en variantes probabilisticas, los parametros de una
+distribucion— y eldecoder—que genera la reconstruccionx
+a partir de ese latente. III-C0a. Perdida de reconstruccion.:Es la medida prin-
+cipal que compara la entrada y la salida del autoencoder. Su funcion es indicar cuanto error comete el modelo al
+reconstruir. Segun el tipo de datos y su normalizacion se elige
+la forma practica de esta perdida:
+Para imagenes normalizadas en[0,1]es comun usar una
+perdida basada en la comparacion pixel a pixel (men-
+cionada en clase como la opcion directa). El profesor
+comparo esta tecnica con el enfoque que usabamos en
+regresion para penalizar diferencias entre valores. Para imagenes con valores binarios o interpretadas co-
+mo probabilidades se emplea una perdida adecuada a
+ese caso (la alternativa binaria que se menciono en la
+presentacion). Lo que se obtiene con esta perdida es un indicador directo
+de calidad de reconstruccion. En aplicaciones como deteccion
+de anomalias se usa ese error (o una metrica derivada) para
+decidir si una muestra es atipica. III-C0b. Regularizacion en VAE (perdida adicional).:
+En la variante variacional el encoder no entrega un vector
+determinista sino parametros de una distribucion en el espacio
+latente. Ademas de la perdida de reconstruccion, se incorpora
+un termino que obliga a que la distribucion latente siga una re-
+ferencia (el profesor lo describio como forzar una distribucion
+continua, por ejemplo, normal). Ese termino de regularizacion:
+Proviene directamente de los parametros que calcula el
+encoder (media y dispersion en la clase). Su proposito es estructurar el espacio latente para que
+sea continuo y muestreable, permitiendo interpolacion y
+generacion controlada. III-C0c.

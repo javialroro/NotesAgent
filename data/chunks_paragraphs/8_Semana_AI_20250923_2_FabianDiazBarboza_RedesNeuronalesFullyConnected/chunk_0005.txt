@@ -1,0 +1,28 @@
+Por ejemplo,
+para determinar si la imagen corresponde al digito “5” o
+no, la decision puede tomarse a partir de las 10 salidas
+(o de una combinacion entrenada de ellas), en lugar de
+hacerlo directamente sobre los pixeles. De este modo, las
+capas previas actuan como extraedores de caracteristicas
+no lineales que potencian una decision binaria final mas
+robusta.5.4 Propiedades Esenciales de la Red
+1.Nolinealidad:lasfuncionesdeactivacion(sigmoide,
+ReLU, etc.) permiten que la red modelice relaciones
+no lineales entre entradas y salidas. 2.Capasyprofundidad:amayorprofundidad,mayor
+capacidad para representar abstracciones jerarquicas. 3.Diferenciabilidad:la diferenciabilidad de las fun-
+ciones internas es requisito para aplicar retropropaga-
+cion y optimizar los parametros mediante gradiente
+descendente. 6 Conclusiones
+En conclusion de la clase, las redes neuronales son como
+una evolucion natural de la regresion logistica: partien-
+do de la clasificacion binaria, pasando por la extension
+multinomial y compactando parametros mediante alge-
+bra lineal, se llega a arquitecturas fully connected que
+permiten mayor expresividad y paralelizacion. La ecua-
+cionz=Wx+bnos sintetiza el paso fundamental hacia
+la representacion matricial; pero el verdadero salto en
+capacidad proviene de combinar esa formulacion con fun-
+ciones de activacion no lineales y con multiples capas
+diferenciables, lo que habilita la retropropagacion y el
+entrenamiento eficiente de modelos capaces de abstraer
+caracteristicas complejas de datos como MNIST. 3

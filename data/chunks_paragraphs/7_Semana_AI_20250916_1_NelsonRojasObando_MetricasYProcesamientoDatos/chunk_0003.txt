@@ -1,0 +1,9 @@
+b)Transformaciones de los datos: aplicar transformacio-
+nes matematicas, como la transformacion logaritmica o
+la raiz cuadrada, puede reducir la influencia de valores
+extremos, estabilizando la varianza y mejorando la
+distribucion de los datos. c)Imputacion o sustitucion de valores: reemplazar
+los outliers por valores mas representativos, como la
+media, la mediana o un valor obtenido mediante inter-
+polacion. Esta tecnica conserva el tamano del conjunto
+de datos y es util cuando la eliminacion no es deseable.

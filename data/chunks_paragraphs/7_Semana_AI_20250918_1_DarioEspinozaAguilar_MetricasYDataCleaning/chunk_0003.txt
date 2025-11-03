@@ -1,0 +1,25 @@
+A. ¿Por que los datos pueden ser inexactos? •Instrumentos de recoleccion de datos defectuosos. •Errores humanos o computacionales en la entrada de
+datos. •Usuarios que ingresan valores falsos para campos obli-
+gatorios. –Conocido como datos faltantes disfrazados . •Inconsistencia en convenciones de nombres, codigos o
+formatos. •Tuplas duplicadas que requieren procesos de data clean-
+ing. B. ¿Por que los datos pueden estar incompletos? •Atributos de interes no siempre estan disponibles
+•No se incluyen porque no se consideraron importantes en
+el momento de la entrada
+•Datos relevantes no se registran por malentendidos o
+fallos del equipo
+•Datos inconsistentes con otros registros pueden ser elim-
+inados
+•Historial o modificaciones de datos pasados pueden no
+haberse registrado
+•Valores faltantes en atributos claves pueden necesitar ser
+inferidos
+C. ¿Por que los datos pueden ser inconsistentes? •Diferencias en convenciones de nombres o codigos usa-
+dos para clasificar elementos
+•Formatos de entrada distintos para un mismo atributo
+•Conflictos entre bases de datos o sistemas que manejan
+el
+•Errores al integrar datos de multiples fuentes het-
+erogeneas
+•Actualizaciones parciales o incorrectas que dejan reg-
+istros contradictorios
+D.

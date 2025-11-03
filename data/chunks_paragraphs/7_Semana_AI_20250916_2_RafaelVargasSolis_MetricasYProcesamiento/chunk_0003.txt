@@ -1,0 +1,15 @@
+Para reducir varianza (overfitting):
+•Aplicar regularizacion: Metodos como L1 (Lasso) y
+L2 (Ridge) añaden penalizaciones a los coeficientes del
+modelo, limitando su magnitud y evitando que el modelo
+se ajuste excesivamente a los datos de entrenamiento. •Aumentar los datos o usar tecnicas de ensamble:
+Incrementar el tamaño del conjunto de entrenamiento o
+aplicar metodos como bagging yrandom forest mejora la
+estabilidad del modelo y reduce la sensibilidad al ruido
+de los datos. 4. ¿Cual es la derivada de la funcion sigmoide σ(x) =
+1
+1+e−x? La funcion sigmoide se define como:
+σ(x) =1
+1 +e−x(1)
+Su derivada es:
+σ′(x) =σ(x) (1−σ(x)) (2)

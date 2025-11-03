@@ -1,0 +1,21 @@
+•Data scientist : Son las personas encargadas de realizar
+la recoleccion y la preparacion de los datos, de tal manera
+que sean aplicables para el entrenamiento de los modelos
+u algoritmos. •Research scientist : A diferencia de los data scientist ,
+los research scientist se encargan de investigar y proponer
+proponer nuevos modelos, algoritmos o modelos. B. Machine learning: Ingenieria
+•Puesta en produccion del modelo : Es necesario la
+continua monitorizacion del modelo antes de la puesta a
+produccion y pasado un tiempo, se busca realizar correc-
+ciones, monitorizar si los resultados o salidas mantienen
+una distribucion normal probabilistica y como el progreso
+de entrenamiento luego de la puesta en produccion mueve
+dicha distribucion, es decir , dar seguimiento a las salidas. •Transformar el modelo :Hace referencia a todas las
+estrategias y cambios requeridos para adaptar el modelo
+segun los requerimientos especificados , por ejemplo,
+si se dispone de un modelo en python, cuales son las
+estrategias para adaptarlo en otras plataformas como c++
+o movil , una de dichas estrategias es la reduccion del
+peso del modelo. •Onnx : Es una herramienta que facilita la portabilidad de
+modelos entre plataformas y dispositivos, optimizando y
+reduciendo el tamaño del modelo.

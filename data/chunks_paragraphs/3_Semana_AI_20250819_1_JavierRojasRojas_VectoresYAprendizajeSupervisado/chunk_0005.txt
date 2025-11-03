@@ -1,0 +1,49 @@
+1)Ejemplo: Vector y su vector unitario :Se considera v=
+(4,3)y su vector unitario u= (0.80,0.60). v= (4,3),u= (0.80,0.60)
+Paso 1: Calcular el producto punto
+u·v= 0.80·4 + 0 .60·3 = 3 .2 + 1 .8 = 5 .0
+Paso 2: Calcular las normas
+∥u∥=p
+0.802+ 0.602=√
+0.64 + 0 .36 =√
+1 = 1
+∥v∥=p
+42+ 32=√
+16 + 9 =√
+25 = 5
+Paso 3: Usar la identidad del coseno
+cos(θ) =u·v
+∥u∥ · ∥v∥=5
+1·5= 1⇒θ= cos−1(1) = 0◦
+Conclusion:Se demuestra que elangulo entre dos vectores
+co-direccionales es cero. H.¿Que ocurre si calcula el producto punto consigo mismo? Se sabe que un vector es co-direccional consigo mismo , por
+lo tanto suangulo es de 0◦:
+u·u=∥u∥ · ∥u∥ ·cos(0◦)
+u·u=∥u∥2
+Se puede expresar la distancia L2 en terminos de producto
+punto :√u·u=∥u∥
+Si se tiene solamente el vector u, se puede calcular su
+magnitud , o hacer la operacion inversa . I.¿Que sucede con vectores que tienenangulo de 90◦? Cuando dos vectores forman unangulo de 90◦:
+u·v=∥u∥ · ∥v∥ ·cos(90◦) =∥u∥ · ∥v∥ ·0 = 0
+El producto punto en este caso seriacero. Se dice que estos
+vectores son perpendiculares . Fig. 5. Ejemplo vectores conangulo de 90◦J.Ortogonalidad
+Dos vectores xyysonortogonales si y solo si:
+x·y= 0
+y se denota como x⊥y. K.Ortonormalidad
+Si ademas de ser ortogonales, ∥x∥= 1y∥y∥= 1, es decir,
+ambos vectores son unitarios , entonces se dice que xyyson
+ortonormales . III. SUPERVISED LEARNING
+Se tiene un dataset, donde se tiene un conjunto de ejemplos
+que se toma de algun fenomeno, y unas etiquetas que nos
+ayudaran a realizar nuestro proceso de aprendizaje. A.Feature
+•Es una propiedad o atributo medible de una entidad. •Normalmente se representa numericamente para ser
+procesada
+•Ejemplos:
+–Altura de una casa
+–Peso de un individuo
+–Intensidad de un pixel en una imagen
+B.Vector de caracteristicas
+Se denota un vector de caracteristicas como
+x= (x1,x2, . . . ,xD)∈RD
+Donde cada xies un feature . Este vector agrupa todas las
+propiedades de un ejemplo en una sola estructura.

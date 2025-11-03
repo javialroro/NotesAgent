@@ -1,0 +1,154 @@
+Apuntes IA Clase 7/10
+Gianmarco Oporta Perez
+Ingenieria en Computacion
+Instituto Tecnologico de Costa Rica
+San Jose, Costa Rica
+gooporta@estudiantec.cr
+Abstract —El presente documento recopila los apuntes de la
+clase del 7 de octubre, correspondientes al curso de Inteligencia
+Artificial. Se abordan los lineamientos del Proyecto 1, centrado
+en redes neuronales convolucionales aplicadas al reconocimiento
+de voz mediante espectrogramas, asi como los fundamentos
+teoricos de las redes convolucionales y su aplicacion en tareas
+de clasificacion y segmentacion de imagenes.
+Index Terms —Inteligencia Artificial, Redes Neuronales Con-
+volucionales, Clasificacion de Audio, PyTorch, Espectrogramas
+I. R ESULTADOS DEL QUIZ5
+Se realizo el quiz 5 durante el inicio de la sesion, la cual
+contiene las siguientes preguntas:
+•Pregunta: Describa que es una red totalmente conectada.
+R/Es una red neuronal en la cual cada neurona esta
+conectada con todas las neuronas de la capa siguiente,
+de principio a fin.
+•Pregunta: Mencione tres funciones de activacion no
+lineales.
+R/ReLU, Sigmoide y Tanh.
+•Pregunta: Describa los cuatro componentes principales
+de un agente LLM.
+R/
+– Perfil: Define la identidad o personalidad del agente,
+determinando su tono, estilo de comunicacion y
+comportamiento general.
+– Memoria: Permite conservar informacion relevante
+de interacciones anteriores o resultados previos, fa-
+cilitando la continuidad y el contexto en tareas
+extensas.
+– Herramientas: Corresponden a recursos o funciones
+externas que el agente puede invocar para realizar
+operaciones especificas o acceder a informacion adi-
+cional.
+– Planificacion o razonamiento: Consiste en la ca-
+pacidad del agente para interpretar las instrucciones
+del usuario, elaborar estrategias y seleccionar la
+accion mas apropiada segun el objetivo planteado.
+•Pregunta: Describa la diferencia entre sistemas de agenteunico y sistemas multiagentes.
+R/Un agenteunico percibe su entorno, toma decisiones
+y ejecuta acciones de manera independiente, mientras
+que los sistemas multiagentes estan conformados pormultiples agentes que colaboran o compiten entre si
+y con su entorno para alcanzar objetivos comunes o
+individuales.
+II. D ESCRIPCION DEL PROYECTO
+El primer proyecto tiene como objetivo aplicar redes neu-
+ronales convolucionales (CNN) en la tarea de reconocimiento
+de voz a partir de espectrogramas. Su proposito es desarrollar
+un modelo de clasificacion multiclase capaz de identificar
+distintos tipos de sonidos, tales como vocalizaciones humanas
+y animales, instrumentos musicales o ruidos ambientales.
+Para lograrlo, se utiliza un conjunto de datos publico ori-
+entado a la clasificacion de audio, en el cual cada muestra
+corresponde a una grabacion corta etiquetada con su clase
+correspondiente. Antes del entrenamiento, las señales acusticas
+son transformadas en representaciones visuales denominadas
+espectrogramas, las cuales se emplean como entrada a las
+redes convolucionales.
+El proyecto requiere la construccion manual de dos modelos
+empleando PyTorch sin librerias de alto nivel:
+•Modelo A: Variante clasica de LeNet-5 adaptada al
+reconocimiento de audio mediante espectrogramas.
+•Modelo B: Arquitectura alternativa fundamentada en
+literatura academica o en un diseño propio justificado
+teoricamente.
+Se deben generar dos versiones del conjunto de datos: una
+con los audios transformados a imagenes (base) y otra con
+versiones aumentadas mediante tecnicas de data augmentation
+orientadas al dominio del audio. Este proceso busca incremen-
+tar la robustez del modelo y su capacidad de generalizacion.
+Durante la fase de entrenamiento se construyen cu-
+atro combinaciones principales: Modelo A/Base, Modelo
+A/Aumentado, Modelo B/Base y Modelo B/Aumentado. Cada
+modelo se entrena con diferentes hiperparametros, evaluando
+su desempeño con metricas como precision, perdida, F1-Score
+y matriz de confusion. La herramienta Weights & Biases se
+utiliza para monitorear y visualizar los resultados durante el
+entrenamiento.
+Finalmente, los modelos seleccionados se comparan para
+determinar el de mejor rendimiento general. El informe debe
+presentarse en formato IEEE, acompañado del codigo fuente
+y el cuaderno en Jupyter Notebook.
+
+III. A SPECTOS PRACTICOS DEL PROYECTO
+El desarrollo debe realizarse en PyTorch, construyendo
+manualmente cada capa de la red. Es necesario registrar
+todas las metricas relevantes utilizadas en clases anteriores,
+incluyendo la perdida, precision y F1-Score. Dado que los
+espectrogramas generados pueden ser pesados, se recomienda
+reducir su resolucion a 224 pixeles por lado.
+La fecha tentativa de entrega fue establecida para el jueves
+30 de octubre. Se espera que los modelos implementados sean
+completamente reproducibles y que incluyan mecanismos de
+control de aleatoriedad y registro de resultados.
+IV. F UNDAMENTOS DE REDES NEURONALES
+CONVOLUCIONALES
+Las redes neuronales convolucionales (CNN, por sus siglas
+en ingles) representan una evolucion de las redes neuronales
+tradicionales orientadas al procesamiento de datos estruc-
+turados espacialmente, como imagenes o espectrogramas. A
+diferencia de las redes completamente conectadas, las CNN
+aprenden patrones espaciales y jerarquicos de manera eficiente.
+Hasta este punto del curso, se ha trabajado con redes
+que reciben un vector de caracteristicas como entrada, lo
+transforman mediante capas ocultas y producen una salida.
+Sin embargo, este enfoque no considera la estructura espacial
+de los datos, lo cual puede generar errores al mover, rotar o
+escalar los objetos dentro de una imagen.
+A. Ejemplo: Dataset CIFAR-10
+El conjunto de datos CIFAR-10 se utiliza frecuentemente
+para experimentacion en vision por computadora. Contiene
+imagenes a color de tamaño32×32×3, representando diez
+clases diferentes.
+Aunque cada imagen es relativamente pequeña, una version
+de mayor resolucion, por ejemplo 200×200×3, aumentaria
+drasticamente el numero de parametros de entrada, lo que
+dificultaria la escalabilidad del modelo.
+B. Estructura de una Red Convolucional
+En una red convolucional, las neuronas se organizan en
+tres dimensiones: ancho, alto y profundidad. Cada neurona
+esta conectadaunicamente a una pequeña region de la capa
+anterior, en lugar de estar completamente conectada, lo cual
+reduce la complejidad y mejora la eficiencia computacional.
+Las capas principales que componen una CNN son:
+•Capa convolucional: Calcula las salidas de las neuronas
+conectadas a regiones locales de la capa anterior.
+•Capa de agrupamiento (pooling): Reduce el tamaño
+espacial de las representaciones, manteniendo las carac-
+teristicas mas relevantes.
+•Capa completamente conectada (fully connected):
+Transforma la representacion final en probabilidades de
+pertenencia a una clase especifica.
+A medida que las imagenes avanzan a traves de las capas
+convolucionales y de agrupamiento, se reduce su tamaño
+espacial, pero aumenta la abstraccion de las caracteristicas
+aprendidas.
+Fig. 1. redes convolucionales
+C. Aplicaciones Comunes
+Las redes convolucionales se aplican ampliamente en diver-
+sas tareas de vision artificial, entre las que destacan:
+•Clasificacion de imagenes.
+•Segmentacion de objetos.
+•Segmentacion de instancias.
+•Procesamiento general de imagenes.
+Estas arquitecturas han demostrado una gran eficacia en
+problemas de reconocimiento visual, deteccion de patrones y
+procesamiento de señales en el dominio de la vision.
+REFERENCES
+[1] S. Pacheco, “Convolutional Neural networks” Presentacion,

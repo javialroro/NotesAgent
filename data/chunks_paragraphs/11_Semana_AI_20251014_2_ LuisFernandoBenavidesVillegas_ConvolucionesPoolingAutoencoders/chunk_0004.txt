@@ -1,0 +1,30 @@
+Elpoolingreduce el ancho y el alto de la imagen, pero
+conserva la cantidad de canales, por lo que con entrada de
+tamañoW×H×D, el pooling reduceWyH, manteniendo
+D. Esto evita que el modelo crezca en cantidad de parametros
+y mantiene la informacion esencial para las siguientes capas. E. Capa Fully-Connected
+Tras las etapas de convolucion y pooling, la red produce
+un vector que resume las caracteristicas mas relevantes de la
+imagen. Este vector se conecta a una o variascapas totalmente
+conectadas. Cada neurona de estas capas esta conectada con
+todas las salidas anteriores, permitiendo combinar las carac-
+teristicas extraidas para realizar la clasificacion final. El perceptron multicapa (MLP) se encarga de transformar
+este vector en una prediccion, como la probabilidad de perte-
+nencia a una clase especifica. F . Arquitecturas Convolucionales
+1) Estructura General:Una arquitectura convolucional se
+compone de bloques repetidos de:
+Convolucion→Activacion→Pooling
+Estos bloques se repiten varias veces para extraer informacion
+progresivamente mas abstracta. Posteriormente, el resultado se
+aplana (flatten) y se conecta a una o mas capasfully connected
+para la clasificacion. Se recomienda el uso de filtros pequeños (por ejemplo,3×3
+o5×5) ya que permiten:
+•Reducir la cantidad de parametros a aprender. •Capturar relaciones no lineales al encadenar multiples
+capas. Filtros grandes (7×7o mas) capturan mas informacion en
+una sola capa, pero aumentan excesivamente el numero de
+parametros y reducen la no linealidad. 2) Reglas Practicas:
+•Es preferible que las dimensiones de las imagenes sean
+divisibles entre 2 para facilitar las reducciones conmax
+pooling. •En general, se utilizastridede 2 ypaddingde 1 para
+mantener dimensiones manejables. •Elpoolingde2×2es el mas comun, reduciendo la
+imagen a la mitad en cada dimension.

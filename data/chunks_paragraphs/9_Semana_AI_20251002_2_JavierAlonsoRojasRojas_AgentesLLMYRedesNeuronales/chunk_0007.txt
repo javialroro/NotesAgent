@@ -1,0 +1,42 @@
+Su definicion matematica es la siguiente:
+g(x) =(
+αx, six <0
+x, six≥0
+La derivada correspondiente es:
+dg(x)
+dx=(
+α, six <0
+1,six≥0
+El parametro αse entrena junto con el resto de los pesos de
+la red, lo que otorga al modelo mayor flexibilidad y capacidad
+de adaptacion frente a distintas distribuciones de datos. Por
+esta razon, la PReLU suele ofrecer un mejor desempeño en
+arquitecturas profundas donde la ReLU estandar podria perder
+gradiente. E. Softmax
+La funcion Softmax transforma las salidas de la capa final
+en una distribucion de probabilidad, como vemos en la figura
+6. Su expresion se define como:
+σ(x)j=exj
+PK
+k=1exk
+donde cada valor xjse denomina logit. Esta funcion se utiliza
+principalmente en problemas de clasificacion multiclase, ya
+que garantiza que todas las salidas sean positivas y sumen 1. •El uso de exasegura una funcion estrictamente creciente
+y evita valores negativos. •Se emplea junto con la funcion de perdida Cross-
+Entropy Loss , tambien llamada Log-Loss . La perdida se define como:
+L=−logP(Y=yi|X=xi)
+y, en el caso multiclase:
+L=−logesk
+PC
+j=1esj
+F . Seleccion de la funcion de activacion
+La eleccion de la funcion de activacion depende del tipo de
+problema y la arquitectura de la red. Las funciones Sigmoid y
+Tanh tienden a sufrir el problema del gradiente desvanecido,
+por lo que no son recomendadas para redes profundas. En
+la practica, se suele comenzar con la funcionReLU por
+su eficiencia computacional y buen rendimiento en modelos
+deDeep Learning . Si esta presenta problemas (por ejemplo,
+neuronas muertas), se pueden utilizar variantes como Leaky
+ReLU oParametric ReLU , que permiten mantener un flujo
+de gradiente estable incluso en valores negativos.

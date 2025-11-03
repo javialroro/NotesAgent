@@ -1,0 +1,55 @@
+Fig. 2: Derivada de la funcion sigmoide
+D. Verosimilitud vs. Error cuadratico
+Mientras que el error cuadratico medio (MSE) es ideal para
+predecir valores continuos, la verosimilitud se utiliza cuando
+el resultado es una probabilidad. En regresion logistica, se
+busca maximizar la probabilidad de que el modelo asigne la
+clase correcta a cada ejemplo. La Figura 3 compara ambos
+enfoques.
+Fig. 3: Comparacion entre MSE y verosimilitud
+E. Interpretacion de la verosimilitud
+La verosimilitud se entiende como la probabilidad de obser-
+var los datos dados los parametros actuales. Analicemos los
+casos:
+•Casoy i= 1:La probabilidad esσ(wx+b). Ejemplo:
+wx+b= 1.458 =⇒σ(1.458) = 0.81. Esto significa
+que hay un 81% de probabilidad de que la calabazano
+sea naranja, como se muestra en la Figura 4.
+•Casoy i= 0:La probabilidad es1−σ(wx+b). Ejemplo:
+wx+b=−1.32 =⇒σ(−1.32) = 0.21. Entonces
+1−0.21 = 0.79, lo que se interpreta como un 79% de
+probabilidad de que la calabazasi sea naranja(Figura 5).
+F . Uso de logaritmos
+Multiplicar probabilidades pequeñas genera valores cer-
+canos a cero, causando inestabilidad. Aplicando logaritmos se
+transforma en sumas:
+ln(L) =X
+yiln(fw,b(xi)) + (1−y i) ln(1−f w,b(xi))
+.
+Fig. 4: Ejemplo: calabaza no es naranja
+Fig. 5: Ejemplo: calabaza si es naranja
+G. Composicion de funciones y regla de la cadena
+El modelo puede expresarse como:
+z(x) =wx+b, a(z) =σ(z), f w,b(x) =a(z).
+Entonces la funcion de costo es:
+L=y iln(a(z)) + (1−y i) ln(1−a(z)).
+Aplicando la regla de la cadena:
+∂L
+∂w=∂L
+∂a·∂a
+∂z·∂z
+∂w.
+De manera analoga parab.
+H. Derivadas parciales paso a paso
+•Con respecto aa(z):
+∂L
+∂a=−yi
+a(x)+1−y i
+1−a(x).
+•Con respecto az:
+∂a
+∂z=σ(z)(1−σ(z)).
+•Con respecto awyb:
+∂z
+∂w=x,∂z
+∂b= 1.

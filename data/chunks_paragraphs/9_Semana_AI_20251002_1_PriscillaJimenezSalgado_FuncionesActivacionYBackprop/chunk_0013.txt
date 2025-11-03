@@ -1,0 +1,89 @@
+D. Multiples neuronas
+Fig. 28.Grafo con mayor dimensionaldad
+•Superindice:Señala la capa a la que pertenece
+una variable. Ejemplo:𝑎(𝑙)corresponde a la capa
+𝑙.
+•Subindice:Identifica el numero de neurona
+dentro de una capa especifica. Ejemplo:𝑎(𝑙)
+𝑗se
+refiere a la𝑗- ´esima neurona en la capa𝑙.
+•Pesos:Se representan con dos subindices: el
+primero indica la neurona destino y el segundo
+la neurona de origen. Ejemplo:𝑤(𝑙)
+𝑗,𝑘representa el
+peso que conecta la neurona𝑎(𝑙−1)
+𝑘con la neurona
+𝑎(𝑙)
+𝑗.
+A continuacion, en la siguiente figura se ilustra
+como una neurona de la capa𝑙recibe entradas desde
+varias neuronas de la capa anterior(𝑙−1). Este
+proceso se puede dividir en dos pasos:
+•Preactivacion:
+𝑧(𝑙)
+𝑗=𝑏(𝑙)
+𝑗+𝑛𝑙−1∑
+𝑘=1𝑤(𝑙)
+𝑗,𝑘𝑎(𝑙−1)
+𝑘
+donde𝑏(𝑙)
+𝑗es el sesgo de la neurona y𝑤(𝑙)
+𝑗,𝑘los
+pesos de conexion.
+•Activacion:
+𝑎(𝑙)
+𝑗=𝑔(𝑧(𝑙)
+𝑗)
+donde𝑔representa la funcion de activacion
+aplicada.
+Fig. 29.EjemploE. Calculo de funcion de perdida
+Para esta seccion, ellossglobal se obtiene sumando
+las diferencias entre la salida de cada neurona en
+la capa de activacion𝑗y su valor esperado𝑦 𝑗,
+recorriendo todas las neuronas de la capa𝑙.
+𝐿𝑖=𝑛𝑙∑
+𝑗=1(𝑎(𝑙)
+𝑗−𝑦𝑗)2
+En la siguiente figura se muestra un ejemplo
+donde se evalua la salida de una capa de activacion
+utilizando esta funcion de perdida.
+Fig. 30.Ejemplo
+Cambios a la Regla de la Cadena
+Como las funciones𝐿 𝑖,𝑧(𝑙)
+𝑗y𝑎(𝑙)
+𝑗han sido mod-
+ificadas, es necesario plantear nuevas derivadas que
+permitan actualizar los parametros de cada neurona
+𝑗.
+En la ecuacion se observa que, para ajustar un
+peso especifico𝑤(𝑙)
+𝑗,𝑘, debemos calcular sus derivadas
+parciales. Sin embargo, gracias al concepto decache,
+launica derivada que cambia al actualizar un peso
+diferente es𝛿𝑧(𝑙)
+𝑗
+𝛿𝑤(𝑙)
+𝑗,𝑘, mientras que el resto permanece
+constante para toda la capa.
+Las derivadas se expresan de la siguiente forma:
+𝛿𝐿𝑖
+𝛿𝑎𝑙
+𝑗=((𝑎𝑙
+1−𝑦 1)2+(𝑎𝑙
+2−𝑦 2)2+···+(𝑎𝑙
+𝑛−𝑦𝑛)2)
+𝛿𝐿𝑖
+𝛿𝑎𝑙
+𝑗=2(𝑎𝑙
+𝑗−𝑦𝑗)
+𝛿𝑎(𝑙)
+𝑗
+𝛿𝑧(𝑙)
+𝑗=𝑔(𝑧(𝑙)
+𝑗)(1−𝑔(𝑧(𝑙)
+𝑗))
+𝛿𝑧(𝑙)
+𝑗
+𝛿𝑤(𝑙)
+𝑗,𝑘=𝑎(𝑙−1)
+𝑘

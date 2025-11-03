@@ -1,0 +1,30 @@
+Repaso de Derivadas, Regresion Lineal y
+Sesgo–Varianza en Aprendizaje Supervisado
+Ian Murillo Campos
+Instituto Tecnologico de Costa Rica
+Escuela de Ingenieria en Computacion
+Inteligencia Artificial Gr 2
+Abstract—This paper reviews key elements of supervised
+learning. It introduces the use of partial derivatives and gradient
+descent to optimize the mean squared error function. It also
+examines issues in linear regression such as nonlinearity and
+outliers, describing statistical methods to address them. Finally, it
+outlines dataset partitioning into training, validation, and testing
+sets, and explains the bias–variance tradeoff as a tool to evaluate
+model generalization. I. INTRODUCTION
+El aprendizaje supervisado entrena modelos predictivos a
+partir de ejemplos con etiquetas. Las derivadas parciales
+permiten calcular la influencia de cada parametro sobre la
+funcion de perdida y se aplican en el descenso de gradiente. En la regresion lineal, los problemas comunes incluyen la
+no linealidad de la relacion entre variables y la presencia de
+outliers, que pueden corregirse con tecnicas estadisticas. La division de datos en entrenamiento, validacion y prueba
+permite medir la capacidad de generalizacion del modelo. Este
+analisis se relaciona con el sesgo y la varianza, cuyo equilibrio
+evita tanto el sobreajuste como el subajuste. II. REPASO DE DERIVADAS
+A. Funcion de perdida (MSE)
+Se busca optimizar esta funcion con valores que aumentan
+L, siendo L una parabola. Dicho de otro modo, se busca
+encontrar la pendiente de algun punto de la parabola en el
+que nos ubiquemos y buscamos descender sobre la funcion
+para llegar a su punto minimo. Se busca calcular cuanto influye el valor w sobre el valor L,
+calculando sus derivadas parciales.

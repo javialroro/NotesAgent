@@ -1,0 +1,5 @@
+El proceso de tokenizacion
+divide el texto en unidades minimas llamadastokens(palabras,
+subpalabras o caracteres), asignando a cada una un identifi-
+cadorunico. Estos identificadores se transforman en vectores
+que los modelos utilizan como entrada.

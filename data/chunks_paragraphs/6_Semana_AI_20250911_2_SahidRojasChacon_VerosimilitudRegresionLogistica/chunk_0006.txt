@@ -1,0 +1,19 @@
+Finalmente, el bloque in-
+cluyeLogisticRegressiondesklearnparareplicar
+el mismo enfoquecon la libreria estandar, lo que sirve como
+referencia y valida que la implementacion manual respeta la
+teoria. VIII-D. Resumen codigo↔teoria
+Verosimilitud→log-loss.El codigo minimiza (16), que es
+−logL; asi, “minimizar la perdida” equivale a “maximizar la
+verosimilitud”. Regla de la cadena.La rutax→z→a→Lda∂L
+∂z=a−y,
+base de los gradientes vectorizadosdwydb. Parametros actualizables.Solowybcambian; el resto (sig-
+moide, datos) son transformaciones/entradas fijas conforme a
+la formulacion del modelo. IX. CONCLUSIONES
+La clave para no perderse es mirar la composicionx→z→
+a→Ly empujar las derivadas con la regla de la cadena. El
+uso de logaritmos cambia productos por sumas y, al negar
+el log-likelihood, pasamos a minimizar una funcion estable
+y derivable. Con los gradientes compactos(a−y)xy(a−
+y), actualizarwybse vuelve mecanico con descenso por
+gradiente.

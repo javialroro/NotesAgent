@@ -1,0 +1,36 @@
+2
+Cuadro II
+EJEMPLO SIMPLIFICADO DE TOKENIZACION
+Palabra Token ID Numerico
+Los los 105
+LLM llm 2124
+aprenden aprenden 893
+patrones patrones 5749
+condiciones. El uso de modelos preentrenados en este contexto
+facilita una generalizacion mas robusta y una convergencia
+mas rapida durante el proceso de entrenamiento, lo cual
+resulta ventajoso en escenarios donde los datos etiquetados
+son limitados [4]. III-B. Tokenizacion
+En el procesamiento del lenguaje natural, cada palabra,
+signo o simbolo debe transformarse en una representacion
+numerica para que pueda ser comprendida y procesada por
+los modelos de lenguaje. Este proceso se conoce comotoke-
+nizacion, y consiste en dividir el texto en unidades minimas
+denominadastokens, que pueden corresponder a palabras,
+subpalabras o incluso caracteres individuales. A cada token se
+le asigna un identificador numerico unico dentro de un vocabu-
+lario previamente definido, lo que permite representar oracio-
+nes completas como secuencias de numeros. Existen diversas
+estrategias de tokenizacion, como la basada en subpalabras
+(Byte Pair EncodingoWordPiece), que buscan equilibrar la
+eficiencia del vocabulario con la capacidad del modelo para
+manejar palabras desconocidas o de diferentes idiomas [5]. La Tabla II muestra un ejemplo simplificado del proceso de
+tokenizacion, en el cual cada palabra del texto es descompuesta
+en su correspondiente token y asociada a un identificador
+numerico dentro del vocabulario del modelo. Este procedi-
+miento permite representar de forma estructurada los elemen-
+tos linguisticos, facilitando que el modelo procese el texto
+como una secuencia de valores discretos que posteriormente
+seran transformados en vectores continuos mediante tecnicas
+deembedding. La Tabla III resume algunos de los tipos mas comunes de
+tokenizacion utilizados en modelos de lenguaje.

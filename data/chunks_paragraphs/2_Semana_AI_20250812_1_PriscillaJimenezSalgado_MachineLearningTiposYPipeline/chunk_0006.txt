@@ -1,0 +1,19 @@
+El proceso comienza con la recoleccion de datos . A partir de ellos, se genera un conjunto estructurado
+(dataset ) que se dividira en dos partes: una para
+elentrenamiento y otra para las pruebas . Esta
+informacion se almacena para su uso posterior. En la fase de entrenamiento , el modelo aprende
+a partir del conjunto de datos de entrenamiento,
+ajustando sus parametros segun el fenomeno que se
+desea modelar. Durante esta etapa tambien se define
+que tipo de modelo utilizar, justificando la eleccion
+en funcion de las necesidades del problema. Luego se pasa a la validacion, donde se utilizan
+datos que el modelo no ha visto antes para evaluar
+su rendimiento en condiciones similares a las de
+produccion. Esto permite identificar que modelo
+obtiene los mejores resultados segun los criterios de
+evaluacion establecidos. El modelo seleccionado se guarda en un reposito-
+rio o almacenamiento de modelos , desde el cual
+se prepara para su implementacion en el entorno
+elegido. Porultimo, se lleva a cabo el despliegue oservicio
+de predicciones , donde el modelo ya entrenado y
+validado comienza a procesar datos reales y a generar

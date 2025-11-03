@@ -1,0 +1,33 @@
+Apuntes de clase: Redes Neuronales
+Brandon Emmanuel Sanchez Araya
+Escuela de Ingenieria en Computacion
+Instituto Tecnologico de Costa Rica
+Cartago, Costa Rica
+brandon01sanchez@estudiantec.cr
+23 Setiembre 2025
+Abstract—Este documento presenta una formalizacion de
+apuntes de clase correspondientes al curso de Inteligencia Arti-
+ficial. Se abordan los conceptos fundamentales de la regresion
+logistica (binaria y multiclase), el uso del dataset MNIST y
+la representacion de imagenes medianteflatten. Asimismo, se
+introduce la codificacionone–hot, la formulacion matricial con
+pesos y sesgos, y la relacion de estos modelos con la construccion
+de redes neuronales. Finalmente, se destacan las propiedades
+esenciales de las redes, como la no linealidad, la organizacion en
+capas y su capacidad para resolver problemas complejos a traves
+de la optimizacion por gradiente. I. ELDATASETMNIST
+El datasetMNIST(Modified National Institute of Standards
+and Technology) es uno de los conjuntos de datos mas famosos
+en elarea de aprendizaje automatico. Fue creado a partir de
+la recopilacion de miles de digitos manuscritos provenientes
+de estudiantes de secundaria y empleados de la Oficina del
+Censo de los Estados Unidos. La idea original era disponer de
+un conjunto estandarizado que sirviera para probar y comparar
+algoritmos de reconocimiento de escritura. •Conjunto de imagenes: digitos escritos a mano (del 0 al
+9). •Tamaño original:128×128pixeles. •Tamaño transformado:28×28pixeles. •Flatten: cada imagen se convierte en un vector de784
+caracteristicas. •1 Channel: un solo canal, es decir en blanco y negro. •Cantidad de ejemplos: 60,000 para entrenamiento y
+10,000 para prueba. En la Figura 1 se muestra un ejemplo de como un digito
+manuscrito se representa en MNIST como una matriz de28×
+28pixeles, que luego puede convertirse en un vector de784
+caracteristicas (flatten). . II. ¿COMO DISEÑAR UN PROGRAMA QUE RECONOZCA
+TODOS LOS NUMEROS QUE LAS PERSONAS PUEDEN HACER? A.

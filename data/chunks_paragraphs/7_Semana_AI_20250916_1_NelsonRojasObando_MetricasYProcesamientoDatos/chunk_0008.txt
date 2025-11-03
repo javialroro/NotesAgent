@@ -1,0 +1,35 @@
+Tuplas duplicadas que requieren procesos de data clea-
+ning
+Por quelos datos pueden estar incompletos? Atributos de interes no siempre estan disponibles
+No se incluyen porque no se consideraron importantes en
+el momento de la entrada
+Datos relevantes no se registran por malentendidos o
+fallos de equipo
+Datos inconsistentes con otros registros pueden ser eli-
+minados
+Historial o modificaciones de datos pasados pueden no
+haberse registrado
+Valores faltantes en atributos clave pueden necesitar ser
+inferidos. Por que los datos pueden ser inconsistentes? Diferencias en convenciones de nombres o codigos usa-
+dos para clasificar elementos
+Formatos de entrada distintos para un
+Principales tareas en el preprocesamiento de datos:
+Data cleaning (limpieza de datos):eliminacion de ruido,
+correccion de inconsistencias y tratamiento de valores
+faltantes. Data integration (integracion de datos):combinacion
+de informacion proveniente de multiples fuentes hetero-
+geneas en un repositorio coherente y unificado. Data reduction (reduccion de datos):disminucion del
+volumen mediante seleccion de atributos relevantes, re-
+duccion de dimensionalidad o discretizacion. Data transformation (transformacion de datos):inclu-
+ye normalizacion, estandarizacion, agregacion y construc-
+cion de nuevas variables. Data discretization (discretizacion de datos):transfor-
+macion de atributos continuos en atributos categoricos
+para facilitar el analisis y la modelizacion. Data Cleaning: tratamiento de valores faltantes y ruido:
+Tratamiento de valores faltantes:
+• Ignorar tuplas con valores faltantes (puede llevar a la
+perdida de datos). • Completar manualmente los valores faltantes (costoso
+y poco practico en grandesdatasets). • Usar un valor global constante (por ejemplo: “desco-
+nocido”,∞). • Rellenar con la media, mediana o moda. Tambien
+puede hacerse por clase. ◦Ejemplo: en clasificacion de clientes por riesgo
+crediticio, reemplazar con el ingreso promedio de
+clientes en la misma categoria de riesgo.

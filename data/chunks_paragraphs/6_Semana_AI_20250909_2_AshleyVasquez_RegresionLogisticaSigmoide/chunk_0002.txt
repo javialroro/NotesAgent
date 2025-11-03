@@ -1,0 +1,23 @@
+•Se debe comprobar si la relacion entre las variables es
+lineal; si no, aplicarfeature engineering. •El metododescribe()ayuda a resumir los datos de
+forma estadistica. •Figuras deben colocarse en parte superior o inferior de
+columnas.III. ACTIVIDADIEEE
+En noviembre se llevara a cabo un evento IEEE en La
+Sabana. Este congreso reune presentaciones sobre inteligencia
+artificial y biologia molecular, y es una oportunidad para
+establecer conexiones con investigadores y profesionales. IV. REGRESIONLOGISTICA
+A. Definicion
+La regresion logistica es un modelo de clasificacion binaria
+que estima la probabilidad de que un dato pertenezca a una
+clase. A diferencia de la regresion lineal, que entrega un valor
+continuo, este modelo transforma la salida en una probabilidad
+entre 0 y 1, y se basa en la distribucion de Bernoulli. B. Funcion Sigmoide
+σ(x) =1
+1 +e−x
+La funcion sigmoide transforma cualquier numero real en un
+valor en[0,1]. Se define un umbral (generalmente 0.5) para
+decidir la clase asignada. Como se observa en la Figura 1, es
+la base para convertir salidas lineales en probabilidades. Fig. 1: Funcion sigmoide
+C. Derivada de la Sigmoide
+σ′(x) =σ(x)(1−σ(x)). El hecho de que la derivada se exprese en funcion de la
+propia sigmoide la hace eficiente y practica en optimizacion. La Figura 2 ilustra este comportamiento.

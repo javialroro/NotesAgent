@@ -1,0 +1,7 @@
+T IPOS DE APRENDIZAJES
+Hay varios tipos de aprendizajes, sin embargo solo men-
+cionare las dos vistas en clases. A. Supervisado
+En este voy a tener un conjuntos de datos con caracteristicas. Por ejemplo, una casa con las variables x1, x2 y x3, que van
+a ser el numero de cuartos, metros cuadrado y cantidad de
+robos. Con esto podemos tener una tabla que me va a dar la
+muestra y me etiqueta. Fig. 1. Ejemplo de aprendizaje supervisado.

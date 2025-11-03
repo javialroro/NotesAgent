@@ -1,0 +1,34 @@
+ASPECTOS ADMINISTRATIVOS
+Debido a que no hubo noticias previas a la clase, se inicio
+con una breve explicacion sobre el primer proyecto de Redes
+Neuronales.A. Respuesta del quiz
+Se realizo el quiz 5 donde se establecieron las respuestas
+de este. Las preguntas con sus respuestas son las siguientes:
+Pregunta:Describa que es una red totalmente conectada
+(fully connected)Respuesta:Es un tipo de red neuronal en
+la que cada neurona esta conectada con todas las neuronas de
+la capa siguiente. Pregunta:Mencione 3 funciones de activacion no-lineales. Respuesta:ReLU, Sigmoide y Tanh
+Pregunta:Describa los 4 componentes principales de un
+agente LLM.Respuesta:
+•Perfil:Puede tener su propia personalidad
+•Memoria:Permite que el agente recuerde informacion
+pasada o resultados previos para mantener contexto en
+tareas largas
+•Herramientas:Son funciones externas que el agente
+puede usar para ejecutar acciones
+•Planificacion o razonamiento:Decide que hacer, inter-
+pretando las instrucciones del usuario y eligiendo la mejor
+accion
+Pregunta:Describa la diferencia entre sistemas de agenteunico y sistemas multiagentes.Respuesta:Un agenteunico
+percibe su entorno, toma decisiones y actua por si mismo,
+mientras que los sistemas multiagentes son varios agentes que
+interactuan entre si y con el entorno. B. Explicacion del proyecto
+Para este proyecto necesitamos aplicar redes neuronales para
+el reconocimiento de voz a partir de espectrogramas, es decir,
+reconocimiento de patrones en voz donde utilizaremos una
+arquitectura que se llama Redes Neuronales Convolucionales
+(CNN) la cual nos sirve para el procesamiento de imagenes. El reto de este proyecto es analizar una serie temporal en un
+audio donde analizaremos la señal que viene al segundo donde
+estemos procesando, por ejemplo, si estamos procesando un
+5t, hay que procesar un 5t+1, 5t+2, y asi sucesivamente. Se
+podrian resolver con redes recurrentes.

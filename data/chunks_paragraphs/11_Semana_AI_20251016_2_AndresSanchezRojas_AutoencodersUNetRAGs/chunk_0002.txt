@@ -1,0 +1,31 @@
+Definicion y proposito
+Los autoencoders son una arquitectura novedosa en el ambito
+del aprendizaje automatico que se caracteriza por comparar
+sus salidas con las mismas entradas, lo que permite entrenarlos
+sin necesidad de etiquetas, clasificandolos como modelos no
+supervisados. Su principal utilidad radica en la reduccion de
+dimensionalidad, ofreciendo representaciones mas potentes que
+tecnicas clasicas como el Analisis de Componentes Principales
+(PCA). Esta capacidad de compresion y reconstruccion los hace
+especialmente utiles en tareas como la deteccion de anomalias,
+la identificacion de transacciones fraudulentas, la eliminacion
+de ruido en datos, el aumento de resolucion (upscaling) y el re-
+conocimiento facial. En esencia, los autoencoders aprenden una
+codificacion eficiente de los datos, lo que les permite capturarpatrones relevantes y reconstruir las entradas con alta fidelidad. Esta versatilidad los convierte en herramientas valiosas tanto en
+aplicaciones de seguridad como en procesamiento de imagenes
+y senales. II-B. Encoder y Decoder
+Elencoderes un conjunto de bloques convolucionales que
+extraen la informacion mas relevante de la entrada y descartan
+lo que no aporta, comprimiendo los datos a traves de un “cuello
+de botella” para eliminar ruido y caracteristicas innecesarias;
+la salida de ese proceso es el vector o espacio latente, una
+representacion de baja dimensionalidad que conserva los rasgos
+utiles para diferenciar patrones. Eldecoderes la parte que toma
+el espacio latente y reconstruye la senal o imagen original,
+expandiendo la informacion comprimida para producir una
+salida lo mas fiel posible a la entrada; su objetivo es invertir
+la codificacion del encoder y permitir tareas como denoising,
+upscaling o deteccion de anomalias mediante la comparacion
+entre entrada y reconstruccion. II-C. Aplicaciones
+Entre las aplicaciones practicas destacan:
+Deteccion de anomalias y fraude . Eliminacion de ruido (denoising). Aumento de resolucion (upscaling).

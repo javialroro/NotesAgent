@@ -1,0 +1,30 @@
+La sociedad
+podria pensar que puede ser como un terminator que quiere
+dominar al mundo, los amigos de otras carreras no rela-
+cionasdas con computacion pueden pensar que eres una mente
+brillante haciendo alguna tarea con tecnologia o si le preguntas
+a otro de computacion puede que te vea como un vago gando
+mucho dinero, y asi sucesivamente con diferentes analogias.A. Yann LeCun
+Yann LeCun es un investigador muy reconocido en el
+campo de la inteligencia artificial y es considerado uno de
+los tres padrinos del deep learning. Es el fundador de las
+Convolutional Neural Networks, un tipo de red neuronal capaz
+de procesar imagenes de manera eficiente. Anteriormente, los costos computacionales para procesar
+imagenes eran muy altos lo que limitaba su uso. Por esta
+razon,´el diseño una arquitectura que permitia realizar este
+procesamiento con un costo computacional mucho menor, un
+modelo mas liviano y efectivo para tareas visuales. Actualmente Yann LeCun es director de proyectos en Meta,
+donde dirige todas lo relacionado con inteligencia artificial. Su impacto en elarea fue reconocido con el Premio Turing,
+otorgado por sus contribuciones en el desarrollo y avance de
+las redes neuronales. B. ¿Que es la inteligencia? No existe un consenso claro que defina que es la inteligencia
+artificial. Este concepto ha sido estudiado desde diversas
+disciplinas como la psicologia y la filosofia, pero podemos
+decir de forma abstracta que la inteligencia puede verse de
+varias maneras, como un grupo de animales que trabajan
+para realizar una tarea especifica, o como la manera en que
+los humanos piensan y se comportan. Ademas estos sistemas
+pueden ser autonomos y adaptativos capaces de aprender y
+ajustarse a nuevas situaciones. C. Autonomo y adaptativo
+Autonomo significa que no necesitamos realizar instruc-
+ciones para funcionar ya que es capaz de tomar decisiones
+y ejecutar acciones por si mismo.

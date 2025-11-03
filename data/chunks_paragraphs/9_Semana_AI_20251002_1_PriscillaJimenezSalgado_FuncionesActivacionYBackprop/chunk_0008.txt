@@ -1,0 +1,12 @@
+Al ir aumentando esas dimensiones,
+los datos empiezan a dispersarse y quedan muy
+separados entre si, lo que hace mas dificil encontrar
+patrones claros. En otras palabras, el modelo tiene
+que calcular en un espacio cada vez mas grande y
+con menos densidad de informacion, lo que complica
+el aprendizaje. Fig. 13.Maldicion de la dimensionalidad
+– Comportamiento jerarquico:Se utiliza este
+enfoque porque imita la forma en que los humanos
+aprenden: comienzan con conceptos simples y luego
+los combinan para formar ideas mas complejas. Esto permite generar mejoras exponenciales en las
+funciones y aprovechar mejor el aprendizaje. •Permite construir funciones polinomicas.

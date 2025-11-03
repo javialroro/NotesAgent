@@ -1,0 +1,11 @@
+VII. CONCLUSION
+Los temas revisados durante esta semana refuerzan la com-
+prension de como los modelos de lenguaje modernos procesan
+informacion y como se estan extendiendo hacia arquitecturas
+mas complejas yutiles, como los sistemas RAG y los agentes
+inteligentes. Estas herramientas representan un paso clave
+hacia una inteligencia artificial mas contextual, adaptable y
+responsable.
+REFERENCIA
+Pacheco Portuguez, S. (2025).Presentacion del curso de
+Inteligencia Artificial. Instituto Tecnologico de Costa Rica.

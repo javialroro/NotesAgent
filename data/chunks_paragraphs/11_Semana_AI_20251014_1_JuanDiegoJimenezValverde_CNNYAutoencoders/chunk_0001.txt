@@ -1,0 +1,34 @@
+Apuntes IA Clase 14/10/2025
+Juan Jimenez Valverde
+Escuela de Ingenieria en Computacion
+Instituto Tecnologico de Costa Rica
+Cartago, Costa Rica
+juand0908@estudiantec.cr
+Abstract—Este documento resume los conceptos clave vistos en
+la clase de Inteligencia Artificial sobre redes neuronales convolu-
+cionales (CNN) y autoencoders. Se abordan temas fundamentales
+como los filtros, campos receptivos,stride,paddingy las capas de
+pooling, asi como las arquitecturas clasicas de CNN, entre ellas
+LeNet, AlexNet, ZFNet, GoogleNet, VGG16, ResNet y DenseNet. Ademas, se presentan consideraciones practicas para el analisis
+de modelos de aprendizaje profundo, como la visualizacion de
+activaciones, losembeddingsde caracteristicas y la estructura
+de los autoencoders, incluyendo sus aplicaciones en reduccion
+de dimensionalidad, deteccion de anomalias y procesamiento
+de imagenes. El objetivo es ofrecer una vision general clara y
+concisa, ´util tanto para el estudio teorico como para la aplicacion
+practica. Index Terms—Redes Neuronales Convolucionales, Autoen-
+coders, Visualizacion de Activaciones, Embeddings, Pooling, Ar-
+quitecturas de Aprendizaje Profundo
+I. INTRODUCCION
+Las Redes Neuronales Convolucionales (CNN) se han con-
+vertido en un pilar fundamental de la vision por computadora
+moderna, ya que permiten extraer automaticamente carac-
+teristicas jerarquicas a partir de imagenes. Comprender sus
+mecanismos internos, incluyendo los filtros, los campos recep-
+tivos, elstride, elpaddingy las operaciones depooling, resulta
+esencial para diseñar arquitecturas eficientes e interpretar el
+comportamiento de los modelos. Por su parte, losautoencoderscomplementan el uso de las
+CNN al aprender representaciones compactas de los datos sin
+requerir etiquetas, lo que los hace ideales para tareas de apren-
+dizaje no supervisado como la reduccion de dimensionalidad,
+la deteccion de anomalias y la reconstruccion de imagenes.

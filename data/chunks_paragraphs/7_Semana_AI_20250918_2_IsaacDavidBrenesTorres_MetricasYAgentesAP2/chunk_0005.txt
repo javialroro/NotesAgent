@@ -1,0 +1,4 @@
+REFERENCIAS
+[1] Google Cloud, “Announcing the Agent Payments Protocol (AP2)
+for AI commerce,” Google Cloud Blog, 2024. [En linea]. Disponible: https://cloud.google.com/blog/products/ai-machine-learning/
+announcing-agents-to-payments-ap2-protocol. [Accedido: 18-sep-2025].

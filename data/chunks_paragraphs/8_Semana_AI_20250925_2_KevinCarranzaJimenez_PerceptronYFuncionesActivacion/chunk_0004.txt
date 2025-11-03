@@ -1,0 +1,31 @@
+2
+Fig. 1: Primer Red Neuronal. El resumen de la clase anterior concluye definiendo algunas
+caracteristicas de las redes neuronales, las cuales son que al
+no ser lineales nos permite atacar problemas complejos, esta
+compuesta por capas, estas capas son el hiper parametro de
+la red neuronal y es importante que sean diferenciables. Si la
+red neuronal se puede derivar se puede optimizar y que en
+cada capa hay neuronas. IV. E LPERCEPTRON
+El perceptron es uno de los modelos mas simples de red
+neuronal artificial, propuesto por Frank Rosenblatt en 1958. Consiste en una unidad de procesamiento que recibe un con-
+junto de entradas ponderadas, las combina linealmente y aplica
+una funcion de activacion para producir una salida binaria. Su
+objetivo principal es clasificar patrones linealmente separables. Aunque limitado para problemas no lineales, constituye la base
+conceptual de arquitecturas mas complejas como el perceptron
+multicapa y las redes neuronales profundas [3]. A. Invierno de la AI
+El invierno de la inteligencia artificial hace referencia a
+periodos historicos en los que las expectativas generadas
+alrededor de la investigacion en IA no se cumplieron, provo-
+cando una disminucion drastica en la financiacion, el interes
+academico y el desarrollo industrial en este campo. Durante
+estos periodos, los avances en IA se ralentizaron debido
+a limitaciones tecnologicas, falta de resultados practicos y
+criticas hacia la viabilidad de los enfoques predominantes. Se
+reconocen principalmente dos inviernos de la IA: el primero
+a mediados de los años 1970, y el segundo a finales de los
+años 1980 hasta principios de los 1990 [4]. En 1969, Marvin Minsky y Seymour Papert publicaron el
+libro Perceptrons, en el que señalaron limitaciones fundamen-
+tales del perceptron simple. Entre los problemas destacados,
+Fig. 2: Inspiracion biologica de la red neuronal. señalaron que este modelo no podia resolver funciones no
+linealmente separables, siendo el ejemplo clasico la funcion
+logica XOR.

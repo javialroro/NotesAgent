@@ -1,0 +1,34 @@
+5
+manera, el modelo no depende unicamente de su conocimiento
+preentrenado, sino que se apoya en informacion actualizada y
+especifica al dominio, lo cual mejora la fiabilidad y reduce la
+alucinacion de respuestas [17]. La Figura 4 ilustra de forma general el funcionamiento
+del procesoRetrieval-Augmented Generation(RAG). Este
+enfoque combina la recuperacion de informacion relevante
+desde una base vectorial con la generacion de texto asistida
+por un modelo de lenguaje. A partir de una consulta del
+usuario, el sistema identifica los fragmentos mas relacionados
+semanticamente, los integra dentro delprompty genera una
+respuesta fundamentada en dichas evidencias. De esta manera,
+el modelo puede ofrecer respuestas mas precisas, actualizadas
+y contextualizadas que las obtenidas unicamente a partir del
+conocimiento interno del LLM [1]. VI. BENEFICIOS
+El uso de arquitecturas basadas enRetrieval-Augmented
+Generation(RAG) ofrece multiples beneficios frente al uso
+de modelos de lenguaje puros. En primer lugar, permite
+una significativareduccion de las alucinaciones, ya que
+el modelo genera sus respuestas apoyandose en evidencia
+documental verificable en lugar de depender unicamente de
+su conocimiento implicito. Ademas, posibilita laactualizacion
+continua del conocimiento, dado que la base de recuperacion
+puede ser renovada con informacion reciente sin necesidad
+de reentrenar el modelo. Este enfoque tambien contribuye a
+una mayoreficiencia de costos, al disminuir la necesidad de
+entrenamientos extensivos y aprovechar modelos preexistentes
+combinados con fuentes dinamicas de datos. Finalmente, el
+paradigma RAG favorece laaplicabilidad en dominios espe-
+cializados, permitiendo adaptar el comportamiento del sistema
+a contextos como medicina, derecho o ingenieria mediante la
+incorporacion de bases de conocimiento especificas [18]. VII. CASOS DE USO
+Los sistemas basados enRetrieval-Augmented Generation
+(RAG) presentan aplicaciones practicas en multiples dominios.

@@ -1,0 +1,18 @@
+TIPOS DE CUANTIZACION
+1) Asimetrica→el valor de 0 corresponde al valor menor
+y el maximo es el peso maximo
+2) Simetrica→el cero es el peso 0, el valor absoluto
+maximo de los pesos se mapea a un extremo, si es
+negativo se mapea al valor mas negativo dentro de los
+valores posibles con los bits
+A. Cuantizacion Asimetrica
+xq=clamp(xf
+s+z; 0; 2n−1)
+xf=valorflotante
+z=−1×β
+s
+*s es el parametro de escalado
+s=α−β
+2b−1
+xf=s(x q−z)→permite volver al valor original con un
+grado de error

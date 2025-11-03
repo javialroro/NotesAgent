@@ -1,0 +1,31 @@
+Para dos vectoresa,b∈Rn:
+d(a,b) =vuutnX
+i=1(ai−bi)2
+•Similitud del coseno: mide elangulo entre vectores y su
+orientacion en el espacio, siendo la mas usada en modelos
+de lenguaje:
+sim(a,b) =a·b
+∥a∥∥b∥
+D. Embeddings
+Losembeddingsson representaciones numericas densas que
+capturan el significado semantico y las relaciones contextuales
+de palabras, oraciones o documentos completos. Estos vectores
+permiten comparar ideas, medir similitud y realizar opera-
+ciones semanticas en un espacio continuo de alta dimension. El proceso de generacion de embeddings se puede resumir
+en los siguientes pasos:
+•Entrada textual: La unidad de texto que se quiere rep-
+resentar, que puede ser una palabra, una oracion o un
+documento completo. •Modelo de embeddings: Un modelo que transforma la
+entrada en un vector numerico denso, capturando su
+significado y contexto. •Embedding resultante: El vector que representa la en-
+trada en el espacio continuo. Vectores cercanos indican
+conceptos semanticamente similares. •Espacio de embeddings: El espacio vectorial donde cada
+embedding ocupa una posicion. Este espacio permite
+medir similitudes y realizar busquedas por proximidad. Como se ilustra en la Figura 2, la figura representa el flujo
+de generacion de embeddings: desde palabras, oraciones o
+documentos de entrada, pasando por el modelo de embeddings,
+hasta el vector resultante y su posicion en el espacio de
+embeddings. Ademas, la Figura 3 muestra un ejemplo simplificado de
+sentence embeddingsproyectados en un plano bidimensional,
+donde frases con significado similar aparecen proximas entre
+si.

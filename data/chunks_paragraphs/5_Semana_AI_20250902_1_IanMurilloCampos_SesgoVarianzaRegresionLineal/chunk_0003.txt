@@ -1,0 +1,27 @@
+Fig. 1. Ejemplo de grafica de regresion lineal. En la figura 1 se ve a la izquierda un plot residual que muestra
+la fiderencia entre los puntos que tenia que predecir y cuanto
+se alejan entre si, el modelo de plot residual mas correcto es
+el que este mas cercano al cero. En la figura de la derecha es el arreglo a los datos, utilizando
+tecnicas para que una funcion cuadratica como la de la
+izquierda se comporte mas como una funcion lineal. La forma de solucinarlo es extender el modelo lineal incorpo-
+rando transformaciones polinomicas del predictor, con eso:
+•aunque la relacion es no lineal en los datos, el modelo
+sigue siendo lineal en los parametros. •Se puede resolver con regresion lineal estandar. B. Outliers
+Son datos que se salen de la distribucion que se trata de
+predecir. Al tratar de entrenar el modelo de IA, este se va a centrar
+Fig. 2. Ejemplo de Outlier. tanto en los modelos cercanos a la linea como a los queestan mas alejados, provocando que el modelo busque hacer
+un ”trade off” entre los datos. Esto no esta bien ya que el
+modelo quedaria sesgado por los outliers y no se utilizarian
+correctamente los datos que si quiero buscar predecir. Estos datos en su mayoria son ocasionados por errores de
+captura, y la forma de corregirlos puede ser eliminarlos
+directamente del dataset. Otras tecnicas pueden ser:
+•Standardized Residuals: Escalar el residuo crufo por una
+desviacion estandar global de los errores. Donde:
+–ei=yi−yies el residuo crudo
+–n=numero de observaciones
+–p=numero de parametros estimados en el modelo (incluye el intercepto)
+La razon de utilizar una desviacion estandar es que
+teniendo todo estandarizado, se puede saber que a ciertas
+desviaciones estandar de la media se encuentra un por-
+centaje de los datos. Con esto se puede definir un umbral
+donde los datos son sobresalientes.

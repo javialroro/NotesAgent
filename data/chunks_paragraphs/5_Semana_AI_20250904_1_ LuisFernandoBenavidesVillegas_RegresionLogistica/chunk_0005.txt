@@ -1,0 +1,23 @@
+Se caracteriza por alto sesgo , es decir, asume una
+forma equivocada de los datos (por ejemplo, usar un modelo
+lineal para datos con comportamiento cuadratico). Fig. 3. Ej. de underfitting
+Fig. 4. Ej. de regresion de underfit-
+ting
+3) Caso ideal: El error en training es bajo y tambien lo
+es en validation. El modelo logra ajustarse a los datos sin
+sobreajustarse al ruido y puede generalizar bien a ejemplos no
+vistos. Representa un buen equilibrio entre sesgo y varianza. Fig. 5. Ej. del caso ideal
+ Fig. 6. Ej. de regresion del caso ideal
+4) Bias-Variance Tradeoff: Es un caso super raro porque
+el error en training es alto pero el error en validation es bajo. Si sucede, puede deberse a errores de calculo o valores mal
+tomados, no a un aprendizaje real del modelo. III. A LTOBIAS
+Se presenta cuando el modelo es demasiado simple y
+no logra capturar el patron real de los datos, provocando
+underfitting . Tanto el error en training como en validation
+son altos, ya que el modelo asume demasiado sobre la forma
+de los datos. A. Causas
+•Modelo demasiado simple (ej. lineal para datos con
+relaciones cuadraticas). •No se utilizan todas las variables relevantes. •Losfeatures disponibles no son buenos predictores de la
+variable objetivo. B. Posibles soluciones
+•Incrementar la complejidad del modelo (por ejemplo,
+pasar de lineal a cuadratico o a un modelo mas flexible). •Incorporar masfeatures o transformar los existentes.

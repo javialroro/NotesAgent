@@ -1,0 +1,32 @@
+Escalar
+Es un valor numerico que representa una sitaucion a la vez,
+basicamente es un numero, un unico elemento
+B. Vectores
+Se puede pensar en un vector como un arreglo de tamaño
+fijo de escalares, un vector no seria mas que un conjunto de
+escalares
+C. Matrices
+Se puede ver como un arreglo de arreglos o como un tensor
+de orden 2
+D. Tensores de orden superior
+Ya no tienen nombre especifico mas que tensores de orden
+k
+Una propiedad util de los escalares, vectores, matrices
+y tensores es que las operaciones elemento a elemento
+generan resultados que tienen la misma forma que sus
+operandos
+XVIII. P RODUCTO HADAMARD
+Consiste en la multiplicacion de elemento a elemento de
+dos matrices de un mismo tamaño
+import numpy as np
+# Definicin de matrices
+X = np.array([[1, 2, 3],
+[4, 5, 6]])
+Y = np.array([[7, 8, 9],
+[10, 11, 12]])
+# Producto de Hadamard (elemento a elemento)
+Z = X *Y
+print (Z)
+# Resultado:
+# [[ 7 16 27]
+# [40 55 72]]

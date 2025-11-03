@@ -1,0 +1,27 @@
+Propiedades basicas de la aritmetica de tensores
+Sumar o multiplicar un escalar con un tensor produce un
+tensor de la misma forma que el original, donde cada elemento
+se ve afectado por el escalar:
+a = 2
+X = torch.arange(24).reshape(2, 3, 4)
+a + X # Suma escalar elemento a
+elemento
+(a*X).shape # Multiplicacion escalar,
+mantiene la forma
+tensor([[[ 2, 3, 4, 5],
+[ 6, 7, 8, 9],
+[10, 11, 12, 13]],
+[[14, 15, 16, 17],
+[18, 19, 20, 21],
+[22, 23, 24, 25]]])
+torch.Size([2, 3, 4])
+1) Reduccion:Se pueden sumar los elementos de un tensor
+usando sum() :
+x = torch.arange(3, dtype=torch.float32)
+x, x. sum() # Vector [0,1,2] y su suma
+tensor([0., 1., 2.]), tensor(3.)
+Para un tensor multidimensional, sum() por defecto reduce
+todos los ejes:
+A = torch.arange(6, dtype=torch.float32). reshape(2, 3)
+A.shape, A. sum() # Suma de todos los
+elementos

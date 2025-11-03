@@ -1,0 +1,44 @@
+D. Error Cuadratico Medio (MSE)
+Es el resultado del modelo contra la etiqueta. Sumamos
+todos los errores de los samples y lo promediamos. L=1
+NNX
+i=1(fw,b(xi)−yi)2
+D1. Conceptos Clave):
+Loss Function: (fw,b(xi)−yi)2es la medida de pena-
+lidad que cuantifica el error de cada ejemplo. Error Cuadratico: Penaliza los errores grandes. Cost Function: Es el promedio de la Loss Function sobre
+todo el dataset. Objetivo: Minimizar L para ajustar los parametros w,b. El motivo por el cual queremos minimizar L, es porque
+entre menor sea L, significa que tenemos un mejor modelo, y
+entre mas grande significa que tenemos un peor modelo. E. ¿Por que MSE y no MAE? Es debido a que es cuadratica, y esto nos asegura que vamos
+a tener un punto minimo. Y tambien es porque la funcion no
+MAE no es smooth, por lo que no nos va a permitir obtener
+las derivadas en todos los puntos, lo que induce a errores de
+calculo
+F . Derivadas Generales
+Regla Funcionf(x) Derivada f′(x)
+Constante k 0
+Identidad x 1
+Constante multiplicativa kx k
+Potencia xnnxn−1
+Suma u(x) +v(x) u′(x) +v′(x)
+Producto u(x)v(x) u′(x)v(x) +u(x)v′(x)
+Constante sumada u(x) +z u′(x)
+Derivadas parciales f(x, y) = 2x+ 3y∂f
+∂x= 2,∂f
+∂y= 3
+Cuadro I
+REPASO DE DERIVADAS BASICAS
+G. Descenso del gradiente
+El descenso del gradiente es un algoritmo iterativo de opti-
+mizacion para encontrar el minimo de una funcion. Funciona
+actualizando repetidamente los parametros en la direccion
+opuesta al gradiente de la funcion de costo. G1. Regla de actualizacion:
+xnuevo =xantiguo−α·(2x)
+G2. Importancia del α:Es el learning rate, debe ser
+pequeño para no pasarnos del punto minimo. Este es un
+hiperparametro
+Figura 2. Comparacion de distintos valores para alpha
+III. C ONTENIDO DE LA CLASE
+A. Funcion de Perdida y sus Derivadas Parciales
+Para optimizar los parametros wybde nuestro modelo,
+necesitamos actualizar sus valores de manera que la funcion
+de perdida se minimice.

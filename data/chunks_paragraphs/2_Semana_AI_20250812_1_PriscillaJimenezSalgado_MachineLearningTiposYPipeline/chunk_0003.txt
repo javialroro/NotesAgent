@@ -1,0 +1,35 @@
+Fig. 3. IA identificando accionesoptimas en un entorno de plataformas
+D.Modelos deterministas y estocasticos
+En Inteligencia Artificial y Machine Learning, un
+modelo puede clasificarse segun como responde a
+una entrada:
+•Determinista: Para una entrada especifica, siem-
+pre devuelve la misma salida. Ejemplo: determi-
+nar si hay luz de dia a las 12 p.m. •Estocastico: Para una entrada especifica, puede
+devolver diferentes salidas de un conjunto de
+posibilidades, incorporando aleatoriedad. Ejem-
+plo: predecir el clima exacto a las 12 p.m. II.Machine Learning
+El concepto de Machine Learning consiste en
+diseñar maquinas capaces de realizar tareas sin estar
+programadas de forma explicita, extrayendo la logica
+directamente de los datos. Por ejemplo, no se le indicara a la computadora
+que es un perro ni las reglas que lo definen (cola,
+ojos, raza, etc.); en su lugar, se le proporcionara una
+imagen y retroalimentacion para que aprenda por si
+misma. Asi, si se dispone de imagenes etiquetadas
+como X e Y, el modelo recibe cada imagen junto
+con su etiqueta y debe, de manera implicita, aprender
+a distinguir entre ambas, sin que se le explique el
+procedimiento.En resumen, se le entregaunicamente la entrada y
+su etiqueta, y el modelo debe inferir o aproximar el
+resultado con la mayor precision posible. En este contexto, se cuenta con dos perspectivas:
+Ciencia e Ingenieria. Machine Learning: Ciencia
+•Generar conocimiento: Se refiere a investi-
+gar y desarrollar nuevas ideas para mejorar
+el aprendizaje automatico. Esto puede incluir
+crear modelos desde cero, encontrar formas mas
+eficientes de optimizar funciones o aprovechar
+datos sin etiquetar para entrenar sistemas. •Metricas: Se emplean metricas para determinar
+que modelo ofrece un mejor desempeño, eval-
+uando su rendimiento en funcion del problema
+especifico que se busca resolver.

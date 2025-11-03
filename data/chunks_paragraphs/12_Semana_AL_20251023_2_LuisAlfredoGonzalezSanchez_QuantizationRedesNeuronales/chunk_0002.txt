@@ -1,0 +1,28 @@
+En el presente documento, se busca resumir la
+informacion vista en la clase del 23 de octubre,donde se ha
+revisado como diferentes metodos de cuantizacion —desde la
+simetrica y asimetrica hasta la dinamica, granulada y post-
+entrenamiento— manejan la conversion de pesos, activaciones
+y sesgos, optimizando el balance entre precision y eficiencia. Ademas, se menciona como tecnicas como la cuantizacion
+consciente durante el entrenamiento (QAT) ayudan a mantener
+la precision del modelo al considerar el efecto de la cuanti-
+zacion desde el inicio del aprendizaje. II. B REVE DEFINICION DE ONNIX
+Para continuar el tema de quantization en supervised learn-
+ing , es importante entender la herramienta onnix, suponga
+un modelo llm ya entrenado¿Como empieza a funcionar el
+producto o sistema? La herramienta Onnix permite representarmodelos de aprendizaje automatico desarrollados en distin-
+tos frameworks como PyTorch o TensorFlow en una repre-
+sentacion intermedia estandar y eficiente. Esta representacion
+facilita la interoperabilidad y el despliegue de modelos en
+diferentes plataformas y hardware mediante optimizaciones
+en C++ u otros lenguajes, asegurando que el mismo modelo
+pueda ejecutarse con alto rendimiento en entornos variados. Considerando lo anterior, las plataformas poseen diversas lim-
+itaciones y rendimiento tanto en software como en hardware, si
+se entrenan modelos grandes, posiblemente un celular no este
+adaptado para soportar dicho modelo, para ello se observara
+el concepto de quantization. III. Q UANTIZATION
+Suponga que se tiene un modelo de deep learning con
+muchas capas, por ejemplo , llama 2 , con 70 mil millones
+de parametros aproximadamente, si cada parametro es de 32
+bits, se obtiene un tamaño aproximado de 28 gb para solo
+almacenar el modelo, ¿Como podriamos cargarlo a memoria?

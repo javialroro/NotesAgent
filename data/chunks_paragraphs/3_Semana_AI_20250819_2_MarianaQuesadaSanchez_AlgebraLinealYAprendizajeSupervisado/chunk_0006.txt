@@ -1,0 +1,12 @@
+3) Dispositivos: tablet, laptop o telefono
+Con tamano de pantalla, peso y sistema operativo, se
+debe asignar cada dispositivo a una de varias cate-
+gorias. Tipo: Clasificacion . 4) Meteorologia: precipitacion →humedad. Con cantidad de precipitacion y un valor de humedad,
+se desea predecir la humedad en distintas epocas del
+ano. Tipo: Regresion (humedad como variable continua). REFERENCES
+[1] S. Rani and G. Sikka, “Recent Techniques of Clustering of Time Series
+Data: A Survey,” Artificial Intelligence Review , vol. 46, no. 1, pp. 27–
+44, 2016. Available: https://www.researchgate.net/figure/Comparative-
+between-Euclidean-and-Manhattan-distance fig1332432569
+[2] S. Pacheco, “Repaso de Matematica: Algebra Lineal,” Presentacion,
+Instituto Tecnologico de Costa Rica, 2025.

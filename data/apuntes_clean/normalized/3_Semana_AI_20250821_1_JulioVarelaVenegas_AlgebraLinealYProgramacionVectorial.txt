@@ -1,0 +1,195 @@
+Inteligencia Artificial
+Apuntes de la clase del dia 21/08/2025
+Julio Varela Venegas-2019008041
+Escuela de Ingenieria en Computacion
+Instituto Tecnologico de Costa Rica
+Cartago, Costa Rica
+juliojvv20@estudiantec.cr
+Resumen —This session of the Artificial Intelligence course
+began with a review of fundamental linear algebra concepts,
+emphasizing their relevance for data analysis and manipulation.
+The class then introduced the principles of supervised learning
+and its main characteristics. Using Visual Studio Code with a
+Jupyter Notebook, practical examples were presented to illustrate
+dataset operations. The professor highlighted the advantages
+of applying vectorized programming over traditional iterative
+approaches, showing how vectorization optimizes data processing
+and facilitates the use of linear algebra operations.
+Index Terms —Inteligencia Artificial, Aprendizaje Supervisa-
+do, ´Algebra Lineal, Programacion Vectorial, Jupyter Notebook,
+Procesamiento de Datos.
+I. I NTRODUCCION
+En esta sesion del curso de Inteligencia Artificial se refor-
+zaron conceptos dealgebra lineal vistos en la clase anterior,
+los cuales son fundamentales para el manejo eficiente de
+datos, destacando su aplicacion en el contexto de modelos de
+aprendizaje automatico. Luego, se hablo sobre algunos de los
+conceptos clave del aprendizaje supervisado como una de las
+ramas centrales de la disciplina, explicando sus caracteristicas
+y objetivos. A nivel practico, la clase incluyo el uso de Visual
+Studio Code junto con Jupyter Notebook con codigos de
+ejemplo enfocados en dar una demostracion sobre los temas de
+algebra vistos en clase y como estos pueden permitir trabajar
+con mayor eficiencia sobre un determinado dataset. Porultimo
+se logro evidenciar como las tecnicas vectorizadas no solo
+simplifican la implementacion, sino que tambien optimizan el
+rendimiento en tareas de procesamiento de datos.
+II. N OTICIAS Y CONTEXTO RECIENTE
+En esta parte de la clase se discutio brevemente la impor-
+tancia de asistir a charlas organizadas por grupos estudiantiles
+como IEEE, ya que estas actividades permiten el contacto con
+profesionales delarea y fomentan tanto el aprendizaje com-
+plementario como la creacion de redes de colaboracion que
+pueden abrir oportunidades laborales en el futuro. Asimismo,
+se menciono el surgimiento de nuevas versiones de modelos
+de lenguaje como GPT-5. Aunque se destaco su relevancia
+en elambito de la Inteligencia Artificial, se comento que la
+recepcion por parte de los usuarios no fue del todo positiva.
+Mas alla de esta observacion, no se abordaron en detalle otras
+noticias recientes durante la sesion.III. R EPASO DE MATEMATICA :´ALGEBRA LINEAL
+En esta parte de la clase retomamos conceptos basicos dealgebra lineal, que son fundamentales para entender la Inteli-
+gencia Artificial. Como textos de apoyo se usaron Introduccion
+a la Inteligencia Artificial yDive into Machine Learning –
+Algebra, Capitulo 2 . A continuacion se resumen los puntos
+mas importantes.
+III-A. Vectores y Representacion
+Un vector es un objeto matematico con direccion y magni-
+tud, definido en un espacio N-dimensional. En 2D o 3D se
+puede representar graficamente, pero en dimensiones mayores
+(4D, 500D, etc.) aunque no se pueda visualizar, si se puede
+operar matematicamente.
+Figura 1. Representacion grafica de un vector.
+Un vector se puede ver como un segmento con un punto
+inicial y uno final; la operacion fundamental es restar las
+coordenadas correspondientes. Normalmente se asume que
+todos los vectores parten del origen (0,0)y los ejes dependen
+de la dimension que estemos usando.
+III-B. Vectores en Lenguaje Natural
+En IA, las palabras se pueden representar como vectores en
+un espacio semantico. Por ejemplo, las palabras Rey, Reina,
+Hombre, Mujer pueden combinarse de forma vectorial para
+ver relaciones: Rey - Hombre + Mujer da un vector cercano
+aReina . Esto muestra como los vectores son la base para
+representar conceptos en IA.
+
+III-C. Magnitud y Distancias
+La magnitud indica la distancia entre el punto inicial y final
+del vector, calculada con la norma ∥v∥.
+Distancia Manhattan (L1): suma de los valores abso-
+lutos de las diferencias en cada eje:
+d(x,y) =nX
+i=1|xi−yi|
+Distancia Euclidiana (L2): hipotenusa del triangulo
+formado por los vectores:
+d(x,y) =vuutnX
+i=1(xi−yi)2
+Figura 2. Distancia Euclidiana entre dos puntos.
+III-D. Propiedades de la Norma
+La norma cumple varias propiedades:
+Positividad: siempre es mayor o igual a cero.
+Homogeneidad: escalar el vector escala tambien su
+norma.
+Desigualdad triangular: la norma de la suma es menor
+o igual que la suma de las normas.
+Un caso especial es el vector unitario , cuya norma es 1.
+Normalizar un vector lo convierte en unitario y simplifica
+calculos.
+III-E. Producto Punto
+El producto punto se define como:
+x·y=nX
+i=1xiyi
+Figura 3. Formula del producto punto.
+El resultado siempre es un escalar. En IA, xpuede ser un
+vector de caracteristicas y yun vector de pesos, permitiendo
+cuantificar la importancia relativa de cada feature.III-F. Identidad del Coseno
+La identidad del coseno mide la similitud entre vectores.
+Esutil para comparar palabras en un espacio vectorial. La
+formula es:
+u·v=||u|| · ||v|| ·cos(θ)
+Figura 4. Analogias semanticas usando vectores.
+Interpretacion: - ´Angulo pequeño→vectores similares. -
+´Angulo 0◦→mismo vector. - ´Angulo grande →vectores
+lejanos, sin relacion.
+Aunque se ilustre en 2D, normalmente se calcula en espa-
+cios de 500 o 1000 dimensiones.
+III-F1. Ejemplo de calculo: Parau= (1,2)yv= (3,4):
+1. Calcular u·v. 2. Calcular ||u||y||v||. 3. Sustituir en la
+formula del coseno.
+Resultado: ´angulo ∼10,3◦→vectores casi codireccionales.
+III-F2. Vectores Codireccionales: Dos vectores con la
+misma direccion pero diferente magnitud cumplen u=k·v.
+´Angulo 0◦, misma direccion.
+Producto punto consigo mismo:
+u·u=||u||2=⇒ ||u||=√u·u
+Figura 5. Demostracion de u·u=||u||2.
+III-F3. Ortogonalidad y Ortonormalidad: Vectores conangulo 90◦→producto punto = 0 →ortogonales (). Si ademas
+tienen norma 1 →ortonormales.
+IV. S UPERVISED LEARNING
+En aprendizaje supervisado tenemos dos cosas importantes:
+features ylabels . -Features: propiedades medibles de una
+entidad (altura, peso, intensidad de pixel, etc.). - Labels: valor
+objetivo que queremos predecir.
+Un vector de features x= (x1, x2, . . .)describe todas
+las propiedades de un ejemplo, y la variable dependiente y
+depende de estas.
+Regresion:predecir valores continuos (por ejemplo, pre-
+cio de una casa).
+Clasificacion: asignar a categorias discretas (tipo de
+vehiculo: moto, carro, camion).
+
+Figura 6. Estructura de un dataset con features y labels.
+V. N OTEBOOK : PROGRAMACIONVECTORIAL Y
+OPERACION CON DATASETS
+Se exploraron ventajas de operar un dataset con programa-
+cion vectorial yalgebra lineal vs usar ciclos tradicionales. Esto
+mejora la eficiencia y permite trabajar con grandes volumenes
+de datos.
+V-A. Introduccion a NumPy
+NumPy permite: - Arrays multidimensionales (vectores,
+matrices, tensores). - Operaciones vectorizadas. - Calculos
+rapidos gracias a C y Fortran. - Funciones dealgebra lineal y
+estadisticas. - Integracion con Pandas, Matplotlib, Scikit-learn.
+- Compatibilidad con GPU mediante bibliotecas externas.
+V-B. Creacion y manipulacion de arrays (pseudocodigo)
+- Crear array 1D con numeros consecutivos. - Crear matriz
+identidad 3x3. - Realizar operaciones basicas (suma, mul-
+tiplicacion). - Calcular media, desviacion estandar y otras
+estadisticas.
+V-C. Calculo de la distancia euclidiana (pseudocodigo)
+Ciclos tradicionales: sumar las diferencias al cuadrado y
+sacar raiz.Programacion vectorial: restar vectores, elevar
+al cuadrado, sumar y sacar raiz.Comparacion:con vectores
+grandes, vectorial es mucho mas rapido.
+V-D. Creacion de datasets con Pandas y NumPy (pseu-
+docodigo)
+- Generar 3 clases con distribucion normal. - Asignar
+etiquetas 0, 1, 2. - Combinar datos en un solo dataset. - Crear
+DataFrame con features y labels. - Visualizar distribucion con
+graficos.
+Figura 7. Distribucion de clases en el dataset generado.V-E. Exploracion y visualizacion de datos
+- Ver primeras/ ´ultimas filas. - Contar elementos por colum-
+na. - Acceder a columnas individuales. - Calcular estadisticas
+descriptivas (media, desviacion, cuartiles, percentiles). - Gra-
+ficar histogramas para ver distribuciones.
+V-F. Clasificacion de nuevos samples
+Se entran 100 samples nuevos y se quiere clasificarlos
+usando el dataset previo.
+Estrategia: K-Nearest Neighbors (KNN) 1. Tomar dataset
+de entrenamiento. 2. Para cada nuevo sample: - Calcular
+distancia a todos los samples de entrenamiento. - Tomar los k
+mas cercanos. - Asignar la clase mas frecuente entre ellos.
+Notas: - Permite clasificar segun proximidad a ejemplos
+conocidos. - kes un hiperparametro que define cuantos vecinos
+considerar. - Puede aplicarse a clasificacion o, en variantes, a
+regresion.
+VI. C ONCLUSION
+La Inteligencia Artificial combina matematicas, programa-
+cion y consideraciones practicas. Entender los fundamentos,
+cuidar la calidad de los datos y practicar con herramientas
+como NumPy y Pandas es clave para agilizar el manejo de
+grandes cantidades de datos y la optimizacion de tiempos de
+ejecucion.
+REFERENCIAS
+[1] Apuntes de la clase de Inteligencia Artificial, Profesor Steven Andres
+Pacheco Portuguez, Instituto Tecnologico de Costa Rica, 21 de julio de
+2025.

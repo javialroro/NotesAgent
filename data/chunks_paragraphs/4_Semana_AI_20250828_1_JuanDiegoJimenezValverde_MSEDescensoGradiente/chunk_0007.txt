@@ -1,0 +1,35 @@
+–Requiere tener todo el dataset en memoria. –En datasets grandes, las actualizaciones son lentas
+(cada paso es costoso). –Gradiente muy estable puede ocultar senales utiles
+y hacer que el proceso converja a parametros no
+deseados segun la topologia (segun el problema). Fig. 4. Batch gradient descent
+b) Stochastic Gradient Descent (SGD):
+•Actualiza los parametros por cada sample del training set
+(o mezcla aleatoria de samples). •Ventajas: detecta rapidamente si el algoritmo puede con-
+verger; util para datasets muy grandes. •Desventajas:
+–Senales de gradiente ruidosas (alto ruido en las
+actualizaciones). –Muchas actualizaciones (computacionalmente cos-
+toso si no se optimiza). –La trayectoria del parametro es muy oscilatoria:
+w←w−α∂L
+∂w
+ejecutado por muestra puede producir movimientos
+muy erraticos. Fig. 5. Stochastic gradient descent
+c) Mini-batch Gradient Descent:
+•Combina ambas estrategias: se calcula la gradiente sobre
+batches de tamano intermedio. •Ventajas:
+–Reduce el ruido respecto a SGD (mas estable) y es
+mas eficiente que Batch GD. –Mejora la explotacion de hardware (vectorizacion,
+GPUs).–Ayuda a evitar minimos locales y aporta robustez en
+la optimizacion. •Desventajas:
+–Introduce un hiperparametro adicional: batch size . –Hay que elegir el tamano del batch cuidadosamente
+(trade-off entre estabilidad y velocidad). Fig. 6. Mini-batch gradient descent
+V. C OMENTARIOS PRACTICOS Y TAREAS
+Se mencionoque se asignarauna tarea practica: imple-
+mentar (solo con NumPy) un pipeline de regresion lineal que
+incluya:
+1) Exploracion visual del dataset. 2) Ingenieria simple de features (transformaciones no lin-
+eales cuando aplique). 3) Implementacion de MSE y pasos de descenso (batch /
+mini-batch). Eso ayuda a entender por quealgunas funciones no son smooth
+y como afecta a las derivadas y la optimizacion. VI. C ONCLUSION
+En esta clase se consolidola comprension de conceptos
+fundamentales para implementar algoritmos de aprendizaje
+supervisado de manera eficiente y correcta.

@@ -1,0 +1,37 @@
+Cada enfoque
+difiere en el nivel de granularidad con que divide el texto:
+desde unidades completas como palabras, hasta fragmentos
+mas pequenos como subpalabras, caracteres o incluso bytes
+individuales. Esta diversidad de metodos permite adaptar la
+representacion del texto segun las necesidades del modelo,
+equilibrando la complejidad del vocabulario con la capacidad
+para manejar palabras desconocidas o simbolos especiales. Cuadro III
+TIPOS COMUNES DE TOKENIZACION
+Tipo Ejemplo Ventaja principal
+Palabra "Los modelos" Simplicidad
+Caracter "L", .o", "s" Sin OOV*
+Subpalabra .aprend-iendo" Equilibrio vocabula-
+rio/contexto
+Byte-level bytes UTF-8 Soporta cualquier simbolo
+Espacio en blanco "Hola", "mundo" Rapido y simple
+Figura 2. 3D Semantic feature space
+III-C. Representacion de tokens en un espacio vectorial
+Una vez que el texto ha sido tokenizado, cada token se
+convierte en un numero que sirve unicamente como iden-
+tificador dentro del vocabulario del modelo. Sin embargo,
+estos valores numericos carecen de significado semantico por
+simismos, ya que no reflejan las relaciones o similitudes
+entre las palabras. Para que un modelo pueda comprender el
+contexto y el significado del lenguaje, es necesario transformar
+dichos identificadores en representaciones continuas que cap-
+turen las propiedades semanticas y sintacticas de las palabras
+dentro del texto. Este proceso se logra mediante el uso de
+embeddings, los cuales permiten a los modelos de lenguaje
+aprender representaciones vectoriales que preservan relaciones
+de significado y proximidad contextual [6]. La Figura 2 representa un espacio vectorial tridimensional
+en el que las palabras se distribuyen segun tres dimensiones
+semanticas: edad, genero y realeza. Cada punto del espacio
+corresponde a la proyeccion de una palabra en funcion de
+sus caracteristicas aprendidas por el modelo, lo que permite
+observar relaciones de similitud y diferencia entre concep-
+tos.

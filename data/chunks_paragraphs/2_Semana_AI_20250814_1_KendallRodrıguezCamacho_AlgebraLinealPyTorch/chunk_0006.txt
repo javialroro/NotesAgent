@@ -1,0 +1,8 @@
+4) Model Selection: Elegir el modelo que mejor se adapta
+al problema, considerando no solo su desempeño, sino tambien
+su explicabilidad, es decir, que tan facil es interpretar y
+entender como toma decisiones. 5) Model Training: Entrenar el modelo y ajustar los hiper-
+parametros, utilizando tecnicas como Grid Search. Durante
+este proceso, el modelo realiza optimizacion basada en los
+datos para mejorar su desempeño y reducir errores. 6) Model Deployment: Poner el modelo en produccion,
+integrarlo con aplicaciones y monitorear su desempeño.

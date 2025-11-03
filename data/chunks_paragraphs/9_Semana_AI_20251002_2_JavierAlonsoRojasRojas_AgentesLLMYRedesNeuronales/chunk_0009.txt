@@ -1,0 +1,23 @@
+•Subindice: indica la neurona dentro de una capa. Ejem-
+plo:a(l)
+jes la j-´esima neurona en la capa l. •Pesos: se representan como w(l)
+j,k, que conecta la neurona
+a(l−1)
+kcona(l)
+j, aca j seria el destino y k el origen. Cada neurona de la capa lrecibe entradas desde todas las
+neuronas de la capa anterior (l−1), siguiendo los pasos:
+•Preactivacion:
+z(l)
+j=b(l)
+j+nl−1X
+k=1w(l)
+j,ka(l−1)
+k
+•Activacion:
+a(l)
+j=g(z(l)
+j)
+Para obtener la activacion de una neurona destino, se
+calculan las contribuciones de todas las neuronas de la capa
+anterior, multiplicando los pesos de conexion correspondientes
+por la activacion de cada neurona origen. Posteriormente, se

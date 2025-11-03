@@ -1,0 +1,24 @@
+B. Cuantizacion Simetrica
+rango:[−(2n−1),(2n−1)]
+s=abs(α)
+2n−1−1
+xf=sx q
+IV. ESTRATEGIAS DE SELECCION DEL RANGO
+•Cuantizacion Dinamica
+–Calculo estadistico de cual sera el valor de esa capa
+–se utiliza en la etapa post-training quantization
+•Post training quantization
+–hay que tratar los pesos atipicos porque puede con-
+finar los demas pesos en un rango muy pequeño e
+introduce mas error
+–Se puede utilizar el percentil en vez del min y max
+–agregamos observers que se encargan de hacer la
+estadisticas, calibran todas las salidas de la capa
+–se hace con los datos de prueba
+•Quantization Aware Training (QAT)
+–insertar modulos irreales en la computacion de grafo
+del modelo para similar el efector de cuantizacion
+durante el entrenamiento.
+–La funcion de perdida es usada para actualizar los
+pesos que constantemente sufren.
+-

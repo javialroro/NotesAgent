@@ -1,0 +1,10 @@
+Reconocimiento facial y compresion de imagenes. III. VARIATIONALAUTOENCODER
+Son una variante probabilistica de los autoencoders que
+generan una representacion latente continua modelada como
+una distribucion. En lugar de devolver un unico vector latente
+determinista, el encoder estima parametros de una distribucion:
+la mediaµ(x)y la log-varianzalogσ2(x). III-A. Reparametrizacion
+La reparametrizacion permite que la aleatoriedad se aisle
+en una variable independiente, de forma que los gradientes
+puedan fluir hacia los parametros que predicen la media y la
+varianza.

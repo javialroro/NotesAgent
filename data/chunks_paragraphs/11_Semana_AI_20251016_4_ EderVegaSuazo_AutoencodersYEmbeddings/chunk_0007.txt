@@ -1,0 +1,8 @@
+Para representar frases
+se puede usar promedio de embeddings o agregadores mas
+complejos. III-G0c. Modelos de lenguaje:Evolucion: RNN/LSTM
+→Transformers con self-attention. La self-attention permite
+capturar dependencias largas y producir embeddings contex-
+tuales; esos embeddings sirven para recuperacion, clasificacion
+y agentes. Figura 6: Esquema ilustrativo de tokenizacion subword y
+mapeo a IDs.

@@ -1,0 +1,25 @@
+Chunks
+El texto se divide en fragmentos denominadoschunks, que
+suelen contener entre 200 y 500 tokens. Cada fragmento se
+transforma en un vector mediante un modelo de embeddings,
+capturando su significado semantico. B. Consulta o recuperacion
+Dada una consulta, el sistema convierte la pregunta en
+un embedding y calcula la similitud con los embeddings
+indexados, devolviendo los mas cercanos semanticamente. C. Aumento y generacion
+Los fragmentos recuperados se integran en el prompt envi-
+ado al LLM, proporcionando contexto adicional que guia la
+respuesta hacia informacion verificada y relevante. D. Ventajas principales
+•Reduccion de alucinaciones. •Actualizacion continua del conocimiento. •Eficiencia de costos en entrenamiento. •Aplicabilidad en dominios especializados. •Asistentes empresariales enriquecidos. •Soporte a la investigacion y atencion al cliente. V. LLMTRADICIONAL VSAGENTE INTELIGENTE
+Un LLM tradicional puede ofrecer informacion general,
+pero carece de personalizacion y accion. Por ejemplo, si se le
+consulta “¿Cuantos dias de vacaciones me quedan?”, no podra
+responder con precision al no tener acceso a datos personales. En cambio, un agente inteligente integra:
+•Memoria:recuerda preferencias y contextos previos. •Herramientas:accede a APIs externas (clima, vuelos,
+calendario). •Planificacion:organiza y ejecuta tareas en funcion de
+objetivos. •Accion:transforma planes en resultados concretos. Este paradigma refleja la evolucion hacia sistemas que
+razonan y actuan, mas alla de solo responder texto. VI. ESCALAMIENTO RESPONSABLE
+Es fundamental evaluar cuando realmente se requiere es-
+calar de un modelo LLM a un sistema de agentes o mul-
+tiagentes. Esto implica garantizar seguridad, privacidad y el
+usoetico de los datos. Los agentes deben ser diseñados bajo
+principios de transparencia y responsabilidad.

@@ -1,0 +1,33 @@
+Derivada de la funcion sigmoide
+σ(x) =1
+1 +e−x
+σ′(x) =1′·(1 +e−x)−1·(1 +e−x)′
+(1 +e−x)2
+σ′(x) =e−x
+(1 +e−x)2
+σ′(x) =e−x+ 1−1
+(1 +e−x)2
+σ′(x) =e−x+ 1
+(1 +e−x)2−1
+(1 +e−x)2
+σ′(x) =1
+1 +e−x−1
+(1 +e−x)2
+σ′(x) =1
+1 +e−x·
+1−1
+1 +e−x
+σ′(x) =σ(x) (1−σ(x))
+D. Hallar la funcion de perdida
+¿MSE? Esto y mas en la siguiente clase. VII. C ONCLUSION
+En esta clase se reforzaron conceptos esenciales para
+comprender como los modelos de aprendizaje supervisado
+aprenden a partir de datos. Se revisaron las limitaciones de
+la regresion lineal y los problemas comunes asociados al
+sesgo y la varianza, asi como tecnicas para evaluar y mejorar
+la generalizacion de los modelos. Ademas, se introdujo la
+regresion logistica como un modelo de clasificacion, desta-
+cando el papel de la funcion sigmoide y su derivada en el
+proceso de optimizacion. Estos fundamentos sientan la base
+para profundizar en funciones de perdida especificas y en el
+entrenamiento de modelos mas complejos en futuras sesiones.

@@ -1,0 +1,13 @@
+IV. CONCLUSION
+A lo largo de este documento se profundizoen los funda-
+mentos de la regresion logistica, en particular en el uso de
+la verosimilitud como funcion de costo y en la aplicacion del
+logaritmo para simplificar su derivacion. Se revisaron ejemplos
+practicos que ilustran como interpretar probabilidades segun
+los valores de entrada, y se abordoel proceso de actualizacion
+de parametros mediante gradiente descendente. Ademas, el
+repaso permitioconectar la teoria con la implementacion
+practica en Python, reforzando la comprension del modelo y
+su utilidad en la clasificacion de datos. Con esto, se sientan
+las bases para continuar con tecnicas mas avanzadas de apren-
+dizaje supervisado.

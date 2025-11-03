@@ -1,0 +1,135 @@
+Apuntes semana 12 - Modelos de Lenguaje
+Extensos y Sistemas Avanzados
+(LLMs, RAG y Agentes Inteligentes)
+Fernando Daniel Brenes Reyes
+Escuela de Ingeniería en Computación
+Instituto Tecnológico de Costa Rica
+Cartago, Costa Rica
+21 de octubre
+2020097446@estudiantec.cr
+Resumen—El presente documento contiene un repaso y am-
+pliación de los conceptos fundamentales de los Modelos de
+Lenguaje Extensos (LLMs), su representación del conocimiento
+mediante la tokenización y los embeddings en espacios vec-
+toriales. Se detalla la evolución del LLM tradicional hacia
+arquitecturas avanzadas como Retrieval-Augmented Generation
+(RAG), que resuelve las limitaciones de conocimiento estático, y
+los Agentes Inteligentes, que integran memoria, planificación y la
+capacidad de ejecutar acciones autónomas, reflejando el estado
+del arte en la inteligencia artificial contextual y adaptable.
+Index Terms—LLM, RAG, Agentes Inteligentes, Tokenización,
+Embeddings, Aprendizaje Contextual.
+I. INTRODUCCIÓN
+LosModelos de Lenguaje Extensos (LLMs)se han
+consolidado como la base de los sistemas modernos deInte-
+ligencia Artificial Generativa (IAG). Estos modelos no solo
+generan texto, sino que también permiten la comprensión y el
+razonamiento sobre texto, código y otra información compleja.
+Aunque son potentes, los LLMs poseen un conocimiento
+limitado a sus datos de entrenamiento (estático) y pueden
+incurrir enalucinaciones. Para superar estas barreras, se han
+desarrollado enfoques como Retrieval-Augmented Generation
+(RAG) y los Agentes Inteligentes.
+II. FUNDAMENTOS DELLMS YREPRESENTACIÓN
+II-A. Tokenización: De la Palabra al Número
+Para que los LLMs puedan computar con el lenguaje,
+el texto de entrada debe convertirse en una representación
+numérica. El proceso deTokenizacióntransforma palabras,
+signos o símbolos en unidades mínimas llamadastokens,
+asignando a cada una unID numéricoúnico.
+Existen múltiples estrategias de tokenización, cada una
+optimizada para un objetivo distinto:
+Por palabra: Ofrece simplicidad.
+Por carácter: Permite manejar símbolos o palabras fuera
+del vocabulario (OOV).
+Subpalabra (BPE, WordPiece): Logra un equilibrio
+óptimo entre el tamaño del vocabulario y la preservación
+del contexto.II-B. Embeddings y Espacios Vectoriales
+Una vez tokenizados, los IDs numéricos se convierten en
+embeddings, que son representaciones numéricas densas en
+un espacio continuo de alta dimensión.
+Captura semántica: Los embeddings capturan el sig-
+nificado y las relaciones contextuales entre palabras u
+oraciones completas.
+Proximidad: Las palabras con significados similares se
+ubican próximas en el espacio vectorial.
+Operaciones: Este espacio permite realizar operacio-
+nes semánticas, como analogías (por ejemplo,Rey−
+Hombre+Mujer≈Reina).
+Para medir lasimilitudentre dos vectoresaybenRn, la
+Similitud del Cosenoes la métrica más utilizada:
+sim(a,b) =a·b
+||a||||b||(1)
+Figura 1. Representación tridimensional de tokens (Realeza).
+
+II-C. Capacidades Emergentes
+El entrenamiento masivo de los LLMs les confiere capa-
+cidades avanzadas queemergensin haber sido entrenados
+directamente para ellas:
+Razonamiento y planificación.
+Aprendizaje en el prompt(In-context Learning): Adap-
+tan el comportamiento a partir de ejemplos dados en la
+entrada.
+Multitarea: Realizan traducción, clasificación y codifi-
+cación sin reentrenamiento.
+III. RETRIEVAL-AUGMENTEDGENERATION(RAG)
+RAG es un paradigma que conecta un LLM con un mó-
+dulo de recuperación (retriever) para inyectarconocimiento
+externo, actualizado y verificabledurante la generación de
+respuestas.
+III-A. Proceso y Flujo de RAG
+1.Preparación (Chunking): Los documentos se dividen
+en fragmentos (chunks), que suelen contener entre200
+y 500 tokens, a menudo conoverlappara preservar el
+contexto.
+2.Indexación: Cadachunkse convierte en unembedding
+y se almacena en unabase de datos vectorial(por
+ejemplo, FAISS, Qdrant, Pinecone).
+3.Consulta y recuperación: La pregunta del usuario se
+transforma en unembedding, se calcula la similitud
+con los vectores indexados y se seleccionan lostop-k
+chunksmás cercanos semánticamente.
+4.Aumento y generación: Loschunksrecuperados se
+integran en una plantilla estructurada (prompt) como
+contexto adicional, asegurando que la respuesta del
+LLM sea precisa y fundamentada.
+III-B. Ventajas y Limitaciones
+RAG ofrece lareducción de alucinaciones, laactua-
+lización continua del conocimientoy la aplicabilidad en
+dominios especializados. No obstante, los sistemas RAG si-
+guen siendopasivos; su función se limita a complementar la
+respuesta del LLM con datos recuperados.
+Figura 2. Diagrama del flujo de un sistema RAG, desde la indexación hasta
+la generación de la respuesta.
+Figura 3. Agente inteligente.
+IV. DELLMAAGENTEINTELIGENTE
+LosAgentes Inteligentesbasados en LLMs superan la
+pasividad de los sistemas RAG. Estos agentes puedenrazonar,
+planificaryactuarde manera autónoma, interactuando con
+el mundo real mediante herramientas externas.
+IV-A. Componentes Clave del Agente
+1.Memoria: Permite mantener coherencia y contexto a lo
+largo del tiempo.
+Corto plazo: Ventana de contexto del modelo.
+Largo plazo: Bases de datos externas, incluyendo
+sistemas RAG para la recuperación contextual.
+2.Planificación: Permite descomponer problemas comple-
+jos en pasos y razonar sobre ellos.
+Chains of Thought (CoT): Razonamiento secuen-
+cial.
+Trees of Thought (ToT): Exploración de múltiples
+caminos de razonamiento antes de decidir.
+3.Acción: Capacidad de ejecutar tareas concretas median-
+teherramientas externas(APIs, buscadores, sistemas
+RAG). Por ejemplo, un agente puede acceder a un
+sistema de recursos humanos para responder: “¿Cuántos
+días de vacaciones me quedan?”.
+IV-B. Escalamiento Responsable
+La implementación de agentes requiere evaluar cuándo es
+necesaria la complejidad de un sistema multiagente. Es crucial
+garantizar laseguridad,privacidady eluso éticode los
+datos, diseñando los agentes bajo principios de transparencia
+y responsabilidad.
+REFERENCIAS
+[1] Pacheco Portuguez, S. (2025).Presentación del curso de Inteligencia
+Artificial. Instituto Tecnológico de Costa Rica.

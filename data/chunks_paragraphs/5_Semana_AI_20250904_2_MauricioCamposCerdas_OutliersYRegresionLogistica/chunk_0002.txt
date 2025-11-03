@@ -1,0 +1,34 @@
+P OTENCIALES PROBLEMAS DE LA REGRESIONLINEAL
+•No linealidad: En regresion lineal se asume que ex-
+iste una relacion lineal entre las variables predictoras
+y la variable respuesta. Sin embargo, esto no siempre
+se cumple, lo que provoca que el modelo no capture
+adecuadamente la relacion y que los residuos presenten
+patrones sistematicos (por ejemplo, con forma parabolica)
+en lugar de distribuirse aleatoriamente (ver Fig. 1). Una estrategia para enfrentar este problema es aplicar
+feature engineering . Un ejemplo es incorporar terminos
+polinomicos adicionales a las variables, lo que permite
+aproximar mejor relaciones no lineales. Fig. 1. Residual plots
+•Datos sobresalientes: Siempre existiran outliers, ya sea
+por ruido o error humano. Lo que pasa es que nos afecta
+a nuestro modelo, siempre habra cierta sensibilidad hay
+que tratarlos para evitar que nos afecte en gran medida
+nuestro modelo. A. Metodos para tratar outliers
+– Standardized Residuals: Tenemos el calculo de
+los residuos y calculamos la desviacion estandar,
+para asegurarnos de que nuestros datos siguen una
+distribucion normal. A partir de que los tenemos
+estandarizados, calculamos a cuantas desviaciones
+estandar se encuentra ese dato. Lo que nos dira
+es el limite de hasta donde se consideran datos
+sobresalientes. ∗ |z|>2: posible outlier. ∗ |z|>3: outlier muy probable, se recomienda
+excluir. – Regla del rango intercuartilico (IQR): Definido
+como IQR =Q3−Q1. Los datos que se encuentran
+fuera del intervalo [Q1−1.5·IQR, Q 3 + 1.5·IQR]
+se consideran outliers. – Winsorizacion:Tecnica que consiste en reemplazar
+los valores extremos por los percentiles limite (por
+ejemplo, 5% y 95%). III. S ESGO Y VARIANZA
+El dataset suele dividirse en train y test (80/20)
+A. Training set
+Se utiliza para ajustar el modelo. Nos puede pasar que
+entrenemos el modelo mucho tiempo, lleguemos al final y

@@ -1,0 +1,13 @@
+D. AlexNet
+Esta es una arquitectura que salio para la revolucion de
+convoluciones y el Deep Learning en todos sus aspectos.
+Fig. 5. Arquitectura AlexNet.
+En la Fig. 5 podemos apreciar el proceso. Los cubitos de
+adentro representan el tamaño de los filtros.
+De esta manera podemos tratar un problema de clasifi-
+cacion en imagenes. Lo primero que se hace es una con-
+volucion donde extraemos ciertas caracteristicas. Para reducir
+las imagenes se realiza un pooling, donde se pierden pixeles.
+Al final llegamos a un resumen de la imagen anterior. Solo
+quedaria hacer una fully connected.
+Fig. 6. Reduccion de imagen.

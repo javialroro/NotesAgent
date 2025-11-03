@@ -1,0 +1,479 @@
+1
+Apuntes Semana 12, Martes 21 de Octubre
+Carranza Jimenez Kevin
+Instituto Tecnologico de Costa Rica
+Correo electronico: kcarranza@estudiantec.cr
+Resumen—El siguiente documento presenta el resumen de la
+clase del dia martes 21 de octubre, impartida por el profesor Ste-
+ven Pacheco Portuguez en el Instituto Tecnologico de Costa Rica.
+La clase presenta el cronograma restante del curso, un resumen
+de la clase anterior en el que se repasan los temas de modelos
+de lenguaje a gran escala (LLM), tokenizacion, embeddings y la
+introducion del paradigma de Retrieval-Augmented Generation
+(RAG) y agentes inteligentes. En la presente clase se profundiza
+en el tema de LLM, RAGs y agentes introducidos en la clase
+anterior.
+Index Terms—LLM, RAG, Embedding, Agente
+I. INTRODUCCION
+La sesion iniciocon una revision del cronograma restante
+del curso. Posteriormente, se realizoun repaso de la clase
+anterior, en la cual se introdujeron conceptos fundamentales
+sobre los modelos de lenguaje de gran escala (Large Language
+Models, LLM), el proceso de tokenizacion y la representacion
+semantica medianteembeddings.
+A partir de este punto, la clase se centroen dos temas prin-
+cipales: la integracion de modelos mediante esquemas de Re-
+cuperacion Aumentada de Generacion (Retrieval-Augmented
+Generation, RAG) y la nocion de agentes inteligentes.
+II. ASPECTOS ADMINISTRATIVOS DE LA CLASE
+Se presentoel calendario en el cual se muestran las pro-
+ximas actividades y evaluaciones que restan del curso. En la
+tabla I.
+III. RAGS YAGENTESUTILIZANDOLLMS
+Los esquemas de Recuperacion Aumentada de Generacion
+(Retrieval-Augmented Generation, RAG) y los agentes inteli-
+gentes representan una evolucion significativa en el uso de los
+Cuadro I
+CRONOGRAMA DE CLASES Y ACTIVIDADES
+Semana Martes Jueves
+12 Clase Agentes - LLM y Asig-
+nacion de Tarea 04 AgentesClase Quantization
+13 Aplicar Quiz 6 y Clase Quan-
+tization - UnsupervisedClase Unsupervised - PCA y
+Entrega de Proyecto I
+14 Evaluacion presencial Proyec-
+to I.Entrega Tarea 04 Agentes y
+Evaluacion presencial PRoyec-
+to I
+15 Clase virtual Unsupervised -
+PCA, Asignacion de Proyecto
+II y Asignacion de Tarea 05
+Autoencoder - QuantizationRevision virtual de Tarea 04
+Agentes
+16 Clase Sesgos de AI
+17 Semana Colchon Semana Colchon
+18 Examen I Entrega Proyecto IImodelos de lenguaje de gran escala (LLM). Los RAG combi-
+nan la capacidad generativa de los LLM con mecanismos de
+recuperacion de informacion externa, permitiendo respuestas
+mas precisas y actualizadas basadas en conocimiento relevan-
+te [1]. Por su parte, los agentes inteligentes extienden este
+enfoque al incorporar razonamiento, planificacion y toma de
+decisiones, posibilitando sistemas que no solo generan texto,
+sino que tambien actuan de manera autonoma en funcion de
+objetivos especificos [2].
+III-A. ¿Por quelos LLM son tan utilizados?
+Los modelos de lenguaje de gran escala (LLM) se han
+convertido en la base de numerosos sistemas modernos
+de inteligencia artificial, impulsando avances significativos
+en tareas de generacion, comprension y razonamiento
+sobre texto, codigo e incluso modalidades mas complejas
+como imagenes y audio. Estos modelos son capaces
+de representar conocimiento a gran escala mediante el
+aprendizaje de patrones linguisticos y semanticos a partir de
+enormes volumenes de datos, lo que explica la sorprendente
+coherencia y versatilidad de sus resultados [3]. Comprender
+los mecanismos internos que permiten estas representaciones,
+asicomo sus limitaciones y potencial de generalizacion,
+resulta esencial para el desarrollo de aplicaciones mas seguras
+y efectivas basadas en inteligencia artificial generativa.
+La Figura 1 ilustra la arquitectura de un modelo de red
+neuronal preentrenado disenado para la clasificacion de even-
+tos de colision. Este modelo recibe como entrada un conjunto
+de caracteristicas ofeaturesque incluyen la velocidad del
+vehiculo, la calidad del terreno, el grado de vision disponible y
+la experiencia total del conductor. A partir de estos parametros,
+la red aprende a identificar patrones que permiten estimar la
+probabilidad de que ocurra una colision bajo determinadas
+Figura 1. Modelo de red neuronal preentrenado para la clasificacion de
+eventos de colision.
+
+2
+Cuadro II
+EJEMPLO SIMPLIFICADO DE TOKENIZACION
+Palabra Token ID Numerico
+Los los 105
+LLM llm 2124
+aprenden aprenden 893
+patrones patrones 5749
+condiciones. El uso de modelos preentrenados en este contexto
+facilita una generalizacion mas robusta y una convergencia
+mas rapida durante el proceso de entrenamiento, lo cual
+resulta ventajoso en escenarios donde los datos etiquetados
+son limitados [4].
+III-B. Tokenizacion
+En el procesamiento del lenguaje natural, cada palabra,
+signo o simbolo debe transformarse en una representacion
+numerica para que pueda ser comprendida y procesada por
+los modelos de lenguaje. Este proceso se conoce comotoke-
+nizacion, y consiste en dividir el texto en unidades minimas
+denominadastokens, que pueden corresponder a palabras,
+subpalabras o incluso caracteres individuales. A cada token se
+le asigna un identificador numerico unico dentro de un vocabu-
+lario previamente definido, lo que permite representar oracio-
+nes completas como secuencias de numeros. Existen diversas
+estrategias de tokenizacion, como la basada en subpalabras
+(Byte Pair EncodingoWordPiece), que buscan equilibrar la
+eficiencia del vocabulario con la capacidad del modelo para
+manejar palabras desconocidas o de diferentes idiomas [5].
+La Tabla II muestra un ejemplo simplificado del proceso de
+tokenizacion, en el cual cada palabra del texto es descompuesta
+en su correspondiente token y asociada a un identificador
+numerico dentro del vocabulario del modelo. Este procedi-
+miento permite representar de forma estructurada los elemen-
+tos linguisticos, facilitando que el modelo procese el texto
+como una secuencia de valores discretos que posteriormente
+seran transformados en vectores continuos mediante tecnicas
+deembedding.
+La Tabla III resume algunos de los tipos mas comunes de
+tokenizacion utilizados en modelos de lenguaje. Cada enfoque
+difiere en el nivel de granularidad con que divide el texto:
+desde unidades completas como palabras, hasta fragmentos
+mas pequenos como subpalabras, caracteres o incluso bytes
+individuales. Esta diversidad de metodos permite adaptar la
+representacion del texto segun las necesidades del modelo,
+equilibrando la complejidad del vocabulario con la capacidad
+para manejar palabras desconocidas o simbolos especiales.
+Cuadro III
+TIPOS COMUNES DE TOKENIZACION
+Tipo Ejemplo Ventaja principal
+Palabra "Los modelos" Simplicidad
+Caracter "L", .o", "s" Sin OOV*
+Subpalabra .aprend-iendo" Equilibrio vocabula-
+rio/contexto
+Byte-level bytes UTF-8 Soporta cualquier simbolo
+Espacio en blanco "Hola", "mundo" Rapido y simple
+Figura 2. 3D Semantic feature space
+III-C. Representacion de tokens en un espacio vectorial
+Una vez que el texto ha sido tokenizado, cada token se
+convierte en un numero que sirve unicamente como iden-
+tificador dentro del vocabulario del modelo. Sin embargo,
+estos valores numericos carecen de significado semantico por
+simismos, ya que no reflejan las relaciones o similitudes
+entre las palabras. Para que un modelo pueda comprender el
+contexto y el significado del lenguaje, es necesario transformar
+dichos identificadores en representaciones continuas que cap-
+turen las propiedades semanticas y sintacticas de las palabras
+dentro del texto. Este proceso se logra mediante el uso de
+embeddings, los cuales permiten a los modelos de lenguaje
+aprender representaciones vectoriales que preservan relaciones
+de significado y proximidad contextual [6].
+La Figura 2 representa un espacio vectorial tridimensional
+en el que las palabras se distribuyen segun tres dimensiones
+semanticas: edad, genero y realeza. Cada punto del espacio
+corresponde a la proyeccion de una palabra en funcion de
+sus caracteristicas aprendidas por el modelo, lo que permite
+observar relaciones de similitud y diferencia entre concep-
+tos. Por ejemplo, terminos como “rey” y “reina” se ubican
+proximos entre sien la dimension de realeza, pero difieren
+en la dimension de genero, ilustrando como losembeddings
+capturan relaciones semanticas complejas dentro de un espacio
+continuo [6].
+III-D. Similaridad entre vectores
+Una vez que las palabras han sido transformadas en vectores
+dentro de un espacio continuo, es posible cuantificar su grado
+de similitud midiendo la distancia o el angulo entre dichos
+vectores. En este contexto, dos vectores proximos representan
+palabras con significados semanticamente similares, mientras
+que aquellos que se encuentran alejados reflejan conceptos
+distintos o no relacionados. Esta propiedad permite a los mo-
+delos de lenguaje capturar relaciones latentes como analogias
+o asociaciones conceptuales, lo que ha sido fundamental para
+tareas como la busqueda semantica, la traduccion automatica
+y la inferencia contextual [7].
+
+3
+III-E. Metricas mas comunes
+Las metricas mas comunes para calcular similitud entre
+vectores son:
+Distancia euclidiana:
+d(a, b) =sX
+i(ai−b i)2 (1)
+Mide que tan lejos estan los puntos.
+Similitud del coseno
+sim(a, b) =a·b
+∥a∥∥b∥(2)
+Mide el angulo entre vectores: cuanto mas pequeno, mas
+similares.
+La mas usada en modelos de lenguaje es la similitud de
+coseno, ya que se enfoca en la direccion del vector mas que
+en su magnitud.
+IV. EMBEDDINGS
+Losembeddingsson representaciones numericas densas que
+asignan a cada token —ya sea una palabra, subpalabra o inclu-
+so una frase— un vector en un espacio continuo de alta dimen-
+sion. Estas representaciones permiten capturar el significado
+semantico y las relaciones contextuales entre los terminos, de
+modo que palabras con sentidos similares se ubiquen proximas
+entre sidentro del espacio vectorial. Ademas, los modelos
+modernos son capaces de generarembeddingsa nivel de frase
+o enunciado (sentence embeddings), los cuales condensan el
+significado global de un texto. Este tipo de representacion
+posibilita comparar oraciones, ideas o documentos en funcion
+de su contenido semantico, en lugar de basarse unicamente en
+coincidencias literales de palabras [8].
+La Figura 3 representa un ejemplo conceptual de embed-
+dings para frases similares en el que se muestran las diferentes
+fases de forma general y simplificada, pasando des de la
+palabra, documento u oracion, hasta el espacio del embedding.
+IV-A. Capacidad de los modelos de lenguaje
+Gracias a su entrenamiento a gran escala y al uso de
+arquitecturas basadas entransformers, los modelos de len-
+guaje de gran escala (LLM) han desarrollado un conjunto de
+capacidades emergentes que trascienden las funciones para
+las que fueron disenados explicitamente. Estas habilidades
+Figura 3. Ejemplo conceptual de embeddings de frases similares—como el razonamiento contextual, la inferencia logica o la
+adaptacion a tareas no vistas durante el entrenamiento— no
+fueron programadas de forma directa, sino que surgen como
+resultado del aprendizaje de patrones complejos a partir de
+enormes volumenes de datos textuales y contextuales. Este
+fenomeno ha sido objeto de creciente interes, ya que evidencia
+como la escala y la estructura de los modelos pueden dar
+lugar a comportamientos no lineales y sofisticados en el
+procesamiento del lenguaje natural [9].
+IV-B. Capacidades de modelos de lenguaje
+Comprension textual: interpretan el significado de pa-
+labras y frases segun el entorno en el que aparecen.
+Generacion coherente de texto: pueden redactar, tradu-
+cir o resumir informacion manteniendo estilo y consis-
+tencia.
+Razonamiento y planificacion: resulven problemas, ex-
+plican pasos y trazan estrategias.
+Aprendizaje de prompt: adaptan su comportamiento a
+partir de ejemplos dados en la misma conversacion (in-
+context learning).
+Multitarea: realizan traduccion, clasificacion, codifica-
+cion, analisis o dialogo sin requerir reentrenamiento.
+IV-C. Limitacion de los modelos de lenguaje
+Alucinaciones:generan respuestas convincentes pero
+incorrectas o inventadas.
+Memoria limitada:no recuerdan interacciones pasadas
+mas allade su ventana de contexto.
+Conocimiento estatico:su informacion proviene de los
+datos de entrenamiento.
+Costos computacionales:requieren grandes recursos
+para entrenamiento e inferencia.
+V. RETRIVAL-AUGMENTEDGENERATION(RAG)
+El enfoque de Recuperacion Aumentada de Generacion
+(Retrieval-Augmented Generation, RAG) combina la potencia
+generativa de los modelos de lenguaje de gran escala (LLM)
+con un modulo de recuperacion de informacion externa, cono-
+cido comoretriever. Este componente permite inyectar cono-
+cimiento relevante proveniente de bases de datos o colecciones
+de documentos en el momento de la consulta, ampliando asila capacidad del modelo para generar respuestas mas precisas,
+actualizadas y fundamentadas en evidencia. De esta manera,
+el sistema integra razonamiento generativo con recuperacion
+informativa, superando las limitaciones de los LLM entrenados
+unicamente con conocimiento estatico [1].
+V-A. Ingesta y Chunking
+El primer paso en la construccion de un sistema de Recupe-
+racion Aumentada de Generacion (RAG) consiste en preparar
+los documentos que serviran como fuente de informacion.
+Para ello, el texto se segmenta en fragmentos manejables
+denominadoschunks, que suelen tener una longitud entre 200
+y 500 tokens, con el fin de preservar la coherencia semantica
+y facilitar la recuperacion eficiente de informacion relevante.
+
+4
+Posteriormente, cada fragmento se transforma en un vector
+mediante un modulo deembeddings, el cual codifica su signi-
+ficado semantico en un espacio de alta dimension. Esta repre-
+sentacion vectorial permite medir similitudes entre consultas y
+fragmentos de texto, habilitando la busqueda contextual basada
+en significado y no en coincidencias literales [10].
+V-A1. Chunking Tamano fijo:El proceso dechunkingde
+tamano fijo consiste en dividir los documentos en segmentos
+de texto de longitud predefinida, con el objetivo de estandarizar
+las unidades de informacion utilizadas en los sistemas de
+recuperacion. Esta tecnica permite equilibrar la granularidad
+del contenido: fragmentos demasiado pequenos pueden perder
+contexto semantico, mientras que fragmentos demasiado gran-
+des dificultan la busqueda eficiente y aumentan la ambiguedad
+en la recuperacion. Al mantener un tamano constante, los
+chunksfacilitan la indexacion vectorial y mejoran la preci-
+sion de los modelos que empleanembeddingspara comparar
+consultas y pasajes de texto [11].
+V-A2. Chunking recursivo:Elchunkingrecursivo es una
+tecnica avanzada utilizada para segmentar texto de manera
+jerarquica y adaptativa, en lugar de emplear longitudes fijas.
+Este metodo divide los documentos siguiendo la estructura
+linguistica del contenido, como parrafos, oraciones o seccio-
+nes, y aplica fragmentaciones adicionales cuando un segmento
+excede un limite de tokens definido. De este modo, se preserva
+el contexto semantico relevante en cada fragmento, evitando
+cortes arbitrarios que podrian afectar la coherencia del texto. El
+enfoque recursivo resulta especialmente util en tareas de Recu-
+peracion Aumentada de Generacion (RAG), donde mantener la
+integridad semantica de loschunksmejora significativamente
+la precision de la recuperacion contextual [12].
+V-A3. Chunking similaridad semantica:Elchunkingbasa-
+do en similitud semantica emplea medidas vectoriales —prin-
+cipalmente la similitud del coseno— para dividir un texto
+en fragmentos coherentes segun su significado, en lugar de
+hacerlo por longitud o estructura gramatical. En este enfoque,
+se generanembeddingsde oraciones o parrafos consecutivos, y
+se calcula la similitud coseno entre ellos. Cuando la similitud
+cae por debajo de un umbral predefinido, se considera que el
+contexto cambia significativamente, estableciendo asiun nuevo
+limite dechunk. Este metodo produce divisiones mas naturales
+desde el punto de vista semantico, preservando la coherencia
+tematica y mejorando la recuperacion contextual en sistemas
+basados enRetrieval-Augmented Generation (RAG)[13].
+V-B. Indexacion
+Laindexacion vectoriales un proceso fundamental en
+los sistemas de recuperacion aumentada (Retrieval-Augmented
+Generation, RAG), que permite almacenar y buscar eficien-
+temente representaciones numericas de documentos o frag-
+mentos de texto en un espacio vectorial de alta dimension.
+Su proposito es facilitar la recuperacion de informacion se-
+manticamente similar a una consulta mediante la comparacion
+de vectores utilizando metricas como la similitud coseno o
+la distancia euclidiana. Entre las soluciones mas utilizadas
+se encuentranQdrant, un motor de busqueda vectorial de
+codigo abierto optimizado para busquedas por similitud yfiltrado hibrido;Pinecone, un servicio en la nube que ofrece
+indexacion vectorial escalable y mantenimiento automatico de
+indices; yFAISS(Facebook AI Similarity Search), una biblio-
+teca desarrollada por Meta que permite busquedas eficientes
+en grandes volumenes de vectores mediante tecnicas de cuan-
+tizacion y optimizacion de memoria. Estas herramientas son
+esenciales para el funcionamiento de sistemas RAG modernos,
+al permitir una recuperacion rapida y precisa del contexto mas
+relevante [14]–[16].
+V-C. Consulta o Recuperacion
+Una vez construida la base vectorial, el siguiente paso
+consiste en realizar la recuperacion semantica de informacion.
+Dada una consulta o pregunta formulada por el usuario, esta
+se transforma en unembeddingque captura su significado
+en un espacio de alta dimension. Posteriormente, se calcula
+la similitud —comunmente mediante la metrica del coseno—
+entre este vector de consulta y todos losembeddingsprevia-
+mente indexados. Finalmente, el sistema devuelve lostop-k
+fragmentos mas cercanos, es decir, aquellos cuya representa-
+cion vectorial es mas similar a la de la consulta. Este proceso
+permite realizar busquedas basadas en el significado semantico
+del texto, en lugar de depender de coincidencias literales o
+palabras exactas, lo que mejora significativamente la precision
+contextual en aplicaciones basadas enRetrieval-Augmented
+Generation (RAG)[1].
+V-D. Augmentacion y Generacion (Inyeccion de contexto)
+El paso final en un sistemaRetrieval-Augmented Generation
+(RAG)consiste en integrar la informacion recuperada dentro
+delpromptque se enviaraal modelo de lenguaje. Para ello, se
+construye una plantilla o estructura de entrada que combina
+la pregunta del usuario con los fragmentos de texto mas
+relevantes obtenidos en la fase de recuperacion. Este contexto
+adicional actua como una fuente de conocimiento explicita
+que guia al LLM, permitiendole generar una respuesta mas
+precisa, coherente y sustentada en la evidencia. De esta
+Figura 4. Diagrama del proceso del RAG
+
+5
+manera, el modelo no depende unicamente de su conocimiento
+preentrenado, sino que se apoya en informacion actualizada y
+especifica al dominio, lo cual mejora la fiabilidad y reduce la
+alucinacion de respuestas [17].
+La Figura 4 ilustra de forma general el funcionamiento
+del procesoRetrieval-Augmented Generation(RAG). Este
+enfoque combina la recuperacion de informacion relevante
+desde una base vectorial con la generacion de texto asistida
+por un modelo de lenguaje. A partir de una consulta del
+usuario, el sistema identifica los fragmentos mas relacionados
+semanticamente, los integra dentro delprompty genera una
+respuesta fundamentada en dichas evidencias. De esta manera,
+el modelo puede ofrecer respuestas mas precisas, actualizadas
+y contextualizadas que las obtenidas unicamente a partir del
+conocimiento interno del LLM [1].
+VI. BENEFICIOS
+El uso de arquitecturas basadas enRetrieval-Augmented
+Generation(RAG) ofrece multiples beneficios frente al uso
+de modelos de lenguaje puros. En primer lugar, permite
+una significativareduccion de las alucinaciones, ya que
+el modelo genera sus respuestas apoyandose en evidencia
+documental verificable en lugar de depender unicamente de
+su conocimiento implicito. Ademas, posibilita laactualizacion
+continua del conocimiento, dado que la base de recuperacion
+puede ser renovada con informacion reciente sin necesidad
+de reentrenar el modelo. Este enfoque tambien contribuye a
+una mayoreficiencia de costos, al disminuir la necesidad de
+entrenamientos extensivos y aprovechar modelos preexistentes
+combinados con fuentes dinamicas de datos. Finalmente, el
+paradigma RAG favorece laaplicabilidad en dominios espe-
+cializados, permitiendo adaptar el comportamiento del sistema
+a contextos como medicina, derecho o ingenieria mediante la
+incorporacion de bases de conocimiento especificas [18].
+VII. CASOS DE USO
+Los sistemas basados enRetrieval-Augmented Generation
+(RAG) presentan aplicaciones practicas en multiples dominios.
+Por ejemplo, en el ambito corporativo, losasistentes empre-
+sariales enriquecidospueden ofrecer informacion precisa y
+contextualizada a partir de bases de conocimiento internas,
+mejorando la productividad y la toma de decisiones. En el
+campo de lainvestigacion, los RAG facilitan la recuperacion
+de literatura relevante y la sintesis de informacion compleja,
+acelerando el analisis de grandes volumenes de datos textuales.
+Asimismo, en el area desoporte al cliente, estos sistemas
+permiten generar respuestas fundamentadas y coherentes a
+consultas de usuarios, reduciendo errores y mejorando la
+experiencia de atencion mediante informacion verificada y
+actualizada [18].
+VIII. TAREA4: AGENTECONVERSACIONAL
+Al final de la clase se presentola asignacion y revision del
+enunciado de la Tarea 4, centrada en el desarrollo de un agente
+conversacional. La fecha de entrega se ha establecido para el
+jueves 6 de noviembre.REFERENCIAS
+[1] P. Lewis, E. Perez, A. Piktus, F. Petroni, V . Karpukhin, N. Goyal,
+H. Kuttler, M. Lewis, W. tau Yih, T. Rocktaschel, S. Riedel, and
+D. Kiela, “Retrieval-augmented generation for knowledge-intensive nlp
+tasks,”Advances in Neural Information Processing Systems (NeurIPS),
+2020.
+[2] S. Wang, Y . Qin, W. Chen, Z. Wu, Z. Xi, Y . Xu, T. Gui, X. Qiu, and
+Z. Zhang, “A survey on large language model based autonomous agents,”
+arXiv preprint arXiv:2401.03428, 2024.
+[3] OpenAI, “Gpt-4 technical report,” arXiv preprint arXiv:2303.08774,
+2023.
+[4] Y . LeCun, Y . Bengio, and G. Hinton, “Deep learning,”Nature, vol. 521,
+pp. 436–444, 2015.
+[5] R. Sennrich, B. Haddow, and A. Birch, “Neural machine translation
+of rare words with subword units,” inProceedings of the 54th Annual
+Meeting of the Association for Computational Linguistics (ACL), 2016,
+pp. 1715–1725.
+[6] T. Mikolov, K. Chen, G. Corrado, and J. Dean, “Efficient estimation of
+word representations in vector space,” inProceedings of the Internatio-
+nal Conference on Learning Representations (ICLR), 2013.
+[7] J. Pennington, R. Socher, and C. D. Manning, “Glove: Global vectors
+for word representation,” inProceedings of the 2014 Conference on
+Empirical Methods in Natural Language Processing (EMNLP), 2014,
+pp. 1532–1543.
+[8] N. Reimers and I. Gurevych, “Sentence-bert: Sentence embeddings using
+siamese bert-networks,” inProceedings of the 2019 Conference on
+Empirical Methods in Natural Language Processing (EMNLP), 2019,
+pp. 3982–3992.
+[9] J. Wei, Y . Tay, R. Bommasani, C. Raffel, B. Zoph, S. Borgeaud,
+D. Yogatama, M. Bosma, D. Zhou, D. Metzler, E. Chi, T. Hashimoto,
+O. Vinyals, P. Liang, J. Dean, and W. Fedus, “Emergent abilities of large
+language models,”arXiv preprint arXiv:2206.07682, 2022.
+[10] V . Karpukhin, B. Oguz, S. Min, P. Lewis, L. Wu, S. Edunov, D. Chen,
+and W. tau Yih, “Dense passage retrieval for open-domain question ans-
+wering,” inProceedings of the 2020 Conference on Empirical Methods
+in Natural Language Processing (EMNLP), 2020, pp. 6769–6781.
+[11] G. Izacard and E. Grave, “Leveraging passage retrieval with genera-
+tive models for open domain question answering,” inProceedings of
+the 16th Conference of the European Chapter of the Association for
+Computational Linguistics (EACL), 2021, pp. 874–880.
+[12] L. Gilardi and D. Steiner, “Recursive chunking strategies for impro-
+ved context retrieval in large language models,” arXiv preprint ar-
+Xiv:2309.02706, 2023.
+[13] Y . Liu, S. Kumar, and P. Gupta, “Semantic chunking with cosine
+similarity for enhanced context preservation in rag systems,” arXiv
+preprint arXiv:2403.11892, 2024.
+[14] J. Johnson, M. Douze, and H. Jegou, “Billion-scale similarity search
+with gpus,”IEEE Transactions on Big Data, vol. 7, no. 3, pp. 535–547,
+2019.
+[15] P. S. Inc., “Pinecone documentation,” https://docs.pinecone.io/, 2024.
+[16] Q. Team, “Qdrant: Vector database documentation,” https://qdrant.tech/
+documentation/, 2024.
+[17] G. Izacard, P. Lewis, M. Lomeli, L. Hosseini, F. Petroni, T. Schick,
+S. Riedel, and D. Kiela, “Atlas: Few-shot learning with retrieval aug-
+mented language models,”arXiv preprint arXiv:2208.03299, 2022.
+[18] Y . Gao, S. Li, J. Lin, J. Callanet al., “Retrieval-augmented generation
+for large language models: A survey,”arXiv preprint arXiv:2312.10997,
+2023.

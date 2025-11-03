@@ -1,0 +1,34 @@
+Filtro Gaussiano:suaviza la imagen (blur) y reduce
+ruido; resalta contornos al combinarse con operadores
+de gradiente. Campo Receptivo (RF):region de la entrada que “ve”
+una neurona de una capa dada. Aumenta con la profun-
+didad. Si encadenamos capas con kernelk iystrides i,
+el RF efectivo crece de forma acumulativa. Parametros y costo:el numero de parametros en una capa
+conv esk2·Cin·Cout+C out(sesgo). La complejidad
+computacional se aproxima porH out·Wout·k2·Cin·Cout.B. Parametros de la Convolucion: Stride, Padding y Tamaño
+de Salida
+Para una entrada 1D de longitudm, kernelk,paddingpy
+strides, la salida es:
+out=m+ 2p−k
+s
++ 1. En 2D se aplica por dimension (alto y ancho). Elpadding
+simetrico tipico para “conservacion de tamaño” cons= 1es
+p=k−1
+2(sikes impar). Elstride>1reduce la resolucion
+espacial. C. Pesos Compartidos y Eficiencia
+Lacomparticion de pesosaplica el mismo kernel en todas
+las posiciones espaciales, reduciendo parametros frente a capas
+densas. En primeras capas, la red aprende bordes y texturas;
+en capas profundas, patrones semanticos mas abstractos. D. Capa de Pooling
+Reduce la resolucion espacial conservando canales:
+Max Pooling:retiene el valor maximo de cada ventana. Average Pooling:promedia los valores. Regla practica:pooling2×2constride2 para reduccion a la
+mitad. MantieneD=C iny reduceH, W. E. Activaciones, Normalizacion y Regularizacion
+Activacion:ReLU es estandar en CNN modernas (evita
+saturacion y acelera entrenamiento). Tanh/sigmoid pue-
+den usarse en salidas especificas. Batch Normalization (BN):estabiliza la distribucion
+de activaciones, permite mayores tasas de aprendizaje y
+acelera la convergencia. Regularizacion:Dropout (tipico en capas densas), L2
+(weight decay) ydata augmentationreducen sobreajuste. F . Capa Fully-Connected (MLP) y Clasificacion
+Tras extraer mapas de activacion, se aplicaflatten(oglobal
+average pooling) y capas densas para clasificacion. En proble-
+mas multi-clase se usasoftmaxy perdida de entropia cruzada. III.

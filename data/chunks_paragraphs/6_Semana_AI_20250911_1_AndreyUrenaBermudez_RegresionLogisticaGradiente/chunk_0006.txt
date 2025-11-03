@@ -1,0 +1,17 @@
+Luego, se ejecuta el ciclo de entrenamiento
+por la cantidad de epochs definida, donde primero se calcula
+la prediccion lineal, que luego pasa por la funcion sigmoide
+para obtener una probabilidad. A partir de esta probabilidad,se actualizan los valores de w y b, y se calcula el error en
+cada iteracion. La funcionpredictse encarga de predecir la clase de una
+nueva muestra en base al umbral que se define. Una vez
+obtenida la probabilidad, se asigna la clase correspondiente. Figura 5. Codigo Regresion Logistica
+Finalmente, el modelo se implementa instanciando la clase
+y entrenandola con X train y y train. Luego, se evalua con
+X test y y test, calculando la accuracy y generando un clas
+sification report para medir su desempeno, el cual muestra
+metricas como el nivel de accuracy, precision, recall, f1-score
+y support. Figura 6. Enter Caption
+De igual forma, en lugar de implementar la regresion
+logistica manualmente, se puede utilizar el metodo que facilita
+sklearn, tal y como se muestra en la figura 6. En este caso,
+se instancia el modelo de regresion logistica con

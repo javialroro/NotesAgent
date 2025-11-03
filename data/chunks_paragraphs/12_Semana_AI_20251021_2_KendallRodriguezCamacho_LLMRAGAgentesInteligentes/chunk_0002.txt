@@ -1,0 +1,41 @@
+Calendario previsto para el resto del curso
+La siguiente Tabla I muestra la planificacion de las ac-
+tividades restantes del curso, indicando las fechas y tareas
+correspondientes para cada semana. Nota: En caso de que no se realice la visita a Microsoft, la
+clase”Riesgos de IA”se trasladaria al jueves de la semana 15,
+y el examen se aplicaria el jueves 20 de noviembre (semana
+16).TABLE I
+CALENDARIO PREVISTO PARA EL RESTO DEL CURSO
+Semana Martes Jueves
+12 Asignacion de Tarea 04 (Agentes) Clase de Quantization
+13 Quiz 6, Terminar tema Quantiza-
+tion, Empezar Unsupervised Learn-
+ing y PCAClase Unsupervised Learning y En-
+trega Proyecto 01
+14 Revision de Proyecto 01 de forma
+presencial (se sacara cita en un
+forms)Entrega de Tarea 04 (Agentes) y
+continuar con revision de Proyectos
+15 Clase virtual, se asigna Proyecto 02
+y Tarea 05 sobre QuantizationRevision tarea 04 (Agentes) de
+forma Virtual
+16 Clase Riesgos de IA Visita a Microsoft
+17 - -
+18 Examen presencial Entrega de Proyecto 02
+B. Asignacion de Tarea 04
+Se asigna la Tarea 04, la cual consiste en desarrollar un
+asistente conversacional que se desempeñe ante diferentes
+preguntas basadas en una base de documentos (Apuntes de
+clase realizados por los estudiantes hasta la fecha). Se requiere implementar tecnicas de recuperacion y au-
+mento de contexto (RAG) y comparar empiricamente los
+resultados con distintos esquemas de segmentacion del texto. La fecha de entrega esta prevista para el jueves 6 de
+noviembre. III. FUNDAMENTOS DE LOSLLMS
+A. Funcionamiento general
+Los LLMs procesan los datos de entrada transformandolos
+en representaciones numericas que describen caracteristicas
+semanticas. Cada palabra, simbolo o caracter se convierte en
+una secuencia de valores numericos mediante la tokenizacion,
+para luego ser procesados en redes neuronales profundas con
+millones o miles de millones de parametros. B. Del lenguaje al numero
+El texto debe convertirse en representaciones numericas para
+ser interpretado por el modelo.

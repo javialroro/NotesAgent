@@ -1,0 +1,18 @@
+Componentes Clave del Agente
+1.Memoria: Permite mantener coherencia y contexto a lo
+largo del tiempo. Corto plazo: Ventana de contexto del modelo. Largo plazo: Bases de datos externas, incluyendo
+sistemas RAG para la recuperacion contextual. 2.Planificacion: Permite descomponer problemas comple-
+jos en pasos y razonar sobre ellos. Chains of Thought (CoT): Razonamiento secuen-
+cial. Trees of Thought (ToT): Exploracion de multiples
+caminos de razonamiento antes de decidir. 3.Accion: Capacidad de ejecutar tareas concretas median-
+teherramientas externas(APIs, buscadores, sistemas
+RAG). Por ejemplo, un agente puede acceder a un
+sistema de recursos humanos para responder: “¿Cuantos
+dias de vacaciones me quedan?”. IV-B. Escalamiento Responsable
+La implementacion de agentes requiere evaluar cuando es
+necesaria la complejidad de un sistema multiagente. Es crucial
+garantizar laseguridad,privacidady eluso eticode los
+datos, disenando los agentes bajo principios de transparencia
+y responsabilidad. REFERENCIAS
+[1] Pacheco Portuguez, S. (2025).Presentacion del curso de Inteligencia
+Artificial. Instituto Tecnologico de Costa Rica.

@@ -1,0 +1,26 @@
+F . Posibles escenarios
+Dentro de los posibles escenarios de estos metodos se
+encueentran:
+•Bajo error en training, bajo error en testing.
+•Escenario ideal.
+•Modelo evita el ruido existente en los datos.
+•Puede generalizar correctamente.
+Visualmente se puede ver de la siguiente forma:
+Otro escenario es cuando se tiene lo siguiente:
+•Bajo error en training, alto error en testing.
+•Overfitting.
+•No es capaz de generalizar.
+•Alta varianza.
+Visualmente se ve de la siguiente forma:
+Otro escenario es el siguiente:
+•Alto error en training, alto error en testing.
+•Underfitting.
+•El modelo no esta aprendiendo nada de los datos.
+•Modelo muy simple.
+•Alto sesgo
+Visualmente se ve de la siguiente forma:
+Para solucionar esteultimo caso se utiliza un Bias-Variance
+tradeoff.
+V. BIAS-VARIANCE TRADEOFF
+Se busca un modelo que tenga baja varianza y
+bajo sesgo, para eso se editan valores en las pruebas,

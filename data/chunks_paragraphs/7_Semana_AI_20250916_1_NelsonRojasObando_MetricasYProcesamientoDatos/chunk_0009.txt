@@ -1,0 +1,23 @@
+• Inferir valores mediante modelos estadisticos o de
+aprendizaje automatico (regresion,k-NN, arboles de
+decision). Binning (agrupacion en intervalos):
+• Reemplazar cada valor por:
+◦La media del bin. ◦La mediana del bin.◦El borde mas cercano del bin. • Ejemplo: valores de salarios. Suavizado de ruido:
+• Ajustar una funcion matematica a los datos (puede ser
+lineal o no lineal). ◦Ejemplo: ventas mensuales con fluctuaciones; se
+ajusta una regresion lineal para capturar la tenden-
+cia general y se consideran ruido los valores que
+se desvian demasiado. • Aplicar tecnicas de filtrado, como la media movil. ◦Ejemplo: datos diarios de temperatura con ruido;
+se calcula la media movil de 7 dias. Data Integration: manejo de redundancia:
+La misma informacion puede estar registrada varias veces
+o con valores distintos. • Ejemplo: un cliente registrado como “Juan Perez” y
+tambien como “J. A. Perez”. • Direcciones almacenadas como “San Jose, Costa Rica”
+en una base de datos y como “SJ-CR” en otra. Uso de pruebas estadisticas para detectar redundancia o
+asociacion entre variables:
+•Prueba de correlacionχ2para datos nominales:
+mide la asociacion entre variables categoricas. • Hipotesis de independencia:
+H0:P(A i∩Bj) =P(A i)P(B j)
+• Las variables se consideran independientes si:
+χ2
+calculado ≤χ2
+α,d f

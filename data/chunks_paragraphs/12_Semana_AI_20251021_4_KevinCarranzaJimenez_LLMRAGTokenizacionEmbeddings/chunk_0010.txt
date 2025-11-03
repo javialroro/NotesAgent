@@ -1,0 +1,29 @@
+4
+Posteriormente, cada fragmento se transforma en un vector
+mediante un modulo deembeddings, el cual codifica su signi-
+ficado semantico en un espacio de alta dimension. Esta repre-
+sentacion vectorial permite medir similitudes entre consultas y
+fragmentos de texto, habilitando la busqueda contextual basada
+en significado y no en coincidencias literales [10]. V-A1. Chunking Tamano fijo:El proceso dechunkingde
+tamano fijo consiste en dividir los documentos en segmentos
+de texto de longitud predefinida, con el objetivo de estandarizar
+las unidades de informacion utilizadas en los sistemas de
+recuperacion. Esta tecnica permite equilibrar la granularidad
+del contenido: fragmentos demasiado pequenos pueden perder
+contexto semantico, mientras que fragmentos demasiado gran-
+des dificultan la busqueda eficiente y aumentan la ambiguedad
+en la recuperacion. Al mantener un tamano constante, los
+chunksfacilitan la indexacion vectorial y mejoran la preci-
+sion de los modelos que empleanembeddingspara comparar
+consultas y pasajes de texto [11]. V-A2. Chunking recursivo:Elchunkingrecursivo es una
+tecnica avanzada utilizada para segmentar texto de manera
+jerarquica y adaptativa, en lugar de emplear longitudes fijas. Este metodo divide los documentos siguiendo la estructura
+linguistica del contenido, como parrafos, oraciones o seccio-
+nes, y aplica fragmentaciones adicionales cuando un segmento
+excede un limite de tokens definido. De este modo, se preserva
+el contexto semantico relevante en cada fragmento, evitando
+cortes arbitrarios que podrian afectar la coherencia del texto. El
+enfoque recursivo resulta especialmente util en tareas de Recu-
+peracion Aumentada de Generacion (RAG), donde mantener la
+integridad semantica de loschunksmejora significativamente
+la precision de la recuperacion contextual [12]. V-A3.

@@ -1,0 +1,55 @@
+provoca gradientes muy pequeños. Esto hace que el
+entrenamiento se vuelva lento o se detenga, fenomeno
+conocido comovanishing gradient.
+Fig. 20.Ejemplo
+C. Tangente Hiperbolica
+La funcionTanHtiene un rango de valores entre
+−1 y 1. Su comportamiento es similar al de la funcion
+sigmoide, con la diferencia de que esta centrada en
+el origen, lo que permite que los valores negativos
+tambien sean considerados. Sin embargo, al igual
+que la sigmoide, presenta el problema delgradiente
+desvanecidoen los extremos, lo que puede dificultar
+el entrenamiento de redes profundas.
+Fig. 21.Ejemplo
+D. Funcion Softmax
+La funcionSoftmaxconvierte la capa de salida
+(output layer) en una distribucion de probabilidad,
+ya que normaliza los valores mediante una sumatoria.
+Su definicion es la siguiente:
+𝜎(𝑥)𝑗=𝑒𝑥𝑗
+I𝐾
+𝑘=1𝑒𝑥𝑘
+Es comunmente utilizada en problemas de clasifi-
+cacion, donde el vector de entrada se conoce como
+logits. Ademas, se emplea junto con la funcion de
+perdidaCross-Entropy Loss.
+Fig. 22.Ejemplo softmax
+•¿Por que usar𝑒𝑥?Porque es una funcion
+estrictamente creciente y evita valores negativos
+en la salida.
+•Cross-Entropy Loss:Tambien llamadaLog-
+LossoLogistic Loss, se utiliza como funcion de
+perdida en Softmax. Representa probabilidades
+en un espacio logaritmico dentro del rango[0,1]
+y es numericamente estable.
+La perdida se define como:
+𝐿=log(𝑃(𝑌=𝑦 𝑖|𝑋=𝑥𝑖))
+y en el caso de clasificacion multiclase:
+𝐿=−log 
+𝑒𝑠𝑘
+I𝐶
+𝑗=1𝑒𝑠𝑗!
+Fig. 23.Ejemplo
+E. ¿Cual funcion de activacion utilizar?
+La eleccion de la funcion de activacion depende
+del tipo de problema que se este resolviendo. Las
+funcionesSigmoidyTanhsuelen presentar el in-
+conveniente delvanishing gradient, lo que dificulta
+el entrenamiento en redes profundas. Por ello, se
+recomienda iniciar con la funcionReLU, ya que es
+rapida de calcular y ampliamente utilizada enDeep
+Learning. En caso de que no funcione adecuada-
+mente, se pueden emplear variantes comoLeaky
+ReLUoParametric ReLU, que buscan superar estas
+limitaciones.

@@ -1,0 +1,36 @@
+•MLOps : Los equipos de MLops tiene la finalidad de
+monitorear y gestionar el modelo de manera detallada
+,tanto con los datos como la calidad de los mismos,
+por ejemplo, en el seguimiento que se da en puesta
+en produccion estan encargados de monitorear el com-
+portamiento del modelo, en casos donde suceda algun
+cambio en los datos, deben de entrenarlo nuevamente. V. P ARADIGMAS DE RESOLUCION DE PROBLEMAS
+Se detallan a continuacion ciertos paradigmas o estrategias
+para resolver problemas en elambito de la inteligencia artifi-
+cial:
+A. Problemas de busqueda
+: Son todos aquellos algoritmos que permiten encontrar la
+mejor solucion, representada por el camino mas barato o la
+ruta mas corta, se detallan algoritmos como Dijkstra , DFS,
+BFS. Fig. 3. Ejemplo de algoritmos de busqueda
+B. Problemas de optimizacion
+Son todas aquellas soluciones que pretenden encontrar la
+solucion mas optima dentro de un grupo de soluciones.Existen
+2 tipos:
+•Solucion local : Es aquella seleccionada dentro de un
+grupo oarea especifica, un ejemplo es el visto en clase
+respecto a bares, el mejor bar cercano al tec de cartago
+es la nave, pero esto es por que en elarea cercana al tec
+es la mejor o launica opcion. •Solucion local : Se refiere a la mejor solucion encontrada
+entre todas las posibles soluciones, tomando el ejemplo
+del bar, si se evalua a nivel provincia , probablemente se
+encuentre un mejor bar que la nave. C. Problemas de prediccion y clasificacion
+En los problemas de prediccion , existe una serie de datos
+respecto a un evento, comportamiento, entre otros y se desea
+encontrar patrones para realizar una prediccion ,generalmente
+se representa con una funcion, que podra generar una esti-
+macion de la relacion de los datos con sus salidas, un ejemplo
+es el visto en clase , donde en base al motor del vehiculo , se
+obtienen datos respecto al consumo de gasolina y se genera
+una funcion la cual sera capaz de predecir cual es el consumo
+de gasolina de otro vehiculo.

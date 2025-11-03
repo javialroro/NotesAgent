@@ -1,0 +1,132 @@
+Apuntes Semana 6
+Apuntes del 09 de septiembre
+Juan Pablo Rodr ´ıguez Cano
+IC-6200 Inteligencia Artificial
+Tecnol ´ogico de Costa Rica
+jp99@estudiantec.cr
+Abstract —En este documento se detallan las indicaciones de
+la tarea 1 de Inteligencia Artifical y se introduce el tema
+de regresi ´on log ´ıstica como un modelo de clasificaci ´on cuyas
+propiedades de funci ´on son aptas para modelar problemas
+complejos y la optimizaci ´on de recursos.
+Index Terms —
+I. P REGUNTAS DEL QUIZ
+1) Describa qu ´e es ”overfitting” y ”underfitting”.
+R/ ”Overfitting” es cuando el modelo tiene una mejor
+m´etrica con el conjunto de entrenmaiento que con el
+conjunto de testing, lo cual indica una pobre general-
+izaci ´on con datos nuevos. ”Underfitting” es cuando el
+model no logra captar la relaci ´on entre los features de
+manera que los puntajes de m ´etrica son bajos para el
+conjunto de entrenamiento y testeo.
+2) Describa k-Fold Cross-Validation
+Se subdivide el conjunto de entrenamiento en k-1 partes.
+En cada ´epoca se entrenan k-1 partes y se utiliza el otro
+subconjunto para la validaci ´on, el
+3) ¿Qu ´e es un m ´ınimo global y m ´ınimo local en una
+funci ´on?
+Un m ´ınimo local es el valor m ´ınimo de una funci ´on en
+una vecindad reducida, mientras que el m ´ınimo global
+se refiere al m ´ınimo global a trav ´es de todo el dominio
+de la funci ´on.
+4) Desarrolle la derivada parcial de L con respecto a W de:
+L=1
+NX
+((wxi+b)−yi)
+∂L
+∂w=2
+NX
+((wxi+b)−yi)xi)
+II. I NDICACIONES DE LA TAREA
+•La tarea se deber realizar en grupos de 3 personas.
+•La fecha de entrega es el 16 de septiembre.
+•Solo hace falta que una persona del grupo suba la tarea.
+En el nombre del archivo zip debe venir el nombre de
+todos.
+•No se puede utilizar ninguna biblioteca que no sea numpy
+o pandas
+•Kagg;e es una plataforma con datasets para machine
+learning para el p ´ublico y tambi ´en presentan oportu-
+nidades para participar en concursos de ML.
+•La funci ´on de p ´erdida y la gr ´aficaci ´on debe se manual•El m ´etodo describe() resume los datos anal ´ıticos que son
+importantes para saber c ´omo se comportan los features
+•No debe haber c ´odigo en el informe, solo resultados,
+an´alisis etc.
+•El notebook ser ´a evidencia del trabajo
+•El objetivo es ver si la relaci ´on con la predicci ´on es lineal,
+y si no aplicar un feature engineering
+•figuras en IEEE siempre van en la parte superior o inferior
+de las columnas.
+•El formato es de IEEE para conferencias
+III. A CTIVIDAD DE IEEE
+Es un evento anual que se dar ´a esta vez en noviembre
+en la sabana. Es una oportunidad para conocer sobre temas
+innovadores en inteligencia artificial y biolog ´ıa molecular. Es
+una oportunidad para crear contactos dentro de la industria
+ya que los presentadores suelen ser receptivos al p ´ublico y
+disponen de tiempo para hablar.
+IV. C ONTENIDO DE CLASE
+A. Regresi ´on Log ´ısitca
+A diferencia de la regresi ´on lineal que es un modelo que
+predice un n ´umero real a partir de los features, la regresi ´on
+log´ıstica es un modelo de clasificaci ´on binaria. El resultado
+de dicho modelo es la probabilidad de que suceda un evento
+y est ´a basado en la distribuci ´on de Bernoulli: P(X=k) =
+pk(1−p)1−k
+B. Funci ´on Sigmoide
+Esta funci ´on es conveniente porque puede modelar com-
+portamientos no lineales, el cual es un comportamiento muy
+
+com´un en la mayor ´ıa de problemas. Trae consigo una mayor
+complejidad pero a su vez logra resolver problemas m ´as
+complejos.
+Su codominio es de 0 a 1 y esto es muy conveniente ya que
+los valores probabil ´ısticos comparten ese mismo espacio.
+La funci ´on sigmoide se expresa de la siguiente manera
+σ(x) =1
+1 +e−x⇒σ(fw,b(x)) =1
+1 +e−fw,bx
+La manera en que esta funci ´on se convierte en un clasi-
+ficador es al escoger un umbral. este umbral se utiliza para
+definir un punto a partir de cu ´al se calsifica un evento con
+una etiqueta o la otra. Por lo general se suele escoger un valor
+umbral de 0.5.
+C. Derivada de la funci ´on Sigmoide
+Como la regresi ´on log ´ıstica es un clasificador, se debe
+encontrar una funci ´on de p ´eridica adecuada para el problema.
+Para esto se debe analizar la derivada de la funci ´on sigmoide,
+ya que es necesario para cualquier problema de optimizaci ´on.
+σ′(x) =1′(1 +e−x)−(1(1 + e−x)′)
+(1 +e−x)2
+⇒σ′(x) =σ(x)(1−σ(x))
+Como se puede notar, la derivada se puede expresar en
+t´erminos de la funci ´on misma, lo cual lo hace muy conveniente
+ya que no se requieren operaciones muy complejas y con esto
+se obtiene una mayor eficiencia.
+D. Funci ´on de P ´erdida: Verosimilitud
+En vez de utilizar MSE o MAE, se utiliza la verosimilitud.
+Esta est ´a dada por la siguiente ecuaci ´on
+L=Y
+fw,b(xi)yi(1−fw,b(xi))1−yi
+El resultado que se obtiene para un punto en esta ecuaci ´on
+es la probabilidad de que su etiqueta sea yicon los pesos
+wactuales. Como se quiere optimizar los pesos para los
+cuales se obtiene una mejor m ´etrica, se debe derivar esta
+funci ´on. Sin embargo, existe un problema con esta expresi ´on
+donde una multiplicaci ´on incluye polinomios muy grandes,
+y calcular la dervida respectiva se vuelve muy complejo
+y computacionalmente costoso. Adem ´as, como se trata de
+valores probabil ´ısticos, o sea, de 0 a 1, su multiplicaci ´on
+se vuelve extremadamente peque ˜na y as ´ı la derivada de la
+funci ´on se vuelve virtualmente cero, y esto no cambia los
+pesos en el paso de entrenamiento. A esto se le conoce como el
+fen´omeno de ”vanishing gradients”. Por esta raz ´on se aplican
+los teoremas de logaritmo y se obtiene la siguiente expresi ´on.
+ln(L) =X
+ln(fw,b(xi)yi+ln((1−fw, b (xi))1−yi)
+⇒ln(L) =X
+yiln(fw,b(xi) + 1−yiln((1−fw, b (xi)))
+Esto se convierte en una tarea m ´as f´acil de optimizaci ´on. Sin
+embargo, la funci ´on de logaritmo es estrictamente creciente,por lo que hay que convertir un problema de maximizaci ´on en
+minimizaci ´on. Para esto, simplemente se da vuelta a la funci ´on
+delnmultiplicando por -1.

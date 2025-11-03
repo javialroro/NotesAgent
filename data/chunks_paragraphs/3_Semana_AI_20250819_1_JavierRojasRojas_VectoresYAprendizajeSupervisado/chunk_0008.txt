@@ -1,0 +1,6 @@
+Se quiere
+determinar la humedad en diferentesepocas del año. ¿Es este un problema de regresion o clasificacion? Respuesta: Regresion, ya que se esta prediciendo valores
+continuos de humedad. REFERENCES
+[1] S. A. P. Portuguez, “Apuntes de la clase de inteligencia artificial,” Cartago,
+Costa Rica, agosto 2025, clase del 19 de agosto de 2025. [2] F. Explicadas. (2025) ´Angulo entre dos vectores. [Online]. Available:
+https://www.formulasexplicadas.com/angulo-entre-dos-vectores/

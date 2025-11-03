@@ -1,0 +1,9 @@
+Estructura General y Objetivo
+Encoder→Espacio Latente→Decoder
+Aprenden a reconstruir la entrada. Aunque la señal de entre-
+namiento es auto-supervisada (salida = entrada), se consideran
+tipicamente metodos no supervisados por no requerir etiquetas
+externas. B. Componentes y Variantes
+Encoder:reduce espacialidad y comprime informacion
+(conv +downsampling). Latente:vector/tensor compacto; su tamaño controla capaci-
+dad vs. compresion.

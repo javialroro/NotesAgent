@@ -1,0 +1,275 @@
+Inteligencia Artificial
+Apuntes de Clase - 19 de Agosto 2025
+Javier Rojas Rojas
+Escuela de Ingenier ´ıa en Computaci ´on
+Tecnol ´ogico de Costa Rica
+Cartago, Costa Rica
+javrojas@estudiantec.cr
+Abstract —This paper summarizes the topics covered in class
+on August 19, 2025. The session focused on two main areas: a
+review of linear algebra concepts, with emphasis on vectors, and
+an introduction to supervised learning. In the first part, vectors
+were examined in terms of their definitions, norms, distances,
+and operations, highlighting their importance as mathematical
+tools for representing and comparing data. In the second part,
+supervised learning was introduced through the notions of
+features, labels, regression, and classification. The connection
+between these two areas illustrates how algebraic concepts serve
+as the foundation for machine learning techniques.
+I.INTRODUCCI ´ON
+Estos apuntes est ´an basados en la clase del 19 de Agosto de
+2025 [1]. El ´algebra lineal es la base matem ´atica de muchas
+t´ecnicas de inteligencia artificial. En particular, los vectores
+permiten representar datos, medir similitudes y realizar opera-
+ciones fundamentales en espacios multidimensionales. Estos
+conceptos resultan esenciales para entender el aprendizaje
+supervisado, paradigma en el que los datos se expresan me-
+diante vectores de caracter ´ısticas y etiquetas asociadas. Dicho
+enfoque permite construir modelos de regresi ´on, orientados a
+predecir valores continuos, y de clasificaci ´on, enfocados en
+asignar categor ´ıas. Este documento resume lo visto en clase,
+donde se tocaron ambos temas, destacando la conexi ´on entre la
+teor´ıa algebraica y su aplicaci ´on en el aprendizaje autom ´atico.
+II.REPASO DE ´ALGEBRA LINEAL
+A.¿Qu´e es un vector?
+Un vector es una estructura de datos que permite organizar
+informaci ´on de forma secuencial y que tambi ´en puede inter-
+pretarse geom ´etricamente.
+1)Caracter ´ısticas :
+•Tiene un punto de origen (normalmente (0,0)) y un punto
+final.
+•Posee una direcci ´onespec ´ıfica.
+•Tiene una magnitud (distancia entre el punto de origen y
+punto final).
+2)Vector como desplazamiento :Un vector puede inter-
+pretarse como un desplazamiento entre dos puntos en un
+espacio n-dimensional. Si se considera un punto de origen
+A= (a1, a2, . . . , a n)y un punto final B= (b1, b2, . . . , b n),
+el vector que representa el desplazamiento de AaBse calcula
+como:u=B−A= (b1−a1, b2−a2, . . . , b n−an)
+De esta manera, cada componente del vector se obtiene
+restando las coordenadas correspondientes del punto de origen
+a las del punto final.
+B.Norma de un vector
+Lanorma de un vector representa su magnitud, es decir, qu ´e
+tan grande es o cu´anto mide desde el punto de inicio hasta el
+punto final. Se denota como ∥x∥.
+Existen diferentes formas de medir la norma de un
+vector:
+1)Norma L1: Distancia Manhattan :Ladistancia Man-
+hattan entre dos puntos se calcula sumando las distancias
+absolutas de cada componente, desplaz ´andose ´unicamente a
+lo largo de los ejes del espacio desde el punto de inicio hasta
+el punto final. Esta m ´etrica se utiliza especialmente cuando no
+se permiten desplazamientos negativos.
+nX
+i=1|xi−yi|
+Fig. 1. Ejemplo de distancia Manhattan
+2)Norma L2: Distancia Euclidiana :Ladistancia eu-
+clidiana representa la distancia directa entre dos puntos y
+se calcula usando el teorema de Pit ´agoras . Para un vector
+x= (x1, x2, . . . , x n), su norma es:
+∥x∥=q
+x2
+1+x2
+2+. . .+x2n
+
+C.Propiedades de la norma
+•Positividad: ∥x∥ ≥0y∥x∥= 0 si y solo si x=0.
+•Homogeneidad: ∥αx∥=|α|·∥x∥para cualquier escalar
+α.
+•Desigualdad triangular: ∥x+y∥ ≤ ∥x∥+∥y∥.
+D.Vector unitario
+•Es aquel vector que tiene una longitud o magnitud de 1 .
+•Se puede obtener el vector unitario de un vector u
+dividiendo el vector uentre su norma.
+ˆu=u
+∥u∥
+Al multiplicar este vector por un escalar, se puede hacer
+crecer o decrecer, o si se tiene un escalar espec ´ıfico, se podr ´ıa
+llegar al vector original.
+Fig. 2. Ejemplo de un vector y su vector unitario
+E.Producto punto
+Es el producto interno entre dos vectores, siempre genera
+unescalar .
+xTy∈Rn=x1x2. . . x n
+y1
+y2
+...
+yn
+=nX
+i=1xiyi
+Es especialmente ´util en inteligencia artificial, ya que se
+puede usar como indicador de importancia de features , uti-
+lizando un vector de pesos , y al realizar la operaci ´on nos dar ´ıa
+un indicador de la importancia del feature .
+Fig. 3. Ejemplo Producto punto
+F .Identidad del coseno
+La identidad del coseno para el producto punto entre dos
+vectores uyven funci ´on de sus magnitudes y el ´angulo θ
+es:
+u·v=∥u∥ · ∥v∥ ·cos(θ)
+Fig. 4. ´Angulo entre dos vectores ayb[2]
+¿Por qu ´e es esto importante? Esta es una de las m ´etricas
+m´as importantes para determinar la similitud entre vectores,
+ya que entre menor sea el ´angulo, los vectores ser ´an m ´as
+similares.
+En NLP ( Natural Language Processing ), esto puede ser
+usado para identificar qu ´e tan similares son dos frases, trans-
+formando las frases en vectores y midiendo ese ´angulo .
+1)Ejemplo de c ´alculo de ´angulo entre dos vectores :Se
+consideran los vectores u= (1,2)yv= (3,4).
+Paso 1: Calcular el producto punto
+u·v= 1·3 + 2·4 = 3 + 8 = 11
+Paso 2: Calcular las normas
+∥u∥=p
+12+ 22=√
+5,∥v∥=p
+32+ 42=√
+25 = 5
+Paso 3: Aplicar la identidad del coseno
+cos(θ) =u·v
+∥u∥ · ∥v∥=11√
+5·5=11
+5√
+5≈0.9839
+Paso 4: Calcular el ´angulo
+θ= arccos(0 .9839) ≈10.3◦
+G.Vector co-direccional
+Son dos vectores que siguen la misma direcci ´on, pero con
+magnitudes distintas :
+u=K·v
+Estos al ser iguales en direcci ´on, su ´angulo es de 0◦.
+
+1)Ejemplo: Vector y su vector unitario :Se considera v=
+(4,3)y su vector unitario u= (0.80,0.60).
+v= (4,3),u= (0.80,0.60)
+Paso 1: Calcular el producto punto
+u·v= 0.80·4 + 0 .60·3 = 3 .2 + 1 .8 = 5 .0
+Paso 2: Calcular las normas
+∥u∥=p
+0.802+ 0.602=√
+0.64 + 0 .36 =√
+1 = 1
+∥v∥=p
+42+ 32=√
+16 + 9 =√
+25 = 5
+Paso 3: Usar la identidad del coseno
+cos(θ) =u·v
+∥u∥ · ∥v∥=5
+1·5= 1⇒θ= cos−1(1) = 0◦
+Conclusi ´on:Se demuestra que el ´angulo entre dos vectores
+co-direccionales es cero.
+H.¿Qu´e ocurre si calcula el producto punto consigo mismo?
+Se sabe que un vector es co-direccional consigo mismo , por
+lo tanto su ´angulo es de 0◦:
+u·u=∥u∥ · ∥u∥ ·cos(0◦)
+u·u=∥u∥2
+Se puede expresar la distancia L2 en t´erminos de producto
+punto :√u·u=∥u∥
+Si se tiene solamente el vector u, se puede calcular su
+magnitud , o hacer la operaci ´on inversa .
+I.¿Qu´e sucede con vectores que tienen ´angulo de 90◦?
+Cuando dos vectores forman un ´angulo de 90◦:
+u·v=∥u∥ · ∥v∥ ·cos(90◦) =∥u∥ · ∥v∥ ·0 = 0
+El producto punto en este caso ser ´ıacero. Se dice que estos
+vectores son perpendiculares .
+Fig. 5. Ejemplo vectores con ´angulo de 90◦J.Ortogonalidad
+Dos vectores xyysonortogonales si y s ´olo si:
+x·y= 0
+y se denota como x⊥y.
+K.Ortonormalidad
+Si adem ´as de ser ortogonales, ∥x∥= 1y∥y∥= 1, es decir,
+ambos vectores son unitarios , entonces se dice que xyyson
+ortonormales .
+III. SUPERVISED LEARNING
+Se tiene un dataset, donde se tiene un conjunto de ejemplos
+que se toma de alg ´un fen ´omeno, y unas etiquetas que nos
+ayudar ´an a realizar nuestro proceso de aprendizaje.
+A.Feature
+•Es una propiedad o atributo medible de una entidad.
+•Normalmente se representa num ´ericamente para ser
+procesada
+•Ejemplos:
+–Altura de una casa
+–Peso de un individuo
+–Intensidad de un pixel en una imagen
+B.Vector de caracter ´ısticas
+Se denota un vector de caracter ´ısticas como
+x= (x1,x2, . . . ,xD)∈RD
+Donde cada xies un feature . Este vector agrupa todas las
+propiedades de un ejemplo en una sola estructura.
+N´umero de habitaciones Metros cuadrados Cantidad de jardines
+2 250 1
+TABLE I
+EJEMPLO DE VECTOR DE CARACTER ´ISTICAS
+C.Label
+•Valor objetivo que se quiere predecir
+•Puede ser
+–Continuo: y∈R(Regresi ´on)
+–Discreto: y∈ {1, . . . , K }(Clasificaci ´on, donde en
+el conjunto finito se representar ´ıa la categor ´ıa)
+D. Dataset
+Conjunto de datos que se utilizar ´an que tiene la forma
+{(xi, yi)}N
+i=1
+N´umero de habitaciones Metros cuadrados Cantidad de jardines Precio
+2 250 1 250000
+3 350 5 650000
+TABLE II
+EJEMPLO DE DATASET
+
+Donde las primeras columnas son features y ”Precio” ser ´ıa
+ellabel .
+E.Subcategor ´ıas principales
+1)Regresi ´on:
+•Consiste en ajustar una curva o l ´ınea que pase lo m ´as
+cerca posible de un conjunto de puntos de datos.
+•Se emplea para analizar tendencias, por ejemplo:
+–¿Existe una relaci ´on directa entre las iniciativas de
+marketing (anuncios en l ´ınea) y las ventas reales de
+un producto?
+–¿C´omo afecta el tiempo al valor de una crip-
+tomoneda? ¿Aumentar ´a exponencialmente su valor
+con el paso del tiempo?
+Fig. 6. Ejemplo de regresiones
+2)Clasificaci ´on:
+•Tiene como objetivo predecir la categor ´ıa o clase a la que
+pertenece un ejemplo, seg ´un sus caracter ´ıstica.
+•Ejemplo pr ´actico:
+–¿Se puede determinar si un veh ´ıculo es un autom ´ovil
+o un cami ´on bas ´andonos en su n ´umero de ruedas,
+peso y velocidad m ´axima?
+Fig. 7. Ejemplo de clasificaci ´on
+IV.EJERCICIOS COMPROBATORIOS DE SUPERVISED
+LEARNING
+1) Basado en datos sobre ratas, se tiene una caracter ´ıstica
+de esperanza de vida y una de obesidad. Se est ´a in-
+tentando encontrar una correlaci ´on entre las dos car-
+acter ´ısticas. ¿Es este un problema de regresi ´on oclasificaci ´on? Respuesta: Regresi ´on, ya que se est ´a
+prediciendo valores continuos de esperanza de vida.
+2) Basado en datos sobre animales, se dispone del peso de
+cada ejemplar y de si tiene alas o no. Se est ´a tratando
+de determinar cu ´ales animales son p ´ajaros. ¿Es este
+un problema de regresi ´on o clasificaci ´on? Respuesta:
+Clasificaci ´on, ya que se est ´a determinando si pertenece
+a la categor ´ıa ”p ´ajaro” o no.
+3) Basado en datos sobre dispositivos inform ´aticos, se
+cuenta con el tama ˜no de pantalla, el peso y el sistema
+operativo de varios dispositivos. Se quiere determinar
+cu´ales dispositivos son tablets, laptops o tel ´efonos. ¿Es
+este un problema de regresi ´on o clasificaci ´on? Re-
+spuesta: Clasificaci ´on, ya que se est ´a asignando dis-
+positivos a categor ´ıas discretas.
+4) Basado en datos meteorol ´ogicos, se tiene la cantidad
+de precipitaci ´on y un valor de humedad. Se quiere
+determinar la humedad en diferentes ´epocas del a ˜no.
+¿Es este un problema de regresi ´on o clasificaci ´on?
+Respuesta: Regresi ´on, ya que se est ´a prediciendo valores
+continuos de humedad.
+REFERENCES
+[1] S. A. P. Portuguez, “Apuntes de la clase de inteligencia artificial,” Cartago,
+Costa Rica, agosto 2025, clase del 19 de agosto de 2025.
+[2] F. Explicadas. (2025) ´Angulo entre dos vectores. [Online]. Available:
+https://www.formulasexplicadas.com/angulo-entre-dos-vectores/

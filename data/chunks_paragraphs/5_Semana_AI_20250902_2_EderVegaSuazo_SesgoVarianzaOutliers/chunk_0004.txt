@@ -1,0 +1,6 @@
+El
+entendimiento del compromiso entre sesgo y varianza permite
+desarrollar modelos que generalizan efectivamente a nuevos
+datos, balanceando complejidad y capacidad predictiva. REFERENCIAS
+[1] Apuntes de la clase de Inteligencia Artificial, Profesor S. Pacheco,
+Instituto Tecnologico de Costa Rica, 2025.

@@ -1,0 +1,3 @@
+En
+este algoritmo el hiperparametro es el k. 1. Ventajas
+No requiere fase de entrenamiento. Facil de implementar. Flexible: regresion y clasificacion.

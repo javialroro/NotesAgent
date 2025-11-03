@@ -1,0 +1,13 @@
+D.Agrupamiento
+Conjunto de datos no etiquetados y se busca encontrar
+patrones de estos mismos datos, aqui aplica el k-means
+V. M ODELOS DETERMINISTA O E STOCASTICO
+1)Determinista :Este modelo indica que para una entrada
+de datos retoran una salida siempre consistente, un ejemplo
+de esto seria por ejemplo ¿Hay luz al medio dia? 2)Estocastico :Este modelo indica que para una entrada
+puede retornar un resultado a partir de un conjunto de los
+posibles resultados, muy aleatorio, un ejemplo seria ¿Cual sera
+el clima a medio dia? VI. C ONJUNTO AI
+•Inteligencia Artificial: Algoritmos generativos
+•Machine learning: Utiliza metodos estadisticos, como
+regresion lineal, logistica y arboles de decision

@@ -1,0 +1,5 @@
+Ejemplo del proceso de agrupamiento
+2)Prediccion y clasificacion:
+•Prediccion: Estima un valor numerico
+basandose en patrones de los datos. •Clasificacion:Asigna datos a una categoria
+segun sus caracteristicas. Fig. 9. Ejemplo del proceso de prediccion y clasificacion

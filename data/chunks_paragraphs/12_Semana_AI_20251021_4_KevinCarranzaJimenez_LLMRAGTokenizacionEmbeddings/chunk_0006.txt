@@ -1,0 +1,16 @@
+Por ejemplo, terminos como “rey” y “reina” se ubican
+proximos entre sien la dimension de realeza, pero difieren
+en la dimension de genero, ilustrando como losembeddings
+capturan relaciones semanticas complejas dentro de un espacio
+continuo [6]. III-D. Similaridad entre vectores
+Una vez que las palabras han sido transformadas en vectores
+dentro de un espacio continuo, es posible cuantificar su grado
+de similitud midiendo la distancia o el angulo entre dichos
+vectores. En este contexto, dos vectores proximos representan
+palabras con significados semanticamente similares, mientras
+que aquellos que se encuentran alejados reflejan conceptos
+distintos o no relacionados. Esta propiedad permite a los mo-
+delos de lenguaje capturar relaciones latentes como analogias
+o asociaciones conceptuales, lo que ha sido fundamental para
+tareas como la busqueda semantica, la traduccion automatica
+y la inferencia contextual [7].

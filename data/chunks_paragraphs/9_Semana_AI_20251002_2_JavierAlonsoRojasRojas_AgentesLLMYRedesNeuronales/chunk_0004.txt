@@ -1,0 +1,34 @@
+Fig. 2. Funciones de activacion
+B. El problema del XOR
+El principal inconveniente del perceptron simple es que el
+problema XOR no es linealmente separable, por lo que este
+modelo no puede ofrecer una solucion adecuada. Esto dio
+origen a las redes neuronales multicapa (MLP), capaces de
+resolver problemas no lineales y ampliar significativamente el
+rango de aplicaciones posibles. C. Inspiracion biologica
+Las redes neuronales artificiales se inspiran en el fun-
+cionamiento del cerebro humano. Cada neurona recibe señales
+a traves de sus dendritas (entradas), las procesa en el nucleo
+mediante una combinacion lineal, y decide si transmite o no
+la señal segun una funcion de activacion. D. Funciones de activacion
+Las funciones de activacion introducen no linealidad en el
+modelo, permitiendo que la red aprenda relaciones complejas:
+•ReLU: g(x) = max(0 , x); eficiente, pero puede generar
+“neuronas muertas” cuando el gradiente es cero. •Leaky ReLU: introduce una pequeña pendiente en la
+parte negativa para evitar neuronas inactivas. •Tanh: produce salidas en el rango (−1,1),´util para
+manejar valores positivos y negativos. •Sigmoide: transforma la entrada en valores entre 0 y 1,
+comun en tareas de clasificacion binaria. E. Perceptron Multicapa (MLP)
+ElMultilayer Perceptron (MLP) extiende el perceptron sim-
+ple añadiendo capas ocultas que permiten resolver problemas
+no lineales. Su estructura general incluye:
+•Capa de entrada: recibe los datos originales Xi. •Capas ocultas: realizan transformaciones y calculos in-
+ternos. •Capa de salida: entrega el resultado final, cuyo tamaño
+depende del tipo de problema. El entrenamiento se realiza mediante backpropagation , que
+calcula el error del modelo y ajusta los pesos utilizando
+descenso de gradiente. Fig. 3. Comportamiento Jerarquico
+Fig. 4. Funcionamiento de las CNN
+Cada capa se calcula de la siguiente forma:
+h(0)=σ(XW 0+b0) (1)
+h(1)=σ(h(0)W1+b1) (2)
+h(n)=g(h(n−1)Wn+bn) (3)
+F .

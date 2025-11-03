@@ -1,0 +1,35 @@
+Existen tensores unidimensionales los cuales son llamados
+vectores, bidimensionales en formas de matriz y cuando k ¿
+2 ejes se deja de usar un nombre especifico y se le conoce
+como tensor de orden k
+XI. I NTRODUCCION A PYTORCH
+A.Librerias necesarias para la manipulacion de tensores,
+arreglos y estructuras de datos tabulares
+import torch
+import numpy as np
+import pandas as pd
+B.¿Como crear Tensores? La funcion arange (n) funciona para generar tensores prel-
+lenados con valores espaciados uniformemente, comenzando
+en 0 (inlcuido) hasta el n (no incluido) los tensores recien
+creados se almacenan en memoria principal
+x= torch.arange(12,dtype=torch.float32)
+x# Tensor unidimensional que puede ser operado
+con diversas funciones que pueden ser
+invocadas sobre el
+C. Funciones sobre tensores
+•.numel() Indica el numero de elementos que tiene el
+tensor
+•.shape Se usa para acceder al tamaño de cada eje del
+tensor
+•.reshape Se usa para reorganizar las dimensiones del
+tensor sin copiar los datos se puede pasar de un tensor
+de una dimension por ejemplo el ejemplo anterior de 12
+elementos, a un tensor bidimensional de 3 filas por 4
+columnas
+•torch.zeros((z,x,y)) / torch.ones((z,x,y)) /
+torch.grandn(x,y) Se utilizan para crear tensores
+de diferentes dimensiones, relleno con ceros, unos o
+numeros random
+•Operaciones elemento a elemento pytorch permite op-
+eraciones aritmeticas entre tensores las cuales se aplicaran
+elemento a elemento

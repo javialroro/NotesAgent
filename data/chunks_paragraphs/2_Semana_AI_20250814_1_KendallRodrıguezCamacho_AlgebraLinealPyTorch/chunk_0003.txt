@@ -1,0 +1,8 @@
+Las metricas
+se utilizan para cuantificar que tan bien funciona un modelo,
+aportando una base objetiva para comparar resultados y enfo-
+ques. En este contexto, los roles principales incluyen:
+•Data Scientist: Experimenta con modelos, selecciona al-
+goritmos, ajusta hiperparametros y evalua resultados. •Research Scientist: Investiga nuevos algoritmos, publica
+articulos cientificos y desarrolla teorias para avanzar la
+inteligencia artificial.

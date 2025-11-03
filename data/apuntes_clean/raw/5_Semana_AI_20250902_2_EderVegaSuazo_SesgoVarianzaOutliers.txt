@@ -1,0 +1,139 @@
+Apuntes semana 5 Clase #1s
+Eder Vega Suazo
+Escuela de Ingenier ´ıa en Computaci ´on
+Instituto Tecnol ´ogico de Costa Rica
+IC-6200 - Inteligencia Artificial Gr2
+Resumen—Este documento es un resumen de la clase de
+inteligencia artificial correspondiente a la semana 5, enfocando
+en los fundamentos del aprendizaje supervisado. Se abordan
+temas clave como la optimizaci ´on de modelos mediante c ´alculo
+diferencial y el algoritmo de descenso de gradiente aplicado a la
+funci ´on de error cuadr ´atico medio. Adem ´as, se examinan desaf ´ıos
+comunes en el modelado predictivo, incluyendo el manejo de
+relaciones no lineales entre variables y la detecci ´on de valores
+at´ıpicos. Tambien discuten estrategias para la evaluaci ´on de mo-
+delos mediante partici ´on de datasets y se analiza el compromiso
+entre sesgo y varianza, crucial para desarrollar modelos con
+capacidad de generalizaci ´on efectiva.
+I. OPTIMIZACI ´ON MEDIANTE C ´ALCULO DIFERENCIAL
+I-A. Funci ´on de error cuadr ´atico medio
+En problemas de regresi ´on, la funci ´on de costo m ´as com ´un
+est´a dada por:
+L=1
+NNX
+i=1(fw,b(xi)−y i)2, i= 1, . . . , N
+dondeh θ(xi)representa la predicci ´on del modelo para la
+instanciai- ´esima.
+El proceso de optimizaci ´on busca minimizar esta funci ´on
+mediante el c ´alculo de gradientes:
+∂L
+∂w=1
+NNX
+i=12((wx i+b)−y i)·xi
+∂L
+∂b=1
+NNX
+i=12((wx i+b)−y i)
+I-B. Algoritmo de descenso de gradiente
+La actualizaci ´on de par ´ametros se realiza de forma iterativa
+mediante:
+w(t+1)=w(t)−α∂L
+∂w(t)
+b(t+1)=b(t)−α∂L
+∂b(t)
+dondeαrepresenta la tasa de aprendizaje que controla la
+magnitud de cada actualizaci ´on.
+I-C. Terminolog ´ıa fundamental
+´Epoca (Epoch): Ciclo completo de presentaci ´on de todos
+los ejemplos de entrenamiento al modelo.
+Lote (Batch): Subconjunto de ejemplos utilizados para
+calcular una actualizaci ´on de par ´ametros.
+Tasa de aprendizaje: Hyperpar ´ametro que determina la
+velocidad de convergencia del algoritmo.II. DESAF ´IOS EN MODELADO PREDICTIVO
+II-A. Relaciones no lineales entre variables
+La regresi ´on lineal presume una relaci ´on lineal entre pre-
+dictores y variable respuesta. Cuando esta suposici ´on se viola,
+el modelo resulta inadecuado y muestra patrones sistem ´aticos
+en los residuos:
+ei=yi−ˆyi
+La soluci ´on implica transformar las variables predictoras
+mediante expansi ´on polinomial o otras transformaciones que
+permitan capturar relaciones no lineales manteniendo la linea-
+lidad en los par ´ametros.
+Figura 1: Ejemplo de relaci ´on no lineal y su ajuste mediante
+transformaci ´on polinomial.
+II-B. Manejo de valores at ´ıpicos
+Las observaciones extremas pueden distorsionar significati-
+vamente los modelos de regresi ´on. Existen m ´ultiples enfoques
+para su identificaci ´on y tratamiento:
+II-B1. Identificaci ´on de valores at ´ıpicos:
+Residuos estandarizados:z i=ei
+σedondeσ ees la
+desviaci ´on est ´andar de los residuos.
+Rango intercuart ´ılico: Valores fuera de[Q 1−1,5·
+IQR, Q 3+ 1,5·IQR]se consideran at ´ıpicos.
+II-B2. T ´ecnicas de tratamiento:
+Eliminaci ´on: Remover observaciones identificadas como
+at´ıpicas.
+Winsorizaci ´on: Reemplazar valores extremos por per-
+centiles espec ´ıficos (ej. percentil 5 y 95).
+Transformaciones: Aplicar funciones como logaritmo
+o ra´ız cuadrada para reducir la influencia de valores
+extremos.
+
+Figura 2: Efecto de valores at ´ıpicos en un modelo de regresi ´on
+lineal.
+III. EVALUACI ´ON Y VALIDACI ´ON DE MODELOS
+III-A. Partici ´on de datasets
+La divisi ´on adecuada de los datos es crucial para evaluar la
+capacidad de generalizaci ´on:
+Cuadro I: Prop ´ositos de los diferentes subconjuntos de datos
+Subconjunto Prop ´osito
+Entrenamiento Ajuste de par ´ametros del modelo mediante optimiza-
+ci´on
+Validaci ´on Selecci ´on de hyperpar ´ametros y monitorizaci ´on del
+sobreajuste
+Prueba Evaluaci ´on final del rendimiento con datos nunca
+vistos
+III-B. T ´ecnicas de muestreo
+1.Muestreo aleatorio: Divisi ´on randomizada que preserva
+la distribuci ´on original de los datos.
+2.Muestreo estratificado: Mantiene la proporci ´on de cla-
+ses en cada partici ´on, crucial para datos desbalanceados.
+3.Validaci ´on cruzada: Divide los datos enkparticiones
+y realizakiteraciones de entrenamiento/validaci ´on.
+Figura 3: Esquema de validaci ´on cruzada conk= 5particio-
+nes.Cuadro II: Caracter ´ısticas de modelos con sesgo o varianza
+elevados
+M´etrica Alto sesgo Alta varianza
+Error entrenamiento Alto Bajo
+Error validaci ´on Alto Alto
+Comportamiento Subajuste Sobreajuste
+Soluciones Modelos m ´as comple-
+josRegularizaci ´on, m ´as
+datos
+IV. SESGO Y VARIANZA
+IV-A. Diagn ´ostico de problemas comunes
+IV-B. Estrategias de mejora
+Para alto sesgo: Aumentar la complejidad del modelo,
+agregar caracter ´ısticas adicionales o reducir regulariza-
+ci´on.
+Para alta varianza: Aumentar datos de entrenamiento,
+aplicar t ´ecnicas de regularizaci ´on o reducir la compleji-
+dad del modelo.
+Compromiso ´optimo: Seleccionar la complejidad del
+modelo que minimice el error de generalizaci ´on.
+Figura 4: Relaci ´on entre complejidad del modelo y error de
+generalizaci ´on.
+V. CONCLUSIONES
+La efectividad de los modelos de aprendizaje supervisado
+depende cr ´ıticamente de la adecuada optimizaci ´on de par ´ame-
+tros, el manejo de relaciones complejas entre variables, la
+identificaci ´on y tratamiento de valores at ´ıpicos, y la evalua-
+ci´on rigurosa mediante t ´ecnicas de validaci ´on apropiadas. El
+entendimiento del compromiso entre sesgo y varianza permite
+desarrollar modelos que generalizan efectivamente a nuevos
+datos, balanceando complejidad y capacidad predictiva.
+REFERENCIAS
+[1] Apuntes de la clase de Inteligencia Artificial, Profesor S. Pacheco,
+Instituto Tecnol ´ogico de Costa Rica, 2025.

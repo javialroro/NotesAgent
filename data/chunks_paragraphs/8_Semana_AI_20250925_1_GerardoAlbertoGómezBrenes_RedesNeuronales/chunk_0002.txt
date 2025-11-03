@@ -1,0 +1,26 @@
+Para obtener una distribucion de probabilidad sobre clases
+se usasoftmax:
+softmax(z) i=exp(z i)P
+jexp(z j). La prediccion final corresponde al indice con mayor probabi-
+lidad. VI. ARQUITECTURA:CAPAS Y CONEXIONES
+Una red densa (fully connected / dense) conecta todas las
+salidas de una capa con todas las entradas de la siguiente. Anadir capas y activaciones no lineales permite resolver rela-
+ciones no lineales que un perceptron simple no puede (ejemplo
+clasico: XOR). VII. FUNCIONES DE ACTIVACION Y GRADIENTES
+Funciones mencionadas en clase:
+Sigmoide:σ(z) = 1/(1 +e−z). Derivada:σ′(z) =
+σ(z) (1−σ(z)). Tiene problemas devanishing gradient
+en extremos. ReLU:ReLU(z) = max(0, z). Es eficiente, pero puede
+generar neuronas “muertas” cuando la derivada es cero. Leaky ReLU: variante con pequena pendiente negativa
+para evitar neuronas muertas. tanh(z): acotada en(−1,1), util en algunos contextos. VIII. FORWARD,PERDIDA Y RETROPROPAGACION
+Elforwardcalcula salidas capa a capa. Con una funcion de
+perdidaLse aplica retropropagacion para obtener derivadas
+parciales∂L/∂wy actualizar parametros. Regla de actualiza-
+cion (descenso de gradiente):
+w←w−η∂L
+∂w,
+dondeηes la tasa de aprendizaje. Para el perceptron se
+mencionoelhinge loss:
+Lhinge= max(0,1−y(wTx+b)). La retropropagacion usa la regla de la cadena para propagar
+sensibilidades hacia atras; por eso es necesario que las capas
+sean diferenciables.

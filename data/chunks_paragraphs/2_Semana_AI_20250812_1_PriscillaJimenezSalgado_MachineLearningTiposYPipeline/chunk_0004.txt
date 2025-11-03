@@ -1,0 +1,14 @@
+•Data Scientist: Se encarga de trabajar con los
+datos desde su recoleccion hasta su preparacion
+final, aplicando tecnicas de analisis y manipu-
+lacion para convertirlos en informacion compren-
+sible y aplicable. •Research Scientist: Centra su labor en inves-
+tigar y proponer nuevos modelos, algoritmos y
+enfoques teoricos que impulsen el avance del
+Machine Learning. Esto incluye experimentar
+con aprendizaje no supervisado. Fig. 4. Descripcion general del uso de Machine Learning en la Ciencia. En esta misma linea, Google publico un articulo
+titulado Towards an AI Co-Scientist, en el que
+presenta una inteligencia artificial capaz de generar
+hipotesis cientificas a partir del analisis de datos. Esta
+tecnologia se probo en elambito medico y permitio
+obtener avances significativos en esaarea.

@@ -1,0 +1,47 @@
+Apuntes semana 5 Clase #1s
+Eder Vega Suazo
+Escuela de Ingenieria en Computacion
+Instituto Tecnologico de Costa Rica
+IC-6200 - Inteligencia Artificial Gr2
+Resumen—Este documento es un resumen de la clase de
+inteligencia artificial correspondiente a la semana 5, enfocando
+en los fundamentos del aprendizaje supervisado. Se abordan
+temas clave como la optimizacion de modelos mediante calculo
+diferencial y el algoritmo de descenso de gradiente aplicado a la
+funcion de error cuadratico medio. Ademas, se examinan desafios
+comunes en el modelado predictivo, incluyendo el manejo de
+relaciones no lineales entre variables y la deteccion de valores
+atipicos. Tambien discuten estrategias para la evaluacion de mo-
+delos mediante particion de datasets y se analiza el compromiso
+entre sesgo y varianza, crucial para desarrollar modelos con
+capacidad de generalizacion efectiva. I. OPTIMIZACION MEDIANTE CALCULO DIFERENCIAL
+I-A. Funcion de error cuadratico medio
+En problemas de regresion, la funcion de costo mas comun
+esta dada por:
+L=1
+NNX
+i=1(fw,b(xi)−y i)2, i= 1, . . . , N
+dondeh θ(xi)representa la prediccion del modelo para la
+instanciai- ´esima. El proceso de optimizacion busca minimizar esta funcion
+mediante el calculo de gradientes:
+∂L
+∂w=1
+NNX
+i=12((wx i+b)−y i)·xi
+∂L
+∂b=1
+NNX
+i=12((wx i+b)−y i)
+I-B. Algoritmo de descenso de gradiente
+La actualizacion de parametros se realiza de forma iterativa
+mediante:
+w(t+1)=w(t)−α∂L
+∂w(t)
+b(t+1)=b(t)−α∂L
+∂b(t)
+dondeαrepresenta la tasa de aprendizaje que controla la
+magnitud de cada actualizacion. I-C. Terminologia fundamentalEpoca (Epoch): Ciclo completo de presentacion de todos
+los ejemplos de entrenamiento al modelo. Lote (Batch): Subconjunto de ejemplos utilizados para
+calcular una actualizacion de parametros. Tasa de aprendizaje: Hyperparametro que determina la
+velocidad de convergencia del algoritmo.II. DESAFIOS EN MODELADO PREDICTIVO
+II-A.

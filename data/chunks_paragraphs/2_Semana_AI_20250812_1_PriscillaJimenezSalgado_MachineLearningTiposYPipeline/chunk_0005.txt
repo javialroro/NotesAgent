@@ -1,0 +1,34 @@
+Machine Learning: Ingenieria
+En la etapa de Puesta en produccion de un
+modelo , lo primero que se debe considerar es la
+necesidad de refactorizar el codigo, ya que sera
+necesario seguir monitoreando el modelo e, incluso,
+volver a entrenarlo pasado cierto tiempo. Esto implica
+modificar su estructura para que pueda ofrecer la
+misma funcionalidad, pero de manera mas eficiente. Por ejemplo, si se dispone de un modelo muy pesado,
+es fundamental Transformar el modelo para que
+pueda ser servido a un cliente de forma practica. Para lograrlo, existen diversas herramientasutiles. Una de ellas es OnnX , que permite tomar un
+modelo desarrollado en un framework especifico
+y optimizarlo, generando una version mas ligera y
+compacta. Tambien pueden aplicarse tecnicas como
+elmodel distillation , donde un modelo mas pequeño
+aprende a imitar el comportamiento de uno de mayor
+tamaño, logrando realizar las mismas tareas con
+menor peso. Otra estrategia es la que reduce la
+cantidad de bits en los parametros del modelo. Estos
+parametros, normalmente en punto flotante, se ajustan
+para mejorar el rendimiento, reduciendo el tamaño y
+acelerando su ejecucion. En elambito del MLOps , el objetivo es gestionar
+el modelo de forma mas detallada. Un concepto clave
+es el data shift , que ocurre cuando el modelo fue
+entrenado con una distribucion de datos especifica,
+pero con el tiempo los patrones cambian, afectando
+su precision. Por eso, una de las responsabilidades del
+equipo de MLOps es monitorear el comportamiento
+del modelo y, si detectan un cambio en los datos,
+volver a entrenarlo. Este monitoreo continuo no solo
+incluye el rendimiento del modelo, sino tambien la
+calidad y actualidad de los datos, la infraestructura
+de despliegue y la trazabilidad de las versiones
+utilizadas. Fig. 5. Descripcion general del uso de Machine Learning en la Ingenieria.Ahora bien, consideremos el siguiente grafico:
+Fig. 6. Sintesis del Machine Learning en el campo de la Ingenieria.

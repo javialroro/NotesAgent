@@ -1,0 +1,22 @@
+El profesor
+mostro un ejemplo hecho con la herramienta y
+explico que incluso podria usarse para presenta-
+ciones academicas. Tambien se menciono la nueva
+aplicacion “Sora by OpenAI”, una plataforma donde
+las personas pueden crear y compartir videos con in-
+teligencia artificial a partir de simples descripciones
+o prompts. Fig. 1: Sora by OpenAI
+II.Aspectos Administrativos
+El profesor compartio las notas de los trabajos
+pendientes y brindo retroalimentacion individual a
+cada grupo de trabajo. Sin embargo, aun queda por
+entregar la calificacion del quiz 4 realizado y de
+la tarea presentada el pasado miercoles, que estan
+pendientes de revision. Ademas, se indico que la
+proxima semana se asignara el proyecto del curso. A.Repaso
+– El perceptron:Puede entenderse de forma simi-
+lar a una regresion logistica, aunque se diferencia en
+la funcion de perdida que utiliza. Durante la historia
+de la inteligencia artificial se produjo el llamado
+“invierno de la IA”, en parte debido al problema
+delXOR, ya que este no podia ser representado

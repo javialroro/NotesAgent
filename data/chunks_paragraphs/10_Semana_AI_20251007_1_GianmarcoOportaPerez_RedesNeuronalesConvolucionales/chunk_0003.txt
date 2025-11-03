@@ -1,0 +1,6 @@
+La herramienta Weights & Biases se
+utiliza para monitorear y visualizar los resultados durante el
+entrenamiento. Finalmente, los modelos seleccionados se comparan para
+determinar el de mejor rendimiento general. El informe debe
+presentarse en formato IEEE, acompañado del codigo fuente
+y el cuaderno en Jupyter Notebook.

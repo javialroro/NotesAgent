@@ -1,0 +1,5 @@
+Esta plantilla asegura que el modelo reciba toda la informacion
+relevante de manera coherente, permitiendole generar respues-
+tas precisas y fundamentadas. A modo de ejemplo, la Figura 4 muestra la estructura
+de la plantilla, donde se pueden observar sus componentes
+principales:prompt,contextyquestion.

@@ -1,0 +1,39 @@
+Apuntes Semana 4 Clase #2
+28/08/2025
+Alex Steven Naranjo Masis
+Instituto Tecnologico de Costa Rica
+Cartago, Costa Rica
+Email: alnaranjo@estudiantec.cr
+Resumen —Para esta clase se repasaron temas de la clase
+anterior como lo son KNN, regresion lineal, Mean Square Error,
+Descenso del gradiente y un repaso general de derivadas. Y luego
+del repaso continuamos viendo temas como lo son: Derivadas
+Parciales con respecto a w y b en la funcion de perdida con
+el fin de actualizarlos y ajustar la funcion, y porultimo vimos
+Epoch y Batch. Index Terms —KNN, Regresion Lineal, Mean Square Error,
+MAE, Descenso del Gradiente, Epoch y Batch
+I. N OTICAS DE LA SEMANA
+A. Small Language Models are the Future of Agentic AI
+En el articulo se dice que los modelos de lenguaje pequeños
+(SLMs) son mas adecuados que los grandes (LLMs) para
+ciertos sistemas inteligentes autonomos (agentic AI), especial-
+mente en tareas especializadas y repetitivas. [1]
+B. Canaries in the Coal Mine? Six Facts about the Recent
+Employment Effects of Artificial Intelligence
+El estudio analiza como la adopcion de la inteligencia
+artificial generativa ha afectado al mercado laboral en EE.UU.,
+utilizando datos administrativos mensuales de nominas de
+ADP, el mayor procesador de nominas del pais, el cual abarca
+millones de trabajadores en decenas de miles de empresas. [2]
+II. R EPASO CLASE ANTERIOR
+A. K Nearest Neighbor (kNN)
+En resumen, cuando obtenemos una nueva instancia, me-
+dimos contra todos los elementos del dataset, y tomamos las
+distancias mas cercanas, y en base a eso determinabamos la
+clase de la nueva instancia. Contamos con el hiperparametro K. Es un algoritmo de lazy learning, porque realmente no se
+aprende de los datos. A1. Ventajas:
+Sencillo de implementar. Es flexible: Aplica tanto para regresion como clasifica-
+cion. A2. Desventajas:
+Las caracteristicas irrelevantes pueden distorsionar las
+distancias
+Es computacionalmente costoso. Poco eficiente en grandes volumenes de datos.B.

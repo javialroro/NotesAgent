@@ -1,0 +1,38 @@
+Inteligencia Artificial
+Apuntes de clases
+Rodolfo David Acuña Lopez
+Escuela de Ingenieria en Computacion
+Instituto Tecnologico de Costa Rica
+Cartago, Costa Rica
+rodolfoide69@estudiantec.cr
+Abstract —En este documento podra encontrar informacion
+sobre la primera clase de IA donde se presentan distintas
+perspectivas sobre esta. Desde la perspectiva de la IA podremos
+encontrar conceptos como autonomia y adaptabilidad. Tambien
+introducen los principios basicos del aprendizaje supervisado y no
+supervisado, destacando su aplicacion para resolver problemas
+complejos. Index Terms —principios de la IA, conceptos de IA
+I. I NTRODUCCION
+La inteligencia artificial puede ser un concepto muy variado
+desde diferentes perspectivas. En elarea de la computacion
+pueden ser sistemas que puedan tener y mostrar compor-
+tamientos de forma ”inteligente”. En la primer clase pudimos
+ver conceptos que nos permiten comprender las bases de esta,
+incluyendo distintas perspectivas sobre que es la IA y como
+se puede definir desde puntos de vista. II. N OTICIAS
+A. Sobre la IA
+Ahora la IA ha llegado para facilitar el trabajo de los
+programadores, por ejemplo, Cursor es una herramienta que
+ayuda mucho en el area de la programacion. B. Benchmark
+SWE-Lancer es un benchmark el cual fue desarrollado
+por OpenAI y servia como herramienta para evaluar los
+modelos de lenguaje en tareas freelance extraidas de diferentes
+plataformas. Este incluia mas de 1400 tareas reales. III. I NTRODUCCION A LA INTELIGENCIA ARTIFICIAL
+¿Que piensas cuando escuchas hablar de IA? ¿Como crees
+que funciona? Al inicio la inteligencia artificial podia basarse
+en una logica el cual estaba llena de instrucciones condi-
+cionales, donde se procesaban multiples datos para llegar a
+una conclusion. Con el tiempo se llego a utilizar el modelo
+de Machine Learning, que basicamente a partir de datos,
+comienza a identificar y resolver patrones. Cuando hablamos
+de IA hay diferentes perspectivas de lo que es.

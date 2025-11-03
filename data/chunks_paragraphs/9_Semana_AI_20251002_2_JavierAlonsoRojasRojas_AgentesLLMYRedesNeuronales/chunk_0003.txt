@@ -1,0 +1,5 @@
+Durante la historia de la inteligencia
+artificial surgio el llamado “invierno de la IA” , en parte debido
+al problema del XOR, ya que este no podia ser representado
+adecuadamente por un modelo lineal ni por un perceptron
+simple.

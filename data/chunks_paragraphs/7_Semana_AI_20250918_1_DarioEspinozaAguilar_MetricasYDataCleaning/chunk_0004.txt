@@ -1,0 +1,27 @@
+Principales tareas en el preprocesamiento de datos
+•Data Cleaning Eliminacion de ruido, correccion de in-
+consistencias, tratamiento de valores faltantes
+•Data Integration Combinacion de datos de multiples
+fuentes heterogeneas en un repositorio coherente
+•Data Reduction Reduccion de volumen mediante se-
+leccion de atributos, reduccion de dimensionalidad o
+discretizacion
+•Data Transformation Normalizacion, estandarizacion,
+agregacion, construccion de nuevas variables
+•Data Discretization Transformacion de atributos contin-
+uos en atributos categoricos
+1) Data cleaning (missing values):
+•Ignorar tuplas con valores faltantes (riesgo si la perdida
+de datos es significtiva)
+•Completar manualmente los valores (costoso y poco
+practico en grandes datasets)
+•Usar un valor global constante. •Rellenar con la media (normal), mediana o moda•Inferir valores mediante modelos estadistico o de ML
+(regresion, k-NN, ´arboles de decision)
+2) Data Cleaning (Noisy Data):
+•Agrupar valores en intervalos(bins). •Se puede utilizar con datos muy ruidosos, se reemplaza el
+valor por: la media del bin, la mediana del bin, el borde
+mas cercano del bin. 3) Data Integration (Redundancy Handling):
+•Se ajusta una funcion matematica (lineal o no lineal) para
+suavizar el ruido de los datos. •Aplicar tecnicas de filtrado para suavizar fluctuaciones,
+se puede utilizar la media movil (utilizar losultimos 7
+elementos para ir calculando la media).

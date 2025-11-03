@@ -1,0 +1,50 @@
+Entonces
+z=w⊤x+b= [ 3 2 4 5 ]
+3
+4
+5
+6
++2 = 67+2 = 69,y=σ(z). 2) Varias regresiones a la vez
+Ahora dos regresiones (piensa “dos neuronas de salida”). Apilamos sus pesos en una matrizWy sus sesgos en un
+vectorb:
+W=3 2 4 5
+4 3 2 1
+∈R2×4, b=2
+3
+∈R2. Con el mismoxde arriba:
+z=Wx+b=3 2 4 5
+4 3 2 1
+3
+4
+5
+6
++2
+3
+=69
+43
+. V. REDNEURONAL
+Una red neuronal es un modelo matematico inspirado en
+el funcionamiento del cerebro humano. Esta compuesta por
+unidades llamadas neuronas, organizadas en capas. Las capas
+estan conectadas entre si, de manera que la salida de una capa
+sirve como entrada de la siguiente. Propiedades clave
+•No linealidad: permite resolver problemas complejos que
+un modelo lineal no podria. •Capas: la profundidad de la red es un hiperparametro
+que define su capacidad, y en cada una de las capas hay
+neuronas. •Diferenciabilidad: cada capa debe ser diferenciable para
+que podamos optimizar mediante gradiente descendente. •Optimizacion: si puedo derivar, puedo optimizar. Cuando aplicamos una red neuronal despues de un clasi-
+ficador multinomial, la logica cambia respecto a una clasifi-
+cacion binaria tradicional. En una clasificacion binaria simple,
+la relacion es lineal entre las entradas (features) y la salida. En
+una red neuronal, la salida ya no depende directamente de la
+imagen original, sino de las activaciones de la capa anterior. Estructura tipica
+•Capa de entrada: es la que recibe directamente los datos
+del problema. Cada neurona de esta capa representa una
+caracteristica (feature) de la entrada. Por ejemplo, en el
+caso de MNIST cada pixel de la imagen se convierte en
+una neurona de la capa de entrada. •Capas intermedias (ocultas): son las que procesan la
+informacion recibida. Aqui la red va combinando y
+transformando los datos para encontrar patrones mas
+abstractos. Se llaman “ocultas” porque no interactuan con
+el mundo exterior: solo comunican informacion entre la
+entrada y la salida.

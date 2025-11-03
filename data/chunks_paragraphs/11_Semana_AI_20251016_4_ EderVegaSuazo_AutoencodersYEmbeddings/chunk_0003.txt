@@ -1,0 +1,15 @@
+Nota:Zoom limita la validez de los enlaces; el profesor
+genero un link que ya esta en el grupo de Telegram para
+las lecciones y la duracion tipica de la sesion es∼40
+min, cuando acabe hay que ingresar nuevamente en el
+mismo link. III-B. Autoencoders: idea y componentes
+Un autoencoder aprende una funcionf:x7→xdondex
+intenta aproximarse ax. Internamente:
+Encoder:transformaxenz=g θ(x). Espacio latente:zes un vector de baja dimension que
+condensa caracteristicas relevantes. Decoder:reconstruyex=h ϕ(z). En imagenes el encoder usa convoluciones y pooling para
+reducir resolucion y aumentar canales. El decoder usa opera-
+ciones de upsampling o convolucion transpuesta para recuperar
+la forma espacial. Ver Figura 1 para un esquema general de
+encoder/decoder. III-C. Entrenamiento y funciones de perdida
+El objetivo del entrenamiento es reducir la diferencia entre
+la entrada original y la reconstruccion que produce el modelo. Los elementos que generan las señales evaluadas por la

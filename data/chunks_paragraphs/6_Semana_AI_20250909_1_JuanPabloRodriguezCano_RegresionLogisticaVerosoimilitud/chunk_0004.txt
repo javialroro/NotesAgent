@@ -1,0 +1,10 @@
+A esto se le conoce como el
+fenomeno de ”vanishing gradients”. Por esta razon se aplican
+los teoremas de logaritmo y se obtiene la siguiente expresion. ln(L) =X
+ln(fw,b(xi)yi+ln((1−fw, b (xi))1−yi)
+⇒ln(L) =X
+yiln(fw,b(xi) + 1−yiln((1−fw, b (xi)))
+Esto se convierte en una tarea mas facil de optimizacion. Sin
+embargo, la funcion de logaritmo es estrictamente creciente,por lo que hay que convertir un problema de maximizacion en
+minimizacion. Para esto, simplemente se da vuelta a la funcion
+delnmultiplicando por -1.

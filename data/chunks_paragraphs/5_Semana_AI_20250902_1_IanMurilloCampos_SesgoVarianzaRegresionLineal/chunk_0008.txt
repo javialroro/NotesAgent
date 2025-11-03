@@ -1,0 +1,6 @@
+visualmente se ve un arreglo de la siguiente forma:
+REFERENCES
+[1] S. Pacheco, “Repaso de Matematica: ´Algebra Lineal,” Presentacion,
+Instituto Tecnologico de Costa Rica, 2025.
+[2] S. Pacheco, “Sesgo y Varianza,” Presentacion, Instituto Tecnologico de
+Costa Rica, 2025.

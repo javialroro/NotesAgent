@@ -1,0 +1,14 @@
+•Cambio en habilidades requeridas: mayorenfasis
+en diseño, validacion, ´etica, pruebas adversariales y
+orquestacion. •Riesgos: tareas de bajo nivel y rutinas repetitivas pueden
+verse desplazadas; se recomienda desarrollar habilidades
+de alto valor (arquitectura, ingenieria de datos, DevOps,
+ML Ops). C. Autos autonomos en California
+California es uno de los centros donde empresas realizan
+pruebas y despliegues de vehiculos autonomos; estos sistemas
+integran LIDAR, camaras, mapas HD y planificacion en
+tiempo real. Lasareas de interes incluyen:
+•Sensores y fusion:LIDAR + camaras + radar + GPS. •Percepcion: deteccion y clasificacion de peatones,
+vehiculos y señales. •Planificacion:toma de decisiones en entornos urbanos
+complejos. •Protocolos de emergencia: procedimientos para fallas
+del sistema, intervencion humana y registro de eventos. Fig. 2. Vehiculo autonomo: sensores, percepcion, planificacion y control.

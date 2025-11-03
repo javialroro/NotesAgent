@@ -1,0 +1,35 @@
+adecuadamente por un modelo de regresion logistica
+ni por un perceptron simple. – Prediccion de compuertas logicas:
+Fig. 2.Compuertas logicas
+En la figura se ilustran las compuertas logicasOR
+yANDmediante graficos bidimensionales. •OR(𝑋 1,𝑋2):Los triangulos indican la salida 1 y
+los circulos la salida 0. Esta compuerta devuelve
+1 siempre que al menos una de las entradas sea
+igual a 1. •AND(𝑋1,𝑋2):Corresponde a una compuerta
+AND donde la primera entrada esta negada. La
+salida es 1 (triangulo) ´ unicamente cuando la
+primera entrada es 0 y la segunda es 1. •AND(𝑋 1,𝑋2):Representa la compuerta AND
+con la segunda entrada negada. El resultado es
+1 (triangulo) solo cuando la primera entrada es 1
+y la segunda es 0. En cada grafico, la linea punteada marca ellimite
+de decisionque distingue entre las dos clases de
+salida (0 y 1). Esta representacion facilita la com-
+prension de como las compuertas logicas realizan la
+clasificacion de sus entradas en un espacio bidimen-
+sional. – Problema del XOR:
+Fig. 3.Problema del XOR
+El principal inconveniente es que el problema no
+es linealmente separable, por lo que el algoritmo
+del perceptron simple no podia ofrecer una solucion
+adecuada. Es en este punto donde surgen las redes
+neuronales o perceptrones multicapa, ya que estos sitienen la capacidad de abordar problemas no lineales. Gracias a ello, se amplia significativamente el rango
+de problemas que pueden resolverse con este metodo. – Inspiracion Biologica:
+Fig. 4.Inspiracion biologica
+Las redes neuronales se inspiran en como funcionan
+las neuronas en nuestro cerebro. Cada neurona esta
+conectada con otras a traves de sus dendritas, y en el
+nucleo es donde se procesa la informacion. Si lo comparamos con una regresion logistica, las
+dendritas serian como las entradas de datos (inputs),
+y el nucleo representaria la funcion lineal que procesa
+esa informacion. Al final, la neurona decide si deja
+pasar o no esa señal.

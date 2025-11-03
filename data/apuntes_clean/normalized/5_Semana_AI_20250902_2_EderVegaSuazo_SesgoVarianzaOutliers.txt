@@ -1,0 +1,138 @@
+Apuntes semana 5 Clase #1s
+Eder Vega Suazo
+Escuela de Ingenieria en Computacion
+Instituto Tecnologico de Costa Rica
+IC-6200 - Inteligencia Artificial Gr2
+Resumen—Este documento es un resumen de la clase de
+inteligencia artificial correspondiente a la semana 5, enfocando
+en los fundamentos del aprendizaje supervisado. Se abordan
+temas clave como la optimizacion de modelos mediante calculo
+diferencial y el algoritmo de descenso de gradiente aplicado a la
+funcion de error cuadratico medio. Ademas, se examinan desafios
+comunes en el modelado predictivo, incluyendo el manejo de
+relaciones no lineales entre variables y la deteccion de valores
+atipicos. Tambien discuten estrategias para la evaluacion de mo-
+delos mediante particion de datasets y se analiza el compromiso
+entre sesgo y varianza, crucial para desarrollar modelos con
+capacidad de generalizacion efectiva.
+I. OPTIMIZACION MEDIANTE CALCULO DIFERENCIAL
+I-A. Funcion de error cuadratico medio
+En problemas de regresion, la funcion de costo mas comun
+esta dada por:
+L=1
+NNX
+i=1(fw,b(xi)−y i)2, i= 1, . . . , N
+dondeh θ(xi)representa la prediccion del modelo para la
+instanciai- ´esima.
+El proceso de optimizacion busca minimizar esta funcion
+mediante el calculo de gradientes:
+∂L
+∂w=1
+NNX
+i=12((wx i+b)−y i)·xi
+∂L
+∂b=1
+NNX
+i=12((wx i+b)−y i)
+I-B. Algoritmo de descenso de gradiente
+La actualizacion de parametros se realiza de forma iterativa
+mediante:
+w(t+1)=w(t)−α∂L
+∂w(t)
+b(t+1)=b(t)−α∂L
+∂b(t)
+dondeαrepresenta la tasa de aprendizaje que controla la
+magnitud de cada actualizacion.
+I-C. Terminologia fundamentalEpoca (Epoch): Ciclo completo de presentacion de todos
+los ejemplos de entrenamiento al modelo.
+Lote (Batch): Subconjunto de ejemplos utilizados para
+calcular una actualizacion de parametros.
+Tasa de aprendizaje: Hyperparametro que determina la
+velocidad de convergencia del algoritmo.II. DESAFIOS EN MODELADO PREDICTIVO
+II-A. Relaciones no lineales entre variables
+La regresion lineal presume una relacion lineal entre pre-
+dictores y variable respuesta. Cuando esta suposicion se viola,
+el modelo resulta inadecuado y muestra patrones sistematicos
+en los residuos:
+ei=yi−yi
+La solucion implica transformar las variables predictoras
+mediante expansion polinomial o otras transformaciones que
+permitan capturar relaciones no lineales manteniendo la linea-
+lidad en los parametros.
+Figura 1: Ejemplo de relacion no lineal y su ajuste mediante
+transformacion polinomial.
+II-B. Manejo de valores atipicos
+Las observaciones extremas pueden distorsionar significati-
+vamente los modelos de regresion. Existen multiples enfoques
+para su identificacion y tratamiento:
+II-B1. Identificacion de valores atipicos:
+Residuos estandarizados:z i=ei
+σedondeσ ees la
+desviacion estandar de los residuos.
+Rango intercuartilico: Valores fuera de[Q 1−1,5·
+IQR, Q 3+ 1,5·IQR]se consideran atipicos.
+II-B2. Tecnicas de tratamiento:
+Eliminacion: Remover observaciones identificadas como
+atipicas.
+Winsorizacion: Reemplazar valores extremos por per-
+centiles especificos (ej. percentil 5 y 95).
+Transformaciones: Aplicar funciones como logaritmo
+o raiz cuadrada para reducir la influencia de valores
+extremos.
+
+Figura 2: Efecto de valores atipicos en un modelo de regresion
+lineal.
+III. EVALUACION Y VALIDACION DE MODELOS
+III-A. Particion de datasets
+La division adecuada de los datos es crucial para evaluar la
+capacidad de generalizacion:
+Cuadro I: Propositos de los diferentes subconjuntos de datos
+Subconjunto Proposito
+Entrenamiento Ajuste de parametros del modelo mediante optimiza-
+cion
+Validacion Seleccion de hyperparametros y monitorizacion del
+sobreajuste
+Prueba Evaluacion final del rendimiento con datos nunca
+vistos
+III-B. Tecnicas de muestreo
+1.Muestreo aleatorio: Division randomizada que preserva
+la distribucion original de los datos.
+2.Muestreo estratificado: Mantiene la proporcion de cla-
+ses en cada particion, crucial para datos desbalanceados.
+3.Validacion cruzada: Divide los datos enkparticiones
+y realizakiteraciones de entrenamiento/validacion.
+Figura 3: Esquema de validacion cruzada conk= 5particio-
+nes.Cuadro II: Caracteristicas de modelos con sesgo o varianza
+elevados
+Metrica Alto sesgo Alta varianza
+Error entrenamiento Alto Bajo
+Error validacion Alto Alto
+Comportamiento Subajuste Sobreajuste
+Soluciones Modelos mas comple-
+josRegularizacion, mas
+datos
+IV. SESGO Y VARIANZA
+IV-A. Diagnostico de problemas comunes
+IV-B. Estrategias de mejora
+Para alto sesgo: Aumentar la complejidad del modelo,
+agregar caracteristicas adicionales o reducir regulariza-
+cion.
+Para alta varianza: Aumentar datos de entrenamiento,
+aplicar tecnicas de regularizacion o reducir la compleji-
+dad del modelo.
+Compromisooptimo: Seleccionar la complejidad del
+modelo que minimice el error de generalizacion.
+Figura 4: Relacion entre complejidad del modelo y error de
+generalizacion.
+V. CONCLUSIONES
+La efectividad de los modelos de aprendizaje supervisado
+depende criticamente de la adecuada optimizacion de parame-
+tros, el manejo de relaciones complejas entre variables, la
+identificacion y tratamiento de valores atipicos, y la evalua-
+cion rigurosa mediante tecnicas de validacion apropiadas. El
+entendimiento del compromiso entre sesgo y varianza permite
+desarrollar modelos que generalizan efectivamente a nuevos
+datos, balanceando complejidad y capacidad predictiva.
+REFERENCIAS
+[1] Apuntes de la clase de Inteligencia Artificial, Profesor S. Pacheco,
+Instituto Tecnologico de Costa Rica, 2025.

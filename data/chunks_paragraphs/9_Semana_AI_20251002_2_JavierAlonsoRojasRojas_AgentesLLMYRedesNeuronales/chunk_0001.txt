@@ -1,0 +1,34 @@
+Apuntes Inteligencia Artificial, Clase 02 de Octubre
+Javier Alonso Rojas Rojas
+Escuela de Ingenieria en Computacion
+Instituto Tecnologico de Costa Rica
+Cartago, Costa Rica
+javrojas@estudiantec.cr
+Abstract —Estos apuntes reflejan lo conversado en la clase
+del 02 de octubre donde se mencionaron temas como. El fun-
+cionamiento de los agentes basados en modelos de lenguaje de
+gran escala (LLM) y su papel en la inteligencia artificial moderna. Se mencionaron las principales herramientas y frameworks para
+la creacion de agentes, junto con las diferencias entre sistemas de
+un solo agente y multiagente. Ademas, se examina el caso de Sora
+de OpenAI como ejemplo de modelo multimodal de generacion
+de video y audio, considerando tambien los retoseticos asociados. Finalmente, se incluye un repaso de los fundamentos de las
+redes neuronales, sus funciones de activacion y el proceso de
+entrenamiento mediante backpropagation, como base conceptual
+de los LLM actuales. I. I NTRODUCTION
+La inteligencia artificial (IA) ha avanzado rapidamente
+gracias a los modelos de lenguaje de gran escala (LLMs) y al
+desarrollo de agentes inteligentes capaces de actuar y razonar
+en distintos contextos. Estos sistemas han transformado la
+generacion de texto en un proceso de planificacion y ejecucion
+mas complejo, permitiendo la creacion de agentes autonomos
+que integran herramientas y colaboran entre si. Los apuntes abordan los fundamentos y la arquitectura de
+los agentes basados en LLM, distinguiendo entre sistemas
+individuales y multiagente, y destacando el papel del Chain of
+Thought (CoT) como mecanismo clave para el razonamiento
+estructurado. Ademas, se incluye el caso de estudio Sora de
+OpenAI y un repaso de las bases neuronales del aprendizaje
+profundo, como las funciones de activacion y el entrenamiento
+porbackpropagation . II. M ENCION DE LECTURA DE AGENTES
+Se hizo un repaso general de la lectura “From Language to
+Action: A Review of Large Language Models as Autonomous
+Agents and Tool Users”.

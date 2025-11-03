@@ -1,0 +1,13 @@
+– Funciones de activacion:En la regresion
+logistica esa transformacion se conoce como funcion
+no lineal, especificamente la sigmoide. Segun la señal
+recibida, la neurona se activa o no, permitiendo que
+la informacion continue, la transforme o la bloquee. Fig. 5.Funciones de activacion
+•Funcion ReLU:La funcion𝑔(𝑥)=max(0,𝑥)
+esta limitada por debajo de cero y es estricta-
+mente creciente. Es muy eficiente en modelos
+deDeep Learning, pero presenta el problema
+de las llamadasneuronas muertas, ya que no es
+derivable en todos los puntos y, en algunos casos,
+el gradiente puede llegar a ser cero, impidiendo
+la actualizacion de los pesos.

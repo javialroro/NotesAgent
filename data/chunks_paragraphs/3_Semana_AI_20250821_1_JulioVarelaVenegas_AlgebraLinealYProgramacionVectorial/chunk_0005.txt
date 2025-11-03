@@ -1,0 +1,10 @@
+Ortogonalidad y Ortonormalidad: Vectores conangulo 90◦→producto punto = 0 →ortogonales (). Si ademas
+tienen norma 1 →ortonormales. IV. S UPERVISED LEARNING
+En aprendizaje supervisado tenemos dos cosas importantes:
+features ylabels . -Features: propiedades medibles de una
+entidad (altura, peso, intensidad de pixel, etc.). - Labels: valor
+objetivo que queremos predecir. Un vector de features x= (x1, x2, . . .)describe todas
+las propiedades de un ejemplo, y la variable dependiente y
+depende de estas. Regresion:predecir valores continuos (por ejemplo, pre-
+cio de una casa). Clasificacion: asignar a categorias discretas (tipo de
+vehiculo: moto, carro, camion).

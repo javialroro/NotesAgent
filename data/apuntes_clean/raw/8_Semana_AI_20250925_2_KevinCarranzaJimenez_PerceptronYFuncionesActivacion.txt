@@ -1,0 +1,290 @@
+1
+Apuntes de la clase del 25 de setiembre de 2025
+Kevin Carranza Jimenez
+Escuela de Ingenier ´ıa en Computaci ´on
+Tecnol ´ogico de Costa Rica
+kcarranza@estudiantec.cr
+Abstract —This document summarizes the lecture held on
+September 25, 2025, which included the presentation of the
+company Skild.ia, focused on applying artificial intelligence algo-
+rithms for robot control. It also provides a review of the previous
+lecture, covering neural networks from logistic regression to their
+application in binary classifiers using multinomial expressions.
+The session then introduces the perceptron model, defined as a
+linear regression with a Hinge Loss function. It is emphasized that
+a single perceptron cannot solve non-linear functions, although
+multiple perceptrons can be combined to achieve this. Finally,
+the multilayer perceptron is introduced as a form of deep neural
+network with biological inspiration.
+Index Terms —Skild, Regresi ´on lineal, multinomial red neu-
+ronal, perceptr ´on.
+I. I NTRODUCTION
+EN el desarrollo del curso, las clases recientes han
+abordado los fundamentos de las redes neuronales y
+su evoluci ´on hacia modelos m ´as complejos. La sesi ´on del
+25 de septiembre de 2025 incluy ´o como tema de inter ´es un
+video de la empresa Skild.ia, que tiene como objetivo utilizar
+algoritmos de inteligencia artificial para controlar robots y
+estos puedan emplear cualquier tarea, trayendo la inteligencia
+artificial al m ´undo f ´ısico. Tambi ´en se incluy ´o tanto la
+revisi ´on de conceptos previamente estudiados, entre ellos la
+regresi ´on log ´ıstica para desarrollar expresiones multinomiales
+y con multiples capas de estas, desarrollar redes neuronales.
+Tambi ´en la introducci ´on del perceptr ´on, considerado el punto
+de partida para las redes neuronales profundas.
+II. S KILD .IA
+Skild AI es una startup emergente dedicada al desarrollo de
+una inteligencia artificial de prop ´osito general para el control
+de robots de m ´ultiples tipos (humanoides, brazos rob ´oticos,
+plataformas de locomoci ´on, etc.).
+La propuesta central de Skild AI es crear un “cerebro rob ´otico
+omni-corporal” —denominado Skild Brain— que permita
+que un mismo modelo de IA controle diferentes cuerpos
+rob´oticos sin necesidad de reentrenamientos espec ´ıficos para
+cada hardware.
+Un aspecto clave de su dise ˜no es la capacidad de adaptaci ´on
+a fallos o cambios dr ´asticos en la morfolog ´ıa del robot:
+cuando un robot pierde una extremidad o sufre un da ˜no, el
+modelo puede reorganizar su control para seguir operando,
+aprovechando la experiencia aprendida previamente [1].III. R EDES NEURONALES
+Una Red Neuronal Artificial (RNA) es un modelo com-
+putacional inspirado en la estructura y funcionamiento del
+cerebro humano, compuesto por nodos (neuronas artificiales)
+organizados en capas y conectados entre s ´ı mediante pesos.
+Estas redes aprenden patrones complejos a partir de datos
+de entrada a trav ´es de un proceso iterativo de ajuste de
+pesos, permitiendo resolver tareas de clasificaci ´on, predicci ´on
+y reconocimiento en diversos dominios [2].
+A. Clasificador de MNIST
+MNIST es un dataset con 60k muestras de n ´umeros del 0 al
+9 en un solo canal. En el resumen de la clase se da a entender
+que se est ´a intentando desarrollar un clasificador utilizando
+este dataset. Que cada una de estas imagenes est ´a compuesta
+por un grupo de p ´ıxeles.
+B. Regresi ´on Log ´ıstica
+En el resumen de la clase anterior se menciona que para el
+clasificador de MNIST se comenzaba tratando de hacer una
+clasificaci ´on binaria respecto a la imagen. Hasta el momento
+de esta clase el ´unico algoritmo conocido para desarrollar esta
+clasificaci ´on es la regresi ´on log ´ıstica. Para esto se pasan la
+informaci ´on de cada uno de los pixeles de la imagen como
+entrada para le regresi ´on log ´ıstica. La situaci ´on es que el
+problema no puede ser resuelto con una regresi ´on log ´ıstica
+´unicamente, si no con una regresi ´on log ´ıstica multinomial, ya
+que requerimos 10 clases y la regresi ´on log ´ıstica solo permite
+1.
+C. Multinomial
+Para esto, al problema requerir 10 clases, se desarrollan
+10 regresiones log ´ısticas, una por cada clase y a cada una
+se le pasa como entrada la informaci ´on de los pixeles de
+la imagen, por lo que una de las regresiones logisticas dar ´a
+mayor probabilidad que las dem ´as. Y en este punto tenemos
+en la Figura 1 una arquitectura que ya podr ´ıa llamarse red
+neuronal, aunque todav ´ıa faltar ´ıa agregar una siguiente capa
+para poder resolver problemas no lineales.
+Tambi ´en se menciona en el resumen de la clase anterior
+que en lugar de calcular cada regresi ´on lineal de forma
+vectorial, cambiamos los vectores por matrices para hacer 1
+sola operaci ´on y no N. Donde N es el tama ˜no de la capa
+siguiente utilizando conceptos de ´algebra lineal. En cada una
+de las filas ser ´a representado las neuronas para la siguiente
+capa y las entradas las columnas.
+
+2
+Fig. 1: Primer Red Neuronal.
+El resumen de la clase anterior concluye definiendo algunas
+caracteristicas de las redes neuronales, las cuales son que al
+no ser lineales nos permite atacar problemas complejos, est ´a
+compuesta por capas, estas capas son el hiper par ´ametro de
+la red neuronal y es importante que sean diferenciables. Si la
+red neuronal se puede derivar se puede optimizar y que en
+cada capa hay neuronas.
+IV. E LPERCEPTR ´ON
+El perceptr ´on es uno de los modelos m ´as simples de red
+neuronal artificial, propuesto por Frank Rosenblatt en 1958.
+Consiste en una unidad de procesamiento que recibe un con-
+junto de entradas ponderadas, las combina linealmente y aplica
+una funci ´on de activaci ´on para producir una salida binaria. Su
+objetivo principal es clasificar patrones linealmente separables.
+Aunque limitado para problemas no lineales, constituye la base
+conceptual de arquitecturas m ´as complejas como el perceptr ´on
+multicapa y las redes neuronales profundas [3].
+A. Invierno de la AI
+El invierno de la inteligencia artificial hace referencia a
+per´ıodos hist ´oricos en los que las expectativas generadas
+alrededor de la investigaci ´on en IA no se cumplieron, provo-
+cando una disminuci ´on dr ´astica en la financiaci ´on, el inter ´es
+acad ´emico y el desarrollo industrial en este campo. Durante
+estos periodos, los avances en IA se ralentizaron debido
+a limitaciones tecnol ´ogicas, falta de resultados pr ´acticos y
+cr´ıticas hacia la viabilidad de los enfoques predominantes. Se
+reconocen principalmente dos inviernos de la IA: el primero
+a mediados de los a ˜nos 1970, y el segundo a finales de los
+a˜nos 1980 hasta principios de los 1990 [4].
+En 1969, Marvin Minsky y Seymour Papert publicaron el
+libro Perceptrons, en el que se ˜nalaron limitaciones fundamen-
+tales del perceptr ´on simple. Entre los problemas destacados,
+Fig. 2: Inspiraci ´on biol ´ogica de la red neuronal.
+se˜nalaron que este modelo no pod ´ıa resolver funciones no
+linealmente separables, siendo el ejemplo cl ´asico la funci ´on
+l´ogica XOR. Adem ´as, advirtieron sobre su limitada expresivi-
+dad computacional y su escasa capacidad para generalizar en
+problemas m ´as complejos, lo que contradec ´ıa las expectativas
+iniciales de que los perceptrones pudieran resolver tareas
+de visi ´on y reconocimiento de patrones. Estas observaciones
+demostraron que, aunque los perceptrones eran ´utiles para
+ciertos problemas lineales, su aplicaci ´on pr ´actica era muy
+limitada. El impacto de estas cr ´ıticas fue significativo, con-
+tribuyendo al primer invierno de la inteligencia artificial, hasta
+que el desarrollo del perceptr ´on multicapa y el algoritmo de
+retropropagaci ´on permitieron superar estas restricciones [5].
+B. Inspiraci ´on Biol ´ogica
+Las redes neuronales artificiales se inspiran en el fun-
+cionamiento de las neuronas del cerebro humano, donde cada
+neurona recibe se ˜nales de m ´ultiples conexiones sin ´apticas, las
+procesa y genera una respuesta que se transmite a otras neu-
+ronas. De manera an ´aloga, en las redes neuronales artificiales,
+cada nodo o “neurona” recibe entradas ponderadas, aplica una
+funci ´on de activaci ´on y transmite su salida a las siguientes
+capas, reproduciendo de forma simplificada el procesamiento
+distribuido y paralelo del sistema nervioso biol ´ogico. Esta
+inspiraci ´on biol ´ogica se ilustra en la Figura 2, donde se
+muestra la correspondencia entre una neurona biol ´ogica y su
+modelo artificial.
+C. Funci ´on de Activaci ´on
+En regresi ´on log ´ıstica se llama funci ´on no-lineal (sigmoid).
+Esta depende de si la se ˜nal activa o no la neurona. Dependi-
+endo de la intensidad de la se ˜nal que se haya recibido, esta
+dejar ´a pasar la informaci ´on, la bloquear ´a o la transformar ´a y
+existen varias funciones de activaci ´on.
+1) Funci ´on Sigmoide: La funci ´on sigmoide transforma un
+valor de entrada en un rango entre 0 y 1, lo que permite
+interpretarla como una probabilidad. Su desventaja principal es
+la saturaci ´on de gradientes en valores extremos, lo que dificulta
+el entrenamiento en redes profundas [6].
+σ(x) =1
+1 +e−x
+
+3
+2) Funci ´on Tangente Hiperb ´olica (tanh): La tangente
+hiperb ´olica es similar a la sigmoide, pero su rango va de
+-1 a 1, lo que permite que las salidas est ´en centradas en
+cero. Esto ayuda a mitigar algunos problemas de gradientes
+en comparaci ´on con la sigmoide, aunque a ´un puede sufrir de
+saturaci ´on [6].
+tanh( x) =ex−e−x
+ex+e−x
+3) Funci ´on ReLU (Rectified Linear Unit): La funci ´on
+ReLU es una de las m ´as utilizadas en redes neuronales
+modernas. Define la salida como 0 para valores negativos
+y como la propia entrada para valores positivos. Es com-
+putacionalmente eficiente y mitiga en gran parte el problema
+del desvanecimiento del gradiente, aunque puede presentar el
+problema de “neurona muerta” [7].
+f(x) = max(0 , x)
+4) Funci ´on Leaky ReLU: La funci ´on Leaky ReLU es una
+variante de la ReLU que permite peque ˜nos valores negativos
+en la salida (usualmente multiplicados por una constante
+peque ˜na, como 0.01). Esto evita el problema de neuronas
+muertas al asegurar un gradiente no nulo para entradas nega-
+tivas [8].
+f(x) =(
+x six≥0
+αx six <0
+5) Funci ´on Softmax: La funci ´on Softmax convierte un
+vector de valores reales en una distribuci ´on de probabilidad,
+donde cada valor queda entre 0 y 1 y la suma total es igual a 1.
+Se utiliza principalmente en la capa de salida de clasificadores
+multiclase [6].
+σ(z)i=ezi
+PK
+j=1ezjparai= 1, . . . , K
+V. P ERCEPTR ´ONMULTICAPA
+El Perceptr ´on Multicapa (MLP, por sus siglas en ingl ´es) es
+una arquitectura fundamental dentro de las redes neuronales
+artificiales. Est ´a compuesto por una capa de entrada, una o
+m´as capas ocultas y una capa de salida. A diferencia del
+perceptr ´on simple, que solo puede resolver problemas lineal-
+mente separables, el MLP utiliza funciones de activaci ´on no
+lineales en sus neuronas ocultas, lo que le permite aproximar
+funciones complejas y resolver problemas no lineales. Su
+entrenamiento se realiza com ´unmente mediante el algoritmo
+de retropropagaci ´on (backpropagation), el cual ajusta los pesos
+de las conexiones minimizando el error entre la salida predicha
+y la deseada. Esta arquitectura constituye la base de los
+modelos modernos de aprendizaje profundo [6], [9].
+A. Maldici ´on de dimensionalidad
+A mayor cantidad de dimensiones, aumenta la complejidad,
+a su vez, aumentando la computabilidad y se vuelve m ´as
+complicado encontrar patrones. Para esto existen algoritmos
+de deducci ´on de dimensiones como el PCA.1) PCA: El An ´alisis de Componentes Principales (PCA,
+por sus siglas en ingl ´es: Principal Component Analysis) es un
+m´etodo estad ´ıstico ampliamente utilizado para la reducci ´on
+de dimensionalidad, que transforma un conjunto de vari-
+ables posiblemente correlacionadas en un nuevo conjunto
+de variables no correlacionadas denominadas componentes
+principales. El procedimiento consiste en centrar los datos,
+calcular la matriz de covarianza, obtener sus autovalores
+y autovectores, y seleccionar los vectores asociados a los
+mayores autovalores para proyectar los datos en un subespacio
+de menor dimensi ´on que conserva la mayor varianza posible
+de la informaci ´on original [10], [11], [12].
+B. Comportamiento Jer ´arquico
+Los humanos aprenden cosas simples para transformarlo en
+algo m ´as complejo, tal es el caso del MLP conformado por
+m´ultiples regresiones lineales, de lo cual se optienen ganan-
+cias exponenciales en algunas funciones, como polinomios,
+la composici ´on de funciones que permite reusar funciones
+simples otras de orden superior y que mediante una repre-
+sentaci ´on compacta, en la que pocos pesos se pueden modelar
+funciones complejas, como por ejemplo, una red neuronal que
+se aproxime a otra.
+VI. C ONCLUSION
+La clase permiti ´o la comprensi ´on de los fundamentos de las
+redes neuronales, resaltando su estructura jer ´arquica al final
+y las motivaciones biol ´ogicas que inspiran su arquitectura.
+A partir del an ´alisis del perceptr ´on y de sus limitaciones,
+se introdujo la necesidad de arquitecturas m ´as complejas,
+como el MLP, que posibilitan la resoluci ´on de problemas
+no lineales. Esta sesi ´on trat ´o tanto el potencial como los
+desaf ´ıos de las redes neuronales, entre ellos la maldici ´on de
+la dimensionalidad y la importancia de un dise ˜no acorde al
+problema en cuesti ´on en t ´erminos de capas y neuronas. As ´ı, la
+clase proporcion ´o las bases para comprender las arquitecturas
+modernas de aprendizaje profundo.
+REFERENCES
+[1] K. Wiggers, “Skild ai emerges from stealth with
+$300m to build a general-purpose ai brain for robots,”
+TechCrunch , Sep. 2025, accessed: 2025-10-02. [Online]. Avail-
+able: https://techcrunch.com/2025/09/16/skild-ai-emerges-from-stealth-
+with-300m-to-build-a-general-purpose-ai-brain-for-robots/
+[2] S. Haykin, Neural Networks and Learning Machines , 3rd ed. Prentice
+Hall, 2009.
+[3] F. Rosenblatt, “The perceptron: A probabilistic model for information
+storage and organization in the brain,” Psychological Review , vol. 65,
+no. 6, pp. 386–408, 1958.
+[4] S. J. Russell and P. Norvig, Artificial Intelligence: A Modern Approach ,
+3rd ed. Prentice Hall, 2010.
+[5] M. Minsky and S. A. Papert, Perceptrons: An Introduction to Compu-
+tational Geometry . MIT Press, 1969.
+[6] I. Goodfellow, Y . Bengio, and A. Courville, Deep Learning . MIT Press,
+2016.
+[7] V . Nair and G. E. Hinton, “Rectified linear units improve restricted boltz-
+mann machines,” in Proceedings of the 27th International Conference
+on Machine Learning (ICML) , 2010.
+[8] A. L. Maas, A. Y . Hannun, and A. Y . Ng, “Rectifier nonlinearities
+improve neural network acoustic models,” in Proceedings of the 30th
+International Conference on Machine Learning (ICML) , 2013.
+
+4
+[9] D. E. Rumelhart, G. E. Hinton, and R. J. Williams, “Learning repre-
+sentations by back-propagating errors,” Nature , vol. 323, no. 6088, pp.
+533–536, 1986.
+[10] I. T. Jolliffe and J. Cadima, “Principal component analysis: a review and
+recent developments,” Philosophical Transactions of the Royal Society
+A: Mathematical, Physical and Engineering Sciences , vol. 374, no. 2065,
+p. 20150202, 2016.
+[11] C. M. Bishop, Pattern Recognition and Machine Learning . Springer,
+2006.
+[12] J. Shlens, “A tutorial on principal component analysis,” arXiv preprint
+arXiv:1404.1100 , 2014.

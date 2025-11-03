@@ -1,0 +1,310 @@
+Inteligencia Artificial
+Apuntes Semana 5, Clase #2
+Luis Fernando Benavides Villegas
+Instituto Tecnol ´ogico de Costa Rica
+Cartago, Costa Rica
+lubenavides@estudiantec.cr
+Abstract —Este documento recopila los apuntes de la clase del
+jueves 04 de septiembre de 2025 para el curso de Inteligencia
+Artificial. Se repasan conceptos clave de regresi ´on lineal y sus
+limitaciones, as ´ı como los problemas de overfitting yunderfitting .
+Tambi ´en se describen t ´ecnicas de subdivisi ´on de datasets y
+estrategias para mejorar la capacidad de generalizaci ´on de los
+modelos. Finalmente, se introduce la regresi ´on log ´ıstica como un
+modelo de clasificaci ´on binaria, explicando la funci ´on sigmoide,
+su derivada y el proceso de optimizaci ´on de par ´ametros mediante
+descenso del gradiente.
+Index Terms —Inteligencia Artificial, regresi ´on lineal, regresi ´on
+log´ıstica, funci ´on sigmoide, overfitting, underfitting, optimizaci ´on
+I. N OTICIAS DE LA SEMANA
+A. IngenIEEEr ´ıa Costa Rica
+Un evento de Ingenier ´ıa que organiza IEEE Costa Rica.
+Habr ´a charlas de profesores distinguidos en diversas ´areas y
+participaci ´on de empresas. [1]
+B. Referencias falsas en IA
+Las “alucinaciones” en inteligencia artificial son cuando los
+modelos generan referencias aparentemente v ´alidas pero que
+en realidad no existen. Esto fue debatido en el grupo Parma
+del TEC y se resalt ´o la importancia de siempre verificar las
+fuentes. La responsabilidad recae en el usuario de confirmar
+la veracidad de la informaci ´on antes de tomarla como cierta.
+C. Google Nano Banana
+El nuevo modelo de Google enfocado en la edici ´on de
+im´agenes que se llama Nano Banana . A diferencia de otros
+generadores que recrean la imagen completa desde cero, este
+modelo conserva mejor los detalles originales y el contexto.
+As´ı, al editar una foto mantiene la coherencia entre iteraciones.
+Se habl ´o tambi ´en de posibles sesgos en los modelos, al notar
+que repeticiones en im ´agenes de personas modificaban rasgos
+hacia un perfil m ´as latino.
+II. R EPASO DE LA CLASE ANTERIOR
+A. Potenciales problemas al aplicar una Regresi ´on Lineal
+1) No linealidad: Un supuesto de la regresi ´on lineal es
+que la relaci ´on entre las variables predictoras y la variable re-
+spuesta es lineal. Cuando no se cumple, los residuos muestranpatrones sistem ´aticos (por ejemplo, en forma de par ´abola) en
+lugar de distribuirse de manera aleatoria. Esto indica que el
+modelo lineal no es adecuado. Para resolverlo, una opci ´on es
+aplicar feature engineering , agregando t ´erminos polin ´omicos
+que transformen las variables originales y permitan que la
+relaci ´on se aproxime mejor a una forma lineal. De esta manera,
+aunque la relaci ´on real sea curva, el modelo puede ajustarse
+con menor error.
+2) Datos sobresalientes: Surgen por ruido, errores de
+medici ´on o datos at ´ıpicos y pueden afectar el ajuste del
+modelo. Una forma de tratarlos es estandarizar los residuos
+dividiendo entre la desviaci ´on est ´andar. Una vez normalizados,
+se mide cu ´antas desviaciones est ´andar se aleja cada dato. Si
+un dato est ´a muy lejos (m ´as de 2 o 3 desviaciones est ´andar),
+se considera sobresaliente. Otras t ´ecnicas que vimos fueron el
+rango intercuart ´ılico, que es el que se usa en gr ´aficos de caja
+y bigotes, y la Winsorizaci ´on, donde en vez de eliminar datos
+at´ıpicos se reemplazan por valores en percentiles l ´ımite.
+3) Colinealidad: Se da cuando dos o m ´as predictores est ´an
+altamente correlacionados entre s ´ı. Esto hace dif ´ıcil separar
+el efecto de cada variable en la predicci ´on, afectando la
+estabilidad de los coeficientes del modelo. En consecuencia,
+los par ´ametros estimados se vuelven poco confiables y muy
+sensibles a cambios en los datos. Para detectarla, se pueden
+usar medidas como el VIF (Variance Inflation Factor) . Una
+soluci ´on com ´un es eliminar variables redundantes o aplicar
+t´ecnicas de regularizaci ´on.
+B. Dataset
+Es el conjunto completo de datos disponibles para entrenar
+y evaluar un modelo. Normalmente se subdivide en diferentes
+partes para poder medir la capacidad de generalizaci ´on y evitar
+problemas como el overfitting .
+C. Training Set
+Subconjunto usado para entrenar el modelo y ajustar sus
+par´ametros. Es donde el algoritmo aprende los patrones pre-
+sentes en los datos.
+D. Validation Set
+Subconjunto usado durante el entrenamiento para evaluar
+el rendimiento intermedio del modelo. Sirve para medir si
+
+lo aprendido se generaliza a datos no vistos y para ajustar
+hiperpar ´ametros. Permite detectar problemas de sobreajuste de
+manera temprana sin necesidad de esperar a la prueba final.
+E. T ´ecnicas para subdividir el dataset
+1) Random Sampling: Consiste en dividir aleatoriamente
+los datos entre entrenamiento y prueba. Es adecuado cuando
+las clases est ´an balanceadas, ya que garantiza representatividad
+sin introducir sesgos. El problema surge si las clases est ´an
+desbalanceadas, porque puede que un subconjunto quede con
+muy pocos o incluso sin ejemplos de alguna clase.
+2) Stratified Sampling: Se usa cuando las clases est ´an
+desbalanceadas. Mantiene la misma proporci ´on de clases en
+los conjuntos de entrenamiento y prueba. De esta forma, si en
+el dataset original una clase representa el 90% y otra el 10%,
+esa relaci ´on se conserva en las divisiones.
+3) K-Fold Cross-Validation: El conjunto de entrenamiento
+se divide en Kpartes (folds). En cada iteraci ´on se usa
+K−1folds para entrenar y el fold restante para validar. El
+proceso se repite Kveces, rotando el fold de validaci ´on. Esto
+permite aprovechar mejor los datos disponibles y obtener una
+evaluaci ´on m ´as robusta del modelo.
+F . Posibles escenarios de comportamiento de training y vali-
+dation
+1) Overfitting: El error en training es bajo pero el error
+en validation comienza a aumentar despu ´es de cierto punto.
+El modelo memoriza los datos de entrenamiento en lugar de
+aprender patrones generales. Se captura tambi ´en el ruido de los
+datos, lo que provoca que no pueda generalizar. Se caracteriza
+por tener alta varianza .
+Fig. 1. Ej. de overfitting
+ Fig. 2. Ej. de regresi ´on de overfitting
+Una t ´ecnica para evitarlo es el early stopping , que consiste
+en detener el entrenamiento en la ´epoca donde el error de
+validaci ´on empieza a empeorar.
+2) Underfitting: Tanto el error en training como en val-
+idation son altos. El modelo no logra aprender patrones de
+los datos porque es demasiado simple o incorrecto para el
+problema. Se caracteriza por alto sesgo , es decir, asume una
+forma equivocada de los datos (por ejemplo, usar un modelo
+lineal para datos con comportamiento cuadr ´atico).
+Fig. 3. Ej. de underfitting
+Fig. 4. Ej. de regresi ´on de underfit-
+ting
+3) Caso ideal: El error en training es bajo y tambi ´en lo
+es en validation. El modelo logra ajustarse a los datos sin
+sobreajustarse al ruido y puede generalizar bien a ejemplos no
+vistos. Representa un buen equilibrio entre sesgo y varianza.
+Fig. 5. Ej. del caso ideal
+ Fig. 6. Ej. de regresi ´on del caso ideal
+4) Bias-Variance Tradeoff: Es un caso s ´uper raro porque
+el error en training es alto pero el error en validation es bajo.
+Si sucede, puede deberse a errores de c ´alculo o valores mal
+tomados, no a un aprendizaje real del modelo.
+III. A LTOBIAS
+Se presenta cuando el modelo es demasiado simple y
+no logra capturar el patr ´on real de los datos, provocando
+underfitting . Tanto el error en training como en validation
+son altos, ya que el modelo asume demasiado sobre la forma
+de los datos.
+A. Causas
+•Modelo demasiado simple (ej. lineal para datos con
+relaciones cuadr ´aticas).
+•No se utilizan todas las variables relevantes.
+•Losfeatures disponibles no son buenos predictores de la
+variable objetivo.
+B. Posibles soluciones
+•Incrementar la complejidad del modelo (por ejemplo,
+pasar de lineal a cuadr ´atico o a un modelo m ´as flexible).
+•Incorporar m ´asfeatures o transformar los existentes.
+
+•Sustituir o recolectar mejores features que representen de
+manera adecuada el problema.
+IV. A LTAVARIANZA
+Se presenta cuando el modelo se ajusta demasiado a los
+datos de entrenamiento pero falla al generalizar en el con-
+junto de validaci ´on. Esto provoca overfitting , donde peque ˜nas
+variaciones en los datos de entrada pueden generar malas
+predicciones.
+A. Causas
+•El modelo es demasiado complejo y aprende patrones
+irrelevantes o ruido.
+•Exceso de dimensionalidad: agregar muchas variables
+aumenta el riesgo de overfitting.
+•Muy pocos ejemplos en el conjunto de entrenamiento,
+especialmente en problemas con clases desbalanceadas.
+B. Posibles soluciones
+•Reducir la complejidad del modelo (ej. usar menos capas
+o un modelo m ´as simple).
+•Disminuir la dimensionalidad eliminando variables irrel-
+evantes.
+•Obtener m ´as ejemplos de entrenamiento para mejorar la
+representaci ´on de todas las clases.
+•Aplicar t ´ecnicas de regularizaci ´on que penalizan la com-
+plejidad del modelo, como:
+–L1 y L2 (penalizaci ´on sobre los par ´ametros).
+–Dropout (apagar ciertas neuronas durante el entre-
+namiento).
+V. R EGRESI ´ONLOG´ISTICA
+Aunque su nombre incluya “regresi ´on”, la regresi ´on
+log´ıstica es un modelo de clasificaci ´on, no de regresi ´on.
+Se utiliza principalmente para problemas binarios , donde las
+etiquetas ytoman los valores 0o1.
+A. Diferencia con la regresi ´on lineal
+•Enregresi ´on lineal se predicen valores continuos en los
+reales ( R).
+•Enregresi ´on log ´ıstica se predice la probabilidad de
+pertenecer a una clase u otra. El resultado final es una
+clasificaci ´on:0o1.
+Por ejemplo, con una variable como el tama ˜no de una
+calabaza:
+•Regresi ´on lineal: predice el precio aproximado en valores
+reales.
+•Regresi ´on log ´ıstica: predice si la calabaza es naranja ( 1)
+o no lo es ( 0).
+Fig. 7. Regresi ´on lineal vs log ´ıstica
+B. Distribuci ´on de Bernoulli
+Cada etiqueta yies una variable aleatoria que sigue una
+distribuci ´on de Bernoulli. La probabilidad de que ocurra el
+evento ( y= 1) o no ocurra ( y= 0) se define como:
+P(Y=k) =pk(1−p)1−k, k∈ {0,1}
+donde:
+•pes la probabilidad de ´exito ( y= 1).
+•kes la etiqueta observada (0 o 1).
+As´ı, si k= 1 , la probabilidad es p; y si k= 0 , la
+probabilidad es 1−p.
+VI. F UNCI ´ONSIGMOIDE
+La funci ´on sigmoide es una herramienta clave porque intro-
+duce no linealidad al modelo y tiene un rango de salida entre
+0 y 1 , lo cual la hace ideal para trabajar con probabilidades.
+Se define como:
+σ(x) =1
+1 +e−x
+Al tomar valores de entrada muy negativos, la salida se
+acerca a 0; mientras que con valores grandes y positivos, se
+acerca a 1.
+Fig. 8. Gr ´afica de la funci ´on sigmoide
+Adem ´as, el argumento xpuede ser cualquier valor o incluso
+otra funci ´on (composici ´on de funciones), lo que da flexibilidad
+para modelar relaciones m ´as complejas.
+
+La idea es tomar la salida de un modelo lineal y conver-
+tirla en una probabilidad. Si partimos de una funci ´on lineal
+fw,b(x) =wx+b, al aplicarle la funci ´on sigmoide obtenemos:
+ˆy=σ(fw,b(x)) =1
+1 +e−(wx+b)
+De esta forma:
+•Siˆy <0.5, se clasifica como 0.
+•Siˆy≥0.5, se clasifica como 1.
+Esto convierte la regresi ´on log ´ıstica en un modelo de
+clasificaci ´on binaria . Queremos hacerlo as ´ı porque calcular
+una funci ´on lineal es simple computacionalmente, es un buen
+m´etodo para mantener la relaci ´on entre variables y pesos y
+permite modelar problemas con mayor complejidad.
+A. Diagrama Computacional de la Regresi ´on Log ´ıstica
+Fig. 9. Diagrama
+1) Los inputs (features) xingresan junto con un vector de
+pesos wy un biasb.
+2) Se calcula el producto punto entre el vector xy el vector
+w.
+3) Se le aplica la funci ´on no lineal σ(z), obteniendo como
+salida una probabilidad.
+4) Finalmente, esta probabilidad se compara con un umbral
+para asignar una etiqueta de clase ( 0o1).
+En algunos textos, al valor lineal z=wx+bse le
+llama pre-activaci ´on, y a la aplicaci ´on de la sigmoide se le
+llama activaci ´on. La salida de la activaci ´on corresponde a la
+probabilidad estimada ˆy.
+B. Optimizaci ´on
+Nuestro objetivo es optimizar los par ´ametros wybpara que
+el modelo aprenda correctamente. Tenemos:
+ˆy=σ(fw,b(x)) =1
+1 +e−(wx+b)
+Para ajustar los par ´ametros, necesitamos calcular las
+derivadas parciales de la funci ´on de p ´erdida respecto a wy
+b. Sin embargo, antes de derivar, debemos definir una funci ´on
+de p´erdida adecuada.En regresi ´on lineal usamos el error cuadr ´atico medio
+(MSE) , pero en clasificaci ´on esto deja de ser ´util, porque ya
+no predecimos valores continuos, sino probabilidades .
+El procedimiento general sigue siendo el mismo:
+•Definimos una funci ´on de p ´erdida Lapropiada para
+probabilidades.
+•Calculamos sus derivadas respecto a wyb.
+•Usamos esas derivadas en el algoritmo de descenso del
+gradiente , iterando sobre los datos de entrenamiento para
+ir actualizando los par ´ametros y minimizar la p ´erdida.
+C. Derivada de la funci ´on sigmoide
+σ(x) =1
+1 +e−x
+σ′(x) =1′·(1 +e−x)−1·(1 +e−x)′
+(1 +e−x)2
+σ′(x) =e−x
+(1 +e−x)2
+σ′(x) =e−x+ 1−1
+(1 +e−x)2
+σ′(x) =e−x+ 1
+(1 +e−x)2−1
+(1 +e−x)2
+σ′(x) =1
+1 +e−x−1
+(1 +e−x)2
+σ′(x) =1
+1 +e−x·
+1−1
+1 +e−x
+σ′(x) =σ(x) (1−σ(x))
+D. Hallar la funci ´on de p ´erdida
+¿MSE? Esto y m ´as en la siguiente clase.
+VII. C ONCLUSI ´ON
+En esta clase se reforzaron conceptos esenciales para
+comprender c ´omo los modelos de aprendizaje supervisado
+aprenden a partir de datos. Se revisaron las limitaciones de
+la regresi ´on lineal y los problemas comunes asociados al
+sesgo y la varianza, as ´ı como t ´ecnicas para evaluar y mejorar
+la generalizaci ´on de los modelos. Adem ´as, se introdujo la
+regresi ´on log ´ıstica como un modelo de clasificaci ´on, desta-
+cando el papel de la funci ´on sigmoide y su derivada en el
+proceso de optimizaci ´on. Estos fundamentos sientan la base
+para profundizar en funciones de p ´erdida espec ´ıficas y en el
+entrenamiento de modelos m ´as complejos en futuras sesiones.
+
+REFERENCIAS
+[1] IEEE Costa Rica. “IngenIEEEr ´ıa Costa Rica.” [En l ´ınea]. Disponible:
+https://r9.ieee.org/costarica/ingenieeeria
+[2] A. Shervine. “Hoja de referencia de Aprendizaje Au-
+tom´atico.” Stanford University. [En l ´ınea]. Disponible:
+https://stanford.edu/ ∼shervine/l/es/teaching/cs-229/
+hoja-referencia-aprendizaje-automatico-consejos-trucos

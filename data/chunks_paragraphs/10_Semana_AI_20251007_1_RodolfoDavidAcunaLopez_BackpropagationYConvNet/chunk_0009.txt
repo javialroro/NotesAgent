@@ -1,0 +1,4 @@
+En
+otras palabras, se calcula la probabilidad de que pertenezca
+a una clase y asi convertir una imagen de pixeles a una
+probabilidad de pertenecer a una clase.

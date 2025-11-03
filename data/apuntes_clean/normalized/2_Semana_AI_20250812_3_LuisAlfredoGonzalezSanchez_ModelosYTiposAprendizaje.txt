@@ -1,0 +1,260 @@
+NOTAS DE CLASE
+INTELIGENCIA ARTIFICIAL - 12 DE AGOSTO - SEMANA 2
+Luis Alfredo Gonzalez Sanchez
+Escuela de Ingenieria en Computadores
+Instituto Tecnologico de Costa Rica
+Cartago, Costa Rica
+2021024482 gonzal3z.luis@estudiantec.cr
+Abstract —This document provides a concise summary of the
+key concepts and examples covered in week two of the artificial
+intelligence course. It begins with an overview of general AI
+concepts, followed by an explanation of the types and main
+approaches of machine learning. The document also explores
+various problem-solving paradigms and concludes with a brief
+review of the essential components of the machine learning
+pipeline. This summary aims to enhance understanding and
+reinforce the material presented in class.
+Index Terms —AI, Machine learning, Pipeline.
+I. I NTRODUCTION
+El presente documento busca brindar un breve resumen a
+los conceptos y ejemplos vistos en la clase de la semana 2
+del curso de inteligencia artificial , comenzando por un breve
+recorrido a determinados conceptos generales de la IA, luego
+se procedera a explicar los tipos de aprendizaje en machine
+learning, sus principales enfoques , algunos paradigmas de
+resolucion de problemas y porultimo un breve repaso a los
+conceptos del pipeline de machine learning.
+II. C ONCEPTOS GENERALES
+Se presentara un breve repaso a conceptos vistos en clase.
+A. Definicion de modelos
+•Modelo determinista : Es aquel modelo que, bajo una
+misma entrada se produce los mismos resultados. No in-
+corpora aleatoriedad, por lo que los resultados obtenidos
+se vuelven predecibles , por ejemplo, bajo caracteristicas
+medicas se puede determinar una enfermedad asociada.
+•Modelo estocastico : Es aquel modelo en que , bajo una
+entrada determinada las salidas son diferentes debido a un
+conjunto de posibles resultados asociados a dicha entrada
+, existe control respecto al grado de aleatoriedad, por
+ejemplo, consultar el clima a la misma hora todos los
+dias.
+B. Definicion de parametros
+•Parametros : Son los datos que se le configuran al
+modelo, permiten controlar el comportamiento de sus
+algoritmos
+•Hiperparametros : Son todos los valores que el mod-
+elo aprende a partir de los datos de entrenamiento,
+le permiten al modelo identificar errores y ajustar sus
+algoritmos.C. La jerarquia de conceptos en IA
+Observe la figura 1.
+Fig. 1. Jerarquia de conceptos IA
+D. ¿Que es machine learning ?
+Consiste en generar maquinas o programas a partir de
+algoritmos que sean capaces de resolver un problema a partir
+de inferencias. En este contexto se busca que , a partir de datos
+de entrada (y en ocasiones con sus resultados) donde el sistema
+sea capaz de resolver problemas en base a los datos que ya
+posee sin que se le explique como resolverlo. Considerando lo
+anterior , se describe a continuacion los tipos de aprendizaje
+en machine learning.
+III. T IPOS DE APRENDIZAJE
+A. Aprendizaje supervisado
+Tipo de aprendizaje que involucra un conjunto de datos con
+caracteristicas y una respectiva etiqueta, esa etiqueta asocia
+dichas caracteristicas con un valor. La etiqueta supervisa y
+corrige las aproximaciones dadas por la funcion planteada para
+obtener mejores resultados, una forma de visualizarlo es de la
+siguiente manera :
+x={xi, yi}
+donde x representa mi caracteristica, xi representa la etiqueta
+y yi, representa el resultado ”supervisado” por la etiqueta.
+
+B. Aprendizaje NO supervisado
+Este tipo de aprendizaje es aquel que se entrena con datos
+sin etiquetas, es decir, sin informacion previa que le permita
+determina cual es el ”resultado correcto”.A diferencia del
+aprendizaje supervisado, donde las etiquetas sirven como una
+”supervision” o guia para corregir y entrenar el modelo, en
+el aprendizaje no supervisado no hay una referencia explicita
+para evaluar o corregir. Un ejemplo mencionado en la clase,son
+los algoritmos de cluster , donde analiza en base a sus
+caracteristicas si pertenece a un grupo u otro, sin hacer uso
+de etiquetas.
+C. Aprendizaje semi-supervisado
+En palabras sencillas es una combinacion de los metodos
+de aprendizaje anteriores, en este tipo de algoritmo, se utilizan
+tanto datos etiquetados como datos no etiquetados para entre-
+nar el modelo, es decir no siempre va a existir una etiqueta
+asociada a las caracteristicas, es principalmenteutil cuando
+se posee etiquetas en solo en una parte de los datos para
+entrenar, y en datos donde las etiquetas son dificiles de obtener
+, aprovecha la informacion de datos sin etiquetas para mejorar
+el rendimiento del modelo.
+D. Aprendizaje auto-supervisado
+Para este tipo de aprendizaje, el modelo no depende de
+datos con etiquetas ”pre- insertadas” para el entrenamiento,
+en lugar de eso, genera automaticamente etiquetas o señales
+de supervision a partir de los propios datos. Un ejemplo visto
+en clase es el uso en modelos de lenguaje, donde el sistema
+predice a partir de palabras previas cual es la palabra que
+sigue a dicha palabra, puede visualizarse la palabra previa
+como dato, pero a la vez como una misma etiqueta para poder
+definir la palabra siguiente.
+E. Aprendizaje por refuerzo
+El aprendizaje por refuerzo consiste en un aprendizaje con
+”premiacion”, existe un agente y dicho agente aprende a tomar
+decisiones a traves de la interaccion con un entorno, buscando
+maximizar una recompensa , se pueden penalizar por acciones
+que llevaran a un resultado insatisfactorio.Ejemplo, observe la
+figura 2. En el videojuego representado, se puede entrenar al
+Fig. 2. Videojuego de ejemplo
+personaje (agente) para que cruce al otro lado basandose en
+si el salto se realiza correctamente (accion) se recompensa, y
+si la accion es insatisfactoria (caer al vacio y perder una vida)
+se castiga por dicha accion.F . Otros tipos de aprendizaje
+Se detallan a continuacion algunos tipos de aprendizaje
+adicionales
+•Fev-shot : Metodo en el cual el modelo aprende a
+partir de breves ejemplos. Una posible aplicacion es con
+respecto a los LLMs ,si el LLMs no sabe como realizar
+la tarea, se le brinda ejemplos y a partir de esos ejemplos
+es capaz de resolver la tarea.
+•One shot : Metodo similar al anterior, solo que reduce la
+candidad de ejemplos a 1 ,y a partir de eseunico ejemplo
+logra resolver.
+•zero shot : En este metodo el sistema resuelve en base a
+lo que ”sabe” , no existen ejemplos del que pueda tomar
+para aprender.
+IV. E NFOQUES DEL MACHINE LEARNING
+Existen dos principales enfoques, ciencia e ingenieria:
+A. Machine learning: Ciencia
+•Se genera conocimiento : Es la parte academica que se
+dedica a investigar y desarrollar nuevas ideas respecto a
+aprendizaje automatico, incluye la elaboracion de mod-
+elos desde cero y optimizar funciones, por lo general,
+esta en manos de investigadores con un fuerte trasfondo
+matematico que les permite conocer a gran detalle los
+procesos que suceden durante el desarrollo de dichos
+modelos o algoritmos.
+•Metricas : A partir de los datos recolectados, los data
+scientist generan metricas que permiten evaluar el de-
+sempeño del modelo o algoritmo.
+•Data scientist : Son las personas encargadas de realizar
+la recoleccion y la preparacion de los datos, de tal manera
+que sean aplicables para el entrenamiento de los modelos
+u algoritmos.
+•Research scientist : A diferencia de los data scientist ,
+los research scientist se encargan de investigar y proponer
+proponer nuevos modelos, algoritmos o modelos.
+B. Machine learning: Ingenieria
+•Puesta en produccion del modelo : Es necesario la
+continua monitorizacion del modelo antes de la puesta a
+produccion y pasado un tiempo, se busca realizar correc-
+ciones, monitorizar si los resultados o salidas mantienen
+una distribucion normal probabilistica y como el progreso
+de entrenamiento luego de la puesta en produccion mueve
+dicha distribucion, es decir , dar seguimiento a las salidas.
+•Transformar el modelo :Hace referencia a todas las
+estrategias y cambios requeridos para adaptar el modelo
+segun los requerimientos especificados , por ejemplo,
+si se dispone de un modelo en python, cuales son las
+estrategias para adaptarlo en otras plataformas como c++
+o movil , una de dichas estrategias es la reduccion del
+peso del modelo.
+•Onnx : Es una herramienta que facilita la portabilidad de
+modelos entre plataformas y dispositivos, optimizando y
+reduciendo el tamaño del modelo.
+
+•MLOps : Los equipos de MLops tiene la finalidad de
+monitorear y gestionar el modelo de manera detallada
+,tanto con los datos como la calidad de los mismos,
+por ejemplo, en el seguimiento que se da en puesta
+en produccion estan encargados de monitorear el com-
+portamiento del modelo, en casos donde suceda algun
+cambio en los datos, deben de entrenarlo nuevamente.
+V. P ARADIGMAS DE RESOLUCION DE PROBLEMAS
+Se detallan a continuacion ciertos paradigmas o estrategias
+para resolver problemas en elambito de la inteligencia artifi-
+cial:
+A. Problemas de busqueda
+: Son todos aquellos algoritmos que permiten encontrar la
+mejor solucion, representada por el camino mas barato o la
+ruta mas corta, se detallan algoritmos como Dijkstra , DFS,
+BFS.
+Fig. 3. Ejemplo de algoritmos de busqueda
+B. Problemas de optimizacion
+Son todas aquellas soluciones que pretenden encontrar la
+solucion mas optima dentro de un grupo de soluciones.Existen
+2 tipos:
+•Solucion local : Es aquella seleccionada dentro de un
+grupo oarea especifica, un ejemplo es el visto en clase
+respecto a bares, el mejor bar cercano al tec de cartago
+es la nave, pero esto es por que en elarea cercana al tec
+es la mejor o launica opcion.
+•Solucion local : Se refiere a la mejor solucion encontrada
+entre todas las posibles soluciones, tomando el ejemplo
+del bar, si se evalua a nivel provincia , probablemente se
+encuentre un mejor bar que la nave.
+C. Problemas de prediccion y clasificacion
+En los problemas de prediccion , existe una serie de datos
+respecto a un evento, comportamiento, entre otros y se desea
+encontrar patrones para realizar una prediccion ,generalmente
+se representa con una funcion, que podra generar una esti-
+macion de la relacion de los datos con sus salidas, un ejemplo
+es el visto en clase , donde en base al motor del vehiculo , se
+obtienen datos respecto al consumo de gasolina y se genera
+una funcion la cual sera capaz de predecir cual es el consumo
+de gasolina de otro vehiculo. Estos datos son cuantificables o
+numericos.
+Fig. 4. Ejemplo de grafica para visualizar problemas de prediccion
+D. Problemas de agrupamiento
+Para los problemas de agrupamiento no existen etiquetas
+con las cuales entrenar, se busca encontrar pertenencia a un
+grupo dadas similitudes a caracteristicas, las soluciones a estos
+problemas permite encontrar relaciones a preguntas que quiza
+no se tenian previamente.
+Fig. 5. Ejemplo de problemas de agrupamiento
+VI. P IPELINE DEL MACHINE LEARNING
+•Data adquisition :Una de las partes mas importantes
+del piplene de machine learning, es todo el proceso de
+recoleccion de datos Relevantes del problema a resolver,
+se deben de resolver preguntas como ¿Cual es la calidad
+de los datos que estoy tomando? ¿De donde los saco?
+¿Es mi fuente libre de sesgo?.
+•Data preparation : La etapa de la preparacion de
+los datos, considerando que el computador trabaja con
+numeros, se debe de resolver las pregunta ¿Como voy
+a representar los datos a mi algoritmo o modelo? , por
+ejemplo, si los datos son imagenes, le asigno valores
+puesto que los algoritmos son matematicos. En esta etapa
+tambien se realizan otras labores como la revision de
+datos duplicados y la busqueda de datos faltantes, por
+ejemplo en un set de datos, con algun dato faltante,
+elimino dicho set o calculo la mediana y la introduzco
+como el dato faltante.
+•Freature engineering : Los freatures son los atributos
+que proporcionan informacionutil de los datos, en esta
+etapa se pueden generar nuevos freatures a partir de los
+
+existentes, seleccionar solo los relevantes para la solucion
+o eliminar freatures que generen algun sesgo.
+•Model selection : Es la etapa de seleccion del modelo mas
+adecuado para cubrir la demanda de recursos y requisitos
+que genera el problema. Entra un concepto importante
+para la seleccion del modelo, la explicabilidad, si tengo
+que dar explicacion del por que de los resultados genera-
+dos constantemente, quiza la mejor solucion no es utilizar
+IA, si no , podria escoger un algoritmo que brinde una
+solucion mas elegante, un ejemplo es para un sistema de
+un banco que detecta si un usuario es elegible para un
+prestamo, entrenar una IA que determine esto puede no
+ser la mejor manera , si no , un algoritmo que con datos
+del usuario pueda determinar si es posible o no darle el
+prestamo.
+•Model training : Es la fase de entrenamiento del modelo,
+los datos son divididos en datos de entrenamiento y
+datos de validacion, en esta parte los algoritmos realizan
+optimizaciones en base a los datos de entrenamiento.
+•Model deployment : En esta etapa el modelo se manda
+a produccion en donde se debe de supervisar para garan-
+tizar un correcto funcionamiento.

@@ -1,0 +1,225 @@
+Repaso de Algebra Lineal y Aprendizaje
+Supervisado
+Instituto Tecnologico de Costa Rica
+Escuela de Ingenieria en Computacion
+Inteligencia Artificial
+Mariana Quesada Sanchez
+19 de agosto de 2024
+Abstract — This paper reviews concepts of linear algebra
+relevant to artificial intelligence, including vectors, norms,
+distances, dot product, orthogonality, and orthonormality. It
+also introduces the principles of supervised learning, describing
+datasets as feature–label pairs and distinguishing between
+regression and classification tasks through illustrative examples.
+I. INTRODUCTION
+El algebra lineal es la base para representar datos en
+espacios multidimensionales y para definir operaciones que
+permiten medir magnitudes, direcciones y similitudes. Estos
+fundamentos son indispensables en algoritmos de machine
+learning, en particular dentro del aprendizaje supervisado,
+donde los datos se representan como vectores de caracteris-
+ticas asociados a etiquetas.
+II. ALGEBRA LINEAL
+A. Vectores
+Un vector se define como una entidad matematica car-
+acterizada por magnitud y direccion. En espacios de dos
+o tres dimensiones, puede visualizarse como un segmento
+orientado que parte del origen y termina en un punto (x,y,z) .
+En espacios de dimension n, se representa como una tupla
+ordenada (x1, x2, . . . , x n). Los vectores constituyen la base
+de la representacion de datos en espacios multidimensionales
+y permiten operaciones como la suma, la resta y la multipli-
+cacion por escalares.
+El desplazamiento de un vector se define como la difer-
+encia entre un punto final B= (b1, b2, . . . , b n)y un
+punto inicial A= (a1, a2, . . . , a n). Formalmente, el vector
+desplazamiento se expresa como
+AB=B−A= (b1−a1, b2−a2, . . . , b n−an),
+lo cual indica cuanto debe recorrerse en cada componente
+para pasar de AaB. Por ejemplo, si A= (1,2)yB= (4,6),
+entonces AB= (3,4), lo que representa un movimiento de
+tres unidades en el eje xy cuatro en el eje y.
+Es importante distinguir entre un vector de posicion y
+un vector de desplazamiento. Un vector de posicion ubica
+un punto especifico en el espacio con respecto al origen,
+mientras que un vector de desplazamiento describe el cambionecesario para trasladarse de un punto a otro. Por ejemplo,
+el vector (4,3)puede interpretarse como la posicion de un
+punto en el plano cartesiano, pero tambien puede representar
+el desplazamiento requerido para pasar del origen (0,0)hasta
+dicho punto.
+xy
+(4,3)
+43
+Fig. 1. Representacion grafica del vector (4,3)en el plano cartesiano.
+B. Norma o magnitud
+La norma mide longitud de un vector y se denota como
+∥x∥. Geometricamente, puede interpretarse como la distancia
+desde el punto de origen hasta el punto final definido
+porx. De esta manera, la norma proporciona una medida
+cuantitativa de la magnitud del vector, independientemente
+de su direccion.
+Para un vector x= (x1, x2, . . . , x n), las normas mas
+comunes son:
+•Norma L1 o Manhattan:
+La distancia Manhattan entre dos puntos A=
+(x1, y1, z1, . . . , n 1)yB= (x2, y2, z2, . . . , n 2)en un
+espacio n-dimensional se calcula mediante la formula:
+∥x∥1=nX
+i=1|xi−yi|
+Se interpreta como la distancia recorrida siguiendo los
+ejes de la cuadricula.
+
+•Norma L2 o Euclidiana:
+∥x∥2=vuutnX
+i=1x2
+i
+Corresponde a la distancia en linea recta entre el origen
+y el punto final, de acuerdo con el teorema de Pitagoras.
+Fig. 2. Comparacion entre distancia Manhattan y Euclidiana [1].
+Una funcion es considerada una norma si cumple las
+siguientes propiedades:
+1)Positividad: ∥x∥ ≥0y∥x∥= 0 si y solo si xes el
+vector nulo.
+2)Homogeneidad: ∥αx∥=|α|∥x∥para cualquier escalar
+α∈R.
+3)Desigualdad triangular: ∥x+y∥ ≤ ∥ x∥+∥y∥para
+todos los vectores xey.
+C. Vectores unitarios
+Un vector unitario es aquel cuya norma es igual a uno. Se
+obtiene normalizando un vector vmediante su magnitud:
+u=v
+∥v∥
+De esta manera, uconserva la direccion de v, pero con
+longitud unitaria.
+Fig. 3. Vector unitario. [2]
+D. Producto punto
+El producto punto entre dos vectores es la suma de las
+multiplicaciones de sus componentes, lo que produce un
+valor real. Esta operacion es fundamental en inteligencia
+artificial, ya que un vector puede representar caracteristicas
+de los datos y otro vector puede representar los pesos
+asociados a dichas caracteristicas. Si un peso es cero, la
+caracteristica correspondiente no contribuye al resultado.El producto punto entre dos vectores uyvse define de
+dos formas equivalentes:
+•Definicion algebraica:
+u·v=nX
+i=1uivi
+Ej 1. Sea
+x=
+1
+2
+3
+, y =
+4
+5
+6
+.
+Calculamos el producto punto:
+xTy=1 2 3
+4
+5
+6
+
+= 1·4 + 2·5 + 3·6 = 4 + 10 + 18 = 32
+•Definicion geometrica:
+u·v=∥u∥∥v∥cos(θ)
+donde θes el angulo entre ambos vectores.
+Ej 2. Sea
+u=1
+2
+, v =3
+4
+.
+Paso 1: Calcular el producto punto
+u·v= 1·3 + 2·4 = 3 + 8 = 11
+Paso 2: Calcular las normas
+∥u∥=p
+12+ 22=√
+5,∥v∥=p
+32+ 42=√
+25 = 5
+Finalmente, usando la definicion geometrica del producto
+punto:
+11 =√
+5·5·cos(θ)⇒cos(θ) =11
+5√
+5≈0.9839
+θ= cos−1(0.9839) ≈10.3◦
+E. Vectores codireccionales
+Dos vectores se consideran codireccionales cuando
+mantienen la misma direccion, aunque difieran en magnitud.
+Esta relacion se cumple si existe un escalar ktal que v=k·u.
+En este caso, el angulo entre ambos vectores es nulo y
+el coseno del angulo es igual a uno. El vector unitario
+es un caso particular, ya que al ser multiplicado por un
+escalar recupera la magnitud del vector original sin alterar
+su direccion.
+Se sabe que si dos vectores son codireccionales, el angulo
+entre ellos es de 0◦. En consecuencia, el producto punto se
+expresa como
+u·u=∥u∥ · ∥u∥ ·cos(0) = ∥u∥2.
+De esta forma, la norma de un vector puede escribirse
+como
+∥u∥=√u·u.
+Asimismo, la distancia euclidiana puede expresarse en
+terminos de producto punto:
+√u·u=p
+∥u∥2=∥u∥.
+
+F . Ortogonalidad y ortonormalidad
+Dos vectores son ortogonales si su producto punto es cero:
+u·v= 0
+Ademas, un conjunto de vectores es ortonormal si ademas
+de ser ortogonales, cada vector es unitario.
+III. APRENDIZAJE SUPERVISADO
+El aprendizaje supervisado consiste en entrenar un modelo
+a partir de un conjunto de datos donde cada ejemplo se
+encuentra representado por un vector de caracteristicas xi
+y una etiqueta asociada yi. Las caracteristicas describen
+propiedades cuantificables del fenomeno observado, mientras
+que la etiqueta corresponde al valor que se desea predecir.
+Existen dos tareas principales dentro del aprendizaje su-
+pervisado
+La regresion busca predecir valores continuos, como el
+precio de una vivienda en funcion de atributos como area,
+numero de habitaciones o ubicacion. La Fig. 4 corresponde
+a un problema de regresion porque busca ajustar una funcion
+que modele la relacion entre una variable independiente
+(carat) y una variable dependiente continua (precio).
+Fig. 4. Ejemplo de regresion. [2].
+La clasificacion, en cambio, asigna cada instancia a una
+categoria discreta a partir de sus caracteristicas. Por ejemplo,
+predecir el tipo de vehiculo dependiendo de cuantas llantas
+tiene y cuanto pesa.
+Fig. 5. Ejemplo de clasificacion. [2].
+En ambos casos, el objetivo es construir un modelo que
+generalice mas allade los datos de entrenamiento y que
+logre realizar predicciones confiables sobre ejemplos no
+observados.A. Ejercicios de aprendizaje supervisado resueltos
+1) Ratas: esperanza de vida vs. obesidad
+Dado un conjunto de datos con dos caracteristicas
+(esperanza de vida y obesidad) se busca modelar la
+relacion entre ambas.
+Tipo: Regresion (la salida es un valor continuo).
+2) Animales: identificar aves
+Tomando en cuenta datos sobre animales, el peso y si
+tiene alas, se desea determinar cuales son pajaros.
+Tipo: Clasificacion (se clasifica cada ejemplar como
+ave o no empleando el peso y la presencia de alas).
+3) Dispositivos: tablet, laptop o telefono
+Con tamano de pantalla, peso y sistema operativo, se
+debe asignar cada dispositivo a una de varias cate-
+gorias.
+Tipo: Clasificacion .
+4) Meteorologia: precipitacion →humedad.
+Con cantidad de precipitacion y un valor de humedad,
+se desea predecir la humedad en distintas epocas del
+ano.
+Tipo: Regresion (humedad como variable continua).
+REFERENCES
+[1] S. Rani and G. Sikka, “Recent Techniques of Clustering of Time Series
+Data: A Survey,” Artificial Intelligence Review , vol. 46, no. 1, pp. 27–
+44, 2016. Available: https://www.researchgate.net/figure/Comparative-
+between-Euclidean-and-Manhattan-distance fig1332432569
+[2] S. Pacheco, “Repaso de Matematica: Algebra Lineal,” Presentacion,
+Instituto Tecnologico de Costa Rica, 2025.

@@ -1,0 +1,40 @@
+Apuntes Semana 6
+Apuntes del 09 de septiembre
+Juan Pablo Rodriguez Cano
+IC-6200 Inteligencia Artificial
+Tecnologico de Costa Rica
+jp99@estudiantec.cr
+Abstract —En este documento se detallan las indicaciones de
+la tarea 1 de Inteligencia Artifical y se introduce el tema
+de regresion logistica como un modelo de clasificacion cuyas
+propiedades de funcion son aptas para modelar problemas
+complejos y la optimizacion de recursos. Index Terms —
+I. P REGUNTAS DEL QUIZ
+1) Describa que es ”overfitting” y ”underfitting”. R/ ”Overfitting” es cuando el modelo tiene una mejor
+metrica con el conjunto de entrenmaiento que con el
+conjunto de testing, lo cual indica una pobre general-
+izacion con datos nuevos. ”Underfitting” es cuando el
+model no logra captar la relacion entre los features de
+manera que los puntajes de metrica son bajos para el
+conjunto de entrenamiento y testeo. 2) Describa k-Fold Cross-Validation
+Se subdivide el conjunto de entrenamiento en k-1 partes. En cadaepoca se entrenan k-1 partes y se utiliza el otro
+subconjunto para la validacion, el
+3) ¿Que es un minimo global y minimo local en una
+funcion? Un minimo local es el valor minimo de una funcion en
+una vecindad reducida, mientras que el minimo global
+se refiere al minimo global a traves de todo el dominio
+de la funcion. 4) Desarrolle la derivada parcial de L con respecto a W de:
+L=1
+NX
+((wxi+b)−yi)
+∂L
+∂w=2
+NX
+((wxi+b)−yi)xi)
+II. I NDICACIONES DE LA TAREA
+•La tarea se deber realizar en grupos de 3 personas. •La fecha de entrega es el 16 de septiembre. •Solo hace falta que una persona del grupo suba la tarea. En el nombre del archivo zip debe venir el nombre de
+todos. •No se puede utilizar ninguna biblioteca que no sea numpy
+o pandas
+•Kagg;e es una plataforma con datasets para machine
+learning para el publico y tambien presentan oportu-
+nidades para participar en concursos de ML.

@@ -1,0 +1,15 @@
+Para cada nuevo sample: - Calcular
+distancia a todos los samples de entrenamiento. - Tomar los k
+mas cercanos. - Asignar la clase mas frecuente entre ellos. Notas: - Permite clasificar segun proximidad a ejemplos
+conocidos. - kes un hiperparametro que define cuantos vecinos
+considerar. - Puede aplicarse a clasificacion o, en variantes, a
+regresion. VI. C ONCLUSION
+La Inteligencia Artificial combina matematicas, programa-
+cion y consideraciones practicas. Entender los fundamentos,
+cuidar la calidad de los datos y practicar con herramientas
+como NumPy y Pandas es clave para agilizar el manejo de
+grandes cantidades de datos y la optimizacion de tiempos de
+ejecucion. REFERENCIAS
+[1] Apuntes de la clase de Inteligencia Artificial, Profesor Steven Andres
+Pacheco Portuguez, Instituto Tecnologico de Costa Rica, 21 de julio de
+2025.

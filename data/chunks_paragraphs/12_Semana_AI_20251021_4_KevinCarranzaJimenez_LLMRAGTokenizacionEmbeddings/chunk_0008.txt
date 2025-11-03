@@ -1,0 +1,27 @@
+Ejemplo conceptual de embeddings de frases similares—como el razonamiento contextual, la inferencia logica o la
+adaptacion a tareas no vistas durante el entrenamiento— no
+fueron programadas de forma directa, sino que surgen como
+resultado del aprendizaje de patrones complejos a partir de
+enormes volumenes de datos textuales y contextuales. Este
+fenomeno ha sido objeto de creciente interes, ya que evidencia
+como la escala y la estructura de los modelos pueden dar
+lugar a comportamientos no lineales y sofisticados en el
+procesamiento del lenguaje natural [9]. IV-B. Capacidades de modelos de lenguaje
+Comprension textual: interpretan el significado de pa-
+labras y frases segun el entorno en el que aparecen. Generacion coherente de texto: pueden redactar, tradu-
+cir o resumir informacion manteniendo estilo y consis-
+tencia. Razonamiento y planificacion: resulven problemas, ex-
+plican pasos y trazan estrategias. Aprendizaje de prompt: adaptan su comportamiento a
+partir de ejemplos dados en la misma conversacion (in-
+context learning). Multitarea: realizan traduccion, clasificacion, codifica-
+cion, analisis o dialogo sin requerir reentrenamiento. IV-C. Limitacion de los modelos de lenguaje
+Alucinaciones:generan respuestas convincentes pero
+incorrectas o inventadas. Memoria limitada:no recuerdan interacciones pasadas
+mas allade su ventana de contexto. Conocimiento estatico:su informacion proviene de los
+datos de entrenamiento. Costos computacionales:requieren grandes recursos
+para entrenamiento e inferencia. V. RETRIVAL-AUGMENTEDGENERATION(RAG)
+El enfoque de Recuperacion Aumentada de Generacion
+(Retrieval-Augmented Generation, RAG) combina la potencia
+generativa de los modelos de lenguaje de gran escala (LLM)
+con un modulo de recuperacion de informacion externa, cono-
+cido comoretriever.

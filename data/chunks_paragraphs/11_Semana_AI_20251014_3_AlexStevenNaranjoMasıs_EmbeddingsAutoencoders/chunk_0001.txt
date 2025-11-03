@@ -1,0 +1,34 @@
+Apuntes Semana 11 Clase #1
+14/10/2025
+Alex Steven Naranjo Masis
+Instituto Tecnologico de Costa Rica
+Cartago, Costa Rica
+Email: alnaranjo@estudiantec.cr
+Resumen—Este documento recopila los apuntes de la clase
+del martes 14 de octubre de 2025 para el curso de Inteligencia
+Artificial. Se abordaron los fundamentos de las Redes Neuronales
+Convolucionales (CNN), explicando el funcionamiento de los
+filtros, el campo receptivo, elstride, elpaddingy las capas
+depoolingpara la extraccion de caracteristicas en imagenes. Ademas, se estudiaron arquitecturas clasicas como LeNet, Alex-
+Net, GoogleNet/Inception, VGG16, ResNet y DenseNet. Finalmen-
+te, se introdujeron los conceptos deembeddings, visualizacion de
+activaciones y autoencoders, analizando sus aplicaciones en re-
+duccion de dimensionalidad, deteccion de anomalias, eliminacion
+de ruido y super-resolucion, junto con consideraciones practicas
+de entrenamiento y seleccion de hiperparametros. Index Terms—Redes Neuronales Convolucionales, Pooling,
+Embeddings, Visualizacion, Autoencoder, Deep Learning
+I. INTRODUCCION
+Las Redes Neuronales Convolucionales (CNN) son un pilar
+en la vision por computadora moderna, pues permiten extraer
+automaticamente caracteristicas jerarquicas de las imagenes. Comprender sus componentes como filtros, campos receptivos,
+stride,paddingypoolinges esencial para diseñar arquitecturas
+eficientes. Por su parte, los autoencoders complementan este
+aprendizaje al representar la informacion de forma comprimi-
+da, sin necesidad de etiquetas externas, y habilitan tareas de
+aprendizaje no supervisado/semisupervisado. II. FUNDAMENTOS DEREDESNEURONALES
+CONVOLUCIONALES(CNNS)
+A. Filtros (Kernels) y Campos Receptivos
+Un filtro 2D de tamañok×kse desliza sobre la imagen (o
+mapa de activacion) para producir unfeature map. Para una
+entrada RGBH×W×C inyC outfiltros, cada filtro tiene
+tamañok×k×C iny produce un canal en la salida.

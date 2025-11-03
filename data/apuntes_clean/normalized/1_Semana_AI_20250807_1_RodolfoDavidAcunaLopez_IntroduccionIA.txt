@@ -1,0 +1,200 @@
+Inteligencia Artificial
+Apuntes de clases
+Rodolfo David Acuña Lopez
+Escuela de Ingenieria en Computacion
+Instituto Tecnologico de Costa Rica
+Cartago, Costa Rica
+rodolfoide69@estudiantec.cr
+Abstract —En este documento podra encontrar informacion
+sobre la primera clase de IA donde se presentan distintas
+perspectivas sobre esta. Desde la perspectiva de la IA podremos
+encontrar conceptos como autonomia y adaptabilidad. Tambien
+introducen los principios basicos del aprendizaje supervisado y no
+supervisado, destacando su aplicacion para resolver problemas
+complejos.
+Index Terms —principios de la IA, conceptos de IA
+I. I NTRODUCCION
+La inteligencia artificial puede ser un concepto muy variado
+desde diferentes perspectivas. En elarea de la computacion
+pueden ser sistemas que puedan tener y mostrar compor-
+tamientos de forma ”inteligente”. En la primer clase pudimos
+ver conceptos que nos permiten comprender las bases de esta,
+incluyendo distintas perspectivas sobre que es la IA y como
+se puede definir desde puntos de vista.
+II. N OTICIAS
+A. Sobre la IA
+Ahora la IA ha llegado para facilitar el trabajo de los
+programadores, por ejemplo, Cursor es una herramienta que
+ayuda mucho en el area de la programacion.
+B. Benchmark
+SWE-Lancer es un benchmark el cual fue desarrollado
+por OpenAI y servia como herramienta para evaluar los
+modelos de lenguaje en tareas freelance extraidas de diferentes
+plataformas. Este incluia mas de 1400 tareas reales.
+III. I NTRODUCCION A LA INTELIGENCIA ARTIFICIAL
+¿Que piensas cuando escuchas hablar de IA? ¿Como crees
+que funciona? Al inicio la inteligencia artificial podia basarse
+en una logica el cual estaba llena de instrucciones condi-
+cionales, donde se procesaban multiples datos para llegar a
+una conclusion. Con el tiempo se llego a utilizar el modelo
+de Machine Learning, que basicamente a partir de datos,
+comienza a identificar y resolver patrones. Cuando hablamos
+de IA hay diferentes perspectivas de lo que es. La sociedad
+podria pensar que puede ser como un terminator que quiere
+dominar al mundo, los amigos de otras carreras no rela-
+cionasdas con computacion pueden pensar que eres una mente
+brillante haciendo alguna tarea con tecnologia o si le preguntas
+a otro de computacion puede que te vea como un vago gando
+mucho dinero, y asi sucesivamente con diferentes analogias.A. Yann LeCun
+Yann LeCun es un investigador muy reconocido en el
+campo de la inteligencia artificial y es considerado uno de
+los tres padrinos del deep learning. Es el fundador de las
+Convolutional Neural Networks, un tipo de red neuronal capaz
+de procesar imagenes de manera eficiente.
+Anteriormente, los costos computacionales para procesar
+imagenes eran muy altos lo que limitaba su uso. Por esta
+razon,´el diseño una arquitectura que permitia realizar este
+procesamiento con un costo computacional mucho menor, un
+modelo mas liviano y efectivo para tareas visuales.
+Actualmente Yann LeCun es director de proyectos en Meta,
+donde dirige todas lo relacionado con inteligencia artificial.
+Su impacto en elarea fue reconocido con el Premio Turing,
+otorgado por sus contribuciones en el desarrollo y avance de
+las redes neuronales.
+B. ¿Que es la inteligencia?
+No existe un consenso claro que defina que es la inteligencia
+artificial. Este concepto ha sido estudiado desde diversas
+disciplinas como la psicologia y la filosofia, pero podemos
+decir de forma abstracta que la inteligencia puede verse de
+varias maneras, como un grupo de animales que trabajan
+para realizar una tarea especifica, o como la manera en que
+los humanos piensan y se comportan. Ademas estos sistemas
+pueden ser autonomos y adaptativos capaces de aprender y
+ajustarse a nuevas situaciones.
+C. Autonomo y adaptativo
+Autonomo significa que no necesitamos realizar instruc-
+ciones para funcionar ya que es capaz de tomar decisiones
+y ejecutar acciones por si mismo.
+Adaptativo implica que un sistema puede modificar su
+comportamiento si el entorno o el espacio del problema
+cambian. Por ejemplo, en clase se mostro una imagen de unas
+hormigas que se apilaban unas sobre otras para alcanzar una
+hoja. Este comportamiento demuestra como pueden adaptarse
+a las condiciones de su ambiente para cumplir un objetivo.
+D. ¿Que puede ser la IA?
+Un sistema que muestra un comportamiento ”inteligente”.
+Por ejemplo, la automatizacion de tareas o algo que nos ayuda
+a resolver problemas complejos. Tambien puede ser como ver
+
+un robot que mueve una caja de un lugar A a un lugar B. Puede
+estar relacionado con simulacion, como la vision, escucha o
+sentidos naturales. Son soluciones que son capaces de aprender
+autonomamente mientras se adaptan a nuevos datos. Entonces,
+en otras palabras mas resumidas, puede ser:
+•Sistema mostrando comportamiento ”inteligente”
+•Algo ”inteligente” que resuelva tareas complejas
+•Simulacion de vision, escucha o sentidos naturales
+•Soluciones adaptativas que aprenden de forma autonoma
+Un ejemplo de lo que puede ser IA es observar carros de
+Uber que utilizan varias capacidades, como computer vision,
+la cual sirve para reconocer diversos parametros, tales como
+vehiculos, personas, señales de transito, distancias, entre otros.
+Otro ejemplo es la capacidad estadistica que la IA puede
+emplear para extraer las caracteristicas de una imagen.
+E. ¿Que puede ser el corazon de la IA?
+Como bien sabemos la IA puede ser alimentada de multiples
+maneras. Sin embargo, llamamos como corazon de la IA a:
+•Funcion matematicas
+•Datos
+A pesar de que estan estas dos, pueden ser mas importante los
+datos ya que sin estos, no hay IA. Ademas los datos presentes
+deben ser buenos datos ya que si son erroneos, las funciones
+matematicas no van a hacer nada.
+F . Datos
+Como mencionamos anteriormente, podemos decir que un
+algoritmo va a ser malo si tenemos datos que son incorrectos
+o hay datos faltantes. Un ejemplo puede ser el pronostico
+del tiempo en Cartago erroneos ya que hacen faltan datos
+estadisticos, por lo que genera una incorrecta prediccion. Hay
+varios tipos de datos pero principlamente tenemos:
+•Los datos cuantitativos o sin sesgos que puede tomar
+una cantidad exacta para que represente un parametro
+medible.
+•Los datos cualitativos como el olor de una flor o el sabor
+de una comida. Estos son datos que no son sencillos de
+medir y que puede variar entre los humanos.
+IV. LINEA DEL TIEMPO
+A continuacion se muestran algunos eventos a travez de los
+años los cuales fueron mostrados en una imagen en clases.
+1950s
+•Se presenta el nombre de IA
+•Se introduce el concepto de la red neuronal artificial.
+•Se inventa el modelo del Perceptron y se cree que va a ser
+el mejor. Sin embargo, este no poda resolver problemas
+sencillos. Resolvia solo problemas lineales.
+1960s
+•Se introducen modelos de machine learning.
+•El robot Unimate trabaja en una linea de montaje de
+automoviles.
+•El robot Shakey tiene movimiento natural y habilidades
+para resolver problemas.1970s
+•Se popularizan los algoritmos evolutivos.
+•El robot Freddy puede usar la percepcion visual.
+•Se inventa el lenguaje de programacion Prolog para el
+uso de reglas.
+1980s
+•Estan las maquinas LISP para sistemas expertos.
+•Redes neuronales a traves de la introduccion de la retro-
+propagacion.
+•Se populariza la inteligencia de enjambre.
+1990s
+•TD-Gammon muestra el poder del aprendizaje por re-
+fuerzo que es como optimizaje a prueba y error.
+•Experimentos con coches autonomos.
+•Auge de los bots de internet y la busqueda.
+2000s
+•Reconocimiento facial con redes neuronales.
+•Watson de IBM gana en Jeopardy.
+•Deteccion de movimiento avanzada de Xbox Kinect.
+•AlphaGo de Google se convierte en campeon de Go.
+•Agentes para realizar tareas especificas.
+V. M ACHINE LEARNING
+Arthur Samuel fue la persona en acuñar este termino en
+1959 el cual lo hace un juego llamado Checkers. Este hombre
+trabajo para IBM y tenia que encontrar una manera de vender
+el producto
+Entonces el machine learning cuenta con dos aristas, las
+cuales son ciencia y ingenieria. La idea es que se construyen
+maquinas que puedan hacer tareas solo infiriendo entre los
+datos existentes, aproximamos una funcion. Este sigue un en-
+foque estadistico para entrenar modelos. Tengamos en cuenta
+que las aproximaciones sonutiles pero no perfectas.
+VI. T IPOS DE APRENDIZAJES
+Hay varios tipos de aprendizajes, sin embargo solo men-
+cionare las dos vistas en clases.
+A. Supervisado
+En este voy a tener un conjuntos de datos con caracteristicas.
+Por ejemplo, una casa con las variables x1, x2 y x3, que van
+a ser el numero de cuartos, metros cuadrado y cantidad de
+robos. Con esto podemos tener una tabla que me va a dar la
+muestra y me etiqueta.
+Fig. 1. Ejemplo de aprendizaje supervisado.
+
+La muestra o conjunto de datos tiene caracteristicas y mi
+etiqueta que me asocia el conjunto de caracteristicas a un
+valor. Entonces, mi modelo es de tipo supervisado porque hago
+una aproximacion. Podemos verlo como f(x) aproximado a y.
+Si el y esta muy lejos, penalizo mi modelo para que en ese
+punto se mejore el entrenamiento. Estos modelos que tratan de
+aproximar un valor, se llaman modelos de regresion. Tambien
+hay modelos de clasificacion.
+B. No supervisado
+En estas a diferencia de las supervisadas, no tenemos
+etiquetas. En otras palabras, no tengo quien me supervise el
+aprendizaje. Como por ejemplo, los algoritmos de clustering.
+Este algoritmo lo que hace es que agrupa datos segun las car-
+acteristicas que comparte, que generalmente usan algoritmos
+de distancia.
+REFERENCES
+[1] Apuntes de la clase de Inteligencia Artificial, Profesor Steven Andrey
+Pacheco Portuguez, Instituto Tecnologico de Costa Rica, 2025.

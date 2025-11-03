@@ -1,0 +1,37 @@
+El proceso comienza con la expresionℎ(0)=
+𝑠𝑖𝑔𝑚𝑜𝑖𝑑(𝑋𝑊0+𝑏0), dondeℎ(0)corresponde a la
+primera capa oculta. Lo que se hace es calcular
+primero la regresion lineal𝑋𝑊0+𝑏0, luego aplicar
+la funcion sigmoide al resultado, y con eso se obtiene
+el valor del primerHidden Layer. Despues, para la siguiente capa oculta, el pro-
+cedimiento es practicamente el mismo:ℎ(1)=
+𝑠𝑖𝑔𝑚𝑜𝑖𝑑(ℎ(0)𝑊1+𝑏1). En este caso, el valor de
+ℎ(0)pasa a ser la entrada de la siguiente capa. Este mismo proceso se repite hasta llegar a laultima
+capa, que se expresa comoℎ(𝑛)=𝑠𝑖𝑔𝑚𝑜𝑖𝑑(ℎ(𝑛−
+1)𝑊𝑛+𝑏𝑛). En otras palabras, cada capa oculta toma como
+entrada el resultado de la capa anterior, y mediante
+una combinacion lineal mas la activacion, se van
+construyendo paso a paso los valores hasta la salida
+final de la red. – Salida independiente y distribucion:Cada salida
+puede asociarse a una variable distinta. Segun el
+caso, la distribucion puede ser de tipo categorica
+(como en el uso desoftmax) o continua (como en
+una regresion). Fig. 9.Salida independiente
+Fig. 10.Distribucion
+– Capa de salida:Es la parte final de la red y se
+calcula con la formulaℎ(𝑛)=𝑔(ℎ(𝑛−1)𝑊𝑛+𝑏𝑛). Basicamente, lo que hace es tomar la salida de
+laultima capa oculta, multiplicarla por los pesos,
+sumarle un sesgo y luego pasarla por una funcion
+de activacion. Esa funcion𝑔(𝑥)no siempre es la
+sigmoide, puede ser otra dependiendo del tipo detarea:softmaxsi se trata de una clasificacion multiple,
+o lineal si es un problema de regresion. Lo importante
+es que sea una funcion no lineal, ya que eso es lo que
+le da a la red la capacidad de resolver
+Fig. 11.Capa de salida
+– Funcion costo:Es unafuncion matematicaque
+calcula el nivel de error del modelo, y cuyo objetivo
+principal es minimizar dicho error durante el proceso
+de entrenamiento. Fig. 12.Funcion de costo
+– Maldicion de dimensionalidad:Pasa cuando tra-
+bajamos con datos que tienen muchisimas variables
+o dimensiones.

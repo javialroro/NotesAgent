@@ -1,0 +1,38 @@
+III-H. Recomendaciones operativas para la tarea
+Probar al menos dos configuraciones: (1) denoising au-
+toencoder, (2) V AE con latente de prueba (p. ej. 32, 64)
+dependiendo de la GPU.
+Guardar checkpoints y curvas de perdida. Evaluar MSE
+y SSIM.
+Para anomalias, definir umbral con validacion y reportar
+precision/recall.
+Para texto, experimentar tokenizacion subword y entrenar
+un embedding basico antes de usar modelos preentrena-
+dos.
+IV. CONCLUSIONES
+Los autoencoders representan una herramienta fundamental
+dentro del aprendizaje profundo no supervisado, al permitir
+que un modelo aprenda representaciones compactas de los
+datos sin depender de etiquetas externas. Durante la sesion
+se destaco como la arquitectura encoder–decoder constituye la
+base para multiples aplicaciones, desde la reduccion de dimen-
+sionalidad hasta la generacion y reconstruccion de imagenes.
+La comprension del espacio latente resulta esencial, ya que enel se concentra la informacion mas relevante de las entradas
+y se posibilita la deteccion de patrones, la identificacion de
+anomalias o la generacion de nuevos ejemplos a partir de
+distribuciones continuas como en los V AE.
+Asimismo, se vio la importancia de seleccionar correc-
+tamente las funciones de perdida y de interpretar el error
+de reconstruccion segun el contexto de aplicacion. En tareas
+visuales, arquitecturas como U-Net o las variantes con skip-
+connections amplian el potencial del modelo, mientras que
+en procesamiento de texto la nocion de codificacion latente se
+traslada a los embeddings y a la tokenizacion como pasos pre-
+vios a los modelos de lenguaje. En conjunto, los autoencoders
+ofrecen una base conceptual y practica para desarrollar solu-
+ciones que integren vision e informacion textual, avanzando
+hacia sistemas mas autonomos e interpretativos.
+REFERENCIAS
+[1] Steven Pacheco P, “Autoencoder” 2025.
+[2] Steven Pacheco P, “RAGs y agentes usando LLMs” 2025.
+[3] Compañeros D. Clase, “11 Semana AI20251014 (1,2,3).,” 2025.

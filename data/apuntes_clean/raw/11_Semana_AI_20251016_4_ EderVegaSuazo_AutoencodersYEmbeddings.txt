@@ -1,0 +1,246 @@
+Apuntes semana 11 Clase #2
+Eder Vega Suazo
+Escuela de Ingenier ´ıa en Computaci ´on
+Instituto Tecnol ´ogico de Costa Rica
+IC-6200 - Inteligencia Artificial Gr2
+Resumen—Este documento condensa la segunda lecci ´on de la
+semana 11 centrada en autoencoders y su aplicaci ´on a im ´agenes y
+texto. Se explican la estructura encoder–espacio latente–decoder,
+variantes pr ´acticas (denoising, V AE, under/overcomplete) y ar-
+quitecturas relacionadas (U-Net, skip-connections). Se discuten
+tareas y aplicaciones: reducci ´on de dimensionalidad, detecci ´on
+de anomal ´ıas, super-resoluci ´on y segmentaci ´on, adem ´as de la
+transici ´on a representaciones de texto (tokenizaci ´on y embed-
+dings) y modelos de lenguaje. El apunte incluye recomendaciones
+experimentales y criterios de evaluaci ´on pr ´acticos orientados a
+la implementaci ´on de proyectos y a la replicaci ´on de resultados.
+Index Terms—Autoencoder, V AE, Denoising, Reducci ´on de
+dimensionalidad, Tokenizaci ´on, Embeddings, U-Net, Detecci ´on de
+anomal ´ıas.
+I. INTRODUCCI ´ON
+Este documento sintetiza los conceptos trabajados en la
+sesi´on sobre arquitecturas basadas en redes convolucionales
+aplicadas a autoencoders y la extensi ´on hacia representacio-
+nes para texto. El documento ofrece una gu ´ıa pr ´actica con
+definiciones, f ´ormulas y recomendaciones operativas para la
+implementaci ´on de experimentos en im ´agenes y texto. Se su-
+giere acompa ˜nar este documento con las figuras referenciadas
+para facilitar la comprensi ´on de arquitecturas y visualizaciones
+de espacios latentes.
+II. REPASO DE LA CLASE
+La sesi ´on inici ´o con un repaso de los temas vistos ante-
+riormente, en los que se introdujeron los fundamentos de los
+autoencoders y su relaci ´on con las redes convolucionales. Se
+record ´o que estas arquitecturas son una aplicaci ´on directa de
+las CNN en un contexto no supervisado, donde el objetivo
+principal es reconstruir la entrada original a partir de una repre-
+sentaci ´on comprimida. El profesor enfatiz ´o que, a diferencia
+de los modelos de clasificaci ´on, los autoencoders no utilizan
+etiquetas externas, sino que aprenden de los propios datos,
+permitiendo capturar patrones y regularidades internas.
+Durante el repaso, se analiz ´o la estructura general de un
+autoencoder compuesta por unencoder, unespacio latente
+y undecoder. El encoder transforma la entrada en una
+representaci ´on de menor dimensionalidad que concentra la in-
+formaci ´on esencial; el decoder, a su vez, reconstruye la imagen
+a partir de esa representaci ´on. Este proceso de codificaci ´on
+y decodificaci ´on se compar ´o con una forma de “compresi ´on
+aprendida” donde el modelo decide qu ´e informaci ´on conservar
+y cu´al descartar.El profesor destac ´o adem ´as las aplicaciones pr ´acticas re-
+visadas: la reducci ´on de dimensionalidad como alternativa a
+m´etodos tradicionales, la detecci ´on de anomal ´ıas mediante
+el an ´alisis del error de reconstrucci ´on, y la restauraci ´on de
+im´agenes afectadas por ruido o baja resoluci ´on. Finalmente,
+se repas ´o el concepto deespacio latente continuo, introducido
+en los autoencoders variacionales (V AE), el cual permite ge-
+nerar nuevas muestras mediante la interpolaci ´on entre puntos
+del espacio latente, estableciendo as ´ı la base para los modelos
+generativos que se profundizar ´ıan en la sesi ´on actual.
+III. APUNTES DE CLASE
+III-A. Organizaci ´on y avisos
+Las revisiones del proyecto ser ´an presenciales, el pro-
+fesor avis ´o a los apuntadores faltantes que lo tomen en
+cuenta ya que una semana se deber ´a de apartar para la
+revisi ´on del proyecto.
+Pr´oximamente habr ´a dos entregables principales: un ejer-
+cicio pr ´actico con autoencoders (im ´agenes) y una tarea
+m´as compleja sobre texto y agentes, esta puede que
+valga m ´as porcentaje. Ya que esta implica planificar
+experimentos y validaciones con tiempo para revisiones
+en laboratorio.
+Nota:Zoom limita la validez de los enlaces; el profesor
+gener ´o un link que ya est ´a en el grupo de Telegram para
+las lecciones y la duraci ´on t´ıpica de la sesi ´on es∼40
+min, cuando acabe hay que ingresar nuevamente en el
+mismo link.
+III-B. Autoencoders: idea y componentes
+Un autoencoder aprende una funci ´onf:x7→ˆxdondeˆx
+intenta aproximarse ax. Internamente:
+Encoder:transformaxenz=g θ(x).
+Espacio latente:zes un vector de baja dimensi ´on que
+condensa caracter ´ısticas relevantes.
+Decoder:reconstruyeˆx=h ϕ(z).
+En im ´agenes el encoder usa convoluciones y pooling para
+reducir resoluci ´on y aumentar canales. El decoder usa opera-
+ciones de upsampling o convoluci ´on transpuesta para recuperar
+la forma espacial. Ver Figura 1 para un esquema general de
+encoder/decoder.
+III-C. Entrenamiento y funciones de p ´erdida
+El objetivo del entrenamiento es reducir la diferencia entre
+la entrada original y la reconstrucci ´on que produce el modelo.
+Los elementos que generan las se ˜nales evaluadas por la
+
+Figura 1: Esquema general de encoder, espacio latente y
+decoder.
+funci ´on de p ´erdida son elencoder—que produce el vector
+latente o, en variantes probabil ´ısticas, los par ´ametros de una
+distribuci ´on— y eldecoder—que genera la reconstrucci ´onˆx
+a partir de ese latente.
+III-C0a. P ´erdida de reconstrucci ´on.:Es la medida prin-
+cipal que compara la entrada y la salida del autoencoder.
+Su funci ´on es indicar cu ´anto error comete el modelo al
+reconstruir. Seg ´un el tipo de datos y su normalizaci ´on se elige
+la forma pr ´actica de esta p ´erdida:
+Para im ´agenes normalizadas en[0,1]es com ´un usar una
+p´erdida basada en la comparaci ´on p ´ıxel a p ´ıxel (men-
+cionada en clase como la opci ´on directa). El profesor
+compar ´o esta t ´ecnica con el enfoque que us ´abamos en
+regresi ´on para penalizar diferencias entre valores.
+Para im ´agenes con valores binarios o interpretadas co-
+mo probabilidades se emplea una p ´erdida adecuada a
+ese caso (la alternativa binaria que se mencion ´o en la
+presentaci ´on).
+Lo que se obtiene con esta p ´erdida es un indicador directo
+de calidad de reconstrucci ´on. En aplicaciones como detecci ´on
+de anomal ´ıas se usa ese error (o una m ´etrica derivada) para
+decidir si una muestra es at ´ıpica.
+III-C0b. Regularizaci ´on en VAE (p ´erdida adicional).:
+En la variante variacional el encoder no entrega un vector
+determinista sino par ´ametros de una distribuci ´on en el espacio
+latente. Adem ´as de la p ´erdida de reconstrucci ´on, se incorpora
+un t´ermino que obliga a que la distribuci ´on latente siga una re-
+ferencia (el profesor lo describi ´o como forzar una distribuci ´on
+continua, por ejemplo, normal). Ese t ´ermino de regularizaci ´on:
+Proviene directamente de los par ´ametros que calcula el
+encoder (media y dispersi ´on en la clase).
+Su prop ´osito es estructurar el espacio latente para que
+sea continuo y muestreable, permitiendo interpolaci ´on y
+generaci ´on controlada.
+III-C0c. Notas pr ´acticas (mencionadas en clase).:
+Normalizar los p ´ıxeles al rango adecuado facilita la
+elecci ´on de la p ´erdida.La elecci ´on entre comparaci ´on p´ıxel a p ´ıxel y una p ´erdida
+para datos binarios depende del rango y la interpretaci ´on
+de los p ´ıxeles.
+Cuando la calidad visual importa, adem ´as de la p ´erdida
+de entrenamiento suele evaluarse la reconstrucci ´on con
+m´etricas perceptuales (p. ej. SSIM) para complementar
+la evaluaci ´on num ´erica.
+III-D. Variantes y su prop ´osito
+III-D0a. Denoising:Entrenar conx ruidosa y objetivo
+xlimpio. El modelo aprende a eliminar ruido espec ´ıfico (ej.
+Salt-and-Pepper).
+III-D0b. Under-/Overcomplete:Latente m ´as peque ˜no
+obliga a comprimir; latente mayor puede memorizar en exceso.
+III-D0c. VAE:Permite muestrear y hacer interpolaci ´on
+en un espacio continuo ´util para generaci ´on. La combinaci ´on
+de reconstrucci ´on y KL genera latentes con estructura es-
+tad´ıstica. Ver Figura 2 para ilustraci ´on de muestreo y espacio
+latente continuo.
+Figura 2: Representaci ´on del muestreo en V AE
+III-E. Aplicaciones pr ´acticas
+III-E0a. Reducci ´on de dimensionalidad:Guardarzen
+una base de datos vectorial. Comparar vectores con similitud
+de coseno:
+sim(u, v) =u·v
+∥u∥∥v∥.
+Usos: b ´usqueda por similitud, indexaci ´on y como entrada
+comprimida para clasificadores simples (KNN).
+
+III-E0b. Detecci ´on de anomal ´ıas (ejemplo bancario):
+Entrenar con transacciones v ´alidas. Para una transacci ´on nueva
+x: calcularerr=L rec(x,ˆx). Si el errorerres mayor a un
+umbral, lo marca como posible fraude. Selecci ´on del umbral
+τmediante ROC o validaci ´on manual. Importante evaluar tasa
+de falsos positivos y costo operativo.
+III-E0c. Denoise y super-resolution:Para super-
+resolution el objetivo puede ser una imagen de alta resoluci ´on
+xHRy la entradax LR. Arquitecturas con skip-connections
+(U-Net style) mejoran la preservaci ´on de detalles. Se
+recomienda usar una figura comparativa de entrada/resultado
+en el informe experimental (ver Figura 3).
+Figura 3: Ejemplo sugerido: comparaci ´on entrada ruidosa /
+salida reconstruida / referencia.
+Nota: aplicaciones forenses (p. ej. mejora de c ´amaras) un
+compa ˜nero plantea las consideraciones legales sobre manipu-
+laci´on de evidencia.
+III-E0d. Segmentaci ´on (U-Net):U-Net concatena ma-
+pas de caracter ´ısticas del encoder en el decoder. Esto restaura
+informaci ´on espacial perdida por pooling y mejora mapeo de
+m´ascaras para segmentaci ´on de objetos. (Se sugiere incluir una
+figura de arquitectura U-Net y un ejemplo de m ´ascara en la
+entrega.)
+Figura 4: Representaci ´on de U-Net
+III-F. Espacios latentes: visualizaci ´on y utilidad (ampliado)
+Visualizarzcon t-SNE/UMAP facilita ver separabilidad por
+clases. Cuando los clusters son n ´ıtidos un clasificador simple
+sobrezfuncionar ´a bien. En V AE la continuidad del espacio
+permite interpolar entre muestras y generar im ´agenes plausi-
+bles no vistas. Ver Figura 5 para un ejemplo de visualizaci ´on
+t-SNE.
+Figura 5: Ejemplo de visualizaci ´on t-SNE de vectores latentes.
+III-G. Transici ´on a NLP: tokenizaci ´on y embeddings
+III-G0a. Tokenizaci ´on:Estrategias: palabra completa,
+subword (BPE), car ´acter, bytes. Subword reduce OOV y
+controla longitud de secuencia. Ver Figura 6 para un esquema
+de tokenizaci ´on subword.
+III-G0b. Embeddings:Cada token se mapea a un vector
+e∈Rdmediante la capaEmbedding. Para representar frases
+se puede usar promedio de embeddings o agregadores m ´as
+complejos.
+III-G0c. Modelos de lenguaje:Evoluci ´on: RNN/LSTM
+→Transformers con self-attention. La self-attention permite
+capturar dependencias largas y producir embeddings contex-
+tuales; esos embeddings sirven para recuperaci ´on, clasificaci ´on
+y agentes.
+Figura 6: Esquema ilustrativo de tokenizaci ´on subword y
+mapeo a IDs.
+
+III-H. Recomendaciones operativas para la tarea
+Probar al menos dos configuraciones: (1) denoising au-
+toencoder, (2) V AE con latente de prueba (p. ej. 32, 64)
+dependiendo de la GPU.
+Guardar checkpoints y curvas de p ´erdida. Evaluar MSE
+y SSIM.
+Para anomal ´ıas, definir umbral con validaci ´on y reportar
+precisi ´on/recall.
+Para texto, experimentar tokenizaci ´on subword y entrenar
+un embedding b ´asico antes de usar modelos preentrena-
+dos.
+IV. CONCLUSIONES
+Los autoencoders representan una herramienta fundamental
+dentro del aprendizaje profundo no supervisado, al permitir
+que un modelo aprenda representaciones compactas de los
+datos sin depender de etiquetas externas. Durante la sesi ´on
+se destac ´o c´omo la arquitectura encoder–decoder constituye la
+base para m ´ultiples aplicaciones, desde la reducci ´on de dimen-
+sionalidad hasta la generaci ´on y reconstrucci ´on de im ´agenes.
+La comprensi ´on del espacio latente resulta esencial, ya que en
+´el se concentra la informaci ´on m ´as relevante de las entradas
+y se posibilita la detecci ´on de patrones, la identificaci ´on de
+anomal ´ıas o la generaci ´on de nuevos ejemplos a partir de
+distribuciones continuas como en los V AE.
+Asimismo, se vio la importancia de seleccionar correc-
+tamente las funciones de p ´erdida y de interpretar el error
+de reconstrucci ´on seg ´un el contexto de aplicaci ´on. En tareas
+visuales, arquitecturas como U-Net o las variantes con skip-
+connections ampl ´ıan el potencial del modelo, mientras que
+en procesamiento de texto la noci ´on de codificaci ´on latente se
+traslada a los embeddings y a la tokenizaci ´on como pasos pre-
+vios a los modelos de lenguaje. En conjunto, los autoencoders
+ofrecen una base conceptual y pr ´actica para desarrollar solu-
+ciones que integren visi ´on e informaci ´on textual, avanzando
+hacia sistemas m ´as aut ´onomos e interpretativos.
+REFERENCIAS
+[1] Steven Pacheco P, “Autoencoder” 2025.
+[2] Steven Pacheco P, “RAGs y agentes usando LLMs” 2025.
+[3] Compa ˜neros D. Clase, “11 Semana AI20251014 (1,2,3).,” 2025.

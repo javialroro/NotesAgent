@@ -1,0 +1,9 @@
+Arquitectura de CNN
+Requiere de 3 capas principales
+1.Convolutional layer
+Computa el filtro contra una imagen. Recibe de entrada el ancho, largo y canales. Tiene n filtros que extraen caracteristicas de las ima-
+genes. Aplica una capa de activacion
+Tiene como parametros(wx)n+b
+2.Pooling layer
+Reduce de la imagen en ancho y largo. Se encarga de aplicar eldownsamplinga lo largo del
+ancho y largo.

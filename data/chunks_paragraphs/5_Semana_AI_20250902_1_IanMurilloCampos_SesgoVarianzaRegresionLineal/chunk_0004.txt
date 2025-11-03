@@ -1,0 +1,14 @@
+•Regla del rango intercuartilico: Utilizar directamente los
+datos en lugar del modelo, tomamos el rango intercuan-
+tilico que existe entre todos los datos, por definicion se
+ve de la siguiente forma:
+IQR=Q 3−Q 1
+La regla para detectar los outliers es la siguiente:
+
+Q1−1.5·IQR, Q 3+ 1.5·IQR
+–Valores< Q 1−1.5·IQR⇒outliers inferiores. –Valores> Q 3+ 1.5·IQR⇒outliers superiores. En la figura 3 se puede ver de forma grafica la regla del
+rango intercuartilico. NOTA: El 1.5 * IQR es aproximadamente equivalente a
+Fig. 3. Ejemplo de Outlier. 2-2.7 desviaciones estandar de la media (depende de la
+forma de la distribucion). •Winsorizacion: Tecnica que reemplaza los valores ex-
+tremos por percentiles limite, en lugar de eliminarlos. El procedimiento es el siguiente:
+–Elegir percentiles de corte (Ej. 5% y 95%).

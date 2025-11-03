@@ -1,0 +1,13 @@
+Una tecnica comun para ello est-SNE, que proyecta estos
+vectores a dos dimensiones preservando la estructura del
+espacio original (Fig. 1). 4) Mapas de Activacion:Ademas de las visualizaciones de
+filtros, es posible generarmapas de activacionoheatmaps
+que muestran que regiones especificas de la imagen influyen
+mas en la decision del modelo. Estas tecnicas sonutiles,
+por ejemplo, en aplicaciones medicas para resaltar fracturas
+o anomalias en radiografias. B. Autoencoders
+Aunque utilizan arquitecturas similares a las redes convolu-
+cionales, losautoencoderstrabajan sin etiquetas explicitas,
+por lo que se consideran metodos no supervisados. Su objetivo
+es reconstruir la entrada original, aprendiendo una repre-
+sentacion interna comprimida.

@@ -1,0 +1,6 @@
+Padding:Tecnica para agregar pixeles alrededor
+del borde de la imagen, permitiendo controlar el tamano de
+salida de la convolucion. Se recomienda que el padding se
+llene con 0, ya que si se usa 1 podria generar ruido o mala
+data. Y su formula esk−1
+2, k = tamano del filtro.

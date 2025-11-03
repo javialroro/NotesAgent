@@ -1,0 +1,51 @@
+Fig. 6.Ejemplo ReLu
+•Leaky ReLU:Esta funcion asigna una pequeña
+constante al valor minimo permitido, lo que
+ayuda a evitar el problema de las neuronas
+muertas. Aunque representa una mejora respecto
+a la ReLU original, no se considera la solucion
+definitiva. 𝑔(𝑥)=(
+0.01𝑥, 𝑥<0
+𝑥, 𝑥≥0
+𝜕𝑔(𝑥)
+𝜕𝑥=(
+0.01, 𝑥<0
+1, 𝑥≥0
+Fig. 7.Ejemplo Leaky ReLu
+•Parametric ReLU (PReLU):Esta funcion per-
+mite aprender un parametro que controla si
+la señal continua en la parte negativa. Dicho
+parametro se entrena junto con el resto de la red,
+lo que brinda mayor flexibilidad al modelo. 𝑔(𝑥)=(
+𝑤𝑥, 𝑥<0
+𝑥, 𝑥≥0
+𝜕𝑔(𝑥)
+𝜕𝑥=(
+𝑤, 𝑥<0
+1, 𝑥≥0
+•Funcion Tanh:Tiene una forma parecida a la
+sigmoide, pero su salida esta acotada en el rango
+(−1,1), lo que permite manejar valores positivos
+y negativos. •Binary Step Function:Devuelve 1 si la entrada
+es mayor que cero y 0 si es menor o igual a cero. •Funcion lineal:Basicamente deja pasar la salida
+sin aplicar ninguna transformacion adicional.•Funciones SELU y ELU:Son de la misma
+familia. Aunque requieren mayor costo computa-
+cional, ofrecen un rendimiento muy eficiente. •Funcion Sigmoide:Convierte la entrada en un
+valor entre 0 y 1. Es muy usada cuando se necesita
+interpretar las salidas como probabilidades. – Perceptron multicapa (MLP):
+Fig. 8.Perceptron
+ElPerceptron Multicapa (MLP)es una evolucion
+del perceptron simple que permite resolver problemas
+mas complejos, especialmente aquellos que no son
+linealmente separables. El profesor lo explico de manera sencilla con la
+imagen: en lacapa de entrada(Input Layer) se
+encuentran los datos originales, representados como
+𝑋𝑖, que no cambian porque son las entradas del
+sistema. Luego aparecen lascapas ocultas(Hidden
+Layers), que son las responsables de realizar los
+calculos, transformaciones y operaciones internas,
+dandole a la red la capacidad de aprender relaciones
+mas complejas. Finalmente, esta lacapa de salida
+(Output Layer), que entrega el resultado final y
+cuyo tamaño depende del problema que se este
+resolviendo.

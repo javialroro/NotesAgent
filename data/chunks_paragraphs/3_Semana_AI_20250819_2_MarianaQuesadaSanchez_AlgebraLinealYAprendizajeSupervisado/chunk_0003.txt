@@ -1,0 +1,70 @@
+•Norma L2 o Euclidiana:
+∥x∥2=vuutnX
+i=1x2
+i
+Corresponde a la distancia en linea recta entre el origen
+y el punto final, de acuerdo con el teorema de Pitagoras. Fig. 2. Comparacion entre distancia Manhattan y Euclidiana [1]. Una funcion es considerada una norma si cumple las
+siguientes propiedades:
+1)Positividad: ∥x∥ ≥0y∥x∥= 0 si y solo si xes el
+vector nulo. 2)Homogeneidad: ∥αx∥=|α|∥x∥para cualquier escalar
+α∈R. 3)Desigualdad triangular: ∥x+y∥ ≤ ∥ x∥+∥y∥para
+todos los vectores xey. C. Vectores unitarios
+Un vector unitario es aquel cuya norma es igual a uno. Se
+obtiene normalizando un vector vmediante su magnitud:
+u=v
+∥v∥
+De esta manera, uconserva la direccion de v, pero con
+longitud unitaria. Fig. 3. Vector unitario. [2]
+D. Producto punto
+El producto punto entre dos vectores es la suma de las
+multiplicaciones de sus componentes, lo que produce un
+valor real. Esta operacion es fundamental en inteligencia
+artificial, ya que un vector puede representar caracteristicas
+de los datos y otro vector puede representar los pesos
+asociados a dichas caracteristicas. Si un peso es cero, la
+caracteristica correspondiente no contribuye al resultado.El producto punto entre dos vectores uyvse define de
+dos formas equivalentes:
+•Definicion algebraica:
+u·v=nX
+i=1uivi
+Ej 1. Sea
+x=
+1
+2
+3
+, y =
+4
+5
+6
+. Calculamos el producto punto:
+xTy=1 2 3
+4
+5
+6
+
+= 1·4 + 2·5 + 3·6 = 4 + 10 + 18 = 32
+•Definicion geometrica:
+u·v=∥u∥∥v∥cos(θ)
+donde θes el angulo entre ambos vectores. Ej 2. Sea
+u=1
+2
+, v =3
+4
+. Paso 1: Calcular el producto punto
+u·v= 1·3 + 2·4 = 3 + 8 = 11
+Paso 2: Calcular las normas
+∥u∥=p
+12+ 22=√
+5,∥v∥=p
+32+ 42=√
+25 = 5
+Finalmente, usando la definicion geometrica del producto
+punto:
+11 =√
+5·5·cos(θ)⇒cos(θ) =11
+5√
+5≈0.9839
+θ= cos−1(0.9839) ≈10.3◦
+E. Vectores codireccionales
+Dos vectores se consideran codireccionales cuando
+mantienen la misma direccion, aunque difieran en magnitud. Esta relacion se cumple si existe un escalar ktal que v=k·u.

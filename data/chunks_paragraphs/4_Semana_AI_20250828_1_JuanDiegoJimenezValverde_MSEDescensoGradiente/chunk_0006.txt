@@ -1,0 +1,15 @@
+Batch:
+•Unbatch es un subconjunto del conjunto de entre-
+namiento usado para calcular la gradiente y actualizar
+parametros. •Ejemplo: 10 000 samples y batch size = 1 000 ⇒se
+necesitan 10 batches para completar 1 epoch. •No se espera a procesar todo el dataset: cada particion
+(batch) sirve para calcular la gradiente y actualizar los
+parametros. •Cada vez que procesamos un batch actualizamos los
+parametros (o acumulamos gradientes segun la estrate-
+gia). Tipos de descenso por gradiente:
+a) Batch Gradient Descent (Vanilla):
+•Calcula la gradiente usando todo el dataset: ∇L=
+1
+NPN
+i=1. . .. •Actualizacion cuando se ha procesado el conjunto com-
+pleto. •Ventajas: gradiente estable, pasos consistentes. •Desventajas:

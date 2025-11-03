@@ -1,0 +1,29 @@
+Figura 3. Ejemplo conceptual de super-resolucion con autoencoder. Decoder:reconstruye conupsamplingo convoluciones trans-
+puestas. Variantes:Denoising(entrenar con entrada ruidosa y salida
+limpia),Sparse(regulariza latente),Under/Overcomplete.(No-
+ta: VAEs y GANs exceden el alcance de esta clase, pero se
+relacionan con lo generativo.)
+C. Funciones de Perdida Comunes
+MSE(Mean Squared Error): reconstruccion pixel a pixel
+(continuo). MAE: mas robusto aoutliers. BCE/BCEWithLogits: para imagenes normaliza-
+das/binarizadas. Perceptual/SSIM(opcional): mejor correlacion percep-
+tual que MSE. D. Aplicaciones
+Reduccion de dimensionalidady almacenamiento efi-
+ciente en BBDD vectoriales. Deteccion de anomalias:entrenar con datos “normales”;
+altas perdidas de reconstruccion sugieren anomalias. Eliminacion de ruido (Denoising). Super-resolucion:reconstruir versiones de mayor reso-
+lucion. E. Hiperparametros Relevantes
+Tamaño del latente:mas pequeño = mayor com-
+presion/menor fidelidad; mas grande = mayor capaci-
+dad/costo. Profundidad del encoder/decodery tipo deupsampling
+(nearest/bilinear vs.ConvTranspose2d). Perdida de reconstruccion(MSE/MAE/BCE/SSIM)
+segun dominio. VI. BUENASPRACTICAS DEENTRENAMIENTO YDISEÑO
+A. Preprocesamiento y Aumento de Datos
+Normalizacion por canal (media/desviacion deldataset). Data augmentationmoderado: flips,crops, ligerosjitters;
+evitaoverfitting.B. Optimizacion y Regularizacion
+Optimizadores:SGD+momentum (control fino), Adam
+(rapida convergencia). LR scheduling:step/cosine/plateau. Regularizacion:L2 (weight decay),dropout(sobre todo
+en densas),early stopping. C. Reglas Practicas de Arquitectura
+Dimensiones divisibles entre 2 para facilitarpooling. Preferir kernels pequeños (3×3/5×5) y apilar
+profundidad para mayor no linealidad. Usarglobal average poolingantes de densas para reducir
+parametros. Insertar BN despues de conv y antes de ReLU para
+estabilidad. D.

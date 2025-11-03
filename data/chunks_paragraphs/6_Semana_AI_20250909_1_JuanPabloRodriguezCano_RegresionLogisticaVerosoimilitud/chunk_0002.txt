@@ -1,0 +1,25 @@
+•La funcion de perdida y la graficacion debe se manual•El metodo describe() resume los datos analiticos que son
+importantes para saber como se comportan los features
+•No debe haber codigo en el informe, solo resultados,
+analisis etc. •El notebook sera evidencia del trabajo
+•El objetivo es ver si la relacion con la prediccion es lineal,
+y si no aplicar un feature engineering
+•figuras en IEEE siempre van en la parte superior o inferior
+de las columnas. •El formato es de IEEE para conferencias
+III. A CTIVIDAD DE IEEE
+Es un evento anual que se dara esta vez en noviembre
+en la sabana. Es una oportunidad para conocer sobre temas
+innovadores en inteligencia artificial y biologia molecular. Es
+una oportunidad para crear contactos dentro de la industria
+ya que los presentadores suelen ser receptivos al publico y
+disponen de tiempo para hablar. IV. C ONTENIDO DE CLASE
+A. Regresion Logisitca
+A diferencia de la regresion lineal que es un modelo que
+predice un numero real a partir de los features, la regresion
+logistica es un modelo de clasificacion binaria. El resultado
+de dicho modelo es la probabilidad de que suceda un evento
+y esta basado en la distribucion de Bernoulli: P(X=k) =
+pk(1−p)1−k
+B. Funcion Sigmoide
+Esta funcion es conveniente porque puede modelar com-
+portamientos no lineales, el cual es un comportamiento muy

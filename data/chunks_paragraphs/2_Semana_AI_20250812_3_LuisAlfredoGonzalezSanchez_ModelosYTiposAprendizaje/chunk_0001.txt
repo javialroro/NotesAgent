@@ -1,0 +1,35 @@
+NOTAS DE CLASE
+INTELIGENCIA ARTIFICIAL - 12 DE AGOSTO - SEMANA 2
+Luis Alfredo Gonzalez Sanchez
+Escuela de Ingenieria en Computadores
+Instituto Tecnologico de Costa Rica
+Cartago, Costa Rica
+2021024482 gonzal3z.luis@estudiantec.cr
+Abstract —This document provides a concise summary of the
+key concepts and examples covered in week two of the artificial
+intelligence course. It begins with an overview of general AI
+concepts, followed by an explanation of the types and main
+approaches of machine learning. The document also explores
+various problem-solving paradigms and concludes with a brief
+review of the essential components of the machine learning
+pipeline. This summary aims to enhance understanding and
+reinforce the material presented in class. Index Terms —AI, Machine learning, Pipeline. I. I NTRODUCTION
+El presente documento busca brindar un breve resumen a
+los conceptos y ejemplos vistos en la clase de la semana 2
+del curso de inteligencia artificial , comenzando por un breve
+recorrido a determinados conceptos generales de la IA, luego
+se procedera a explicar los tipos de aprendizaje en machine
+learning, sus principales enfoques , algunos paradigmas de
+resolucion de problemas y porultimo un breve repaso a los
+conceptos del pipeline de machine learning. II. C ONCEPTOS GENERALES
+Se presentara un breve repaso a conceptos vistos en clase. A. Definicion de modelos
+•Modelo determinista : Es aquel modelo que, bajo una
+misma entrada se produce los mismos resultados. No in-
+corpora aleatoriedad, por lo que los resultados obtenidos
+se vuelven predecibles , por ejemplo, bajo caracteristicas
+medicas se puede determinar una enfermedad asociada. •Modelo estocastico : Es aquel modelo en que , bajo una
+entrada determinada las salidas son diferentes debido a un
+conjunto de posibles resultados asociados a dicha entrada
+, existe control respecto al grado de aleatoriedad, por
+ejemplo, consultar el clima a la misma hora todos los
+dias. B.

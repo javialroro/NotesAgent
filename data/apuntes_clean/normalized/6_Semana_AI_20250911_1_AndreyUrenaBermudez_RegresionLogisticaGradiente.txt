@@ -1,0 +1,239 @@
+Apuntes Semana 6
+Apuntes del 11 de setiembre de 2025
+Andrey Urena Bermudez – 2022017442
+Inteligencia Artificial
+andurena@estudiantec.cr
+Resumen—En este documento, se resume la clase del 11 de
+setiembre de 2025, en la cual se realizoprimeramente un repaso
+de lo visto en la clase anterior. De manera general, este documento
+recopila informacion sobre verosimilitud en la regresion logistica,
+la funcion de costo e informacion sobre un notebook de regresion
+logistica compartido por el profesor.
+Index Terms—Verosimilitud, regresion logistica, gradiente des-
+cendiente, funcion sigmoide, derivada.
+I. NOTA SOBRETAREAI
+Se hace recordatorio sobre darle importancia y no descuidar
+el trabajo escrito de la tarea, asicomo su documentacion, pues
+de este se daraelfeedbackpara los escritos que haya que
+realizar en tareas proximas y etapas del proyecto.
+II. REPASO SOBRE CLASE DEL MARTES
+II-A. Verosimilitud
+Es la probabilidad de observar cada uno de los datos
+cambiando ciertos parametros. Lo que se busca es maximizar
+para llegar al punto de maxima probabilidad.
+La diferencia entre MSE ymaximum likelihoodradica en su
+aplicacion: para la prediccion de valores continuos, se utiliza
+MSE, mientras que para modelar probabilidades, se utiliza
+maximum likelihood.
+Asi, nuestra funcion de costo es:
+L=NY
+i=1fw,b(xi)yi·(1−f w,b(xi))(1−y i)(1)
+Se vioel desarrollo de cada uno de los casos dey ien
+fw,b(xi)yi(1−f w,b(xi))(1−y i):
+Casoy i= 1:
+fw,b(xi)yi(1−f w,b(xi))(1−y i)=fw,b(xi)1(1−f w,b(xi))0
+(1)
+=fw,b(xi)1(2)
+Acael modelo nos da el valor directo. Ejemplo:Calabaza
+no es naranja:
+wx+b= 1,458
+fw,b(xi) =σ(wx i+b) =σ(1,458) = 0,81
+=fw,b(xi)1(1−f w,b(xi))0
+=fw,b(xi)1=σ(1,458)
+= 0,81
+La probabilidad de quex ino sea naranja es0,81.Casoy i= 0:
+fw,b(xi)yi(1−f w,b(xi))(1−y i)=fw,b(xi)0(1−f w,b(xi))1
+(1)
+= (1−f w,b(xi))1(2)
+Con la misma formula puedo estudiar de que ocurra o no
+un evento. Ejemplo:Calabaza es naranja:
+wx+b=−1,32
+fw,b(xi) =σ(wx i+b) =σ(−1,32) = 0,21
+=fw,b(xi)0(1−f w,b(xi))1
+= (1−f w,b(xi))1= (1−σ(−1,32))
+= (1−0,21) = 0,79
+La probabilidad de quex isea naranja es0,79.
+Al final lo que obtenemos es la probabilidad de que la
+muestrax itenga la etiquetay i.
+II-B. Derivada de la funcion de costo
+Primero, se debe calcular la probabilidad de quex itome la
+etiqueta dey i, asicon cada muestra.
+Dado que esto implica la multiplicacion de probabilidades,
+el calculo de la derivada se vuelve complejo. Para sim-
+plificarlo, se busca una expresion equivalente que evite la
+multiplicacion, lo cual se logra aplicando logaritmos.
+II-C. Logaritmos
+ln(an) =n·ln(a)
+ln(a·b) = ln(a) + ln(b)
+ln(an·bn) =n·ln(a) +n·ln(b)
+II-D. Aplicacion de logaritmo a la verosimilitud
+L=Qfw,b(xi)yi·(1−f w,b(xi))(1−y i)
+ln(L) =Pln(fw,b(xi)yi) + ln((1−f w,b(xi))(1−y i))
+ln(L) =Pyi·ln(f w,b(xi)) + (1−y i)·ln(1−f w,b(xi))
+Esto lo vamos a llamarlog-likelihood. Es mucho mas facil
+de computar y derivar, ademas de que quita errores al momento
+de computar las multiplicaciones de probabilidades. Ahora esta
+es la funcion de costo que se va a usar.
+Para minimizar maximizando lo que se puede hacer es darle
+vuelta a la funcion, para eso se multiplica por−1:
+L=1
+NX
+yi·ln(f w,b(xi)) + (1−y i)·ln(1−f w,b(xi))
+
+L=−1
+NhX
+yi·ln(f w,b(xi)) + (1−y i)·ln(1−f w,b(xi))i
+Ahora puedo minimizar la funcion, lo que permite aplicar
+el descenso del gradiente que se ha estado trabajando.
+Figura 1. Grafica minimizando L
+Aquilo ideal es intentar que ellossllegue a cero; si se
+obtiene unlossnegativo, significa que algo se estahaciendo
+mal.
+II-E. Actualizacion de parametros
+Es necesario actualizar los parametroswyb, ya que son
+los que permiten modificar los resultados de las probabilidades
+obtenidas.
+Para actualizar el parametrowse necesita:∂L
+∂w
+Para actualizar el parametrobse necesita:∂L
+∂b
+II-F. Composicion de funciones
+Se va a utilizar el concepto de composicion de funciones
+para que el calculo de derivadas sea mas sencillo.
+Derivada funcion de costo para un sample:
+L=y i·ln(f w,b(xi)) + (1−y i)·ln(1−f w,b(xi))
+Modelo:f w,b(x) =a(z(x))
+a(x) =σ(x) =1
+1+e−x
+z(x) =wx+b
+El resultado de combinar ambas es:
+L=y i·ln(a(z(x))) + (1−y i)·ln(1−a(z(x)))
+Cuando se habla de la tecnica de composicion de funciones
+se aplica la regla de la cadena. Se deben calcular las derivadas
+parciales:
+L=y i·ln(a(z(x))) + (1−y i)·ln(1−a(z(x)))
+∂L
+∂w=∂L
+∂a·∂a
+∂z·∂z
+∂w
+∂L
+∂b=∂L
+∂a·∂a
+∂z·∂z
+∂b1) Calculo de derivadas parciales
+Importante recordar que elLque se estausando es:
+L=−[y i·ln(a(z(x))) + (1−y i)·ln(1−a(z(x)))]
+Primero se inicia calculando la derivada parcial deLcon
+respecto a la funcion sigmoide:
+∂L
+∂a=−
+yi·1
+a(x)·a(x)′
++
+(1−y i)·1
+1−a(x)·(1−a(x))′
+=−yi
+a(x)·1
++(1−y i)
+1−a(x)· −1
+=−yi
+a(x)
+−(1−y i)
+1−a(x)
+=−yi
+a(x)+(1−y i)
+1−a(x)
+Ahora, se calcula la derivada parcial de la funcion sigmoide
+respecto az. Importante recordar que la derivada de sigmoide
+esσ(x)·(1−σ(x)), por lo que la derivada parcial seria:
+∂a
+∂z=σ(z(x))·(1−σ(z(x)))
+Por ultimo, se debe calcular de manera individual la deri-
+vada parcial de cada uno de los parametros con respecto a la
+regresion lineal:
+z(x) =wx+b
+∂z
+∂w=x
+∂z
+∂b= 1
+Ya que se hizo el calculo de cada derivada de manera
+individual, se prosigue a realizar las multiplicaciones:
+Figura 2. Derivada parcial de L respecto a z
+Figura 3. Derivada parcial de L respecto a w y b
+
+Se procede a actualizar parametros:
+z(x) =wx+b
+w=w−α∂L
+∂w
+b=b−α∂L
+∂b
+Dondeαes un hiperparametro (learning rate).
+III. CODIGO
+Se muestra un notebook con el fin de comprender mejor
+como hacer una regresion logistica. Enlace a notebook.
+Figura 4. Codigo Clasificacion
+Como se muestra en lafigura 4, se hace la importacion de
+librerias necesarias, muchas de las cuales pertenecen a sklearn.
+Luego, se hace la clasificacion con make_classification, el
+cual es un metodo para crear un dataset de clasificacion. En
+este caso, se indica que sea de 1000 samples, con 2 features
+informativas, sin features redundantes y con un solo cluster
+por clase.
+Posteriormente, se visualiza el conjunto de datos utilizando
+plt.scatter, donde los puntos se colorean segun su clase (y).
+Luego, se crea un DataFrame con pd.DataFrame que contiene
+las dos caracteristicas (Feature_1 y Feature_2) y la variable
+objetivo (Target).
+Finalmente, se divide el dataset en entrenamiento y prueba
+con train_test_split, reservando el 80 % de los datos para entre-
+namiento y el 20 % para prueba, asegurando reproducibilidad
+con random_state=225.
+Lafigura 5muestra la implementacion manual de la re-
+gresion logistica. La clase recibe como parametros la cantidad
+de epochs a ejecutar, el learning rate que se aplicaray los
+parametros de la regresion w y b, que seran ajustados durante
+el entrenamiento.
+Primero, se define la funcionsigmoide, utilizada para
+convertir la prediccion lineal en una probabilidad. Luego, se
+implementa la funcion de costo binary_cross_entropy_loss,
+que calcula la perdida negativa con el objetivo de minimizarla
+durante el entrenamiento.
+En la funcionfit, se reciben todos los features y las etiquetas
+correspondientes. Antes de iniciar el ajuste de los parametros,
+se inicializan aleatoriamente los valores de w, cuyo tamano
+corresponde al numero de features, ya que cada uno necesita
+un peso asociado. Luego, se ejecuta el ciclo de entrenamiento
+por la cantidad de epochs definida, donde primero se calcula
+la prediccion lineal, que luego pasa por la funcion sigmoide
+para obtener una probabilidad. A partir de esta probabilidad,se actualizan los valores de w y b, y se calcula el error en
+cada iteracion.
+La funcionpredictse encarga de predecir la clase de una
+nueva muestra en base al umbral que se define. Una vez
+obtenida la probabilidad, se asigna la clase correspondiente.
+Figura 5. Codigo Regresion Logistica
+Finalmente, el modelo se implementa instanciando la clase
+y entrenandola con X train y y train. Luego, se evalua con
+X test y y test, calculando la accuracy y generando un clas
+sification report para medir su desempeno, el cual muestra
+metricas como el nivel de accuracy, precision, recall, f1-score
+y support.
+Figura 6. Enter Caption
+De igual forma, en lugar de implementar la regresion
+logistica manualmente, se puede utilizar el metodo que facilita
+sklearn, tal y como se muestra en la figura 6. En este caso,
+se instancia el modelo de regresion logistica con
+
+IV. CONCLUSION
+A lo largo de este documento se profundizoen los funda-
+mentos de la regresion logistica, en particular en el uso de
+la verosimilitud como funcion de costo y en la aplicacion del
+logaritmo para simplificar su derivacion. Se revisaron ejemplos
+practicos que ilustran como interpretar probabilidades segun
+los valores de entrada, y se abordoel proceso de actualizacion
+de parametros mediante gradiente descendente. Ademas, el
+repaso permitioconectar la teoria con la implementacion
+practica en Python, reforzando la comprension del modelo y
+su utilidad en la clasificacion de datos. Con esto, se sientan
+las bases para continuar con tecnicas mas avanzadas de apren-
+dizaje supervisado.

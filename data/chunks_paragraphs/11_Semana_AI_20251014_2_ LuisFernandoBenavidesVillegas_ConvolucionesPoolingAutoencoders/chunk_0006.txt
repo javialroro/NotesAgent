@@ -1,0 +1,23 @@
+Esta estructura densa
+mejora la propagacion del gradiente, optimiza la eficiencia del
+modelo y mantiene un numero reducido de parametros. II. PROBLEMAS CON LASREDESNEURONALES
+CONVOLUCIONALES
+A pesar de su alto desempeño, las redes convolucionales se
+comportan como una “caja negra”, ya que resulta dificil com-
+prender que tipo de informacion estan utilizando para tomar
+sus decisiones. Las representaciones internas que generan son
+altamente abstractas, lo que plantea un reto importante de
+interpretabilidad. Uno de los principales desafios actuales es entender que
+es lo que realmente afecta a la red durante el proceso de
+clasificacion. Las capas internas aprenden caracteristicas com-
+plejas que no siempre son comprensibles para los humanos. Este problema de explicabilidad motiva el uso de tecnicas
+de visualizacion que permitan analizar la respuesta de las
+neuronas ante diferentes estimulos visuales. A. Visualizacion y Analisis de Activaciones
+Una forma practica de estudiar el comportamiento interno
+de las CNN es observar losfeature mapsgenerados por cada
+capa. En estos mapas se puede identificar que regiones de la
+imagen activan ciertas neuronas y, por lo tanto, cuales son
+los elementos visuales que el modelo considera relevantes. En las primeras capas, las activaciones suelen asemejarse
+todavia a la imagen original, pero conforme se profundiza, las
+representaciones se vuelven cada vez mas abstractas y dificiles
+de interpretar.

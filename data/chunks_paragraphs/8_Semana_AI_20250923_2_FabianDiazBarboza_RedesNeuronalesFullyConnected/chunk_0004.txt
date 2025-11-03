@@ -1,0 +1,32 @@
+5.2 El Rol del Sesgob
+Retomando, el parametro b(bias o sesgo) podriamos
+verlo como undesplazamientoen la funcion de acti-
+vacion. Sin b, todas las funciones aprendidas por la red
+tenderian a pasar por el origen, lo que limita la flexibilidad
+del modelo. En el caso de MNIST:
+Tenemos10regresiones logisticas (una por cada cla-
+se). Cada regresion tiene un vector de pesos wi∈R784y
+un sesgob i. Enconjunto,lospesosformanlamatriz W∈R10×784
+y los sesgos forman un vectorb∈R10. Es importante corregir una confusion que se habloen
+clase: no existe un unico bde dimension784por ejemplo. En cambio, hayun sesgo por neurona de salida. Cada
+componente biactua como umbral independiente para la
+neurona i, permitiendo desplazar su funcion de activacion
+y ajustar su probabilidad de disparo de forma individual. 5.3 Fully Connected (Completamente Conectadas)
+Las capasfully connected (FC)son aquellas en las
+que cada neurona de una capa se conecta con todas las
+neuronas de la capa anterior. En nuestro ejemplo de MNIST:
+Cada neurona de salida (de las 10) recibe conexion
+de los 784 pixeles de entrada. Cada conexion tiene su propio peso, y ademas cada
+neurona tiene su sesgob i. Esta estructura convierte el modelo en un clasifica-
+dor mucho mas potente que una sola regresion logistica
+binaria, porque permite:
+1.Aprender multiples fronteras de decision en paralelo. 2.Combinar la informacion de todos los pixeles de
+forma diferenciada para cada clase. 3. Ajustar umbrales especificos gracias a losb i. En otras palabras, una red fully connected extiende el
+poder de una regresion logistica binaria: al apilar capas
+con activaciones no lineales, las salidas de una capa se
+convierten en features no lineales que alimentan la si-
+guiente, permitiendo construir clasificadores mucho mas
+expresivos. 5.3.1 De la Multiclase al Clasificador Binario
+Una arquitectura util consiste en usar primero las 10 re-
+gresiones logisticas (capa multiclase) y luego aplicar sobre
+su salida un clasificador binario adicional.

@@ -1,0 +1,31 @@
+Relevante cuando los falsos positivos son costosos. C. Recall (Sensibilidad)
+Recall =TP
+TP+FN(5)
+Mide la capacidad del modelo para identificar correctamente
+los positivos. Importante en contextos donde los falsos nega-
+tivos son criticos. D. F1-Score
+F1 =2·Precision ·Recall
+Precision +Recall(6)
+Es la media armonica entre precision y recall, usada en casos
+de desbalance de clases. V. C ASO DE ESTUDIO
+Se evaluo un modelo de deteccion de cancer con 1000
+pacientes. •Clase positiva: 30 pacientes con cancer. •Clase negativa: 970 pacientes sin cancer. Matriz de confusion:
+Cancer No cancer
+Cancer 25 (TP) 20 (FP)
+No cancer 5 (FN) 950 (TN)
+Resultados:
+•Accuracy:25+950
+1000= 97.5%
+•Recall:25
+25+5= 83.3%
+•Precision:25
+25+20= 55%
+•F1-Score:2·0.55·0.833
+0.55+0 .833≈66.2%
+A pesar del alto valor de accuracy, las metricas muestran
+limitaciones en la deteccion de la clase positiva. VI. METRICAS AVANZADAS
+A. Curva ROC
+La curva ROC ( Receiver Operating Characteristic ) mues-
+tra el desempeño de un clasificador binario para distintos
+umbrales. Representa la Tasa de Verdaderos Positivos (TPR)
+frente a la Tasa de Falsos Positivos (FPR).

@@ -1,0 +1,37 @@
+Este documento sintetiza los principales conceptos y ar-
+quitecturas revisados en clase, sirviendo como material de
+referencia para la comprension y aplicacion practica de estos
+modelos en inteligencia artificial. II. REPASO DE LA CLASE ANTERIOR
+A. Filtros o Kernels
+Son matrices (por ejemplo, de3×3o5×5) que se deslizan
+sobre la imagen para aplicar convoluciones. ElGaussian
+Kernelse utiliza para suavizar la imagen y eliminar ruido. B. Campo Receptivo
+Es la region local de la imagen a la que una neurona esta
+conectada. Por ejemplo, para una entrada de32×32×3y un
+campo receptivo de5×5, cada neurona tendra5×5×3 = 75
+pesos.C. Stride, Padding y Calculo de Dimensiones
+•Stride:Indica cuantos pasos da el filtro al desplazarse
+sobre la imagen. Unstridemayor reduce el tamaño de la
+salida. •Padding:Agrega pixeles (usualmente ceros) alrededor de
+la imagen de entrada para controlar el tamaño de salida
+y preservar dimensiones. El padding simetrico tipico se
+calcula como:
+p=(k−1)
+2
+dondekes el tamaño del kernel. El tamaño de salida se calcula con:
+Dimension de salida=(m−k+ 2p)
+s+ 1
+donde:mes el tamaño de la entrada,kel tamaño del kernel,
+pel padding aplicado ysel stride. D. Pesos y Arquitectura de AlexNet
+En redes convolucionales se utilizanpesos compartidos,
+lo que reduce drasticamente el numero de parametros, ya que
+el mismo conjunto de filtros se aplica en todas las posiciones
+espaciales. En la arquitectura de AlexNet, por ejemplo, se em-
+plean 96 filtros en la primera capa convolucional, permitiendo
+extraer multiples caracteristicas visuales de forma eficiente. E. Pooling Layer
+Despues de las convoluciones, se aplica la capa depooling,
+que resume la informacion espacial (alto y ancho) sin alterar
+la cantidad de canales. Existen dos tipos principales:
+•Max Pooling:conserva el valor maximo de cada region. •Average Pooling:calcula el promedio de los valores en
+la region. Dada una entrada de tamañoW×H×D, elpoolingreduce
+WyH, manteniendoD. F .

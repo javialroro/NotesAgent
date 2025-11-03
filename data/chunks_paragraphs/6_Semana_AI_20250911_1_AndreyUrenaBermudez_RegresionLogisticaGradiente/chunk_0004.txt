@@ -1,0 +1,16 @@
+Importante recordar que la derivada de sigmoide
+esσ(x)·(1−σ(x)), por lo que la derivada parcial seria:
+∂a
+∂z=σ(z(x))·(1−σ(z(x)))
+Por ultimo, se debe calcular de manera individual la deri-
+vada parcial de cada uno de los parametros con respecto a la
+regresion lineal:
+z(x) =wx+b
+∂z
+∂w=x
+∂z
+∂b= 1
+Ya que se hizo el calculo de cada derivada de manera
+individual, se prosigue a realizar las multiplicaciones:
+Figura 2. Derivada parcial de L respecto a z
+Figura 3. Derivada parcial de L respecto a w y b

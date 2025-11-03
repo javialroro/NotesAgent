@@ -1,0 +1,35 @@
+Inteligencia Artificial
+Apuntes Semana 11, Clase #1
+Luis Fernando Benavides Villegas
+Instituto Tecnologico de Costa Rica
+Cartago, Costa Rica
+lubenavides@estudiantec.cr
+Abstract—Este documento recopila los apuntes de la clase del
+martes 14 de octubre de 2025 para el curso de Inteligencia Ar-
+tificial. Se repasan conceptos como los fundamentos de las redes
+neuronales convolucionales (CNN), abarcando el uso de filtros,
+stride, padding y pooling para la extraccion de caracteristicas en
+imagenes. Se analizan arquitecturas representativas como LeNet,
+AlexNet, GoogleNet, VGG, ResNet y DenseNet, destacando su
+evolucion y aportes al aprendizaje profundo. Ademas, se intro-
+ducen los conceptos de embeddings y visualizacion de activaciones
+para interpretar el comportamiento de los modelos, junto con el
+estudio de los autoencoders y su aplicacion en reconstruccion de
+imagenes, reduccion de dimensionalidad, deteccion de anomalias
+y generacion de datos. Index Terms—Inteligencia Artificial, Redes Neuronales Con-
+volucionales, Pooling, Embeddings, Visualizacion, Autoencoder,
+Deep Learning. I. REPASO DE LACLASEANTERIOR
+A. Convoluciones y Filtros
+Una convolucion consiste en aplicar un filtro (kernel) sobre
+una imagen para extraer informacion relevante. El filtro es
+una matriz de numeros que se entrena junto con la red. Al
+desplazarse por la imagen, calcula un valor por cada posicion,
+generando una nueva imagen llamadamapa de caracteristicas
+(feature mapoactivation map). 1) Filtro Gaussiano:Produce una imagen con un efecto de
+desenfoque (blur), eliminando el ruido y dejando solo la parte
+del contorno. 2) Redes Neuronales:En redes convencionales, todos los
+pixeles estan conectados a todas las neuronas de la siguiente
+capa. En las convoluciones, solo una porcion de los pixeles
+esta conectada, observando solo una parte especifica de la
+imagen. 3) Campo Receptivo:Es la region de la imagen que una
+neurona observa para generar su salida.

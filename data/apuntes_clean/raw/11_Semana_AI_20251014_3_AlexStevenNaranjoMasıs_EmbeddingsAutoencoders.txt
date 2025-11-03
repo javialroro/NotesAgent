@@ -1,0 +1,217 @@
+Apuntes Semana 11 Clase #1
+14/10/2025
+Alex Steven Naranjo Mas ´ıs
+Instituto Tecnol ´ogico de Costa Rica
+Cartago, Costa Rica
+Email: alnaranjo@estudiantec.cr
+Resumen—Este documento recopila los apuntes de la clase
+del martes 14 de octubre de 2025 para el curso de Inteligencia
+Artificial. Se abordaron los fundamentos de las Redes Neuronales
+Convolucionales (CNN), explicando el funcionamiento de los
+filtros, el campo receptivo, elstride, elpaddingy las capas
+depoolingpara la extracci ´on de caracter ´ısticas en im ´agenes.
+Adem ´as, se estudiaron arquitecturas cl ´asicas como LeNet, Alex-
+Net, GoogleNet/Inception, VGG16, ResNet y DenseNet. Finalmen-
+te, se introdujeron los conceptos deembeddings, visualizaci ´on de
+activaciones y autoencoders, analizando sus aplicaciones en re-
+ducci ´on de dimensionalidad, detecci ´on de anomal ´ıas, eliminaci ´on
+de ruido y super-resoluci ´on, junto con consideraciones pr ´acticas
+de entrenamiento y selecci ´on de hiperpar ´ametros.
+Index Terms—Redes Neuronales Convolucionales, Pooling,
+Embeddings, Visualizaci ´on, Autoencoder, Deep Learning
+I. INTRODUCCI ´ON
+Las Redes Neuronales Convolucionales (CNN) son un pilar
+en la visi ´on por computadora moderna, pues permiten extraer
+autom ´aticamente caracter ´ısticas jer ´arquicas de las im ´agenes.
+Comprender sus componentes como filtros, campos receptivos,
+stride,paddingypoolinges esencial para dise ˜nar arquitecturas
+eficientes. Por su parte, los autoencoders complementan este
+aprendizaje al representar la informaci ´on de forma comprimi-
+da, sin necesidad de etiquetas externas, y habilitan tareas de
+aprendizaje no supervisado/semisupervisado.
+II. FUNDAMENTOS DEREDESNEURONALES
+CONVOLUCIONALES(CNNS)
+A. Filtros (Kernels) y Campos Receptivos
+Un filtro 2D de tama ˜nok×kse desliza sobre la imagen (o
+mapa de activaci ´on) para producir unfeature map. Para una
+entrada RGBH×W×C inyC outfiltros, cada filtro tiene
+tama ˜nok×k×C iny produce un canal en la salida.
+Filtro Gaussiano:suaviza la imagen (blur) y reduce
+ruido; resalta contornos al combinarse con operadores
+de gradiente.
+Campo Receptivo (RF):regi ´on de la entrada que “ve”
+una neurona de una capa dada. Aumenta con la profun-
+didad. Si encadenamos capas con kernelk iystrides i,
+el RF efectivo crece de forma acumulativa.
+Par´ametros y costo:el n ´umero de par ´ametros en una capa
+conv esk2·Cin·Cout+C out(sesgo). La complejidad
+computacional se aproxima porH out·Wout·k2·Cin·Cout.B. Par ´ametros de la Convoluci ´on: Stride, Padding y Tama ˜no
+de Salida
+Para una entrada 1D de longitudm, kernelk,paddingpy
+strides, la salida es:
+out=m+ 2p−k
+s
++ 1.
+En 2D se aplica por dimensi ´on (alto y ancho). Elpadding
+sim´etrico t ´ıpico para “conservaci ´on de tama ˜no” cons= 1es
+p=k−1
+2(sikes impar). Elstride>1reduce la resoluci ´on
+espacial.
+C. Pesos Compartidos y Eficiencia
+Lacompartici ´on de pesosaplica el mismo kernel en todas
+las posiciones espaciales, reduciendo par ´ametros frente a capas
+densas. En primeras capas, la red aprende bordes y texturas;
+en capas profundas, patrones sem ´anticos m ´as abstractos.
+D. Capa de Pooling
+Reduce la resoluci ´on espacial conservando canales:
+Max Pooling:retiene el valor m ´aximo de cada ventana.
+Average Pooling:promedia los valores.
+Regla pr ´actica:pooling2×2constride2 para reducci ´on a la
+mitad. MantieneD=C iny reduceH, W.
+E. Activaciones, Normalizaci ´on y Regularizaci ´on
+Activaci ´on:ReLU es est ´andar en CNN modernas (evita
+saturaci ´on y acelera entrenamiento). Tanh/sigmoid pue-
+den usarse en salidas espec ´ıficas.
+Batch Normalization (BN):estabiliza la distribuci ´on
+de activaciones, permite mayores tasas de aprendizaje y
+acelera la convergencia.
+Regularizaci ´on:Dropout (t ´ıpico en capas densas), L2
+(weight decay) ydata augmentationreducen sobreajuste.
+F . Capa Fully-Connected (MLP) y Clasificaci ´on
+Tras extraer mapas de activaci ´on, se aplicaflatten(oglobal
+average pooling) y capas densas para clasificaci ´on. En proble-
+mas multi-clase se usasoftmaxy p ´erdida de entrop ´ıa cruzada.
+III. ARQUITECTURASCONVOLUCIONALES
+A. LeNet-5
+Pionera (LeCun, 1998) para d ´ıgitos manuscritos (MNIST).
+Dos bloques conv+pooling y capas densas. Introdujo la viabi-
+lidad pr ´actica de CNNs.
+
+B. AlexNet (2012)
+Krizhevsky et al. popularizan ReLU,dropout, entrenamiento
+en m ´ultiples GPUs y kernels grandes (11×11,5×5,3×3)
+en entradas224×224. Dispar ´o la adopci ´on dedeep learning
+a gran escala.
+C. ZFNet y Visualizaci ´on Intermedia
+Ajusta tama ˜nos de kernel/stride y estudiafeature maps
+internos para entender qu ´e aprende cada capa, motivando
+pr´acticas de dise ˜no y depuraci ´on.
+D. GoogLeNet / Inception
+M´odulos con ramas paralelas (1×1,3×3,5×5+max
+pooling); reduce par ´ametros (de∼60M a∼4M) usando cuellos
+1×1yglobal average poolingal final.
+E. VGG-16
+Filosof ´ıa de simplicidad: solo3×3+ profundidad (16/19
+capas). A pesar de muchos par ´ametros, es unbaselinedid ´acti-
+co muy usado.
+F . ResNet (Redes Residuales)
+Skip connections(y=F(x) +x) permiten entrenar redes
+muy profundas mitigandovanishing gradient. Bloquesba-
+sic/bottleneckse apilan eficientemente.
+G. DenseNet
+Conexiones densas “todas con todas” dentro del bloque;
+fomenta reutilizaci ´on de caracter ´ısticas, mejora el flujo de
+gradiente y reduce par ´ametros a igual rendimiento.
+IV. EXPLICABILIDAD DELMODELO YEMBEDDINGS
+A. Visualizaci ´on de Activaciones y Filtros
+Observarfeature mapsmuestra qu ´e regiones activan ca-
+da neurona. En capas iniciales, activaciones recuerdan bor-
+des/colores; en capas profundas, part ´ıculas sem ´anticas m ´as
+complejas.
+B. Embeddings y Reducci ´on de Dimensionalidad
+Losembeddingsson vectores enRdque capturan sem ´antica.
+Vectores de clases similares tienden a agruparse en el espacio
+latente.
+t-SNE:proyecci ´on no lineal a 2D/3D preservando vecin-
+darios locales.
+PCA:proyecci ´on lineal; ´util comobaselineo preproce-
+samiento.
+C. Mapas de Activaci ´on (Heatmaps)
+Heatmapsse ˜nalan zonas que m ´as influyen en la predicci ´on
+(´util en aplicaciones m ´edicas/industriales para justificar deci-
+siones).
+Figura 1. Representaci ´on deembeddingsmediante t-SNE.
+Figura 2. Estructura b ´asica de un Autoencoder.
+V. AUTOENCODERS(CODIFICADORESAUTOM ´ATICOS)
+A. Estructura General y Objetivo
+Encoder→Espacio Latente→Decoder
+Aprenden a reconstruir la entrada. Aunque la se ˜nal de entre-
+namiento es auto-supervisada (salida = entrada), se consideran
+t´ıpicamente m ´etodos no supervisados por no requerir etiquetas
+externas.
+B. Componentes y Variantes
+Encoder:reduce espacialidad y comprime informaci ´on
+(conv +downsampling).
+Latente:vector/tensor compacto; su tama ˜no controla capaci-
+dad vs. compresi ´on.
+
+Figura 3. Ejemplo conceptual de super-resoluci ´on con autoencoder.
+Decoder:reconstruye conupsamplingo convoluciones trans-
+puestas.
+Variantes:Denoising(entrenar con entrada ruidosa y salida
+limpia),Sparse(regulariza latente),Under/Overcomplete.(No-
+ta: VAEs y GANs exceden el alcance de esta clase, pero se
+relacionan con lo generativo.)
+C. Funciones de P ´erdida Comunes
+MSE(Mean Squared Error): reconstrucci ´on p´ıxel a p ´ıxel
+(continuo).
+MAE: m ´as robusto aoutliers.
+BCE/BCEWithLogits: para im ´agenes normaliza-
+das/binarizadas.
+Perceptual/SSIM(opcional): mejor correlaci ´on percep-
+tual que MSE.
+D. Aplicaciones
+Reducci ´on de dimensionalidady almacenamiento efi-
+ciente en BBDD vectoriales.
+Detecci ´on de anomal ´ıas:entrenar con datos “normales”;
+altas p ´erdidas de reconstrucci ´on sugieren anomal ´ıas.
+Eliminaci ´on de ruido (Denoising).
+Super-resoluci ´on:reconstruir versiones de mayor reso-
+luci´on.
+E. Hiperpar ´ametros Relevantes
+Tama ˜no del latente:m ´as peque ˜no = mayor com-
+presi ´on/menor fidelidad; m ´as grande = mayor capaci-
+dad/costo.
+Profundidad del encoder/decodery tipo deupsampling
+(nearest/bilinear vs.ConvTranspose2d).
+P´erdida de reconstrucci ´on(MSE/MAE/BCE/SSIM)
+seg´un dominio.
+VI. BUENASPR ´ACTICAS DEENTRENAMIENTO YDISE ˜NO
+A. Preprocesamiento y Aumento de Datos
+Normalizaci ´on por canal (media/desviaci ´on deldataset).
+Data augmentationmoderado: flips,crops, ligerosjitters;
+evitaoverfitting.B. Optimizaci ´on y Regularizaci ´on
+Optimizadores:SGD+momentum (control fino), Adam
+(r´apida convergencia).
+LR scheduling:step/cosine/plateau.
+Regularizaci ´on:L2 (weight decay),dropout(sobre todo
+en densas),early stopping.
+C. Reglas Pr ´acticas de Arquitectura
+Dimensiones divisibles entre 2 para facilitarpooling.
+Preferir kernels peque ˜nos (3×3/5×5) y apilar
+profundidad para mayor no linealidad.
+Usarglobal average poolingantes de densas para reducir
+par´ametros.
+Insertar BN despu ´es de conv y antes de ReLU para
+estabilidad.
+D. Notas de Implementaci ´on
+Enframeworkscomo PyTorch, la reconstrucci ´on en deco-
+ders suele emplearConvTranspose2doUpsample+1×
+1conv; para clasificaci ´on,CrossEntropyLoss(con
+LogSoftmaxinterno) es est ´andar.
+VII. CONCLUSIONES
+Las CNN han transformado la visi ´on por computadora
+al extraer jerarqu ´ıas de caracter ´ısticas de manera autom ´atica
+y eficiente. No obstante, su interpretabilidad sigue siendo
+un reto; t ´ecnicas de visualizaci ´on,embeddingsyheatmaps
+ayudan a entender y validar decisiones. Los autoencoders
+extienden estos conceptos hacia la compresi ´on, reconstrucci ´on
+y generaci ´on de datos, habilitando aplicaciones pr ´acticas como
+reducci ´on de dimensionalidad, detecci ´on de anomal ´ıas y super-
+resoluci ´on. Una ingenier ´ıa cuidadosa de arquitectura,datay
+entrenamiento es clave para un desempe ˜no robusto.
+REFERENCIAS
+[1] Y . LeCun, L. Bottou, Y . Bengio, and P. Haffner, “Gradient-based learning
+applied to document recognition,”Proceedings of the IEEE, vol. 86, no.
+11, pp. 2278–2324, 1998.
+[2] C. Szegedy et al., “Going deeper with convolutions,”CVPR, 2015.

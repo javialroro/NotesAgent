@@ -1,0 +1,7 @@
+REFERENCIAS
+[1] IEEE Costa Rica. “IngenIEEEria Costa Rica.” [En linea]. Disponible:
+https://r9.ieee.org/costarica/ingenieeeria
+[2] A. Shervine. “Hoja de referencia de Aprendizaje Au-
+tomatico.” Stanford University. [En linea]. Disponible:
+https://stanford.edu/ ∼shervine/l/es/teaching/cs-229/
+hoja-referencia-aprendizaje-automatico-consejos-trucos

@@ -1,0 +1,30 @@
+•Tiene una magnitud (distancia entre el punto de origen y
+punto final). 2)Vector como desplazamiento :Un vector puede inter-
+pretarse como un desplazamiento entre dos puntos en un
+espacio n-dimensional. Si se considera un punto de origen
+A= (a1, a2, . . . , a n)y un punto final B= (b1, b2, . . . , b n),
+el vector que representa el desplazamiento de AaBse calcula
+como:u=B−A= (b1−a1, b2−a2, . . . , b n−an)
+De esta manera, cada componente del vector se obtiene
+restando las coordenadas correspondientes del punto de origen
+a las del punto final. B.Norma de un vector
+Lanorma de un vector representa su magnitud, es decir, que
+tan grande es o cuanto mide desde el punto de inicio hasta el
+punto final. Se denota como ∥x∥. Existen diferentes formas de medir la norma de un
+vector:
+1)Norma L1: Distancia Manhattan :Ladistancia Man-
+hattan entre dos puntos se calcula sumando las distancias
+absolutas de cada componente, desplazandoseunicamente a
+lo largo de los ejes del espacio desde el punto de inicio hasta
+el punto final. Esta metrica se utiliza especialmente cuando no
+se permiten desplazamientos negativos. nX
+i=1|xi−yi|
+Fig. 1. Ejemplo de distancia Manhattan
+2)Norma L2: Distancia Euclidiana :Ladistancia eu-
+clidiana representa la distancia directa entre dos puntos y
+se calcula usando el teorema de Pitagoras . Para un vector
+x= (x1, x2, . . . , x n), su norma es:
+∥x∥=q
+x2
+1+x2
+2+. . .+x2n

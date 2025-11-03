@@ -1,0 +1,204 @@
+Inteligencia Artificial
+Apuntes de la clase 07/08/2025
+Fernando Daniel Brenes Reyes
+Escuela de Ingenier ´ıa en Computaci ´on
+Instituto Tecnol ´ogico de Costa Rica
+Cartago, Costa Rica
+2020097446@estudiantec.cr
+Abstract —Estos apuntes organizan y ampl ´ıan el material
+introductorio de la clase sobre Inteligencia Artificial . Se incluyen
+noticias recientes , fundamentos t ´ecnicos , cuestiones pr ´acticas,
+una l ´ınea de tiempo hist ´orica, y una descripci ´on de las principales
+ramas del aprendizaje autom ´atico. El documento est ´a preparado
+en formato IEEE, con lugares marcados para figuras y sugeren-
+cias bibliogr ´aficas.
+Index Terms —Inteligencia Artificial, GPT-5, Autos Aut ´onomos,
+Datos, Aprendizaje Supervisado, Aprendizaje No Supervisado.
+I. I NTRODUCCI ´ON
+La Inteligencia Artificial (IA) es un campo multidisci-
+plinario que combina inform ´atica, estad ´ıstica, matem ´atica
+y aspectos del dominio de aplicaci ´on para crear sistemas
+que pueden percibir, razonar, aprender y actuar. En esta
+compilaci ´on ampliada se cubren conceptos te ´oricos, avances
+recientes y aplicaciones pr ´acticas relevantes para un curso
+introductorio.
+II. N OTICIAS Y CONTEXTO RECIENTE
+A. GPT-5 y modelos de lenguaje avanzados
+A mediados de 2025 emergieron nuevas generaciones de
+grandes modelos de lenguaje con capacidades multimodales,
+mejor manejo del contexto y mejoras en razonamiento. Estos
+modelos impactan fuertemente en herramientas de productivi-
+dad (res ´umenes, generaci ´on de c ´odigo, asistencia de escritura)
+y han generado debate acerca de su adopci ´on responsable y
+efectos laborales.
+Fig. 1. L ´ınea simplificada de evoluci ´on de modelos de lenguaje: GPT-1 →
+GPT-2→GPT-3→GPT-4B. Impacto en el empleo y en programadores
+La automatizaci ´on con IA est ´a permitiendo a organizaciones
+reducir tiempo en tareas repetitivas (redacci ´on de correos,
+generaci ´on de reportes, tests b ´asicos de software). Para pro-
+gramadores esto significa:
+•Aumento de productividad: asistentes que generan es-
+queleto de c ´odigo y pruebas unitarias.
+•Cambio en habilidades requeridas: mayor ´enfasis
+en dise ˜no, validaci ´on, ´etica, pruebas adversariales y
+orquestaci ´on.
+•Riesgos: tareas de bajo nivel y rutinas repetitivas pueden
+verse desplazadas; se recomienda desarrollar habilidades
+de alto valor (arquitectura, ingenier ´ıa de datos, DevOps,
+ML Ops).
+C. Autos aut ´onomos en California
+California es uno de los centros donde empresas realizan
+pruebas y despliegues de veh ´ıculos aut ´onomos; estos sistemas
+integran LIDAR, c ´amaras, mapas HD y planificaci ´on en
+tiempo real. Las ´areas de inter ´es incluyen:
+•Sensores y fusi ´on:LIDAR + c ´amaras + radar + GPS.
+•Percepci ´on: detecci ´on y clasificaci ´on de peatones,
+veh´ıculos y se ˜nales.
+•Planificaci ´on:toma de decisiones en entornos urbanos
+complejos.
+•Protocolos de emergencia: procedimientos para fallas
+del sistema, intervenci ´on humana y registro de eventos.
+Fig. 2. Veh ´ıculo aut ´onomo: sensores, percepci ´on, planificaci ´on y control.
+
+III. D EFINICIONES Y CONCEPTOS B ´ASICOS
+A. ¿Qu ´e es inteligencia?
+No existe una definici ´on´unica aceptada. En IA operativa se
+suele entender como la capacidad de un sistema para percibir
+su entorno, razonar, tomar decisiones aut ´onomas y adaptarse
+a cambios . Distintos campos (psicolog ´ıa, filosof ´ıa, ciencias
+de la computaci ´on) aportan matices: aprendizaje, simbolismo,
+razonamiento probabil ´ıstico, entre otros.
+B. Aut ´onomo vs. adaptativo
+Aut´onomo: act´ua sin intervenci ´on humana constante.
+Adaptativo: modifica su comportamiento bas ´andose en nueva
+informaci ´on o retroalimentaci ´on.
+Un sistema puede ser aut ´onomo pero no adaptativo (p. ej. un
+robot con una ruta fija) o adaptativo pero no completamente
+aut´onomo (p. ej. un asistente que sugiere cambios que un
+humano valida).
+C. Capacidad de generalizaci ´on
+La generalizaci ´on es la habilidad de un modelo de de-
+sempe ˜narse bien sobre datos no vistos durante el entre-
+namiento. Es el objetivo central al medir la utilidad pr ´actica
+de un modelo.
+IV. D EEPLEARNING Y REDES NEURONALES
+A. Perceptr ´on y or ´ıgenes
+El perceptr ´on (d ´ecada de 1950) es un modelo de unidad
+de decisi ´on lineal que calcula una combinaci ´on ponderada de
+entradas y aplica una funci ´on de activaci ´on. Funciona bien
+para problemas linealmente separables, pero no puede resolver
+problemas no lineales (ej. XOR).
+B. Redes profundas y arquitecturas comunes
+El deep learning usa redes con muchas capas: perceptrones
+multicapa (MLP), redes convolucionales (CNN) y redes re-
+currentes (RNN/LSTM/Transformer). Cada arquitectura est ´a
+orientada a distintos tipos de datos:
+•CNN: im´agenes y datos con estructura espacial.
+•RNN / LSTM: secuencias temporales y texto
+(hist´oricamente).
+•Transformers: atenci ´on y modelado de dependencias a
+larga distancia (estado del arte en NLU y NLG).
+C. Yann LeCun y las CNN
+Yann LeCun fue pionero en redes convolucionales (LeNet)
+y en su aplicaci ´on al reconocimiento de d ´ıgitos. Las CNN
+aprenden filtros que detectan caracter ´ısticas locales (bordes,
+texturas) y luego construyen representaciones de alto nivel
+mediante capas sucesivas.
+Fig. 3. Esquema de una red convolucional
+V. D ATOS :EL CORAZ ´ON DE LA IA
+A. Calidad y preprocesamiento
+Los datos deben ser:
+•Representativos del problema real.
+•Limpios : sin errores obvios (p. ej. mezcla Cel-
+sius/Fahrenheit).
+•Balanceados o bien tratados para evitar sesgos.
+•Steven Pacheco 2025 - Si tenemos mal los datos, mala
+es la salida de nuestra funci ´on
+T´ecnicas comunes: normalizaci ´on, imputaci ´on
+(media/mediana), detecci ´on y tratamiento de outliers,
+ingenier ´ıa de caracter ´ısticas y enriquecimiento.
+B. Sesgos y equidad
+Los datasets reflejan las desigualdades del mundo real.
+Un modelo entrenado con datos sesgados puede perpetuar
+discriminaciones. Ejemplos pr ´acticos:
+•Reconocimiento facial con peor desempe ˜no en ciertos
+grupos demogr ´aficos.
+•Modelos de cr ´edito que penalizan poblaciones subrepre-
+sentadas.
+Buenas pr ´acticas: auditor ´ıas de sesgo, conjuntos de prueba
+estratificados, transparencia en datos y procesos.
+C. Ejemplo del profe: Celsius vs Fahrenheit
+Un error cl ´asico en datasets es mezclar unidades. Si un
+campo de temperatura contiene valores en ambas escalas sin
+etiqueta, el modelo puede aprender patrones err ´oneos. Es
+esencial normalizar unidades y validar rangos.
+VI. B REVE HISTORIA DE LA IA ( L´INEA DEL TIEMPO )
+•1950s: Perceptr ´on y primeras investigaciones (Rosen-
+blatt).
+•1960s: Nacimiento temprano del Machine Learning y
+primeros sistemas simb ´olicos.
+•1970s: Lenguajes l ´ogicos (Prolog), algoritmos cl ´asicos
+(Dijkstra).
+•1980s: Inicio de la experimentaci ´on con autos aut ´onomos.
+•1990s: Resurgimiento con redes multicapa y aprendizaje
+por refuerzo.
+•2000s: Auge del reconocimiento facial y visi ´on por
+computadora.
+•2010s–2020s: Deep learning, grandes modelos de
+lenguaje, despliegues comerciales.
+
+VII. R AMAS DEL APRENDIZAJE AUTOM ´ATICO
+A. Aprendizaje Supervisado
+Consiste en aprender una funci ´onf:X→Ya partir
+de ejemplos etiquetados (xi, yi). T´ecnicas: regresi ´on lineal,
+SVM, ´arboles, redes neuronales. Se eval ´ua con m ´etricas como
+RMSE, accuracy, F1.
+B. Aprendizaje No Supervisado
+No hay etiquetas; el objetivo es encontrar estructura.
+T´ecnicas: clustering (k-means, DBSCAN), reducci ´on de di-
+mensionalidad (PCA, t-SNE, UMAP).
+C. Aprendizaje por Refuerzo
+Agentes aprenden interactuando con un entorno y recibi-
+endo recompensas. Aplicaciones: juegos (Atari, Go), control
+rob´otico. Referencia cl ´asica: Sutton & Barto.
+Fig. 4. Ejemplo de aprendizaje por refuerzo
+VIII. C IENT ´IFICO VS INGENIERO EN IA
+Cient ´ıfico de IA: foco en investigaci ´on, nuevos modelos,
+experimentos.
+Ingeniero de IA / ML Engineer: foco en producci ´on,
+rendimiento, escalabilidad, MLOps y despliegue.
+Ambos roles se complementan; en proyectos reales conviven
+y colaboran.
+IX. T IPOS DE APRENDIZAJE EN IA
+A. Aprendizaje Supervisado
+•Definici ´on: Modelo que aprende a partir de datos etique-
+tados (caracter ´ısticas + valores conocidos).
+•Ejemplo : Predecir el precio de una casa usando sus
+caracter ´ısticas.
+•Proceso :
+–Divisi ´on: Muestra (caracter ´ısticas) + Etiqueta (valor
+objetivo).
+–Aproximaci ´on: Minimiza el error mediante una
+funci ´on de p ´erdida (L) .
+•T´ecnicas :
+–Regresi ´on (valores continuos).
+–Clasificaci ´on (categor ´ıas discretas).B. Aprendizaje No Supervisado
+•Definici ´on: Modelo identifica patrones en datos sin eti-
+quetas .
+•Ejemplo : Agrupamiento de clientes por h ´abitos de com-
+pra.
+•T´ecnicas :
+–Clustering (ej. K-means).
+–Reducci ´on de dimensionalidad (ej. PCA).
+C. Comparaci ´on
+Aspecto Supervisado No Supervisado
+Datos Etiquetados Sin etiquetas
+Objetivo Predicci ´on Descubrir patrones
+Ejemplos Regresi ´on, Clasificaci ´on Clustering
+Fig. 5. Ejemplo de aprendizaje por refuerzo
+CONCLUSI ´ON
+La IA es un campo en r ´apida evoluci ´on: combina teor ´ıa
+matem ´atica, ingenier ´ıa de software y consideraciones ´eticas.
+Comprender fundamentos, cuidar la calidad de los datos y
+adquirir habilidades pr ´acticas (Keras, MLOps, validaci ´on) son
+claves para trabajar efectivamente en este ´ambito.

@@ -1,0 +1,26 @@
+Es importante distinguir entre un vector de posicion y
+un vector de desplazamiento. Un vector de posicion ubica
+un punto especifico en el espacio con respecto al origen,
+mientras que un vector de desplazamiento describe el cambionecesario para trasladarse de un punto a otro. Por ejemplo,
+el vector (4,3)puede interpretarse como la posicion de un
+punto en el plano cartesiano, pero tambien puede representar
+el desplazamiento requerido para pasar del origen (0,0)hasta
+dicho punto. xy
+(4,3)
+43
+Fig. 1. Representacion grafica del vector (4,3)en el plano cartesiano. B. Norma o magnitud
+La norma mide longitud de un vector y se denota como
+∥x∥. Geometricamente, puede interpretarse como la distancia
+desde el punto de origen hasta el punto final definido
+porx. De esta manera, la norma proporciona una medida
+cuantitativa de la magnitud del vector, independientemente
+de su direccion. Para un vector x= (x1, x2, . . . , x n), las normas mas
+comunes son:
+•Norma L1 o Manhattan:
+La distancia Manhattan entre dos puntos A=
+(x1, y1, z1, . . . , n 1)yB= (x2, y2, z2, . . . , n 2)en un
+espacio n-dimensional se calcula mediante la formula:
+∥x∥1=nX
+i=1|xi−yi|
+Se interpreta como la distancia recorrida siguiendo los
+ejes de la cuadricula.

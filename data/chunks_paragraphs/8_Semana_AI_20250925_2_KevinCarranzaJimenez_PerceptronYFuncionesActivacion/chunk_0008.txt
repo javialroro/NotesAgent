@@ -1,0 +1,25 @@
+A partir del analisis del perceptron y de sus limitaciones,
+se introdujo la necesidad de arquitecturas mas complejas,
+como el MLP, que posibilitan la resolucion de problemas
+no lineales. Esta sesion trato tanto el potencial como los
+desafios de las redes neuronales, entre ellos la maldicion de
+la dimensionalidad y la importancia de un diseño acorde al
+problema en cuestion en terminos de capas y neuronas. Asi, la
+clase proporciono las bases para comprender las arquitecturas
+modernas de aprendizaje profundo. REFERENCES
+[1] K. Wiggers, “Skild ai emerges from stealth with
+$300m to build a general-purpose ai brain for robots,”
+TechCrunch , Sep. 2025, accessed: 2025-10-02. [Online]. Avail-
+able: https://techcrunch.com/2025/09/16/skild-ai-emerges-from-stealth-
+with-300m-to-build-a-general-purpose-ai-brain-for-robots/
+[2] S. Haykin, Neural Networks and Learning Machines , 3rd ed. Prentice
+Hall, 2009. [3] F. Rosenblatt, “The perceptron: A probabilistic model for information
+storage and organization in the brain,” Psychological Review , vol. 65,
+no. 6, pp. 386–408, 1958. [4] S. J. Russell and P. Norvig, Artificial Intelligence: A Modern Approach ,
+3rd ed. Prentice Hall, 2010. [5] M. Minsky and S. A. Papert, Perceptrons: An Introduction to Compu-
+tational Geometry . MIT Press, 1969. [6] I. Goodfellow, Y . Bengio, and A. Courville, Deep Learning . MIT Press,
+2016. [7] V . Nair and G. E. Hinton, “Rectified linear units improve restricted boltz-
+mann machines,” in Proceedings of the 27th International Conference
+on Machine Learning (ICML) , 2010. [8] A. L. Maas, A. Y . Hannun, and A. Y . Ng, “Rectifier nonlinearities
+improve neural network acoustic models,” in Proceedings of the 30th
+International Conference on Machine Learning (ICML) , 2013.

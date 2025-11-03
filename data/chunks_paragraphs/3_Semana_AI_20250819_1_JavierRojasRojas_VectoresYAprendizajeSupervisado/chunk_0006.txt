@@ -1,0 +1,19 @@
+Numero de habitaciones Metros cuadrados Cantidad de jardines
+2 250 1
+TABLE I
+EJEMPLO DE VECTOR DE CARACTERISTICAS
+C.Label
+•Valor objetivo que se quiere predecir
+•Puede ser
+–Continuo: y∈R(Regresion)
+–Discreto: y∈ {1, . . . , K }(Clasificacion, donde en
+el conjunto finito se representaria la categoria)
+D. Dataset
+Conjunto de datos que se utilizaran que tiene la forma
+{(xi, yi)}N
+i=1
+Numero de habitaciones Metros cuadrados Cantidad de jardines Precio
+2 250 1 250000
+3 350 5 650000
+TABLE II
+EJEMPLO DE DATASET

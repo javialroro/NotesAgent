@@ -1,0 +1,114 @@
+Apuntes Semana 12
+Apuntes del 23 de octubre
+Juan Pablo Rodr ´ıguez Cano
+IC-6200 Inteligencia Artificial
+Tecnol ´ogico de Costa Rica
+jp99@estudiantec.cr
+Abstract—La cuantizaci ´on en una t ´ecnica en redes neuronales
+para reducir el tama ˜no de los par ´ametros de los modelos,
+principalmente transformando los datos de punto flotante a
+enteros, lo cual adem ´as reduce el tiempo de computaci ´on de
+operaciones. Esta t ´ecnica es esencial para distribuir modelos en
+sistemas comerciales y ampliar la cantidad de plataformas que
+puedan correr estos modelos.
+Index Terms—cuantizaci ´on, punto flotante, reducci ´on de
+par´amtetros.
+I. ACTIVIDAD DEIEEE
+Es un evento anual que se dar ´a esta vez en noviembre
+en la sabana. Es una oportunidad para conocer sobre temas
+innovadores en inteligencia artificial y biolog ´ıa molecular. Es
+una oportunidad para crear contactos dentro de la industria
+ya que los presentadores suelen ser receptivos al p ´ublico y
+disponen de tiempo para hablar.
+II. QUANTIZATION
+Una vez que entrenado un modelo de redes neuronales, se
+debe colocar en un sistema para la distribuci ´on de este. Para
+esto existen varias t ´ecnicas, entre ellas, una opci ´on com ´un es
+utilizar el framework ONNX, que toma modelos escritos en
+diferentes lenguajes y bibliotecas y se crea una versi ´on que
+maximiza la eficiencia de recursos y computaci ´on utilizando
+C++.
+El mecanismo por el cual se disminuye es la cuantizaci ´on y
+se enfoca en el hecho que los par ´ametros de los modelos son
+representados con tipos de datos de punto flotante, se reducen
+para hacer los modelos m ´as densos con t ´ecnicas especiales
+para no afectar mucho la precisi ´on de la inferencia. Aunque
+no es posible no introducir error, es necesario asumir esta
+desventaja para desplegar los modelos.
+LLaMA 2 es un modelo muy popular y notorio por tener
+un tama ˜no muy grande, tiene 70 mil millones de par ´ametros,
+cada uno est ´a representado por un punto flotante de 32 bits,
+lo que resulta en 28GB que deber ´ıan estar en memoria si
+se quisiera utilizar en una m ´aquina local. Esto claramente
+no es viable porque la mayor ´ıa de m ´aquinas comerciales
+cuentan con una capacidad menor a eso. Adem ´as, las opera-
+ciones que se se hacen con datos de punto flotante son muy
+lentas en comparaci ´on a datos representados por enteros. La
+cuantizaci ´on hace una reducci ´on de los bits requeridos para
+representar cada par ´ametro y lo convierte a enteros, que se
+pueden representar en las siguientes configuraciones: 8, 5, 2y hasta 1 bit. La cuantizaci ´on resulta en un menor tiempo de
+inferencia y menor consumo de energ ´ıa, adem ´as de facilitar
+la opci ´on de correr estos modelos en sistemas peque ˜nos como
+dispositivos m ´oviles o sistemas embebidos.
+A. Representaci ´on de n ´umeros
+Se suelen utilizar n ´umeros en bloques de 8 bits para los
+enteros, para representar n ´umeros negativos se utiliza el com-
+plemento a2 en los computadores. En contraste, para los punto
+flotantes se utiliza el ieee-754, cuyo tama ˜no de representaci ´on
+es de 32 bits, se utiliza la siguiente f ´ormula.
+v= (−1)sign×2E−127×(1 +23X
+i=1b23−i2−i)
+Para no perder tanta informaci ´on se tiene el siguiente
+mecanismo:
+1) Antes de que las entradas lleguen a la siguiente capa se
+cuantizan los pesos
+2) Estos pesos se limitan a ciertos rangos, dependiendo de
+la cantidad de bits de la cuantizaci ´on. Lo que se quiere
+es que la distribuci ´on sea equivalente.
+3) Se hacen las operaciones con los datos de tipo entero.
+4) Al salir de la capa, se de-cuantizan los pesos para que las
+siguientes capas operen con n ´umeros de punto flotante,
+sin ”saber” que fueron cuantizados.
+III. TIPOS DE CUANTIZACI ´ON
+1) Asim ´etrica→el valor de 0 corresponde al valor menor
+y el m ´aximo es el peso m ´aximo
+2) Sim ´etrica→el cero es el peso 0, el valor absoluto
+m´aximo de los pesos se mapea a un extremo, si es
+negativo se mapea al valor m ´as negativo dentro de los
+valores posibles con los bits
+A. Cuantizaci ´on Asim ´etrica
+xq=clamp(xf
+s+z; 0; 2n−1)
+xf=valorflotante
+z=−1×β
+s
+*s es el par ´ametro de escalado
+s=α−β
+2b−1
+xf=s(x q−z)→permite volver al valor original con un
+grado de error
+
+B. Cuantizaci ´on Sim ´etrica
+rango:[−(2n−1),(2n−1)]
+s=abs(α)
+2n−1−1
+xf=sx q
+IV. ESTRATEGIAS DE SELECCI ´ON DEL RANGO
+•Cuantizaci ´on Din ´amica
+–C´alculo estad ´ıstico de cu ´al ser ´a el valor de esa capa
+–se utiliza en la etapa post-training quantization
+•Post training quantization
+–hay que tratar los pesos at ´ıpicos porque puede con-
+finar los dem ´as pesos en un rango muy peque ˜no e
+introduce m ´as error
+–Se puede utilizar el percentil en vez del min y max
+–agregamos observers que se encargan de hacer la
+estad ´ısticas, calibran todas las salidas de la capa
+–se hace con los datos de prueba
+•Quantization Aware Training (QAT)
+–insertar m ´odulos irreales en la computaci ´on de grafo
+del modelo para similar el efector de cuantizaci ´on
+durante el entrenamiento.
+–La funci ´on de perdida es usada para actualizar los
+pesos que constantemente sufren.
+-

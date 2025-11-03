@@ -1,0 +1,21 @@
+Una alternativa es comprar una GPU con dicho tamaño para
+el procesamiento del modelo, pero GPUs que soporten esos
+tamaños son costosas , lo que se busca es reducir el tamaño
+del modelo, una de sus tecnicas es quantization
+A. definicion
+Quantization es una tecnica de compresion de modelos de
+aprendizaje automatico que reduce el numero de bits utilizados
+para representar los parametros del modelo, transformando
+los valores de punto flotante a representaciones de menor
+precision, generalmente enteros de 8, 5, 2 o incluso 1 bit. Lo que se busca es disminuir el tamaño y la complejidad
+computacional del modelo, manteniendo una precision cercana
+al original. No se debe de confundir como una tecnica de
+redondear pesos, sino de convertir y ajustar los tipos de datos
+para optimizar el balance entre tamaño, velocidad de inferencia
+y precision. Se busca un tradeoff optimo entre capacidades del
+modelo vs rendimiento. B. ventajas
+•menor consumo de memoria al cargar los modelos en
+memoria
+•Permite insertar el modelo en sistemas con recursos
+limitados / con proposito especifico, como celulares o
+embebidos

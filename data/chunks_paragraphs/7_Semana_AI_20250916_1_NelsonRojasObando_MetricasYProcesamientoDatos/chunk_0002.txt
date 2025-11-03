@@ -1,0 +1,37 @@
+Asimismo, se destacan las principales
+tareas del preprocesamiento de datos, entre ellas la limpie-
+za, integracion, reduccion, transformacion y discretizacion,
+esenciales para enfrentar problemas como datos incompletos,
+inconsistentes o ruidosos. II. ASPECTOS ADMINISTRATIVOS
+Ver dos lecturas asociadas con lectura procesamiento de
+datos y de redes neuronales ademas de dos capitulos de un
+libro. Se realizoel quiz #3, donde al finalizar se vieron las
+respuestas correspondientes. El quiz consistioen:
+1. Mencione la diferencia de regresion lineal y logistica. Respuesta:Laregresion linealy laregresion logisticason tecnicas
+fundamentales en el aprendizaje supervisado, pero se
+aplican a diferentes tipos de problemas:
+Regresion lineal:se utiliza cuando la variable de-
+pendiente escontinua. El modelo estima una relacion
+lineal entre las variables independientes y la variable
+dependiente, siguiendo la forma:
+y=β 0+β 1x1+···+β nxn+ε
+dondeypuede tomar cualquier valor real. Regresion logistica:se emplea cuando la variable
+dependiente escategorica, tipicamente binaria (0 o 1). El modelo estima la probabilidad de pertenecer a una
+clase utilizando la funcion sigmoide:
+P(y= 1|x) =1
+1 +e−(β 0+β1x1+···+β nxn)
+De esta forma, la salida estaacotada en el intervalo
+[0,1]y se interpreta como probabilidad. 2. Describa 3 tecnicas para el tratamiento de datos sobresa-
+lientes. Respueta:
+Los datos sobresalientes, tambien conocidos como
+outliers, son observaciones que se desvian significativa-
+mente del resto de los datos. Su presencia puede afectar
+de manera negativa el rendimiento de los modelos de
+aprendizaje automatico. Entre las tecnicas mas comunes
+para su tratamiento se encuentran:
+a)Eliminacion de outliers: consiste en descartar aquellas
+observaciones que superan un umbral definido, por
+ejemplo, valores que se encuentran a mas de tres
+desviaciones estandar de la media. Esta tecnica es util
+cuando los outliers provienen de errores de medicion
+o registro.

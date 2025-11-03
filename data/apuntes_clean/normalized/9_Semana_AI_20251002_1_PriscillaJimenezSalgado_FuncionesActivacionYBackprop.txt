@@ -1,0 +1,513 @@
+APUNTES DE CLASE
+Inteligencia Artificial — Semana 9 — 02 de Octubre
+Priscilla Jimenez Salgado
+Escuela de Ingenieria en Computacion, Tecnologico de Costa Rica
+Cartago, Costa Rica —2021022576@estudiantec.cr
+Abstract—Este documento hace un repaso general
+y claro sobre las funciones de activacion mas
+utilizadas en las redes neuronales, ademas de
+explicar conceptos importantes sobre como estan
+diseñadas y como han evolucionado las redes
+neuronales artificiales. Se presentan funciones
+como ReLU, Sigmoide y Softmax, entre otras, con
+su base matematica. Tambien se repasa el con-
+cepto de perceptron y las redes multicapa, y se
+comentan algunos retos clasicos en elarea, como
+el problema del XOR y la llamada “maldicion de
+la dimensionalidad”.
+I.Review de la lectura
+En clase el profesor comento de forma muy basica
+la lectura From Language to Action: A Review
+of Large Language Models as Autonomous Agents
+and Tool Users. Señalo que lo importante para
+el proximo quiz del martes es entender lo esen-
+cial: los modelos de lenguaje (LLMs) ya no solo
+generan texto, sino que tambien funcionan como
+agentes autonomos capaces de razonar, planificar,
+usar memoria e interactuar con herramientas ex-
+ternas. La lectura diferencia entre sistemas de un
+solo agente y sistemas multi-agente, donde varios
+modelos colaboran para resolver problemas mas
+complejos. Ademas, se destacan sus aplicaciones
+en investigacion, programacion, salud, robotica y
+simulaciones, asi como los principales retos, entre
+ellos la memoria limitada, la seguridad, laetica y
+la necesidad de mejores evaluaciones.
+A.Noticias de la semana
+En clase se hablo del lanzamiento de Sora 2, el
+nuevo modelo de generacion de video creado por
+OpenAI como respuesta al Nano Banana de Google.A diferencia del primer Sora, que tenia resultados
+poco realistas, esta nueva version produce videos
+mas naturales y coherentes, ademas de incluir audio
+gracias a su capacidad multimodal. El profesor
+mostro un ejemplo hecho con la herramienta y
+explico que incluso podria usarse para presenta-
+ciones academicas. Tambien se menciono la nueva
+aplicacion “Sora by OpenAI”, una plataforma donde
+las personas pueden crear y compartir videos con in-
+teligencia artificial a partir de simples descripciones
+o prompts.
+Fig. 1: Sora by OpenAI
+II.Aspectos Administrativos
+El profesor compartio las notas de los trabajos
+pendientes y brindo retroalimentacion individual a
+cada grupo de trabajo. Sin embargo, aun queda por
+entregar la calificacion del quiz 4 realizado y de
+la tarea presentada el pasado miercoles, que estan
+pendientes de revision. Ademas, se indico que la
+proxima semana se asignara el proyecto del curso.
+A.Repaso
+– El perceptron:Puede entenderse de forma simi-
+lar a una regresion logistica, aunque se diferencia en
+la funcion de perdida que utiliza. Durante la historia
+de la inteligencia artificial se produjo el llamado
+“invierno de la IA”, en parte debido al problema
+delXOR, ya que este no podia ser representado
+
+adecuadamente por un modelo de regresion logistica
+ni por un perceptron simple.
+– Prediccion de compuertas logicas:
+Fig. 2.Compuertas logicas
+En la figura se ilustran las compuertas logicasOR
+yANDmediante graficos bidimensionales.
+•OR(𝑋 1,𝑋2):Los triangulos indican la salida 1 y
+los circulos la salida 0. Esta compuerta devuelve
+1 siempre que al menos una de las entradas sea
+igual a 1.
+•AND(𝑋1,𝑋2):Corresponde a una compuerta
+AND donde la primera entrada esta negada. La
+salida es 1 (triangulo) ´ unicamente cuando la
+primera entrada es 0 y la segunda es 1.
+•AND(𝑋 1,𝑋2):Representa la compuerta AND
+con la segunda entrada negada. El resultado es
+1 (triangulo) solo cuando la primera entrada es 1
+y la segunda es 0.
+En cada grafico, la linea punteada marca ellimite
+de decisionque distingue entre las dos clases de
+salida (0 y 1). Esta representacion facilita la com-
+prension de como las compuertas logicas realizan la
+clasificacion de sus entradas en un espacio bidimen-
+sional.
+– Problema del XOR:
+Fig. 3.Problema del XOR
+El principal inconveniente es que el problema no
+es linealmente separable, por lo que el algoritmo
+del perceptron simple no podia ofrecer una solucion
+adecuada. Es en este punto donde surgen las redes
+neuronales o perceptrones multicapa, ya que estos sitienen la capacidad de abordar problemas no lineales.
+Gracias a ello, se amplia significativamente el rango
+de problemas que pueden resolverse con este metodo.
+– Inspiracion Biologica:
+Fig. 4.Inspiracion biologica
+Las redes neuronales se inspiran en como funcionan
+las neuronas en nuestro cerebro. Cada neurona esta
+conectada con otras a traves de sus dendritas, y en el
+nucleo es donde se procesa la informacion.
+Si lo comparamos con una regresion logistica, las
+dendritas serian como las entradas de datos (inputs),
+y el nucleo representaria la funcion lineal que procesa
+esa informacion. Al final, la neurona decide si deja
+pasar o no esa señal.
+– Funciones de activacion:En la regresion
+logistica esa transformacion se conoce como funcion
+no lineal, especificamente la sigmoide. Segun la señal
+recibida, la neurona se activa o no, permitiendo que
+la informacion continue, la transforme o la bloquee.
+Fig. 5.Funciones de activacion
+•Funcion ReLU:La funcion𝑔(𝑥)=max(0,𝑥)
+esta limitada por debajo de cero y es estricta-
+mente creciente. Es muy eficiente en modelos
+deDeep Learning, pero presenta el problema
+de las llamadasneuronas muertas, ya que no es
+derivable en todos los puntos y, en algunos casos,
+el gradiente puede llegar a ser cero, impidiendo
+la actualizacion de los pesos.
+
+Fig. 6.Ejemplo ReLu
+•Leaky ReLU:Esta funcion asigna una pequeña
+constante al valor minimo permitido, lo que
+ayuda a evitar el problema de las neuronas
+muertas. Aunque representa una mejora respecto
+a la ReLU original, no se considera la solucion
+definitiva.
+𝑔(𝑥)=(
+0.01𝑥, 𝑥<0
+𝑥, 𝑥≥0
+𝜕𝑔(𝑥)
+𝜕𝑥=(
+0.01, 𝑥<0
+1, 𝑥≥0
+Fig. 7.Ejemplo Leaky ReLu
+•Parametric ReLU (PReLU):Esta funcion per-
+mite aprender un parametro que controla si
+la señal continua en la parte negativa. Dicho
+parametro se entrena junto con el resto de la red,
+lo que brinda mayor flexibilidad al modelo.
+𝑔(𝑥)=(
+𝑤𝑥, 𝑥<0
+𝑥, 𝑥≥0
+𝜕𝑔(𝑥)
+𝜕𝑥=(
+𝑤, 𝑥<0
+1, 𝑥≥0
+•Funcion Tanh:Tiene una forma parecida a la
+sigmoide, pero su salida esta acotada en el rango
+(−1,1), lo que permite manejar valores positivos
+y negativos.
+•Binary Step Function:Devuelve 1 si la entrada
+es mayor que cero y 0 si es menor o igual a cero.
+•Funcion lineal:Basicamente deja pasar la salida
+sin aplicar ninguna transformacion adicional.•Funciones SELU y ELU:Son de la misma
+familia. Aunque requieren mayor costo computa-
+cional, ofrecen un rendimiento muy eficiente.
+•Funcion Sigmoide:Convierte la entrada en un
+valor entre 0 y 1. Es muy usada cuando se necesita
+interpretar las salidas como probabilidades.
+– Perceptron multicapa (MLP):
+Fig. 8.Perceptron
+ElPerceptron Multicapa (MLP)es una evolucion
+del perceptron simple que permite resolver problemas
+mas complejos, especialmente aquellos que no son
+linealmente separables.
+El profesor lo explico de manera sencilla con la
+imagen: en lacapa de entrada(Input Layer) se
+encuentran los datos originales, representados como
+𝑋𝑖, que no cambian porque son las entradas del
+sistema. Luego aparecen lascapas ocultas(Hidden
+Layers), que son las responsables de realizar los
+calculos, transformaciones y operaciones internas,
+dandole a la red la capacidad de aprender relaciones
+mas complejas. Finalmente, esta lacapa de salida
+(Output Layer), que entrega el resultado final y
+cuyo tamaño depende del problema que se este
+resolviendo.
+La gran ventaja del MLP es que, gracias a sus
+multiples capas y funciones de activacion, introduce
+no linealidad, lo que le permite resolver problemas
+que el perceptron simple no podia. Ademas, se en-
+trena utilizando lapropagacion del error(backprop-
+agation), que consiste en calcular cuanto se equivoco
+la red y ajustar los pesos mediante descenso de
+gradiente, mejorando asi el rendimiento del modelo.
+Ahora nos preguntamos, ¿como se calcula una
+pasada en la red?
+
+El proceso comienza con la expresionℎ(0)=
+𝑠𝑖𝑔𝑚𝑜𝑖𝑑(𝑋𝑊0+𝑏0), dondeℎ(0)corresponde a la
+primera capa oculta. Lo que se hace es calcular
+primero la regresion lineal𝑋𝑊0+𝑏0, luego aplicar
+la funcion sigmoide al resultado, y con eso se obtiene
+el valor del primerHidden Layer.
+Despues, para la siguiente capa oculta, el pro-
+cedimiento es practicamente el mismo:ℎ(1)=
+𝑠𝑖𝑔𝑚𝑜𝑖𝑑(ℎ(0)𝑊1+𝑏1). En este caso, el valor de
+ℎ(0)pasa a ser la entrada de la siguiente capa.
+Este mismo proceso se repite hasta llegar a laultima
+capa, que se expresa comoℎ(𝑛)=𝑠𝑖𝑔𝑚𝑜𝑖𝑑(ℎ(𝑛−
+1)𝑊𝑛+𝑏𝑛).
+En otras palabras, cada capa oculta toma como
+entrada el resultado de la capa anterior, y mediante
+una combinacion lineal mas la activacion, se van
+construyendo paso a paso los valores hasta la salida
+final de la red.
+– Salida independiente y distribucion:Cada salida
+puede asociarse a una variable distinta. Segun el
+caso, la distribucion puede ser de tipo categorica
+(como en el uso desoftmax) o continua (como en
+una regresion).
+Fig. 9.Salida independiente
+Fig. 10.Distribucion
+– Capa de salida:Es la parte final de la red y se
+calcula con la formulaℎ(𝑛)=𝑔(ℎ(𝑛−1)𝑊𝑛+𝑏𝑛).
+Basicamente, lo que hace es tomar la salida de
+laultima capa oculta, multiplicarla por los pesos,
+sumarle un sesgo y luego pasarla por una funcion
+de activacion. Esa funcion𝑔(𝑥)no siempre es la
+sigmoide, puede ser otra dependiendo del tipo detarea:softmaxsi se trata de una clasificacion multiple,
+o lineal si es un problema de regresion. Lo importante
+es que sea una funcion no lineal, ya que eso es lo que
+le da a la red la capacidad de resolver
+Fig. 11.Capa de salida
+– Funcion costo:Es unafuncion matematicaque
+calcula el nivel de error del modelo, y cuyo objetivo
+principal es minimizar dicho error durante el proceso
+de entrenamiento.
+Fig. 12.Funcion de costo
+– Maldicion de dimensionalidad:Pasa cuando tra-
+bajamos con datos que tienen muchisimas variables
+o dimensiones. Al ir aumentando esas dimensiones,
+los datos empiezan a dispersarse y quedan muy
+separados entre si, lo que hace mas dificil encontrar
+patrones claros. En otras palabras, el modelo tiene
+que calcular en un espacio cada vez mas grande y
+con menos densidad de informacion, lo que complica
+el aprendizaje.
+Fig. 13.Maldicion de la dimensionalidad
+– Comportamiento jerarquico:Se utiliza este
+enfoque porque imita la forma en que los humanos
+aprenden: comienzan con conceptos simples y luego
+los combinan para formar ideas mas complejas.
+Esto permite generar mejoras exponenciales en las
+funciones y aprovechar mejor el aprendizaje.
+•Permite construir funciones polinomicas.
+
+•Utiliza la composicion de funciones, reutilizando
+funciones simples para crear otras de mayor nivel.
+•Ofrece una representacion compacta, donde con
+pocos pesos se pueden modelar funciones com-
+plejas.
+•Ejemplo:una red neuronal puede aproximar otra
+funcion.
+Fig. 14.Comportamiento jerarquico
+– Mapas de caracteristicas en CNN:En una red
+neuronal convolucional (CNN), las capas no trabajan
+solo con los pixeles, sino que van aprendiendo rep-
+resentaciones cada vez mas complejas de la imagen.
+Al inicio, en las primeras capas, se detectan cosas
+muy basicas como bordes o lineas. Luego, en las
+capas intermedias, ya aparecen formas un poco mas
+claras como partes de ojos o bocas. Finalmente, en lasultimas capas, la red es capaz de reconocer objetos
+completos, por ejemplo un rostro.
+Fig. 15.Extraccion progresiva de caracteristicas en una CNN
+– Representaciones Vectoriales:En proce-
+samiento de lenguaje natural, las palabras se repre-
+sentan como vectores de alta dimension, esto permite
+que palabras con funciones similares se agrupen en
+el espacio vectorial.
+Fig. 16.VisualizacionIII.Continuacion de Funciones de activacion
+Las funciones de activacion son un elemento
+fundamental en las redes neuronales, ya que permiten
+introducir la no linealidad necesaria para representar
+relaciones complejas en los datos. A continuacion,
+se presentan las funciones mas importantes junto con
+sus principales caracteristicas matematicas.
+Fig. 17.Ejemplos de funciones de activacion: a la izquierda la
+funcion lineal y a la derecha la funcion tangente hiperbolica (tanh),
+usada en redes neuronales para introducir no linealidad.
+A. Funcion Lineal
+La funcion lineal se define como𝑓(𝑥)=𝑥. La
+derivada es constante, por lo que el modelo no puede
+usar el descenso del gradiente ni aprender de los
+datos.
+Fig. 18.Funcion lineal
+Fig. 19.Ejemplo
+B. Sigmoide
+Tiene una activacion que varia entre 0 y 1, siem-
+pre positiva, acotada y estrictamente creciente. Sin
+embargo, presenta el problema de que su derivada se
+aproxima a cero en los extremos de la funcion, lo que
+
+provoca gradientes muy pequeños. Esto hace que el
+entrenamiento se vuelva lento o se detenga, fenomeno
+conocido comovanishing gradient.
+Fig. 20.Ejemplo
+C. Tangente Hiperbolica
+La funcionTanHtiene un rango de valores entre
+−1 y 1. Su comportamiento es similar al de la funcion
+sigmoide, con la diferencia de que esta centrada en
+el origen, lo que permite que los valores negativos
+tambien sean considerados. Sin embargo, al igual
+que la sigmoide, presenta el problema delgradiente
+desvanecidoen los extremos, lo que puede dificultar
+el entrenamiento de redes profundas.
+Fig. 21.Ejemplo
+D. Funcion Softmax
+La funcionSoftmaxconvierte la capa de salida
+(output layer) en una distribucion de probabilidad,
+ya que normaliza los valores mediante una sumatoria.
+Su definicion es la siguiente:
+𝜎(𝑥)𝑗=𝑒𝑥𝑗
+I𝐾
+𝑘=1𝑒𝑥𝑘
+Es comunmente utilizada en problemas de clasifi-
+cacion, donde el vector de entrada se conoce como
+logits. Ademas, se emplea junto con la funcion de
+perdidaCross-Entropy Loss.
+Fig. 22.Ejemplo softmax
+•¿Por que usar𝑒𝑥?Porque es una funcion
+estrictamente creciente y evita valores negativos
+en la salida.
+•Cross-Entropy Loss:Tambien llamadaLog-
+LossoLogistic Loss, se utiliza como funcion de
+perdida en Softmax. Representa probabilidades
+en un espacio logaritmico dentro del rango[0,1]
+y es numericamente estable.
+La perdida se define como:
+𝐿=log(𝑃(𝑌=𝑦 𝑖|𝑋=𝑥𝑖))
+y en el caso de clasificacion multiclase:
+𝐿=−log 
+𝑒𝑠𝑘
+I𝐶
+𝑗=1𝑒𝑠𝑗!
+Fig. 23.Ejemplo
+E. ¿Cual funcion de activacion utilizar?
+La eleccion de la funcion de activacion depende
+del tipo de problema que se este resolviendo. Las
+funcionesSigmoidyTanhsuelen presentar el in-
+conveniente delvanishing gradient, lo que dificulta
+el entrenamiento en redes profundas. Por ello, se
+recomienda iniciar con la funcionReLU, ya que es
+rapida de calcular y ampliamente utilizada enDeep
+Learning. En caso de que no funcione adecuada-
+mente, se pueden emplear variantes comoLeaky
+ReLUoParametric ReLU, que buscan superar estas
+limitaciones.
+
+IV. Backpropagation
+Permite calcular cuanto contribuye cada peso al
+error final de la red, actualizando los parametros en
+direccion opuesta a la propagacion hacia adelante.
+Este proceso es esencial para que la red aprenda y
+mejore su desempeño durante el entrenamiento.
+A. Procesos del Entrenamiento
+•Forward Propagation:Consiste en calcular la
+salida de la red enviando los datos desde la
+capa de entrada hacia las capas siguientes, hasta
+obtener el resultado final.
+•Backpropagation:Implica propagar el error
+desde la capa de salida hacia las capas anteriores,
+calculando las derivadas parciales con respecto
+a los pesos y sesgos para ajustar los parametros
+del modelo.
+Fig. 24.Forward y Back Propagation
+B. Optimizacion del grafo
+En este ejemplo se considera una red neuronal en
+la que cada capa contieneunicamente una neurona,
+suponiendo que la funcion de activacion utilizada es
+laSigmoide, como se muestra en la Figura??.
+Fig. 25.Grafo de la red neuronal
+•Denominamos a las capas antes de𝐿 𝑖,𝑎𝑙hasta
+𝑎𝑙−𝑛.
+•Definimos el MSE como:
+𝐿𝑖=(𝑎𝑙−𝑦𝑖)2
+•Dividimos la neurona en 2 capas:
+1)Entrada:𝑧𝑙=𝑤𝑙𝑎𝑙−1+𝑏𝑙donde𝑎𝑙−1
+corresponde a los inputs𝑥.2)Salida:𝑎𝑙=𝑔(𝑧𝑙)donde𝑔es nuestra
+funcion de activacion.
+Vamos a actualizar los parametros de𝑧𝑙, que son𝑤𝑙
+y𝑏𝑙. Para esto emplearemos laregla de la cadena,
+usando la salida de la activacion de la capa anterior.
+Profundizando a nivel de neurona, se muestra la
+siguiente figura.
+Fig. 26.Grafo de la capa al y Li a detalle
+C. Vector gradiente
+El vector gradiente se define como el conjunto
+de derivadas parciales de los parametros (pesos y
+sesgos) de la red neuronal. Al calcularlo, es comun
+encontrar operaciones repetidas, lo que se aprovecha
+en el algoritmo de backpropagation para optimizar
+los calculos.
+Fig. 27.Vector Gradiente
+
+D. Multiples neuronas
+Fig. 28.Grafo con mayor dimensionaldad
+•Superindice:Señala la capa a la que pertenece
+una variable. Ejemplo:𝑎(𝑙)corresponde a la capa
+𝑙.
+•Subindice:Identifica el numero de neurona
+dentro de una capa especifica. Ejemplo:𝑎(𝑙)
+𝑗se
+refiere a la𝑗- ´esima neurona en la capa𝑙.
+•Pesos:Se representan con dos subindices: el
+primero indica la neurona destino y el segundo
+la neurona de origen. Ejemplo:𝑤(𝑙)
+𝑗,𝑘representa el
+peso que conecta la neurona𝑎(𝑙−1)
+𝑘con la neurona
+𝑎(𝑙)
+𝑗.
+A continuacion, en la siguiente figura se ilustra
+como una neurona de la capa𝑙recibe entradas desde
+varias neuronas de la capa anterior(𝑙−1). Este
+proceso se puede dividir en dos pasos:
+•Preactivacion:
+𝑧(𝑙)
+𝑗=𝑏(𝑙)
+𝑗+𝑛𝑙−1∑
+𝑘=1𝑤(𝑙)
+𝑗,𝑘𝑎(𝑙−1)
+𝑘
+donde𝑏(𝑙)
+𝑗es el sesgo de la neurona y𝑤(𝑙)
+𝑗,𝑘los
+pesos de conexion.
+•Activacion:
+𝑎(𝑙)
+𝑗=𝑔(𝑧(𝑙)
+𝑗)
+donde𝑔representa la funcion de activacion
+aplicada.
+Fig. 29.EjemploE. Calculo de funcion de perdida
+Para esta seccion, ellossglobal se obtiene sumando
+las diferencias entre la salida de cada neurona en
+la capa de activacion𝑗y su valor esperado𝑦 𝑗,
+recorriendo todas las neuronas de la capa𝑙.
+𝐿𝑖=𝑛𝑙∑
+𝑗=1(𝑎(𝑙)
+𝑗−𝑦𝑗)2
+En la siguiente figura se muestra un ejemplo
+donde se evalua la salida de una capa de activacion
+utilizando esta funcion de perdida.
+Fig. 30.Ejemplo
+Cambios a la Regla de la Cadena
+Como las funciones𝐿 𝑖,𝑧(𝑙)
+𝑗y𝑎(𝑙)
+𝑗han sido mod-
+ificadas, es necesario plantear nuevas derivadas que
+permitan actualizar los parametros de cada neurona
+𝑗.
+En la ecuacion se observa que, para ajustar un
+peso especifico𝑤(𝑙)
+𝑗,𝑘, debemos calcular sus derivadas
+parciales. Sin embargo, gracias al concepto decache,
+launica derivada que cambia al actualizar un peso
+diferente es𝛿𝑧(𝑙)
+𝑗
+𝛿𝑤(𝑙)
+𝑗,𝑘, mientras que el resto permanece
+constante para toda la capa.
+Las derivadas se expresan de la siguiente forma:
+𝛿𝐿𝑖
+𝛿𝑎𝑙
+𝑗=((𝑎𝑙
+1−𝑦 1)2+(𝑎𝑙
+2−𝑦 2)2+···+(𝑎𝑙
+𝑛−𝑦𝑛)2)
+𝛿𝐿𝑖
+𝛿𝑎𝑙
+𝑗=2(𝑎𝑙
+𝑗−𝑦𝑗)
+𝛿𝑎(𝑙)
+𝑗
+𝛿𝑧(𝑙)
+𝑗=𝑔(𝑧(𝑙)
+𝑗)(1−𝑔(𝑧(𝑙)
+𝑗))
+𝛿𝑧(𝑙)
+𝑗
+𝛿𝑤(𝑙)
+𝑗,𝑘=𝑎(𝑙−1)
+𝑘
+
+Con esto se logra actualizar los pesos de la capa𝑙,
+aunque las derivadas no cambian, si deben manejarse
+masindices a medida que la red crece en complejidad.
+Capa𝑙−1
+Cuando el calculo debe extenderse hacia una capa
+anterior, como la capa𝑙−1, el procedimiento se vuelve
+mas complejo. Esto ocurre porque, segun el tamaño
+de la siguiente capa, el algoritmo requiere combinar
+mas conexiones y parametros, lo que incrementa la
+dificultad del calculo.
+𝛿𝐿𝑖
+𝛿𝑎(𝑙−1)
+𝑘=𝑛𝑙∑
+𝑗=1𝛿𝑧(𝑙)
+𝑗
+𝛿𝑎(𝑙−1)
+𝑘𝛿𝑎(𝑙)
+𝑗
+𝛿𝑧(𝑙)
+𝑗𝛿𝐿𝑖
+𝛿𝑎(𝑙)
+𝑗

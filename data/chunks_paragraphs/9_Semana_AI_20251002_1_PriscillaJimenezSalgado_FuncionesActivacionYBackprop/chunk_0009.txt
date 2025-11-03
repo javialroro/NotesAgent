@@ -1,0 +1,34 @@
+•Utiliza la composicion de funciones, reutilizando
+funciones simples para crear otras de mayor nivel. •Ofrece una representacion compacta, donde con
+pocos pesos se pueden modelar funciones com-
+plejas. •Ejemplo:una red neuronal puede aproximar otra
+funcion. Fig. 14.Comportamiento jerarquico
+– Mapas de caracteristicas en CNN:En una red
+neuronal convolucional (CNN), las capas no trabajan
+solo con los pixeles, sino que van aprendiendo rep-
+resentaciones cada vez mas complejas de la imagen. Al inicio, en las primeras capas, se detectan cosas
+muy basicas como bordes o lineas. Luego, en las
+capas intermedias, ya aparecen formas un poco mas
+claras como partes de ojos o bocas. Finalmente, en lasultimas capas, la red es capaz de reconocer objetos
+completos, por ejemplo un rostro. Fig. 15.Extraccion progresiva de caracteristicas en una CNN
+– Representaciones Vectoriales:En proce-
+samiento de lenguaje natural, las palabras se repre-
+sentan como vectores de alta dimension, esto permite
+que palabras con funciones similares se agrupen en
+el espacio vectorial. Fig. 16.VisualizacionIII.Continuacion de Funciones de activacion
+Las funciones de activacion son un elemento
+fundamental en las redes neuronales, ya que permiten
+introducir la no linealidad necesaria para representar
+relaciones complejas en los datos. A continuacion,
+se presentan las funciones mas importantes junto con
+sus principales caracteristicas matematicas. Fig. 17.Ejemplos de funciones de activacion: a la izquierda la
+funcion lineal y a la derecha la funcion tangente hiperbolica (tanh),
+usada en redes neuronales para introducir no linealidad. A. Funcion Lineal
+La funcion lineal se define como𝑓(𝑥)=𝑥. La
+derivada es constante, por lo que el modelo no puede
+usar el descenso del gradiente ni aprender de los
+datos. Fig. 18.Funcion lineal
+Fig. 19.Ejemplo
+B. Sigmoide
+Tiene una activacion que varia entre 0 y 1, siem-
+pre positiva, acotada y estrictamente creciente.

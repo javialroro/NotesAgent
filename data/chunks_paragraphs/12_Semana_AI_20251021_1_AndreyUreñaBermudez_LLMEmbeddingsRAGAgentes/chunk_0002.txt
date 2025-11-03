@@ -1,0 +1,16 @@
+– Semana 16:
+∗Martes 18 de noviembre:TemaRiesgos de la
+Inteligencia Artificial. Figura 1. Ejemplo de un modelo de red neuronal preentrenado. – Semana 17:Semana colchon (sin actividades pro-
+gramadas). – Semana 18:
+∗Martes 2 de diciembre:Examen I. ∗Jueves 4 de diciembre:Entrega del Proyecto II. III. REPASO DE CONCEPTOS
+A. Modelos de Lenguaje de Gran Escala (LLM)
+Los LLM se han convertido en la base de los sistemas mod-
+ernos de inteligencia artificial. Permiten generar, comprender
+y razonar sobre texto, codigo, imagenes y audio. Cada entrada (input) es representada mediante valores
+numericos en punto flotante que describen caracteristicas. El
+tratamiento varia segun si la entrada corresponde a texto,
+numeros o simbolos. B. Tokenizacion
+La tokenizacion convierte las palabras, signos o simbolos
+en representaciones numericas llamadastokens. Estos tokens
+permiten al modelo procesar texto de manera eficiente. Existen varios tipos de tokenizacion, resumidos en la
+Tabla I.

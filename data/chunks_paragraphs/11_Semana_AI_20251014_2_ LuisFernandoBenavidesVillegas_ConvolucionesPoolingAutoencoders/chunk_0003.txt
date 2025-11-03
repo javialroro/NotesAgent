@@ -1,0 +1,6 @@
+Esta operacion toma
+bloques locales y realiza una operacion estadistica sobre ellos,
+como el maximo o el promedio, para resumir su contenido. •Max Pooling:selecciona el valor maximo de cada
+bloque. Es el metodo mas utilizado. •Average Pooling:calcula el promedio de los valores de
+cada bloque. •L2 Pooling:aplica una norma cuadratica sobre los val-
+ores.

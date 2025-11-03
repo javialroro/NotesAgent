@@ -1,0 +1,11 @@
+Alexander Wang fundador de Scale
+Se hablo del caso de Alexander Wang un joven de solo 28
+años que fundo la empresa Scale AI, empresa por la cual Meta
+invirtio 13 mil millones de euros
+B. Guerra de plataformas de LLM
+Se menciono que la competencia por ser la mejor IA, existe
+actualmente como si fuera una guerra entre plataformas, de la
+misma forma que ha ocurrido en otras cosas en el pasado,
+como las plataformas de streaming. REFERENCES
+[1] S. Pacheco Portuguez, “Clase algebra lineal y manipulacion de tensores
+mediante pytorch,” Tecnologico de Costa Rica , 2025. [2] I. Valchanov, “¿que son los tensores?” 365 Data Science , 2023. [Online]. Available: https://365datascience.com/tutorials/python-tutorials/tensor/

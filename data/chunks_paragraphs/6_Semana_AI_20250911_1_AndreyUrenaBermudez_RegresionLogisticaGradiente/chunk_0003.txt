@@ -1,0 +1,62 @@
+L=−1
+NhX
+yi·ln(f w,b(xi)) + (1−y i)·ln(1−f w,b(xi))i
+Ahora puedo minimizar la funcion, lo que permite aplicar
+el descenso del gradiente que se ha estado trabajando. Figura 1. Grafica minimizando L
+Aquilo ideal es intentar que ellossllegue a cero; si se
+obtiene unlossnegativo, significa que algo se estahaciendo
+mal. II-E. Actualizacion de parametros
+Es necesario actualizar los parametroswyb, ya que son
+los que permiten modificar los resultados de las probabilidades
+obtenidas. Para actualizar el parametrowse necesita:∂L
+∂w
+Para actualizar el parametrobse necesita:∂L
+∂b
+II-F. Composicion de funciones
+Se va a utilizar el concepto de composicion de funciones
+para que el calculo de derivadas sea mas sencillo. Derivada funcion de costo para un sample:
+L=y i·ln(f w,b(xi)) + (1−y i)·ln(1−f w,b(xi))
+Modelo:f w,b(x) =a(z(x))
+a(x) =σ(x) =1
+1+e−x
+z(x) =wx+b
+El resultado de combinar ambas es:
+L=y i·ln(a(z(x))) + (1−y i)·ln(1−a(z(x)))
+Cuando se habla de la tecnica de composicion de funciones
+se aplica la regla de la cadena. Se deben calcular las derivadas
+parciales:
+L=y i·ln(a(z(x))) + (1−y i)·ln(1−a(z(x)))
+∂L
+∂w=∂L
+∂a·∂a
+∂z·∂z
+∂w
+∂L
+∂b=∂L
+∂a·∂a
+∂z·∂z
+∂b1) Calculo de derivadas parciales
+Importante recordar que elLque se estausando es:
+L=−[y i·ln(a(z(x))) + (1−y i)·ln(1−a(z(x)))]
+Primero se inicia calculando la derivada parcial deLcon
+respecto a la funcion sigmoide:
+∂L
+∂a=−
+yi·1
+a(x)·a(x)′
++
+(1−y i)·1
+1−a(x)·(1−a(x))′
+=−yi
+a(x)·1
++(1−y i)
+1−a(x)· −1
+=−yi
+a(x)
+−(1−y i)
+1−a(x)
+=−yi
+a(x)+(1−y i)
+1−a(x)
+Ahora, se calcula la derivada parcial de la funcion sigmoide
+respecto az.

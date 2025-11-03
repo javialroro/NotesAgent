@@ -1,0 +1,4 @@
+ARQUITECTURASCONVOLUCIONALES
+A. LeNet-5
+Pionera (LeCun, 1998) para digitos manuscritos (MNIST). Dos bloques conv+pooling y capas densas. Introdujo la viabi-
+lidad practica de CNNs.

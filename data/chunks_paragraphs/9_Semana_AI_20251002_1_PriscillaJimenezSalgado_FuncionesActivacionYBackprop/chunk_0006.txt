@@ -1,0 +1,9 @@
+La gran ventaja del MLP es que, gracias a sus
+multiples capas y funciones de activacion, introduce
+no linealidad, lo que le permite resolver problemas
+que el perceptron simple no podia. Ademas, se en-
+trena utilizando lapropagacion del error(backprop-
+agation), que consiste en calcular cuanto se equivoco
+la red y ajustar los pesos mediante descenso de
+gradiente, mejorando asi el rendimiento del modelo. Ahora nos preguntamos, ¿como se calcula una
+pasada en la red?

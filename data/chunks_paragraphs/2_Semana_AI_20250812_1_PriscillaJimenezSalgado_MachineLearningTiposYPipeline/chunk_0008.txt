@@ -1,0 +1,19 @@
+Se emplea en autoencoders
+y modelos de representacion, principalmente
+para reducir el tamaño de vectores o extraer
+caracteristicas relevantes. •Aprendizaje por refuerzo: El modelo, llamado
+agente, aprende mediante un sistema de recom-
+pensas, mejorando su desempeño a traves de la
+interaccion con un entorno. •Few-Shot Learning: El modelo necesita solo
+unos pocos ejemplos para aprender a realizar una
+tarea especifica. •One-Shot Learning: Basta con mostrarle unaunica vez como realizar la tarea para que el
+modelo pueda reproducirla. •Zero-Shot Learning: El modelo es capaz de
+realizar tareas sin haber sido entrenado previa-
+mente para ellas de forma especifica. V.Pipeline de Machine Learning
+El desarrollo de un modelo de Machine Learning
+pasa por varias etapas clave:
+1)Data Adquisition: Este es muy importante
+ya que se necesitan obtener datos de calidad y
+representativos, evitando errores como valores
+faltantes y duplicados. 2)Data preparation: Para esta etapa se tiene que
+preparar los datos que se tienen para tener un

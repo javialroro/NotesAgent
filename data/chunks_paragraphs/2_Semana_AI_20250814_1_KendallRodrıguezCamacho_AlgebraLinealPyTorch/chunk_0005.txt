@@ -1,0 +1,27 @@
+Fig. 4. Ejemplo de agrupamiento (clustering). V. M ODELOS
+1) Determinista: Un modelo determinista produce siempre
+el mismo resultado para un mismo conjunto de entradas. Ejemplo: ¿Hay luz a mediodia? Para las mismas condiciones,
+la respuesta siempre sera la misma: si. 2) Estocastico: Un modelo estocastico puede producir
+diferentes resultados para el mismo conjunto de entradas,
+dependiendo de probabilidades o factores aleatorios. Ejemplo:
+¿Cual sera el clima a mediodia? Aunque las condiciones
+iniciales sean similares, el clima puede variar: puede estar
+soleado, nublado o lloviendo. Fig. 5. Comparacion entre modelos determinista y estocastico usando el
+ejemplo del clima. VI. J ERARQUIA DE LA INTELIGENCIA ARTIFICIAL
+1) Inteligencia Artificial (IA): Algoritmos que imitan la
+inteligencia humana, capaces de tomar decisiones o resolver
+problemas. 2) Machine Learning (ML): Metodos estadisticos que per-
+miten a los modelos aprender de los datos, como regresiono
+´arboles de decision. 3) Deep Learning (DL): Redes neuronales profundas uti-
+lizadas para problemas complejos, incluyendo vision por com-
+putadora y procesamiento de lenguaje natural (NLP). 4) Generative AI (GenAI): Modelos capaces de generar
+contenido nuevo, como texto, imagenes o audio, a partir de
+patrones aprendidos. Fig. 6. Jerarquia de la IA
+VII. P IPELINE DE MACHINE LEARNING
+1) Data Acquisition: Recolectar datos relevantes y de cal-
+idad. 2) Data Preparation: Limpiar y transformar los datos,
+entregandolos en un formato adecuado para su analisis, elimi-
+nando duplicados, valores faltantes o incorrectos, y aplicando
+normalizacion o escalamiento de los valores. 3) Feature Engineering: Crear y seleccionar las variables
+(features) mas relevantes para entregar al modelounicamente
+las necesarias para su entrenamiento y analisis.

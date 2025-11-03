@@ -1,0 +1,15 @@
+Cada neurona/clase tiene su propio sesgo:b=
+(b0, . . . , b 9)⊤.Cantidad de neuronas=tamaño deb. IV. EJERCICIO:DE VECTOR A MATRIZ
+1) Una sola regresion binaria (vectorx)
+Sea
+x=
+3
+4
+5
+6
+, w=
+3
+2
+4
+5
+, b= 2.

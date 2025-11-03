@@ -1,0 +1,26 @@
+Estos datos son cuantificables o
+numericos. Fig. 4. Ejemplo de grafica para visualizar problemas de prediccion
+D. Problemas de agrupamiento
+Para los problemas de agrupamiento no existen etiquetas
+con las cuales entrenar, se busca encontrar pertenencia a un
+grupo dadas similitudes a caracteristicas, las soluciones a estos
+problemas permite encontrar relaciones a preguntas que quiza
+no se tenian previamente. Fig. 5. Ejemplo de problemas de agrupamiento
+VI. P IPELINE DEL MACHINE LEARNING
+•Data adquisition :Una de las partes mas importantes
+del piplene de machine learning, es todo el proceso de
+recoleccion de datos Relevantes del problema a resolver,
+se deben de resolver preguntas como ¿Cual es la calidad
+de los datos que estoy tomando? ¿De donde los saco? ¿Es mi fuente libre de sesgo?. •Data preparation : La etapa de la preparacion de
+los datos, considerando que el computador trabaja con
+numeros, se debe de resolver las pregunta ¿Como voy
+a representar los datos a mi algoritmo o modelo? , por
+ejemplo, si los datos son imagenes, le asigno valores
+puesto que los algoritmos son matematicos. En esta etapa
+tambien se realizan otras labores como la revision de
+datos duplicados y la busqueda de datos faltantes, por
+ejemplo en un set de datos, con algun dato faltante,
+elimino dicho set o calculo la mediana y la introduzco
+como el dato faltante. •Freature engineering : Los freatures son los atributos
+que proporcionan informacionutil de los datos, en esta
+etapa se pueden generar nuevos freatures a partir de los

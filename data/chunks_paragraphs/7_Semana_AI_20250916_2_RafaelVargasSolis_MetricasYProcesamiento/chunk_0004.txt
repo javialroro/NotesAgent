@@ -1,0 +1,35 @@
+II. METRICAS
+Son medidas que se utilizan para indicar el rendimiento
+de un modelo predictivo. Constituyen la forma mas objetiva
+de evaluar y comparar modelos de aprendizaje automatico,
+permitiendo determinar que tan bien se ajustan a los datos de
+entrenamiento y, sobre todo, que tan bien generalizan a datos
+no vistos. Asimismo, se emplean benchmarks , que son conjuntos de
+datos o pruebas estandarizadas utilizadas en la comunidad
+cientifica para comparar de manera justa el desempeño de
+distintos modelos. El uso de benchmarks permite establecer
+un estandar de referencia que facilita la reproducibilidad y la
+comparacion entre diferentes enfoques. En general, las metricas pueden dividirse en:
+•Metricas de clasificacion: accuracy, precision, recall, F1-
+score, ROC y AUC. •Metricas de regresion: error cuadratico medio (MSE),
+error absoluto medio (MAE) o coeficiente de determi-
+nacion (R2). III. M ATRIZ DE CONFUSION
+Lamatriz de confusionorganiza los resultados de un modelo
+de clasificacion en funcion de las predicciones realizadas y las
+clases reales. Se definen cuatro componentes:
+•True Positive (TP) : positivos correctamente clasificados. •False Positive (FP) : negativos clasificados incorrecta-
+mente como positivos (error tipo I). •True Negative (TN) : negativos correctamente clasifica-
+dos. •False Negative (FN) : positivos clasificados incorrecta-
+mente como negativos (error tipo II). En problemas multiclase, la matriz puede extenderse a
+N×N. Un clasificador ideal concentra todos los valores en
+la diagonal principal. Fig. 1. Ejemplo de matriz de confusion en clasificacion binaria. IV. METRICAS CLASICAS
+A partir de la matriz de confusion se derivan las metricas
+mas utilizadas:A. Accuracy
+Accuracy =TP+TN
+TP+TN +FP+FN(3)
+Mide la proporcion de predicciones correctas. Esutil en datos
+balanceados, pero engañosa en clases desbalanceadas. B. Precision
+Precision =TP
+TP+FP(4)
+Indica que proporcion de predicciones positivas fueron correc-
+tas.

@@ -1,0 +1,35 @@
+Resumen sobre Autoencoders, Segmentacion y
+RAGs: conceptos y arquitecturas
+Andres Sanchez Rojas
+Escuela de Ingenieria en Computacion
+Instituto Tecnologico de Costa Rica
+16/10/2025
+Resumen—Estos son los apuntes de la segunda clase de semana
+11 del curso de IA. Los autoencoders son modelos de aprendizaje
+no supervisado que aprenden a reconstruir sus entradas a traves
+de una representacion comprimida (espacio latente). En este docu-
+mento se resumen conceptos clave: arquitectura encoder/decoder,
+variational autoencoders (V AE) y la reparametrizacion, funciones
+de perdida tipicas, y aplicaciones como deteccion de anomalias
+y denoising. Tambien se introduce la segmentacion de imagen
+y la arquitectura U-Net, y se discuten conceptos relacionados
+con RAGs (Retrieval Augmented Generation), agentes basados en
+LLM, tokenizacion y embeddings. El objetivo es ofrecer una vision
+compacta y legible para un lector que busca una introduccion
+tecnica y aplicada. Index Terms—Autoencoders, Variational Autoencoders, U-Net,
+Segmentacion de imagen, RAG, Tokenizacion, Embeddings
+I. INTRODUCCION
+Este documento sintetiza los principios y aplicaciones
+practicas de los autoencoders, describiendo su entrenamiento
+sin etiquetas por reconstruccion, sus usos en reduccion de di-
+mensionalidad, compresion, deteccion de anomalias, denoising
+y superresolucion, y la extension hacia variantes relevantes
+como los variational autoencoders; ademas presenta la conexion
+con tareas de vision por computador (p. ej., segmentacion y
+arquitecturas tipo U -Net) y la extension a representaciones
+para texto mediante tokenizacion y embeddings, asicomo su
+papel en sistemas mas amplios como RAGs y agentes basados
+en LLM. El texto ofrece una guia practica con definiciones,
+formulas y recomendaciones operativas para implementar
+experimentos en imagenes y texto. II. AUTOENCODERS
+II-A.

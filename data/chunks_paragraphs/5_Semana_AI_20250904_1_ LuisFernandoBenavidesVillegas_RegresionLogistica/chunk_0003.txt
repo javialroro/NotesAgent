@@ -1,0 +1,8 @@
+Normalmente se subdivide en diferentes
+partes para poder medir la capacidad de generalizacion y evitar
+problemas como el overfitting . C. Training Set
+Subconjunto usado para entrenar el modelo y ajustar sus
+parametros. Es donde el algoritmo aprende los patrones pre-
+sentes en los datos. D. Validation Set
+Subconjunto usado durante el entrenamiento para evaluar
+el rendimiento intermedio del modelo. Sirve para medir si

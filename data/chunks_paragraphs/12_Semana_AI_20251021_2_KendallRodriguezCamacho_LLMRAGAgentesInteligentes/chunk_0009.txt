@@ -1,0 +1,30 @@
+Fig. 4. Estructura de un documento RAG
+Fig. 5. Diagrama del flujo deRAGmostrando la preparacion de documentos,
+generacion de embeddings, indexacion, recuperacion y generacion de respues-
+tas. F . Beneficios de RAG
+•Reduccion de alucinaciones. •Actualizacion continua con informacion reciente. •Eficiencia en costos y tiempo de respuesta. •Aplicabilidad en dominios especializados con infor-
+macion privada. G. Aplicaciones de RAG
+•Asistentes empresariales enriquecidos: pueden consultar
+documentacion interna y responder de forma precisa. •Investigacion: lectura automatica de papers, resumenes y
+citas. •Soporte al cliente: analisis de tickets previos para generar
+respuestas coherentes y rapidas. La Figura 5 ilustra el flujo general de un sistema RAG,
+donde se integran la creacion de embeddings, la indexacion y
+la busqueda vectorial para enriquecer las respuestas generadas
+por el LLM. Si bien los RAG mejoran significativamente el rendimiento
+de un LLM tradicional al proporcionarle informacion externa
+y actualizada, estos sistemas siguen siendo pasivos: no pueden
+buscar activamente informacion en la web ni tomar decisiones
+autonomas. Su funcion se limita a complementar la respuesta
+del LLM con los datos recuperados. VII. DELLMS A AGENTES INTELIGENTES
+Losagentes basados en LLMsrepresentan un paso mas alla
+de los RAGs. Mientras que los RAGs solo enriquecen respues-
+tas con informacion recuperada, los agentes pueden razonar,planificar y actuar de manera autonoma, ejecutando tareas en
+el mundo real, como consultar APIs, buscar informacion o
+tomar decisiones basadas en conocimiento externo. Esta capacidad se estructura en tres componentes princi-
+pales:
+A. Memoria
+La memoria permite al agente mantener coherencia y con-
+texto a lo largo de la interaccion:
+•Corto plazo: ventana de contexto del modelo. •Largo plazo: bases de datos externas, incluyendo sistemas
+RAG donde la informacion se divide enchunksy se
+representan comoembeddingspara su recuperacion. B.

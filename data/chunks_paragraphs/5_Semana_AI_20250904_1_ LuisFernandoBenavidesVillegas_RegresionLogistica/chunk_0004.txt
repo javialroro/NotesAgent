@@ -1,0 +1,31 @@
+lo aprendido se generaliza a datos no vistos y para ajustar
+hiperparametros. Permite detectar problemas de sobreajuste de
+manera temprana sin necesidad de esperar a la prueba final. E. Tecnicas para subdividir el dataset
+1) Random Sampling: Consiste en dividir aleatoriamente
+los datos entre entrenamiento y prueba. Es adecuado cuando
+las clases estan balanceadas, ya que garantiza representatividad
+sin introducir sesgos. El problema surge si las clases estan
+desbalanceadas, porque puede que un subconjunto quede con
+muy pocos o incluso sin ejemplos de alguna clase. 2) Stratified Sampling: Se usa cuando las clases estan
+desbalanceadas. Mantiene la misma proporcion de clases en
+los conjuntos de entrenamiento y prueba. De esta forma, si en
+el dataset original una clase representa el 90% y otra el 10%,
+esa relacion se conserva en las divisiones. 3) K-Fold Cross-Validation: El conjunto de entrenamiento
+se divide en Kpartes (folds). En cada iteracion se usa
+K−1folds para entrenar y el fold restante para validar. El
+proceso se repite Kveces, rotando el fold de validacion. Esto
+permite aprovechar mejor los datos disponibles y obtener una
+evaluacion mas robusta del modelo. F . Posibles escenarios de comportamiento de training y vali-
+dation
+1) Overfitting: El error en training es bajo pero el error
+en validation comienza a aumentar despues de cierto punto. El modelo memoriza los datos de entrenamiento en lugar de
+aprender patrones generales. Se captura tambien el ruido de los
+datos, lo que provoca que no pueda generalizar. Se caracteriza
+por tener alta varianza . Fig. 1. Ej. de overfitting
+ Fig. 2. Ej. de regresion de overfitting
+Una tecnica para evitarlo es el early stopping , que consiste
+en detener el entrenamiento en laepoca donde el error de
+validacion empieza a empeorar. 2) Underfitting: Tanto el error en training como en val-
+idation son altos. El modelo no logra aprender patrones de
+los datos porque es demasiado simple o incorrecto para el
+problema.

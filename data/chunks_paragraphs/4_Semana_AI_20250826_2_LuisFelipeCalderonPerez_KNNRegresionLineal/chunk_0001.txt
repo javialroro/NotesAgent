@@ -1,0 +1,41 @@
+Apuntes de clase
+Luis Felipe Calderon Perez
+Escuela de Ingenieria en Computacion
+Tecnologico de Costa Rica
+Cartago, Costa Rica
+2021048663
+26-08-2025
+Resumen —Este documento presenta los apuntes de la cuarta
+semana del curso de inteligencia artificial. Primeramente se dan
+las respuestas del primer quiz. Se repasa la tarea de clasificacion,
+el algoritmo de los K-nearest Neighbors. Se introduce el tema de
+la regresion lineal, funcion de perdida, minimos locales, minimos
+globales, el descendo del gradiente. Ademas, se repasaron las
+derivadas y se terminocon la pregunta de porque escoger MSE
+y no MAE. Index Terms —IA, derivadas, descenso del gradiente, regresion
+lineal
+I. P REGUNTAS Y RESPUESTAS DEL PRIMER QUIZ
+1. Anote y describa las tres propiedades de la norma
+Respuesta:
+Positividad: ∥x∥ ≥0y∥x∥= 0 si y solo si x= 0. Homogeneidad: ∥αx∥=|α|·∥x∥para cualquier escalar
+α. Desigualdad triangular: ∥x+y∥ ≤ ∥ x∥+∥y∥. 2. Describa los tipos de aprendizaje supervised, unsupervi-
+sed y one-shot learning. Respuesta:
+Supervised: El modelo aprende a partir de datos que
+incluyen etiquetas, las cuales sirven como referencia
+durante el entrenamiento. Unsupervised: : El modelo trabaja con datos sin eti-
+quetas y se encarga de encontrar patrones en los datos
+ocultos.One-shot: Basta con mostrarle una unica vez como
+realizar la tarea para que el modelo pueda reproducirla. 3. Si u y v son dos vectores colineales con magnitudes 5
+y 6 respectivamente.¿Desarrolle cual es el resultado del
+producto punto entre u y v? Respuesta:
+u·v=∥u∥ · ∥v∥ ·cos(θ)
+u·v= 5·6·cos(0)
+∴u·v= 30
+4. ¿Quien propone las Redes Generativas Adversarias?. Respuesta: Ian Goodfellow
+II. C LASE
+II-A. Clasificacion
+II-A1. K-nearest Neighbors: Algoritmo en donde un con-
+junto de datos etiquetados recibe un nuevo dato. A ese nuevo
+dato se le calcula la distancia con sus datos vecinos, una
+vez se encuentra a los vecinos mas cercanos, se realiza una
+votacion, para determinar a que categoria o tipo pertenece.

@@ -1,0 +1,54 @@
+•Concatenaciones de tensores Mediante
+torch.cat((X.Y),dim=k se pueden concatenar tensores,
+siendo k el eje donde sobre el que se apilaran
+•Indexacion logica Mediante X==Y siendo X y Y ten-
+sores se pueden realizar mascaras booleanas
+XII. C REACION DESDE LISTAS DE PYTHON
+A= torch.tensot([[2,1,4,3],
+[1,2,3,4],
+[4,3,2,1]], dtype=torch.float32)
+A
+tensor([[2.,1.,4.,3.],
+[1.,2.,3.,4.],
+[4.,3.,2.,1.]])
+XIII. I NDEXACION Y SEGMENTACION(SLICING )
+fila_ultima = A[-1] # ltima fila de X
+submatriz = A[1:3] # Filas 1 y 2 de X
+fila_ultima, submatriz
+XIV. B ROADCASTING
+El broadcasting en tensores permite operar tensores de
+diferentes formas al expandir automaticamente,
+a = torch.arange(3).reshape((3, 1)) # Forma 3
+x1
+b = torch.arange(2).reshape((1, 2)) # Forma 1
+x2
+broadcast = a + b # Resultado de forma 3x2
+gracias al broadcasting
+XV. O PERACIONES IN-PLACE
+Se indica que se tiene que tener cuidado debido a que
+cuando se tratan con modelos de machine learning o deep
+learning, nos encontramos con el hecho de que se ocupa
+muchisima memoria y hay que procurar seroptimos en este
+sentido y al hacer ejecutar operaciones se puede dejar memoria
+asignada o se apunta a nuevas secciones de memoria, lo
+cual puede ser innecesario. Por eso se recomienda el uso de
+operaciones totalmente in-place
+XVI. C ONVERSION A NUMPY Y CARGA DE DATOS DESDE
+CSV
+Se puede interoperar con NumPy, convirtiendo tensores a
+arreglos y viceversa sin copiar datos
+A_np = A.numpy()
+print (type (A_np))
+A_back = torch.from_numpy(A_np)
+print (type (A_back))
+Para cargar datos de un archivo CSV usaremos pandas
+para convertir sus columnas a tensores. Ademas de usar
+codificacion one-hot para completar valores faltantes.df = pd.read_csv(’../data/house_tiny.csv’)
+inputs = df.iloc[:, :2]
+inputs = pd.get_dummies(inputs, dummy_na=True)
+inputs = inputs.fillna(inputs.mean())
+X_csv = torch.tensor(inputs.to_numpy(dtype=
+float ))
+X_csv
+XVII. A LGEBRA LINEAL INTRODUCCION
+A.

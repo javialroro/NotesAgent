@@ -1,0 +1,13 @@
+Este componente permite inyectar cono-
+cimiento relevante proveniente de bases de datos o colecciones
+de documentos en el momento de la consulta, ampliando asila capacidad del modelo para generar respuestas mas precisas,
+actualizadas y fundamentadas en evidencia. De esta manera,
+el sistema integra razonamiento generativo con recuperacion
+informativa, superando las limitaciones de los LLM entrenados
+unicamente con conocimiento estatico [1]. V-A. Ingesta y Chunking
+El primer paso en la construccion de un sistema de Recupe-
+racion Aumentada de Generacion (RAG) consiste en preparar
+los documentos que serviran como fuente de informacion. Para ello, el texto se segmenta en fragmentos manejables
+denominadoschunks, que suelen tener una longitud entre 200
+y 500 tokens, con el fin de preservar la coherencia semantica
+y facilitar la recuperacion eficiente de informacion relevante.

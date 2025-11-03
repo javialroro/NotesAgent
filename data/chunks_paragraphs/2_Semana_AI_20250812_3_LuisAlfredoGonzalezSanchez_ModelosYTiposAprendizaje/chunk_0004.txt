@@ -1,0 +1,35 @@
+Aprendizaje por refuerzo
+El aprendizaje por refuerzo consiste en un aprendizaje con
+”premiacion”, existe un agente y dicho agente aprende a tomar
+decisiones a traves de la interaccion con un entorno, buscando
+maximizar una recompensa , se pueden penalizar por acciones
+que llevaran a un resultado insatisfactorio.Ejemplo, observe la
+figura 2. En el videojuego representado, se puede entrenar al
+Fig. 2. Videojuego de ejemplo
+personaje (agente) para que cruce al otro lado basandose en
+si el salto se realiza correctamente (accion) se recompensa, y
+si la accion es insatisfactoria (caer al vacio y perder una vida)
+se castiga por dicha accion.F . Otros tipos de aprendizaje
+Se detallan a continuacion algunos tipos de aprendizaje
+adicionales
+•Fev-shot : Metodo en el cual el modelo aprende a
+partir de breves ejemplos. Una posible aplicacion es con
+respecto a los LLMs ,si el LLMs no sabe como realizar
+la tarea, se le brinda ejemplos y a partir de esos ejemplos
+es capaz de resolver la tarea. •One shot : Metodo similar al anterior, solo que reduce la
+candidad de ejemplos a 1 ,y a partir de eseunico ejemplo
+logra resolver. •zero shot : En este metodo el sistema resuelve en base a
+lo que ”sabe” , no existen ejemplos del que pueda tomar
+para aprender. IV. E NFOQUES DEL MACHINE LEARNING
+Existen dos principales enfoques, ciencia e ingenieria:
+A. Machine learning: Ciencia
+•Se genera conocimiento : Es la parte academica que se
+dedica a investigar y desarrollar nuevas ideas respecto a
+aprendizaje automatico, incluye la elaboracion de mod-
+elos desde cero y optimizar funciones, por lo general,
+esta en manos de investigadores con un fuerte trasfondo
+matematico que les permite conocer a gran detalle los
+procesos que suceden durante el desarrollo de dichos
+modelos o algoritmos. •Metricas : A partir de los datos recolectados, los data
+scientist generan metricas que permiten evaluar el de-
+sempeño del modelo o algoritmo.

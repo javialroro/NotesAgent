@@ -1,0 +1,32 @@
+Su
+valor varia entre0y1, donde un valor de0,5indica un
+modelo sin capacidad de discriminacion (equivalente a un
+clasificador aleatorio), mientras que un valor cercano a1
+representa un modelo con alto poder de discriminacion.0 0,2 0,4 0,6 0,8 100,20,40,60,81
+Tasa de Falsos Positivos (FPR)Tasa de Verdaderos Positivos (TPR)Clasificador aleatorio
+Modelo
+Figura 3. Ejemplo de curva ROC. Un area bajo la curva (AUC) mas cercano
+a 1 indica mejor rendimiento. De darse un caso en el que la curva, como por ejemplo en
+la figura 3, se acercara mucho a la recta perderia valor porque
+estaria dando los resultados incorrectos, de una forma casi que
+aleatoria. El area bajo la curva debe de ser de al menos 0,5. Procesamiento de datos
+Problemas encontrados
+Incompletitud: valores faltantes en atributos importantes,
+ej. Si el producto estaba en oferta. Inexactitud o ruido: errores y valores atipicos en las
+transacciones. Inconsistencia: discrepancias en los codigos de departa-
+mentos o categorias. Se dio como comparacion el caso de la diabetes y la presion
+sanguinea. Si se registran mediciones, se espera que tenga un
+valor sino tiene presion sanguinea entonces no tendria sentido
+o el sujeto estaria muerto, seria un valor que no aporta pero
+es importante no elimiar el registro ya que podrian haber otras
+features que si aporten valor. Por esta razon, los datasets requiren preprocesamiento antes
+de aplicar tecnicas de mineria o aprendizaje. Es un problema
+del mundo real. Porque pueden ser inexactos? Instrumentos de recoleccion de datos defectuosos
+Errores humanos o computacionales en la entrada de
+datos
+Usuarios que ingresan valores falsos para campos obli-
+gatorios (ej. Fecha por defecto ’1 de enero’ para ocultar
+cumpleanos)
+• Conocido como datos faltantes disfrazados
+Inconsistencias en convenciones de nombres, codigos o
+formatos (ej. fechas con distintos formatos)

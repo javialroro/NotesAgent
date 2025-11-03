@@ -1,0 +1,10 @@
+Menor consumo energetico: ideal para dispositivos em-
+bebidos o moviles. Portabilidad: permite ejecutar modelos complejos en
+hardware limitado.IX. CONCLUSIONES
+El estudio del quantization permite comprender como los
+modelos de inteligencia artificial pueden adaptarse a las limi-
+taciones del hardware sin comprometer significativamente su
+desempeno. Esta tecnica representa un punto de conexion entre
+el desarrollo teorico de los algoritmos y su aplicacion real en
+sistemas de produccion, donde los recursos computacionales,
+la energia y el tiempo de inferencia son factores determinantes.

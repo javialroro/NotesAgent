@@ -1,0 +1,29 @@
+Por ejemplo, en el ambito corporativo, losasistentes empre-
+sariales enriquecidospueden ofrecer informacion precisa y
+contextualizada a partir de bases de conocimiento internas,
+mejorando la productividad y la toma de decisiones. En el
+campo de lainvestigacion, los RAG facilitan la recuperacion
+de literatura relevante y la sintesis de informacion compleja,
+acelerando el analisis de grandes volumenes de datos textuales. Asimismo, en el area desoporte al cliente, estos sistemas
+permiten generar respuestas fundamentadas y coherentes a
+consultas de usuarios, reduciendo errores y mejorando la
+experiencia de atencion mediante informacion verificada y
+actualizada [18]. VIII. TAREA4: AGENTECONVERSACIONAL
+Al final de la clase se presentola asignacion y revision del
+enunciado de la Tarea 4, centrada en el desarrollo de un agente
+conversacional. La fecha de entrega se ha establecido para el
+jueves 6 de noviembre.REFERENCIAS
+[1] P. Lewis, E. Perez, A. Piktus, F. Petroni, V . Karpukhin, N. Goyal,
+H. Kuttler, M. Lewis, W. tau Yih, T. Rocktaschel, S. Riedel, and
+D. Kiela, “Retrieval-augmented generation for knowledge-intensive nlp
+tasks,”Advances in Neural Information Processing Systems (NeurIPS),
+2020. [2] S. Wang, Y . Qin, W. Chen, Z. Wu, Z. Xi, Y . Xu, T. Gui, X. Qiu, and
+Z. Zhang, “A survey on large language model based autonomous agents,”
+arXiv preprint arXiv:2401.03428, 2024. [3] OpenAI, “Gpt-4 technical report,” arXiv preprint arXiv:2303.08774,
+2023. [4] Y . LeCun, Y . Bengio, and G. Hinton, “Deep learning,”Nature, vol. 521,
+pp. 436–444, 2015. [5] R. Sennrich, B. Haddow, and A. Birch, “Neural machine translation
+of rare words with subword units,” inProceedings of the 54th Annual
+Meeting of the Association for Computational Linguistics (ACL), 2016,
+pp. 1715–1725. [6] T. Mikolov, K. Chen, G. Corrado, and J. Dean, “Efficient estimation of
+word representations in vector space,” inProceedings of the Internatio-
+nal Conference on Learning Representations (ICLR), 2013. [7] J.

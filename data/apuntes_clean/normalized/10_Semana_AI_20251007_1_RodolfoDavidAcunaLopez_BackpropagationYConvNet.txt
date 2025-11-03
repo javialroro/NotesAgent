@@ -1,0 +1,295 @@
+Redes Neuronales Convolucionales y
+Backpropagation
+Apuntes de clases
+Rodolfo David Acuña Lopez
+Escuela de Ingenieria en Computacion
+Instituto Tecnologico de Costa Rica
+Cartago, Costa Rica
+rodolfoide69@estudiantec.cr
+Abstract—En este documento podra encontrar informacion
+sobre la semana 10 de clases de IA, donde se comparten las
+respuestas del quiz 5, se comentan detalles sobre el primer
+proyecto, un pequeño resumen de la clase anterior sobre back
+propagation y se habla sobre un tema nuevo donde podemos ver
+temas como ConvNet o arquitectura de red convolucional.
+Index Terms—Redes Neuronales Convolucionales, Backprop-
+agation, CNN, Reconocimiento de Patrones, Procesamiento de
+Imagenes, Deep Learning
+I. INTRODUCCION
+Las redes neuronales han revolucionado el campo de la in-
+teligencia artificial, especialmente en tareas de reconocimiento
+de patrones y procesamiento de señales. En este documento se
+abordan dos conceptos fundamentales: el algoritmo de back-
+propagation, que permite el entrenamiento eficiente de redes
+neuronales profundas, y las redes neuronales convolucionales
+(CNN), que han demostrado ser particularmente efectivas para
+el procesamiento de imagenes y señales.
+El backpropagation es un algoritmo de optimizacion que
+calcula los gradientes de la funcion de perdida con respecto
+a los parametros de la red, permitiendo su ajuste mediante
+descenso de gradiente. Por otro lado, las CNN introducen
+conceptos como convolucion y pooling que aprovechan la
+estructura espacial de los datos, reduciendo significativamente
+el numero de parametros necesarios comparado con redes
+totalmente conectadas.
+Este documento se estructura de la siguiente manera:
+primero se presentan aspectos administrativos del curso in-
+cluyendo respuestas del quiz y detalles del proyecto, luego se
+revisa el algoritmo de backpropagation con sus fundamentos
+matematicos, y finalmente se introduce el concepto de redes
+convolucionales con la arquitectura AlexNet como ejemplo.
+II. ASPECTOS ADMINISTRATIVOS
+Debido a que no hubo noticias previas a la clase, se inicio
+con una breve explicacion sobre el primer proyecto de Redes
+Neuronales.A. Respuesta del quiz
+Se realizo el quiz 5 donde se establecieron las respuestas
+de este. Las preguntas con sus respuestas son las siguientes:
+Pregunta:Describa que es una red totalmente conectada
+(fully connected)Respuesta:Es un tipo de red neuronal en
+la que cada neurona esta conectada con todas las neuronas de
+la capa siguiente.
+Pregunta:Mencione 3 funciones de activacion no-lineales.
+Respuesta:ReLU, Sigmoide y Tanh
+Pregunta:Describa los 4 componentes principales de un
+agente LLM.Respuesta:
+•Perfil:Puede tener su propia personalidad
+•Memoria:Permite que el agente recuerde informacion
+pasada o resultados previos para mantener contexto en
+tareas largas
+•Herramientas:Son funciones externas que el agente
+puede usar para ejecutar acciones
+•Planificacion o razonamiento:Decide que hacer, inter-
+pretando las instrucciones del usuario y eligiendo la mejor
+accion
+Pregunta:Describa la diferencia entre sistemas de agenteunico y sistemas multiagentes.Respuesta:Un agenteunico
+percibe su entorno, toma decisiones y actua por si mismo,
+mientras que los sistemas multiagentes son varios agentes que
+interactuan entre si y con el entorno.
+B. Explicacion del proyecto
+Para este proyecto necesitamos aplicar redes neuronales para
+el reconocimiento de voz a partir de espectrogramas, es decir,
+reconocimiento de patrones en voz donde utilizaremos una
+arquitectura que se llama Redes Neuronales Convolucionales
+(CNN) la cual nos sirve para el procesamiento de imagenes.
+El reto de este proyecto es analizar una serie temporal en un
+audio donde analizaremos la señal que viene al segundo donde
+estemos procesando, por ejemplo, si estamos procesando un
+5t, hay que procesar un 5t+1, 5t+2, y asi sucesivamente. Se
+podrian resolver con redes recurrentes.
+Otra forma de hacer esto es convertir esa voz en espectro-
+gramas, la cual es un diagrama de tiempo y las frecuencias
+que produce la señal de audio. Con esto se produce un patron.
+
+Una herramienta mencionada por el profesor es Weights
+and Biases, la cual es una herramienta de seguimiento y
+visualizacion de experimentos de Machine Learning donde
+nosotros ejecutamos un entrenamiento y vemos en tiempo real
+desde cualquier computador como se esta comportando un
+modelo. La ventaja es que podemos ver el comportamiento
+por lo que podemos detenerlo si no vemos buenos resultados.
+El procesamiento de imagenes puede ser algo pesado por
+lo que debemos reducir el tamaño de estas a un tamaño de
+224x224. Esto debido a que computacionalmente se vuelve
+costoso.
+No se pueden utilizar librerias comoResNetque sirven para
+abstraer la definicion de capas mas alla de torch.nn.
+El profesor nos recomienda buscar una herramienta en
+redes neuronales que nos pueda hacer toda la arquitectura
+del modelo. Incluso esta se puede hacer en PyTorch, queda
+a nuestra disposicion.
+Tenemos dos modelos:
+•LeNet-5 clasico:Este es la arquitectura mas basica
+(como el profesor lo menciona) para el procesamiento
+de imagenes el cual fue creado por Yann LeCun.
+•Arquitectura alternativa:Esta esta basada en literatura
+la cual implementa cualquier arquitectura distinta.
+Podemos escoger diferentes espectrogramas como por ejem-
+plo, el Data Augmentation el cual trata de aumentar los datos
+de entrenamiento para mejorar la generalizacion de mi modelo
+con la finalidad de obtener mejores patrones.
+En el paper SpecAugment, que sale en la bibliografia del
+proyecto, propone 3 tipos de tecnicas:
+•Time Masking:Donde tomo una frecuencia del 1 al 1.5
+donde hago una mascara para cancelar el ruido
+•Time Warping:Para estirar o encoger
+•Frequency Masking:Que aplica mascaras similares pero
+en el eje de la frecuencia, lo que simula la perdida o
+interferencia de ciertas bandas del espectro de audio
+El entrenamiento se debe realizar varias veces por lo que
+se debe dejar todo montado y conectado la herramienta
+de Weights and Biases. Esto porque el entrenamiento con
+imagenes puede ser pesado, requiere de GPU. El profesor men-
+ciona que podemos usar Google Colab pero que es limitado,
+por lo que debemos aprovechar los recursos.
+La extension de la documentacion debe ser de maximo 10
+paginas. Los apuntes anteriores son los mas relevantes sobre
+la explicacion.
+C. Repaso de Back Propagation
+Este nos permite determinar cuanto aporta cada peso al
+error total de la red, ajustando los parametros en la direccion
+contraria al proceso de propagacion hacia adelante, asi como
+lo podemos observar en la Fig. 1.
+Vamos a ver las operaciones como grafos donde van a ser un
+tipo de operaciones donde vamos a ponerle un sobrenombre.
+El sobrenombre nos puede ayudar con las derivadas parciales.
+Cuando tratamos de optimizar un grafo, contamos con dos
+etapas. La de salida la cual le llamamos activacion L donde
+Fig. 1. Back and forward propagation.
+tenemos solo una neurona. Cada una de esas neuronas estan
+compuestas por una funcion no lineal que tiene como entrada
+una funcion lineal. Para optimizar los pesos en esa funcion
+debemos hacer derivadas parciales. Al final esa derivada va
+a ser el activador de la capa anterior por lo que no necesito
+conocer como fue computada cada capa anterior. Solo necesito
+el resultado y ya con eso puedo calcular la derivada que yo voy
+a necesitar. Si yo ocupo calcular la derivada parcial, respecto
+a la funcion de perdida con mi parametro w, lo que tengo que
+hacer es aplicar la regla de la cadena para llegar al parametro
+de mi funcion. Hay calculos que siempre se van a repetir por lo
+que podremos guardar esos calculos para evitar recalcularlos
+de nuevo para cada uno de los parametros.
+∂Li
+∂wl=∂zl
+∂wl∂al
+∂zl∂Li
+∂al,
+∂Li
+∂bl=∂zl
+∂bl∂al
+∂zl∂Li
+∂al.
+Esto nos da como resultado un vector gradiente, la cual
+podemos ver en la Fig. 2, que tiene el calculo de todos los
+gradientes por todos los parametros en la red.
+Fig. 2. Vector gradiente.
+Si tenemos multiples neuronas, tenemos que utilizar su-
+perindices o subindices, podemos ver un ejemplo en la Fig.
+3. El primero me indica la capa en la que me encuentro, en
+este caso el L. El segundo me indica cual neurona es para
+identificar cada una de ellas. Los pesos estan asociados a las
+capas me van a indicar hacia donde voy y de donde provengo.
+Podemos tener dos funciones, las cuales son:
+•Preactivacion
+z(l)
+j=b(l)
+j+nl−1X
+k=1w(l)
+j,ka(l−1)
+k
+
+Fig. 3. Grafo dimensional.
+•Activacion
+a(l)
+j=g
+z(l)
+j
+La funcion de activacion se aplica a toda la capa. Toda la
+capa se computa con sigmoide. Tenemos funciones de perdida,
+donde podemos tener una perdida total dada por:
+Li=nlX
+j=1 
+a(l)
+j−yj2
+El resultado de la derivada de perdida con respecto a la
+activacion es la siguiente:
+∂Li
+∂al
+j= 
+(al
+1−y 1)2+ (al
+2−y 2)2+· · ·+ (al
+n−yn)2′
+∂Li
+∂al
+j= 2 
+al
+j−yj
+El resultado de la derivada de activacion con respecto a la
+de reactivacion es la siguiente:
+∂a(l)
+j
+∂z(l)
+j=g
+z(l)
+j 
+1−g
+z(l)
+j
+En la siguiente figura yo puedo hacer varios calculos de
+derivadas, donde a mi no me interesa como llego el valor
+z ya que al final es un valor que me llego a la funcion, donde
+se aplicaron varias derivadas para llegar a un valor. Al final,
+cada neurona que compute, no me interesa como me llego la
+informacion desde la funcion de perdida ya que a partir de
+cierto punto. Con el valor resultante, puedo sacar la derivada
+con respecto a x y con respecto a y almacenadas, y tener las
+derivadas desde mi funcion de perdida con mis entradas. En
+resumen, la propagacion hacia adelante es la capa de entrada
+por la de salida y la propagacion hacia atras es desde la capa
+de salida hacia la de entrada donde se calcula la gradiente del
+error con respecto a los pesos de cada capa.
+III. CONVNET
+Hasta ahora hemos trabajado con una redfully connected
+con entradas y salidas. El problema es que en el modelo
+anterior usado paraMNIST, nos puede dar varios errores
+como si muevo las imagenes de un centro, y las neuronas que
+se activaban estaban fijas, entonces podemos tener un margende error mayor. Basicamente las neuronas se desconectan de
+sus entradas originales y reciben otras para las cuales no fueron
+entrenadas.
+Hay un dataset que se llama CIFAR-10 el cual son 10 clases
+con tamaño pequeño 32x32 pero son a color, con 3 canales.
+Por tanto, si tuviera que hacer una red neuronal para conectar
+cada pixel a una neurona, tendre una entrada de 3072 pesos.
+Con esto entramos a un problema de dimensionalidad. Esto
+se ve bien pero las imagenes son pequeñas, ¿que pasa si
+se vuelven mas grandes? Para resolver este problema, entra
+en juego el ConvNet, donde vamos a tener 3 dimensiones,
+donde vamos a tener filtros. Cada filtro se encargara de
+reconocer patrones en una imagen. Esos filtros pueden ser
+reconocimientos de lineas verticales, horizontales, diagonales,
+entre otras, que se especializan en extraer informacion de esas
+imagenes.
+Fig. 4. Red totalmente conectada vs ConvNet
+Mi salida se va a reducir, es decir, si tenia 224x224, mi
+salida puede ser 212x212, y si eran 3 canales, puede que ahora
+tengan 64 canales. Esa cantidad de canales van a representar
+la cantidad de filtros que yo tuve que calcular. Esos filtros
+pueden representar colores, lineas, numeros, entre otros.
+Laarquitecturaesta compuesta por 3 etapas:
+A. Convolutional Layer
+En esta se toma el filtro, se desliza por la imagen para hacer
+el calculo de los features. Tenemos como entrada el largo,
+ancho y canales que voy a procesar. Esta computa la salida de
+neurona que se encuentran conectadas a las regiones locales.
+Por lo tanto, si se quiere usar una cantidad de x filtros, la salida
+de esta va a ser el ancho, largo y x. Despues de los filtros se
+aplica una funcion de activacion. Esos filtros se calculan por
+cada canal.
+B. Pooling layer
+Esta se encarga de reducir las dimensiones en largo y ancho,
+en otras palabras, reducir la imagen. Esta aplica la operacion
+de downsampling a lo largo de dimensiones espaciales como
+el ancho y largo. Si su entrada es de 32x32x12, su salida puede
+llegar a ser de 16x16x16. Este no tiene parametros y no me
+afecta la profundidad.
+C. Fully-connected
+En esta es mas facil reducir la informacion de una imagen
+a un vector mas pequeño que el que yo tenia en la entrada,
+entonces, a partir de ese momento hago mi clasificador. En
+otras palabras, se calcula la probabilidad de que pertenezca
+a una clase y asi convertir una imagen de pixeles a una
+probabilidad de pertenecer a una clase.
+
+D. AlexNet
+Esta es una arquitectura que salio para la revolucion de
+convoluciones y el Deep Learning en todos sus aspectos.
+Fig. 5. Arquitectura AlexNet.
+En la Fig. 5 podemos apreciar el proceso. Los cubitos de
+adentro representan el tamaño de los filtros.
+De esta manera podemos tratar un problema de clasifi-
+cacion en imagenes. Lo primero que se hace es una con-
+volucion donde extraemos ciertas caracteristicas. Para reducir
+las imagenes se realiza un pooling, donde se pierden pixeles.
+Al final llegamos a un resumen de la imagen anterior. Solo
+quedaria hacer una fully connected.
+Fig. 6. Reduccion de imagen.

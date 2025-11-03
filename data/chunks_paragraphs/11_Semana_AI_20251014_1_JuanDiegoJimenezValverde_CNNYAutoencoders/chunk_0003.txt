@@ -1,0 +1,4 @@
+Fully-Connected Layer
+Finalmente, las caracteristicas extraidas se transforman en
+ununico vector, conectando todas las neuronas entre si. Esta
+capa permite realizar la clasificacion final del modelo.

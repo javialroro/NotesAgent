@@ -1,0 +1,62 @@
+3Extension a la Clasificacion Multinomial y la
+Codificacion One-Hot
+3.1Ejemplo de clase: 10 Regresiones Logisticas, una
+por alumno
+Para manejar las 10 clases se puede entrenar una regre-
+sion logistica por estudiante (una por clase); la capa de
+salida tendria 10 neuronas (una por clase). 3.2 Codificacion One-Hot de las Etiquetas (y)
+La etiqueta escalar se codifica como un vector one-hot
+enR10. Clase (digito) Vector One-Hot (y∈R10) Esperada
+0[1,0,0,0,0,0,0,0,0,0]Neurona 0
+2[0,0,1,0,0,0,0,0,0,0]Neurona 2
+9[0,0,0,0,0,0,0,0,0,1]Neurona 9
+Cuadro 1: Codificacion one-hot de etiquetas (ejemplos). 4 Compactacion por Algebra Lineal
+4.1 Formulacion Matricial de Pesos y Sesgos
+Stackeando los vectores de pesos obtenemos la matriz
+de pesos y el vector de sesgos:
+W∈R10×784, b∈R10. La combinacion lineal de la capa de salida se escribe
+como:
+z=Wx+b, z∈R10. Elemento Simbolo Dimension
+Entradax784×1
+Matriz de pesosW10×784
+Sesgosb10×1
+Potencial de activacionz10×1
+Cuadro 2: Dimensiones en la formulacion matricial para
+MNIST. Figura 3: Matriz de pesos Wen la capa fully connected:
+cada fila corresponde a una neurona de salida y cada
+columna a un pixel de entrada.4.2Ejemplo Numerico de Clase: De Vector a Matriz
+V.B.1. Calculo de una sola regresion (vector de
+4 features):
+w=
+3
+2
+4
+5
+, b= 2, x=
+3
+4
+5
+6
+. z=w⊤x+b= (3·3) + (2·4) + (4·5) + (5·6) + 2 = 69. y=σ(z). V.B.2. Calculo de varias regresiones a la vez (2
+neuronas):
+W=3 2 4 5
+4 3 2 1
+, b=2
+3
+, x=
+3
+4
+5
+6
+. z=Wx+b=69
+43
+. 5Arquitectura de las Redes Neuronales Profun-
+das
+5.1 Definicion y Estructura Tipica
+Unared neuronal artificiales un modelo de computo
+inspirado en el cerebro humano, compuesto por unidades
+llamadasneuronas artificiales. Cada neurona recibe
+un conjunto de entradas x, aplica una combinacion lineal
+con sus pesos wy un sesgo b, y luego pasa el resultado
+por una funcion de activaciong:
+h(x) =g(w⊤x+b). Capa de entrada:recibe los 784 pixeles (flatten).
