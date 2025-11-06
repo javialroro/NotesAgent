@@ -13,7 +13,7 @@ llm_orq = ChatOpenAI(model="gpt-3.5-turbo-0125", temperature=0.3)
 
 # Inicializar las herramientas con la carpeta donde están los vectores
 collection_name = "ai_apuntes_sliding_openai_v1"
-persist_dir = "NotesAgent-main/data/vectorstores/chroma_sliding_openai_v1"
+persist_dir = "data/vectorstores/chroma_sliding_openai_v1"
 rag_tool = RAGTool(collection_name=collection_name, persist_dir=persist_dir)
 web_tool = get_websearch_tool()
 

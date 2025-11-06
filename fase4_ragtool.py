@@ -6,11 +6,11 @@ from chromadb.config import Settings
 from openai import OpenAI
 import os
 
-# Modelo de entrada para RAGTool
+# ======== MODELO DE INPUT ========
 class RAGInput(BaseModel):
     query: str = Field(..., description="Pregunta o frase a buscar en los apuntes")
 
-# Rag Tool para búsqueda en base vectorial local
+# ======== TOOL ========
 class RAGTool(BaseTool):
     name: str = "RAG_Tool"
     description: str = "Busca información en la base vectorial local de apuntes de Inteligencia Artificial"
@@ -35,7 +35,8 @@ class RAGTool(BaseTool):
 
         results = self._collection.query(
             query_embeddings=[embedding],
-            n_results=5
+            n_results=5,
+            include=["documents",  "distances", "metadatas"]
         )
         docs = results["documents"][0]
         metas = results["metadatas"][0]
@@ -47,4 +48,4 @@ class RAGTool(BaseTool):
         return "\n".join(combined)
 
     async def _arun(self, query: str):
-        raise NotImplementedError("RAGTool no soporta ejecución asíncrona.")    
+        raise NotImplementedError("RAGTool no soporta ejecución asíncrona.")
